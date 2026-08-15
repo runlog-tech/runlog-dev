@@ -91,5 +91,38 @@ def log_experiment(
     return f"Logged experiment #{next_num} ({slug}) to {path}"
 
 
+@mcp.tool()
+def resolve_pending_decision(repo_path: str, decision: str, resolution: str) -> str:
+    """Mark a decision resolved in a repo's memory/pending_decisions.md: strikes
+    through the decision name and writes the resolution into the Direction column."""
+    path = Path(repo_path) / "memory" / "pending_decisions.md"
+    if not path.exists():
+        raise FileNotFoundError(f"No memory/pending_decisions.md at {repo_path}")
+
+    text = path.read_text()
+    header, rows = _find_table(
+        text,
+        ["Decision", "Current setting", "Trigger to act", "Direction"],
+    )
+
+    lines = text.splitlines()
+    for i, line in enumerate(lines):
+        if not line.strip().startswith("|"):
+            continue
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if len(cells) != len(header):
+            continue
+        name = cells[0].strip("~ ")
+        if name != decision.strip("~ "):
+            continue
+        cells[0] = f"~~{name}~~"
+        cells[3] = resolution
+        lines[i] = "| " + " | ".join(cells) + " |"
+        path.write_text("\n".join(lines) + "\n")
+        return f"Marked '{decision}' resolved in {path}"
+
+    raise ValueError(f"No decision matching '{decision}' found in {path}")
+
+
 if __name__ == "__main__":
     mcp.run()
