@@ -37,7 +37,7 @@ State the verdict plainly before moving on: which tier, or "not a good fit," and
 
 ## Step 3: Interview before acting
 
-One question at a time (same discipline as `/grilling` — never bundle multiple questions):
+Ask only what the user's prior answers have actually unblocked — each of the 3 questions below depends on the one before it (no point asking for a subagent name before confirming the user wants to proceed, or asking about model tier before confirming the pattern is real), so they go one at a time, in order:
 
 1. Confirm the user recognizes this pattern as real recurring work (not a detector false positive).
 2. Confirm or adjust the recommended model tier.
