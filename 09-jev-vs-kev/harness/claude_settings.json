@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "defaultMode": "bypass"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /path/to/09-jev-vs-kev/harness/claude_hook.py"
+          }
+        ]
+      }
+    ]
+  }
+}
