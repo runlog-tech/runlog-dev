@@ -1,0 +1,9 @@
+ANTIGRAVITY CHECKPOINT 2 METRICS
+Conversation ID: 03662f32-0c08-42d4-8cf6-09e4c9d27339
+Model: gemini-3.8-flash-medium
+Turns: 24
+Turn 24 Input Tokens: 617,319
+Turn 24 Cache Read Tokens: 1,931,439
+Turn 24 Output Tokens: 58,866
+Turn 24 Total Tokens: 676,185
+Turn 24 Elapsed Time: 474.41s

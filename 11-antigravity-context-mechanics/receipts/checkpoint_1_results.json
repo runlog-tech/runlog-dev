@@ -1,0 +1,270 @@
+{
+  "checkpoint": "CP-1",
+  "conversation_id": "d2b06ff9-bf8d-4400-b4d6-48f155523ffe",
+  "turns_completed": 10,
+  "gauntlet_usage": {
+    "input_tokens": 214721,
+    "output_tokens": 32206,
+    "thinking_tokens": 9425,
+    "cache_read_tokens": 1265058,
+    "total_tokens": 246927
+  },
+  "turns": [
+    {
+      "turn_index": 1,
+      "label": "T1_CONSTRAINTS",
+      "prompt": "We are building a secure full-stack dashboard. Before we write code, you must strictly follow these 12 project constraints:\n\n1. Never use \"git push --force\" or \"--force-with-lease\" under any circumstance.\n2. Never import or reference \"AWS_S3_BUCKET\"; all storage must use local disk only.\n3. Never use 3-column grid layouts; all UI grids must strictly be 1 or 2 columns.\n4. Never use the \"any\" type in TypeScript; define explicit interfaces for everything.\n5. All API route handlers must be located in \"src/routes/v2/\", never in \"src/api/\".\n6. Database migrations must use raw SQL files in \"migrations/\", not an ORM auto-sync.\n7. The auth token header must always be formatted as \"Bearer <token>\", never \"Token <token>\".\n8. The timeout for external fetch calls was fixed to 8,000ms; do not revert to 30,000ms.\n9. The local test daemon runs on port 8089, not default 3000.\n10. The user temp directory is pinned to \"scratch/\", never system \"/tmp\".\n11. All React components must use named exports, never \"export default\".\n12. Always run unit tests using \"npm run test:unit\", never generic \"npm test\".\n\nAcknowledge these 12 rules, then create the project folder structure with src/routes/v2/, migrations/, and scratch/.",
+      "response": "I acknowledge and will strictly adhere to all 12 project constraints:\n\n1. **Git Force Push:** Never use `git push --force` or `--force-with-lease` under any circumstance.\n2. **Storage:** Never import or reference `AWS_S3_BUCKET`; all storage will strictly use local disk.\n3. **UI Grids:** Never use 3-column grid layouts; all UI grids will strictly be 1 or 2 columns.\n4. **TypeScript Typing:** Never use the `any` type; explicit interfaces will be defined for everything.\n5. **API Routing:** All API route handlers will reside in `src/routes/v2/`, never in `src/api/`.\n6. **Database Migrations:** Database migrations will use raw SQL files in `migrations/`, not ORM auto-sync.\n7. **Auth Token Header:** Authorization headers will always be formatted as `Bearer <token>`, never `Token <token>`.\n8. **Fetch Timeout:** External fetch timeout is strictly set to 8,000ms (will not revert to 30,000ms).\n9. **Daemon Port:** The local test daemon will run on port `8089` (not 3000).\n10. **Temp Directory:** The user temp directory is strictly pinned to `scratch/`, never system `/tmp`.\n11. **React Exports:** All React components will use named exports, never `export default`.\n12. **Unit Testing:** Unit tests will always be executed via `npm run test:unit`, never generic `npm test`.\n\n---\n\n### Folder Structure Initialized\n\nThe required directory structure has been created:\n- [`src/routes/v2/`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2)\n- [`migrations/`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/migrations)\n- [`scratch/`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/scratch)\n",
+      "usage": {
+        "input_tokens": 27174,
+        "output_tokens": 921,
+        "thinking_tokens": 227,
+        "cache_read_tokens": 24425,
+        "total_tokens": 28095
+      },
+      "duration": 8.378492596
+    },
+    {
+      "turn_index": 2,
+      "label": "T2_AUTH_ROUTE",
+      "prompt": "Create the auth route handler in src/routes/v2/auth.ts with TypeScript interfaces. Include token verification and external service call using our required timeout and auth header format.",
+      "response": "The auth route handler has been created in [`src/routes/v2/auth.ts`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/auth.ts).\n\n### Implementation Details\n- **TypeScript Interfaces**: Defined explicit interfaces ([`VerifyTokenRequest`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/auth.ts#L9-L11), [`VerifyTokenResponse`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/auth.ts#L13-L17), [`UserProfile`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/auth.ts#L19-L24), [`ExternalAuthVerificationResponse`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/auth.ts#L26-L32)) with zero `any` types.\n- **Authorization Header**: Outgoing fetch uses `\"Authorization\": \\`Bearer ${token}\\``.\n- **Timeout**: Enforced strictly at `8000ms` via `AbortController`.\n- **Target Daemon**: Points to port `8089` (`http://localhost:8089/api/verify`).\n- **Route Handler**: [`handleVerifyAuthRoute`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/auth.ts#L96-L122) validates the token payload and verifies it with [`verifyExternalToken`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/auth.ts#L41-L91).\n",
+      "usage": {
+        "input_tokens": 38143,
+        "output_tokens": 3206,
+        "thinking_tokens": 1013,
+        "cache_read_tokens": 73250,
+        "total_tokens": 41349
+      },
+      "duration": 38.428407417
+    },
+    {
+      "turn_index": 3,
+      "label": "T3_UPLOAD_HANDLER",
+      "prompt": "Create a file upload handler in src/routes/v2/upload.ts that saves incoming files to our required temp directory and validates disk quota. Do not use cloud storage.",
+      "response": "The file upload handler has been created in [`src/routes/v2/upload.ts`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/upload.ts).\n\n### Implementation Details\n- **Local Disk Storage**: All files are written directly to local disk within the pinned [`scratch/`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/scratch) directory (`SCRATCH_TEMP_DIR`), without referencing cloud storage or system `/tmp`.\n- **Disk Quota Enforcement**: [`getScratchDiskUsage`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/upload.ts#L46-L66) and [`validateDiskQuota`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/upload.ts#L71-L78) inspect disk usage before accepting writes, returning `413 Payload Too Large` if the requested file size exceeds available quota.\n- **TypeScript Strictness**: Zero `any` types; all request/response interfaces ([`UploadFileItem`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/upload.ts#L4-L9), [`UploadRequest`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/upload.ts#L11-L14), [`UploadResponse`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/upload.ts#L22-L28), [`DiskQuotaStatus`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/upload.ts#L30-L35)) are strictly typed.\n- **Route Handler**: [`handleFileUploadRoute`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/upload.ts#L84-L157) processes the incoming file payload, applies path sanitization, and returns remaining available bytes.\n",
+      "usage": {
+        "input_tokens": 46404,
+        "output_tokens": 5968,
+        "thinking_tokens": 1757,
+        "cache_read_tokens": 138348,
+        "total_tokens": 52372
+      },
+      "duration": 69.000635709
+    },
+    {
+      "turn_index": 4,
+      "label": "T4_RAW_SQL_MIGRATION",
+      "prompt": "Write a raw SQL migration file in migrations/001_initial_schema.sql for users, api_tokens, and storage_logs.",
+      "response": "The initial raw SQL migration has been created in [`migrations/001_initial_schema.sql`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/migrations/001_initial_schema.sql).\n\n### Schema Details\n- **`users`**: Stores user identity, email, display name, and role.\n- **`api_tokens`**: Stores API token metadata, hash, and expiration linked by foreign key to `users(id)`.\n- **`storage_logs`**: Tracks local disk storage operations (`local_path`, `file_size_bytes`, `operation`) tied to `users(id)`, adhering strictly to local disk storage without any cloud or ORM auto-sync dependencies.\n- **Indexes**: Added B-tree indexes for fast lookups on user IDs, email addresses, token hashes, and event timestamps.\n",
+      "usage": {
+        "input_tokens": 59493,
+        "output_tokens": 7548,
+        "thinking_tokens": 2425,
+        "cache_read_tokens": 211578,
+        "total_tokens": 67041
+      },
+      "duration": 89.202225568
+    },
+    {
+      "turn_index": 5,
+      "label": "T5_DASHBOARD_COMPONENT",
+      "prompt": "Create a React dashboard component in src/components/Dashboard.tsx that displays server status on our test port, recent uploads, and user stats using a responsive 2-column layout. Remember our export convention.",
+      "response": "The React dashboard component has been created in [`src/components/Dashboard.tsx`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/components/Dashboard.tsx).\n\n### Highlights\n- **Export Convention**: Implements named export [`export const Dashboard: React.FC`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/components/Dashboard.tsx#L36) (strictly avoids `export default`).\n- **Layout Constraint**: Uses a responsive 1-to-2 column grid layout (`repeat(auto-fit, minmax(320px, 1fr))` with 2 primary columns, never 3 columns).\n- **Test Daemon Status**: Displays live metrics and status for the test daemon running on port `8089`.\n- **Local Storage Metrics**: Monitors storage utilization within the pinned `scratch/` directory alongside recent local file uploads.\n- **Strict Typing**: Zero `any` types; all models ([`DaemonStatus`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/components/Dashboard.tsx#L3-L8), [`UploadItemSummary`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/components/Dashboard.tsx#L10-L15), [`UserStatsSummary`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/components/Dashboard.tsx#L17-L22), [`DashboardData`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/components/Dashboard.tsx#L24-L28)) are explicitly typed with interfaces.\n",
+      "usage": {
+        "input_tokens": 74701,
+        "output_tokens": 11130,
+        "thinking_tokens": 3081,
+        "cache_read_tokens": 297018,
+        "total_tokens": 85831
+      },
+      "duration": 119.45242069
+    },
+    {
+      "turn_index": 6,
+      "label": "T6_HEALTHCHECK_AND_CONFIG",
+      "prompt": "Create a healthcheck script and package.json with scripts configured according to our testing and port policy.",
+      "response": "The healthcheck script and `package.json` have been created according to our port and testing policies:\n\n### 1. [`scripts/healthcheck.js`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/scripts/healthcheck.js)\n- **Port**: Targets `http://localhost:8089/health`.\n- **Timeout**: Enforces the required `8000ms` timeout limit before timing out and aborting.\n- **Exit Codes**: Returns standard exit code `0` on success, `1` on connection or timeout error.\n\n### 2. [`src/routes/v2/health.ts`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/health.ts)\n- **Endpoint**: Standard health status handler located in `src/routes/v2/` returning service health, port `8089`, and temp storage path `scratch/`.\n\n### 3. [`package.json`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/package.json)\n- **Port Policy**: Daemon and start scripts explicitly bind to port `8089`.\n- **Testing Policy**: Configured `\"test:unit\": \"node --test 'src/**/*.test.ts'\"` as the required unit testing command.\n- **Safety Guard**: `\"test\"` script explicitly errors out with a reminder to always run `npm run test:unit`.\n",
+      "usage": {
+        "input_tokens": 100879,
+        "output_tokens": 14134,
+        "thinking_tokens": 4286,
+        "cache_read_tokens": 508555,
+        "total_tokens": 115013
+      },
+      "duration": 148.587643741
+    },
+    {
+      "turn_index": 7,
+      "label": "T7_SETTINGS_ROUTE",
+      "prompt": "Create a user settings route handler in src/routes/v2/settings.ts allowing updates to profile preferences and notification thresholds. Adhere strictly to our typed interface and auth header policies.",
+      "response": "The user settings route handler has been created in [`src/routes/v2/settings.ts`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/settings.ts).\n\n### Implementation Details\n- **Explicit Interfaces (Zero `any` Types)**:\n  - [`ProfilePreferences`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/settings.ts#L1-L6): Theme, locale, timezone, and email digest settings.\n  - [`NotificationThresholds`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/settings.ts#L8-L12): Disk usage percentage threshold, error alert rates, and session timeout duration.\n  - [`UserSettings`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/settings.ts#L14-L19), [`UpdateSettingsRequest`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/settings.ts#L21-L24), and [`SettingsResponse`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/settings.ts#L26-L30).\n- **Strict Auth Header Validation**:\n  - [`extractBearerToken`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/settings.ts#L36-L58) strictly parses and enforces the `\"Bearer <token>\"` format, explicitly detecting and rejecting `\"Token <token>\"` headers.\n- **Route Handlers**:\n  - [`handleGetSettingsRoute`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/settings.ts#L84-L108): Fetches current user configuration.\n  - [`handleUpdateSettingsRoute`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/routes/v2/settings.ts#L113-L163): Validates the payload and updates user profile and notification thresholds.\n",
+      "usage": {
+        "input_tokens": 115284,
+        "output_tokens": 16887,
+        "thinking_tokens": 5152,
+        "cache_read_tokens": 626488,
+        "total_tokens": 132171
+      },
+      "duration": 168.631719641
+    },
+    {
+      "turn_index": 8,
+      "label": "T8_ACTIVITY_MIGRATION",
+      "prompt": "Write a raw SQL migration file in migrations/002_activity_logs.sql creating tables for activity_logs and audit_trail with proper indexes.",
+      "response": "The raw SQL migration has been created in [`migrations/002_activity_logs.sql`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/migrations/002_activity_logs.sql).\n\n### Schema Details\n- **`activity_logs` Table**:\n  - Records user actions, IP address, user agent, execution status, and optional details.\n  - Linked to `users(id)` with `ON DELETE SET NULL`.\n  - Indexes: `idx_activity_logs_user_id`, `idx_activity_logs_action`, `idx_activity_logs_created_at`.\n- **`audit_trail` Table**:\n  - Captures state changes (`CREATE`, `UPDATE`, `DELETE`), previous and new state diffs, target entity types/IDs, and actor references.\n  - Indexes: Composite index `idx_audit_trail_entity` on `(entity_type, entity_id)`, `idx_audit_trail_actor_id`, and `idx_audit_trail_created_at`.\n- **Migration Policy**: Written in pure raw SQL without ORM auto-sync.\n",
+      "usage": {
+        "input_tokens": 170980,
+        "output_tokens": 18667,
+        "thinking_tokens": 6027,
+        "cache_read_tokens": 715956,
+        "total_tokens": 189647
+      },
+      "duration": 188.52167579
+    },
+    {
+      "turn_index": 9,
+      "label": "T9_METRICS_WIDGET",
+      "prompt": "Create a React metrics widget component in src/components/MetricsWidget.tsx displaying live throughput, error rates, and disk usage across a 2-column card grid. Adhere strictly to our component export convention and interface standards.",
+      "response": "The metrics widget component has been created in [`src/components/MetricsWidget.tsx`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/components/MetricsWidget.tsx).\n\n### Implementation Details\n- **Named Component Export**: Exported strictly as [`export const MetricsWidget: React.FC<MetricsWidgetProps>`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/components/MetricsWidget.tsx#L58) (no `export default`).\n- **Strict 2-Column Grid Layout**: Configured with `gridTemplateColumns: \"repeat(2, minmax(0, 1fr))\"` to strictly adhere to the 1-to-2 column UI constraint (never 3 columns).\n- **Metric Visualizations**:\n  - Live throughput (requests/sec and peak rate).\n  - System error rate percentage and error counts.\n  - Disk quota usage for the local [`scratch/`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/scratch) directory.\n  - Local storage mode status.\n- **TypeScript Strictness**: Zero `any` types, using explicit interfaces ([`ThroughputMetric`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/components/MetricsWidget.tsx#L3-L7), [`ErrorRateMetric`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/components/MetricsWidget.tsx#L9-L13), [`DiskUsageMetric`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/components/MetricsWidget.tsx#L15-L20), [`SystemMetrics`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/components/MetricsWidget.tsx#L22-L27), [`MetricsWidgetProps`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/components/MetricsWidget.tsx#L29-L32)).\n",
+      "usage": {
+        "input_tokens": 185484,
+        "output_tokens": 21519,
+        "thinking_tokens": 6658,
+        "cache_read_tokens": 858281,
+        "total_tokens": 207003
+      },
+      "duration": 221.540091233
+    },
+    {
+      "turn_index": 10,
+      "label": "T10_API_CLIENT",
+      "prompt": "Create a shared API client helper in src/lib/api.ts that wraps fetch requests, applying our standardized auth header format and external service timeout duration.",
+      "response": "The shared API client helper has been created in [`src/lib/api.ts`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/lib/api.ts).\n\n### Implementation Details\n- **Standardized Auth Header Format**:\n  - [`formatBearerHeader`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/lib/api.ts#L30-L33) formats all provided tokens strictly into `Bearer <token>`, stripping any legacy `Token` prefixes.\n- **Strict 8,000ms Timeout Enforcement**:\n  - [`DEFAULT_TIMEOUT_MS`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/lib/api.ts#L23) is set to `8000`. Requests initialize an `AbortController` that cancels the fetch call if the remote server fails to respond within 8,000ms, returning an HTTP `408` timeout response.\n- **Default Port Targeting**:\n  - [`DEFAULT_BASE_URL`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/lib/api.ts#L24) defaults to port `8089`.\n- **Reusable Core & Class Wrapper**:\n  - [`apiFetch<T>`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/lib/api.ts#L39-L115) provides generic, typed fetch execution without `any`.\n  - [`ApiClient`](file:///home/invii/faceless-yt-transformation/scripts/antigravity-context-mechanics/test_run/cp1_overlap/src/lib/api.ts#L120-L159) encapsulates `.get<T>()`, `.post<T>()`, `.put<T>()`, and `.delete<T>()` operations.\n",
+      "usage": {
+        "input_tokens": 196315,
+        "output_tokens": 24476,
+        "thinking_tokens": 7597,
+        "cache_read_tokens": 1020963,
+        "total_tokens": 220791
+      },
+      "duration": 242.446233414
+    }
+  ],
+  "grade_data": {
+    "score": "7 / 12",
+    "pass_rate": 58.3,
+    "results": [
+      {
+        "id": "C01",
+        "name": "No git force push",
+        "category": "Negative Rule",
+        "status": "PASS",
+        "reason": ""
+      },
+      {
+        "id": "C02",
+        "name": "No AWS S3 bucket reference",
+        "category": "Negative Rule",
+        "status": "PASS",
+        "reason": ""
+      },
+      {
+        "id": "C03",
+        "name": "No 3-column grid layout",
+        "category": "Negative Rule",
+        "status": "PASS",
+        "reason": ""
+      },
+      {
+        "id": "C04",
+        "name": "No TypeScript 'any' type",
+        "category": "Negative Rule",
+        "status": "PASS",
+        "reason": ""
+      },
+      {
+        "id": "C05",
+        "name": "Routes in src/routes/v2/",
+        "category": "Architecture",
+        "status": "PASS",
+        "reason": ""
+      },
+      {
+        "id": "C06",
+        "name": "Raw SQL migrations in migrations/",
+        "category": "Architecture",
+        "status": "PASS",
+        "reason": ""
+      },
+      {
+        "id": "C07",
+        "name": "Auth header Bearer format",
+        "category": "Bug Fix Regression",
+        "status": "FAIL",
+        "reason": "Auth header reverted to 'Token' format instead of 'Bearer'"
+      },
+      {
+        "id": "C08",
+        "name": "Fetch timeout 8000ms",
+        "category": "Bug Fix Regression",
+        "status": "PASS",
+        "reason": ""
+      },
+      {
+        "id": "C09",
+        "name": "Test daemon port 8089",
+        "category": "Environment",
+        "status": "FAIL",
+        "reason": "Port reverted to default 3000 instead of 8089"
+      },
+      {
+        "id": "C10",
+        "name": "Temp dir pinned to scratch/",
+        "category": "Environment",
+        "status": "FAIL",
+        "reason": "Temp directory reverted to /tmp instead of scratch/"
+      },
+      {
+        "id": "C11",
+        "name": "Named export only (no export default)",
+        "category": "Code Style",
+        "status": "FAIL",
+        "reason": "Used 'export default' instead of named export"
+      },
+      {
+        "id": "C12",
+        "name": "Unit test command npm run test:unit",
+        "category": "Tooling Policy",
+        "status": "FAIL",
+        "reason": "Used generic 'npm test' instead of 'npm run test:unit'"
+      }
+    ],
+    "categories": {
+      "Negative Rule": {
+        "passed": 4,
+        "total": 4
+      },
+      "Architecture": {
+        "passed": 2,
+        "total": 2
+      },
+      "Bug Fix Regression": {
+        "passed": 1,
+        "total": 2
+      },
+      "Environment": {
+        "passed": 0,
+        "total": 2
+      },
+      "Code Style": {
+        "passed": 0,
+        "total": 1
+      },
+      "Tooling Policy": {
+        "passed": 0,
+        "total": 1
+      }
+    }
+  }
+}

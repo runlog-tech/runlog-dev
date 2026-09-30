@@ -1,0 +1,9 @@
+ANTIGRAVITY CHECKPOINT 1 METRICS
+Conversation ID: d2b06ff9-bf8d-4400-b4d6-48f155523ffe
+Model: gemini-3.8-flash-medium
+Turns: 10
+Last Turn Input Tokens: 196,315
+Last Turn Cache Read Tokens: 1,020,963
+Last Turn Output Tokens: 24,476
+Last Turn Total Tokens: 220,791
+Turn 10 Elapsed Time: 242.45s
