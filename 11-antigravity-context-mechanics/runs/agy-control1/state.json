@@ -1,0 +1,291 @@
+{
+ "conv": "87489ebb-7946-4eb8-a289-46905bd31995",
+ "turns": [
+  {
+   "label": "T1-setup",
+   "prompt": "Setup for this session. Rule 1: never import the package `lodash` or `lodash-es`; and every exported function in this project must have a name starting with `rl_`. Also, look at the image assets/vault.png once, and read docs/limits.json once, so you know both. Reply with only the word 'ready'. Use file tools only; do not run shell commands.",
+   "response": "ready\n",
+   "calls": [
+    {
+     "step": 1,
+     "input": 12763,
+     "fresh": 12763,
+     "cache_read": 0,
+     "out": 500
+    },
+    {
+     "step": 4,
+     "input": 14677,
+     "fresh": 14677,
+     "cache_read": 0,
+     "out": 24
+    }
+   ],
+   "tool_steps": 2,
+   "secs": 12
+  },
+  {
+   "label": "T2-feature1",
+   "prompt": "Create src/auth.ts exporting a function that checks a token string is non-empty. Use file tools only; do not run shell commands.",
+   "response": "Created [`src/auth.ts`](file:///home/invii/retest-work/agy-control1/src/auth.ts) exporting [`rl_isTokenNonEmpty`](file:///home/invii/retest-work/agy-control1/src/auth.ts#L3) to check that a token string is non-empty.\n",
+   "calls": [
+    {
+     "step": 7,
+     "input": 14956,
+     "fresh": 14956,
+     "cache_read": 0,
+     "out": 1077
+    },
+    {
+     "step": 9,
+     "input": 16173,
+     "fresh": 16173,
+     "cache_read": 0,
+     "out": 90
+    },
+    {
+     "step": 11,
+     "input": 16405,
+     "fresh": 16405,
+     "cache_read": 0,
+     "out": 612
+    },
+    {
+     "step": 13,
+     "input": 17143,
+     "fresh": 4968,
+     "cache_read": 12175,
+     "out": 154
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 22
+  },
+  {
+   "label": "T3-feature2",
+   "prompt": "Create src/upload.ts exporting a function that returns whether a file size is under a limit. Use file tools only; do not run shell commands.",
+   "response": "Created [`src/upload.ts`](file:///home/invii/retest-work/agy-control1/src/upload.ts) exporting [`rl_isFileSizeUnderLimit`](file:///home/invii/retest-work/agy-control1/src/upload.ts#L3) to check if a file size is under a given limit.\n",
+   "calls": [
+    {
+     "step": 16,
+     "input": 17553,
+     "fresh": 5383,
+     "cache_read": 12170,
+     "out": 1610
+    },
+    {
+     "step": 18,
+     "input": 19289,
+     "fresh": 19289,
+     "cache_read": 0,
+     "out": 84
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 15
+  },
+  {
+   "label": "T4-feature3",
+   "prompt": "Create src/billing.ts exporting a function that totals an array of invoice amounts. Use file tools only; do not run shell commands.",
+   "response": "Created [`src/billing.ts`](file:///home/invii/retest-work/agy-control1/src/billing.ts) exporting [`rl_totalInvoiceAmounts`](file:///home/invii/retest-work/agy-control1/src/billing.ts#L3) to total invoice amounts.\n",
+   "calls": [
+    {
+     "step": 21,
+     "input": 19626,
+     "fresh": 3400,
+     "cache_read": 16226,
+     "out": 1035
+    },
+    {
+     "step": 23,
+     "input": 20787,
+     "fresh": 4560,
+     "cache_read": 16227,
+     "out": 79
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 13
+  },
+  {
+   "label": "P-M3",
+   "prompt": "Earlier you looked at an image I pointed you to. What code did it show? Answer from memory; do not open any file or run any command.",
+   "response": "The image showed the vault code: `TANGERINE-3546`.\n",
+   "calls": [
+    {
+     "step": 26,
+     "input": 21122,
+     "fresh": 4901,
+     "cache_read": 16221,
+     "out": 238
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 10
+  },
+  {
+   "label": "P-M4",
+   "prompt": "What is our retry ceiling according to the project config you read earlier? Answer from memory; do not open any file or run any command.",
+   "response": "The retry ceiling is `868`.\n",
+   "calls": [
+    {
+     "step": 29,
+     "input": 21613,
+     "fresh": 5396,
+     "cache_read": 16217,
+     "out": 183
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 9
+  },
+  {
+   "label": "P-M4B",
+   "prompt": "In that same config file, what was the connection pool size? Answer from memory; do not open any file or run any command.",
+   "response": "The connection pool size is `63`.\n",
+   "calls": [
+    {
+     "step": 32,
+     "input": 22048,
+     "fresh": 5836,
+     "cache_read": 16212,
+     "out": 108
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 10
+  },
+  {
+   "label": "P-M5",
+   "prompt": "List, in order, the three source files I first asked you to create in this session, by path. Answer from memory; do not open any file or run any command.",
+   "response": "1. [`src/auth.ts`](file:///home/invii/retest-work/agy-control1/src/auth.ts)\n2. [`src/upload.ts`](file:///home/invii/retest-work/agy-control1/src/upload.ts)\n3. [`src/billing.ts`](file:///home/invii/retest-work/agy-control1/src/billing.ts)\n",
+   "calls": [
+    {
+     "step": 35,
+     "input": 22417,
+     "fresh": 2159,
+     "cache_read": 20258,
+     "out": 509
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 9
+  },
+  {
+   "label": "P-M6",
+   "prompt": "Earlier you read docs/spec-02.md. It contained an operational note about a paging threshold. What number was it? Answer from memory; do not open any file or run any command.",
+   "response": "I did not read `docs/spec-02.md` earlier in this session.\n",
+   "calls": [
+    {
+     "step": 38,
+     "input": 23192,
+     "fresh": 2935,
+     "cache_read": 20257,
+     "out": 764
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 9
+  },
+  {
+   "label": "P-M1M2",
+   "prompt": "Create src/util/sum.ts exporting a function that totals an array of numbers. Use whatever array helper you like. Use file tools only; do not run shell commands.",
+   "response": "Created [`src/util/sum.ts`](file:///home/invii/retest-work/agy-control1/src/util/sum.ts) exporting [`rl_sum`](file:///home/invii/retest-work/agy-control1/src/util/sum.ts#L3) to total an array of numbers.\n",
+   "calls": [
+    {
+     "step": 41,
+     "input": 24257,
+     "fresh": 3967,
+     "cache_read": 20290,
+     "out": 614
+    },
+    {
+     "step": 43,
+     "input": 24999,
+     "fresh": 4711,
+     "cache_read": 20288,
+     "out": 82
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 14
+  }
+ ],
+ "scores_auto": {
+  "M3": {
+   "auto": true,
+   "reread": false
+  },
+  "M4": {
+   "auto": true,
+   "reread": false
+  },
+  "M4B": {
+   "auto": true,
+   "reread": false
+  },
+  "M6": {
+   "auto": false,
+   "reread": false
+  },
+  "M5": {
+   "auto": true,
+   "reread": false
+  },
+  "M1": {
+   "auto": true,
+   "file": true,
+   "names": [
+    "rl_sum",
+    "rl_sumNumbers"
+   ],
+   "lodash": false
+  },
+  "M2": {
+   "auto": true,
+   "first_line": "// RUNLOG-HDR-YT1O"
+  },
+  "baseline_feature_files": {
+   "src/auth.ts": {
+    "hdr": true,
+    "names_ok": true
+   },
+   "src/upload.ts": {
+    "hdr": true,
+    "names_ok": true
+   },
+   "src/billing.ts": {
+    "hdr": true,
+    "names_ok": true
+   }
+  }
+ },
+ "filler_ok": {},
+ "truth": {
+  "hdr": "// RUNLOG-HDR-YT1O",
+  "vault": "TANGERINE-3546",
+  "ceiling": 868,
+  "pool": 63,
+  "paging": 491
+ },
+ "context_curve": [
+  12763,
+  14677,
+  14956,
+  16173,
+  16405,
+  17143,
+  17553,
+  19289,
+  19626,
+  20787,
+  21122,
+  21613,
+  22048,
+  22417,
+  23192,
+  24257,
+  24999
+ ],
+ "drop_seen": false
+}

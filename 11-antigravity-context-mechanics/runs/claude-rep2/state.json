@@ -1,0 +1,488 @@
+{
+ "sid": "87ada686-ebdb-44c5-ad5d-d1a1b7a4fef1",
+ "turns": [
+  {
+   "label": "T1-setup",
+   "prompt": "Setup for this session. Rule 1: never import the package `lodash` or `lodash-es`; and every exported function in this project must have a name starting with `rl_`. Also, look at the image assets/vault.png once, and read docs/limits.json once, so you know both. Reply with only the word 'ready'. Use file tools only; do not run shell commands.",
+   "response": "ready",
+   "calls": [
+    {
+     "input": 22914,
+     "out": 3
+    },
+    {
+     "input": 23810,
+     "out": 2
+    }
+   ],
+   "tool_steps": 2,
+   "secs": 10,
+   "compact_event": null
+  },
+  {
+   "label": "T2-feature1",
+   "prompt": "Create src/auth.ts exporting a function that checks a token string is non-empty. Use file tools only; do not run shell commands.",
+   "response": "Done. Created src/auth.ts with `rl_isValidToken()` function that checks token is non-empty.",
+   "calls": [
+    {
+     "input": 24021,
+     "out": 6
+    },
+    {
+     "input": 24491,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 8,
+   "compact_event": null
+  },
+  {
+   "label": "T3-feature2",
+   "prompt": "Create src/upload.ts exporting a function that returns whether a file size is under a limit. Use file tools only; do not run shell commands.",
+   "response": "Done. Created src/upload.ts with `rl_isFileSizeAllowed()` function that returns whether a file size is under a limit.",
+   "calls": [
+    {
+     "input": 24708,
+     "out": 6
+    },
+    {
+     "input": 25380,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 10,
+   "compact_event": null
+  },
+  {
+   "label": "T4-feature3",
+   "prompt": "Create src/billing.ts exporting a function that totals an array of invoice amounts. Use file tools only; do not run shell commands.",
+   "response": "Done. Created src/billing.ts with `rl_totalInvoiceAmounts()` function that totals an array of invoice amounts.",
+   "calls": [
+    {
+     "input": 25615,
+     "out": 6
+    },
+    {
+     "input": 26061,
+     "out": 6
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 8,
+   "compact_event": null
+  },
+  {
+   "label": "F01",
+   "prompt": "Read docs/spec-01.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "worker-cursor-41",
+   "calls": [
+    {
+     "input": 26301,
+     "out": 3
+    },
+    {
+     "input": 39958,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 11,
+   "compact_event": null
+  },
+  {
+   "label": "F02",
+   "prompt": "Read docs/spec-02.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "token-replica-17",
+   "calls": [
+    {
+     "input": 40355,
+     "out": 3
+    },
+    {
+     "input": 53762,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 10,
+   "compact_event": null
+  },
+  {
+   "label": "F03",
+   "prompt": "Read docs/spec-03.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "vacuum-queue-54",
+   "calls": [
+    {
+     "input": 54150,
+     "out": 6
+    },
+    {
+     "input": 67292,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 11,
+   "compact_event": null
+  },
+  {
+   "label": "F04",
+   "prompt": "Read docs/spec-04.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "payload-replica-30",
+   "calls": [
+    {
+     "input": 67683,
+     "out": 6
+    },
+    {
+     "input": 80800,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 11,
+   "compact_event": null
+  },
+  {
+   "label": "F05",
+   "prompt": "Read docs/spec-05.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "ledger-queue-63",
+   "calls": [
+    {
+     "input": 81190,
+     "out": 1
+    },
+    {
+     "input": 94732,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 11,
+   "compact_event": null
+  },
+  {
+   "label": "F06",
+   "prompt": "Read docs/spec-06.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "journal-manifest-69",
+   "calls": [
+    {
+     "input": 95122,
+     "out": 6
+    },
+    {
+     "input": 108874,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 10,
+   "compact_event": null
+  },
+  {
+   "label": "F07",
+   "prompt": "Read docs/spec-07.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "ledger-quorum-28",
+   "calls": [
+    {
+     "input": 109262,
+     "out": 6
+    },
+    {
+     "input": 122509,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 11,
+   "compact_event": null
+  },
+  {
+   "label": "F08",
+   "prompt": "Read docs/spec-08.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "queue-journal-14",
+   "calls": [
+    {
+     "input": 122906,
+     "out": 3
+    },
+    {
+     "input": 136028,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 10,
+   "compact_event": null
+  },
+  {
+   "label": "COMPACT",
+   "prompt": "/compact",
+   "response": "",
+   "calls": [],
+   "tool_steps": 0,
+   "secs": 24,
+   "compact_event": {
+    "type": "system",
+    "subtype": "compact_boundary",
+    "session_id": "87ada686-ebdb-44c5-ad5d-d1a1b7a4fef1",
+    "uuid": "6b1ba593-eb96-4611-a1ee-b7bda0db0394",
+    "compact_metadata": {
+     "trigger": "manual",
+     "pre_tokens": 136304,
+     "post_tokens": 3946,
+     "cumulative_dropped_tokens": 132358,
+     "duration_ms": 20571,
+     "preserved_segment": {
+      "head_uuid": "66444b14-319a-4607-b40b-cd56315903b2",
+      "anchor_uuid": "9e803413-02e6-491c-a80f-aa8e75ca4471",
+      "tail_uuid": "8915de96-df12-4464-afb0-dcae825b7f78"
+     },
+     "preserved_messages": {
+      "anchor_uuid": "9e803413-02e6-491c-a80f-aa8e75ca4471",
+      "uuids": [
+       "66444b14-319a-4607-b40b-cd56315903b2",
+       "8915de96-df12-4464-afb0-dcae825b7f78"
+      ],
+      "all_uuids": [
+       "66444b14-319a-4607-b40b-cd56315903b2",
+       "8915de96-df12-4464-afb0-dcae825b7f78"
+      ]
+     }
+    },
+    "logical_parent_uuid": "8915de96-df12-4464-afb0-dcae825b7f78"
+   }
+  },
+  {
+   "label": "F09-post",
+   "prompt": "Read docs/spec-09.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "retry-quorum-75",
+   "calls": [
+    {
+     "input": 25041,
+     "out": 6
+    },
+    {
+     "input": 38407,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 11,
+   "compact_event": null
+  },
+  {
+   "label": "F10-post",
+   "prompt": "Read docs/spec-10.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "replica-payload-79",
+   "calls": [
+    {
+     "input": 38805,
+     "out": 1
+    },
+    {
+     "input": 52604,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 10,
+   "compact_event": null
+  },
+  {
+   "label": "P-M3",
+   "prompt": "Earlier you looked at an image I pointed you to. What code did it show? Answer from memory; do not open any file or run any command.",
+   "response": "From the previous conversation summary, the image at assets/vault.png was read and confirmed to contain vault code with reference GRANITE-2804. However, the summary doesn't include the specific details of what code was displayed in the image, only that it was accessed to confirm the vault code was available.",
+   "calls": [
+    {
+     "input": 52974,
+     "out": 6
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 7,
+   "compact_event": null
+  },
+  {
+   "label": "P-M4",
+   "prompt": "What is our retry ceiling according to the project config you read earlier? Answer from memory; do not open any file or run any command.",
+   "response": "238",
+   "calls": [
+    {
+     "input": 53399,
+     "out": 6
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 6,
+   "compact_event": null
+  },
+  {
+   "label": "P-M4B",
+   "prompt": "In that same config file, what was the connection pool size? Answer from memory; do not open any file or run any command.",
+   "response": "52",
+   "calls": [
+    {
+     "input": 53599,
+     "out": 6
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 5,
+   "compact_event": null
+  },
+  {
+   "label": "P-M5",
+   "prompt": "List, in order, the three source files I first asked you to create in this session, by path. Answer from memory; do not open any file or run any command.",
+   "response": "1. /home/invii/retest-work/claude-rep2/src/auth.ts\n2. /home/invii/retest-work/claude-rep2/src/upload.ts\n3. /home/invii/retest-work/claude-rep2/src/billing.ts",
+   "calls": [
+    {
+     "input": 53798,
+     "out": 6
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 6,
+   "compact_event": null
+  },
+  {
+   "label": "P-M6",
+   "prompt": "Earlier you read docs/spec-02.md. It contained an operational note about a paging threshold. What number was it? Answer from memory; do not open any file or run any command.",
+   "response": "I don't have that information in my memory. The previous conversation summary indicates that docs/spec-02.md was read to extract its Section 12 title (\"ledger partition 336\"), but it doesn't include details about operational notes or specific paging thresholds from within that file.",
+   "calls": [
+    {
+     "input": 54201,
+     "out": 6
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 8,
+   "compact_event": null
+  },
+  {
+   "label": "P-M1M2",
+   "prompt": "Create src/util/sum.ts exporting a function that totals an array of numbers. Use whatever array helper you like. Use file tools only; do not run shell commands.",
+   "response": "Done. Created `/home/invii/retest-work/claude-rep2/src/util/sum.ts` with `rl_sumNumbers` function that uses `reduce` to total the array.",
+   "calls": [
+    {
+     "input": 54779,
+     "out": 3
+    },
+    {
+     "input": 55219,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 10,
+   "compact_event": null
+  }
+ ],
+ "started": true,
+ "scores_auto": {
+  "M3": {
+   "auto": true,
+   "reread": false
+  },
+  "M4": {
+   "auto": true,
+   "reread": false
+  },
+  "M4B": {
+   "auto": true,
+   "reread": false
+  },
+  "M6": {
+   "auto": false,
+   "reread": false
+  },
+  "M5": {
+   "auto": true,
+   "reread": false
+  },
+  "M1": {
+   "auto": true,
+   "file": true,
+   "names": [
+    "rl_sumNumbers"
+   ],
+   "lodash": false
+  },
+  "M2": {
+   "auto": true,
+   "first_line": "// RUNLOG-HDR-S38K"
+  },
+  "baseline_feature_files": {
+   "src/auth.ts": {
+    "hdr": true,
+    "names_ok": true
+   },
+   "src/upload.ts": {
+    "hdr": true,
+    "names_ok": true
+   },
+   "src/billing.ts": {
+    "hdr": true,
+    "names_ok": true
+   }
+  }
+ },
+ "filler_ok": {
+  "F01": true,
+  "F02": true,
+  "F03": true,
+  "F04": true,
+  "F05": true,
+  "F06": true,
+  "F07": true,
+  "F08": true,
+  "F09-post": true,
+  "F10-post": true
+ },
+ "truth": {
+  "hdr": "// RUNLOG-HDR-S38K",
+  "vault": "GRANITE-2804",
+  "ceiling": 238,
+  "pool": 52,
+  "paging": 694
+ },
+ "context_curve": [
+  22914,
+  23810,
+  24021,
+  24491,
+  24708,
+  25380,
+  25615,
+  26061,
+  26301,
+  39958,
+  40355,
+  53762,
+  54150,
+  67292,
+  67683,
+  80800,
+  81190,
+  94732,
+  95122,
+  108874,
+  109262,
+  122509,
+  122906,
+  136028,
+  25041,
+  38407,
+  38805,
+  52604,
+  52974,
+  53399,
+  53599,
+  53798,
+  54201,
+  54779,
+  55219
+ ]
+}

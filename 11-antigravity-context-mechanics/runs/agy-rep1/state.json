@@ -1,0 +1,685 @@
+{
+ "conv": "0c3e8635-33bd-4f21-bdff-4a19bc910be9",
+ "turns": [
+  {
+   "label": "T1-setup",
+   "prompt": "Setup for this session. Rule 1: never import the package `lodash` or `lodash-es`; and every exported function in this project must have a name starting with `rl_`. Also, look at the image assets/vault.png once, and read docs/limits.json once, so you know both. Reply with only the word 'ready'. Use file tools only; do not run shell commands.",
+   "response": "ready\n",
+   "calls": [
+    {
+     "step": 1,
+     "input": 12760,
+     "fresh": 12760,
+     "cache_read": 0,
+     "out": 445
+    },
+    {
+     "step": 4,
+     "input": 14619,
+     "fresh": 14619,
+     "cache_read": 0,
+     "out": 85
+    }
+   ],
+   "tool_steps": 2,
+   "secs": 10
+  },
+  {
+   "label": "T2-feature1",
+   "prompt": "Create src/auth.ts exporting a function that checks a token string is non-empty. Use file tools only; do not run shell commands.",
+   "response": "Created [src/auth.ts](file:///home/invii/retest-work/agy-rep1/src/auth.ts) with exported function [`rl_isTokenNonEmpty`](file:///home/invii/retest-work/agy-rep1/src/auth.ts#L2).\n",
+   "calls": [
+    {
+     "step": 7,
+     "input": 14959,
+     "fresh": 14959,
+     "cache_read": 0,
+     "out": 459
+    },
+    {
+     "step": 9,
+     "input": 15544,
+     "fresh": 15544,
+     "cache_read": 0,
+     "out": 154
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 11
+  },
+  {
+   "label": "T3-feature2",
+   "prompt": "Create src/upload.ts exporting a function that returns whether a file size is under a limit. Use file tools only; do not run shell commands.",
+   "response": "Created [src/upload.ts](file:///home/invii/retest-work/agy-rep1/src/upload.ts) with exported function [`rl_isFileSizeUnderLimit`](file:///home/invii/retest-work/agy-rep1/src/upload.ts#L2).\n",
+   "calls": [
+    {
+     "step": 12,
+     "input": 15954,
+     "fresh": 15954,
+     "cache_read": 0,
+     "out": 358
+    },
+    {
+     "step": 14,
+     "input": 16438,
+     "fresh": 16438,
+     "cache_read": 0,
+     "out": 74
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 10
+  },
+  {
+   "label": "T4-feature3",
+   "prompt": "Create src/billing.ts exporting a function that totals an array of invoice amounts. Use file tools only; do not run shell commands.",
+   "response": "Created [src/billing.ts](file:///home/invii/retest-work/agy-rep1/src/billing.ts) with exported function [`rl_totalInvoiceAmounts`](file:///home/invii/retest-work/agy-rep1/src/billing.ts#L2).\n",
+   "calls": [
+    {
+     "step": 17,
+     "input": 16765,
+     "fresh": 4602,
+     "cache_read": 12163,
+     "out": 303
+    },
+    {
+     "step": 19,
+     "input": 17194,
+     "fresh": 5034,
+     "cache_read": 12160,
+     "out": 73
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 12
+  },
+  {
+   "label": "F01",
+   "prompt": "Read docs/spec-01.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "throttle-lease-62\n",
+   "calls": [
+    {
+     "step": 22,
+     "input": 17545,
+     "fresh": 17545,
+     "cache_read": 0,
+     "out": 177
+    },
+    {
+     "step": 24,
+     "input": 25914,
+     "fresh": 9657,
+     "cache_read": 16257,
+     "out": 122
+    },
+    {
+     "step": 26,
+     "input": 30188,
+     "fresh": 5784,
+     "cache_read": 24404,
+     "out": 204
+    }
+   ],
+   "tool_steps": 2,
+   "secs": 13
+  },
+  {
+   "label": "F02",
+   "prompt": "Read docs/spec-02.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "replica-eviction-71\n",
+   "calls": [
+    {
+     "step": 29,
+     "input": 30670,
+     "fresh": 2205,
+     "cache_read": 28465,
+     "out": 215
+    },
+    {
+     "step": 31,
+     "input": 39060,
+     "fresh": 10558,
+     "cache_read": 28502,
+     "out": 121
+    },
+    {
+     "step": 33,
+     "input": 43439,
+     "fresh": 6781,
+     "cache_read": 36658,
+     "out": 139
+    }
+   ],
+   "tool_steps": 2,
+   "secs": 16
+  },
+  {
+   "label": "F03",
+   "prompt": "Read docs/spec-03.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "scheduler-cluster-79\n",
+   "calls": [
+    {
+     "step": 36,
+     "input": 41925,
+     "fresh": 41925,
+     "cache_read": 0,
+     "out": 65
+    },
+    {
+     "step": 38,
+     "input": 52146,
+     "fresh": 11389,
+     "cache_read": 40757,
+     "out": 121
+    },
+    {
+     "step": 40,
+     "input": 56333,
+     "fresh": 7416,
+     "cache_read": 48917,
+     "out": 51
+    }
+   ],
+   "tool_steps": 2,
+   "secs": 14
+  },
+  {
+   "label": "F04",
+   "prompt": "Read docs/spec-04.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "schema-index-53\n",
+   "calls": [
+    {
+     "step": 43,
+     "input": 54643,
+     "fresh": 14363,
+     "cache_read": 40280,
+     "out": 65
+    },
+    {
+     "step": 45,
+     "input": 64876,
+     "fresh": 11862,
+     "cache_read": 53014,
+     "out": 121
+    },
+    {
+     "step": 47,
+     "input": 69241,
+     "fresh": 8064,
+     "cache_read": 61177,
+     "out": 46
+    }
+   ],
+   "tool_steps": 2,
+   "secs": 14
+  },
+  {
+   "label": "F05",
+   "prompt": "Read docs/spec-05.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "payload-journal-55\n",
+   "calls": [
+    {
+     "step": 50,
+     "input": 69565,
+     "fresh": 4318,
+     "cache_read": 65247,
+     "out": 177
+    },
+    {
+     "step": 52,
+     "input": 77970,
+     "fresh": 8621,
+     "cache_read": 69349,
+     "out": 121
+    },
+    {
+     "step": 54,
+     "input": 82182,
+     "fresh": 4667,
+     "cache_read": 77515,
+     "out": 51
+    }
+   ],
+   "tool_steps": 2,
+   "secs": 16
+  },
+  {
+   "label": "F06",
+   "prompt": "Read docs/spec-06.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "cluster-queue-36\n",
+   "calls": [
+    {
+     "step": 57,
+     "input": 80209,
+     "fresh": 80209,
+     "cache_read": 0,
+     "out": 65
+    },
+    {
+     "step": 59,
+     "input": 90794,
+     "fresh": 9184,
+     "cache_read": 81610,
+     "out": 121
+    },
+    {
+     "step": 61,
+     "input": 94940,
+     "fresh": 5163,
+     "cache_read": 89777,
+     "out": 51
+    }
+   ],
+   "tool_steps": 2,
+   "secs": 20
+  },
+  {
+   "label": "F07",
+   "prompt": "Read docs/spec-07.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "token-vacuum-76\n",
+   "calls": [
+    {
+     "step": 64,
+     "input": 92879,
+     "fresh": 15867,
+     "cache_read": 77012,
+     "out": 65
+    },
+    {
+     "step": 66,
+     "input": 103488,
+     "fresh": 9617,
+     "cache_read": 93871,
+     "out": 121
+    },
+    {
+     "step": 68,
+     "input": 107974,
+     "fresh": 5935,
+     "cache_read": 102039,
+     "out": 46
+    }
+   ],
+   "tool_steps": 2,
+   "secs": 17
+  },
+  {
+   "label": "F08",
+   "prompt": "Read docs/spec-08.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "cursor-retry-94\n",
+   "calls": [
+    {
+     "step": 71,
+     "input": 105825,
+     "fresh": 16556,
+     "cache_read": 89269,
+     "out": 65
+    },
+    {
+     "step": 73,
+     "input": 116504,
+     "fresh": 10371,
+     "cache_read": 106133,
+     "out": 121
+    },
+    {
+     "step": 75,
+     "input": 120902,
+     "fresh": 6601,
+     "cache_read": 114301,
+     "out": 46
+    }
+   ],
+   "tool_steps": 2,
+   "secs": 14
+  },
+  {
+   "label": "F09",
+   "prompt": "Read docs/spec-09.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "backoff-worker-31\n",
+   "calls": [
+    {
+     "step": 78,
+     "input": 118670,
+     "fresh": 13080,
+     "cache_read": 105590,
+     "out": 65
+    },
+    {
+     "step": 80,
+     "input": 129493,
+     "fresh": 11099,
+     "cache_read": 118394,
+     "out": 121
+    },
+    {
+     "step": 82,
+     "input": 133550,
+     "fresh": 6987,
+     "cache_read": 126563,
+     "out": 49
+    }
+   ],
+   "tool_steps": 2,
+   "secs": 15
+  },
+  {
+   "label": "F10",
+   "prompt": "Read docs/spec-10.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "digest-payload-31\n",
+   "calls": [
+    {
+     "step": 85,
+     "input": 131236,
+     "fresh": 13383,
+     "cache_read": 117853,
+     "out": 65
+    },
+    {
+     "step": 88,
+     "input": 14523,
+     "fresh": 14523,
+     "cache_read": 0,
+     "out": 282
+    },
+    {
+     "step": 90,
+     "input": 18830,
+     "fresh": 18830,
+     "cache_read": 0,
+     "out": 80
+    }
+   ],
+   "tool_steps": 2,
+   "secs": 18
+  },
+  {
+   "label": "F11-post",
+   "prompt": "Read docs/spec-11.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "payload-token-94\n",
+   "calls": [
+    {
+     "step": 93,
+     "input": 18913,
+     "fresh": 18913,
+     "cache_read": 0,
+     "out": 194
+    },
+    {
+     "step": 95,
+     "input": 27592,
+     "fresh": 27592,
+     "cache_read": 0,
+     "out": 99
+    },
+    {
+     "step": 97,
+     "input": 31876,
+     "fresh": 7406,
+     "cache_read": 24470,
+     "out": 59
+    }
+   ],
+   "tool_steps": 2,
+   "secs": 14
+  },
+  {
+   "label": "F12-post",
+   "prompt": "Read docs/spec-12.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "webhook-index-87\n",
+   "calls": [
+    {
+     "step": 100,
+     "input": 31743,
+     "fresh": 15779,
+     "cache_read": 15964,
+     "out": 67
+    },
+    {
+     "step": 102,
+     "input": 40414,
+     "fresh": 11854,
+     "cache_read": 28560,
+     "out": 100
+    },
+    {
+     "step": 104,
+     "input": 44807,
+     "fresh": 8081,
+     "cache_read": 36726,
+     "out": 43
+    }
+   ],
+   "tool_steps": 2,
+   "secs": 14
+  },
+  {
+   "label": "P-M3",
+   "prompt": "Earlier you looked at an image I pointed you to. What code did it show? Answer from memory; do not open any file or run any command.",
+   "response": "HARBOR-5546\n",
+   "calls": [
+    {
+     "step": 107,
+     "input": 45106,
+     "fresh": 4308,
+     "cache_read": 40798,
+     "out": 134
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 8
+  },
+  {
+   "label": "P-M4",
+   "prompt": "What is our retry ceiling according to the project config you read earlier? Answer from memory; do not open any file or run any command.",
+   "response": "880\n",
+   "calls": [
+    {
+     "step": 110,
+     "input": 45493,
+     "fresh": 4704,
+     "cache_read": 40789,
+     "out": 139
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 8
+  },
+  {
+   "label": "P-M4B",
+   "prompt": "In that same config file, what was the connection pool size? Answer from memory; do not open any file or run any command.",
+   "response": "41\n",
+   "calls": [
+    {
+     "step": 113,
+     "input": 45884,
+     "fresh": 5103,
+     "cache_read": 40781,
+     "out": 104
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 9
+  },
+  {
+   "label": "P-M5",
+   "prompt": "List, in order, the three source files I first asked you to create in this session, by path. Answer from memory; do not open any file or run any command.",
+   "response": "1. [/home/invii/retest-work/agy-rep1/src/auth.ts](file:///home/invii/retest-work/agy-rep1/src/auth.ts)\n2. [/home/invii/retest-work/agy-rep1/src/upload.ts](file:///home/invii/retest-work/agy-rep1/src/upload.ts)\n3. [/home/invii/retest-work/agy-rep1/src/billing.ts](file:///home/invii/retest-work/agy-rep1/src/billing.ts)\n",
+   "calls": [
+    {
+     "step": 116,
+     "input": 46249,
+     "fresh": 5476,
+     "cache_read": 40773,
+     "out": 584
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 10
+  },
+  {
+   "label": "P-M6",
+   "prompt": "Earlier you read docs/spec-02.md. It contained an operational note about a paging threshold. What number was it? Answer from memory; do not open any file or run any command.",
+   "response": "336\n",
+   "calls": [
+    {
+     "step": 119,
+     "input": 47099,
+     "fresh": 47099,
+     "cache_read": 0,
+     "out": 113
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 9
+  },
+  {
+   "label": "P-M1M2",
+   "prompt": "Create src/util/sum.ts exporting a function that totals an array of numbers. Use whatever array helper you like. Use file tools only; do not run shell commands.",
+   "response": "Created [`rl_sum`](file:///home/invii/retest-work/agy-rep1/src/util/sum.ts#L3) in [/home/invii/retest-work/agy-rep1/src/util/sum.ts](file:///home/invii/retest-work/agy-rep1/src/util/sum.ts).\n",
+   "calls": [
+    {
+     "step": 122,
+     "input": 47473,
+     "fresh": 2638,
+     "cache_read": 44835,
+     "out": 488
+    },
+    {
+     "step": 124,
+     "input": 48089,
+     "fresh": 3261,
+     "cache_read": 44828,
+     "out": 191
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 12
+  }
+ ],
+ "compaction_observed": true,
+ "fillers_before_drop": 10,
+ "scores_auto": {
+  "M3": {
+   "auto": true,
+   "reread": false
+  },
+  "M4": {
+   "auto": true,
+   "reread": false
+  },
+  "M4B": {
+   "auto": true,
+   "reread": false
+  },
+  "M6": {
+   "auto": true,
+   "reread": false
+  },
+  "M5": {
+   "auto": true,
+   "reread": false
+  },
+  "M1": {
+   "auto": true,
+   "file": true,
+   "names": [
+    "rl_sum"
+   ],
+   "lodash": false
+  },
+  "M2": {
+   "auto": true,
+   "first_line": "// RUNLOG-HDR-UPUH"
+  },
+  "baseline_feature_files": {
+   "src/auth.ts": {
+    "hdr": true,
+    "names_ok": true
+   },
+   "src/upload.ts": {
+    "hdr": true,
+    "names_ok": true
+   },
+   "src/billing.ts": {
+    "hdr": true,
+    "names_ok": true
+   }
+  }
+ },
+ "filler_ok": {
+  "F01": true,
+  "F02": true,
+  "F03": true,
+  "F04": true,
+  "F05": true,
+  "F06": true,
+  "F07": true,
+  "F08": true,
+  "F09": true,
+  "F10": true,
+  "F11-post": true,
+  "F12-post": true
+ },
+ "truth": {
+  "hdr": "// RUNLOG-HDR-UPUH",
+  "vault": "HARBOR-5546",
+  "ceiling": 880,
+  "pool": 41,
+  "paging": 336
+ },
+ "context_curve": [
+  12760,
+  14619,
+  14959,
+  15544,
+  15954,
+  16438,
+  16765,
+  17194,
+  17545,
+  25914,
+  30188,
+  30670,
+  39060,
+  43439,
+  41925,
+  52146,
+  56333,
+  54643,
+  64876,
+  69241,
+  69565,
+  77970,
+  82182,
+  80209,
+  90794,
+  94940,
+  92879,
+  103488,
+  107974,
+  105825,
+  116504,
+  120902,
+  118670,
+  129493,
+  133550,
+  131236,
+  14523,
+  18830,
+  18913,
+  27592,
+  31876,
+  31743,
+  40414,
+  44807,
+  45106,
+  45493,
+  45884,
+  46249,
+  47099,
+  47473,
+  48089
+ ],
+ "drop_seen": true
+}

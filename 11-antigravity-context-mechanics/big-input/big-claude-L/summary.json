@@ -1,0 +1,21 @@
+{
+ "name": "big-claude-L",
+ "secs": 4,
+ "exit": 1,
+ "calls_context": [
+  0
+ ],
+ "events": [],
+ "status": "success",
+ "is_error": true,
+ "error": null,
+ "response": "Prompt is too long",
+ "stderr": "",
+ "truth": {
+  "vault": "COBALT-1159",
+  "paging": 115
+ },
+ "vault_ok": false,
+ "paging_ok": false,
+ "rescored": "paging_ok rescored with word-boundary regex (substring match gave a false positive on big-agy-L: COBALT-1159 contains 115)"
+}

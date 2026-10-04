@@ -1,84 +1,69 @@
-# antigravity-context-mechanics
+# What survives compaction: Antigravity (agy) vs Claude Code
 
-The real benchmark behind RUNLOG's test of how Google Antigravity
-(`agy`, running Gemini 3.8 Flash) retains project rules across a long,
-uncompacted session, run as the same 12-constraint gauntlet used in
-[`10-claude-compact-amnesia`](../10-claude-compact-amnesia), driven
-through Antigravity's headless `--print`/`--output-format json` mode,
-not hand-pasted.
+Retest receipts for RUNLOG video 19. Run 2026-10-03.
 
-## Headline result
+## Status of the earlier version
 
-**12 / 12 constraint-checks held (100%) at Turn 24, 617,319 input
-tokens** — the checkpoint used on screen, chosen because it lines up
-with Claude Code's `autoCompactWindow: 700000` default for a fair,
-apples-to-apples comparison at a similar token scale. CP-1 (Turn 10,
-196,315 tokens) also held 12/12.
+The first version of this experiment (video 18, now private) is withdrawn. Its files are kept unchanged in `withdrawn-v1/` for history only. Do not cite them. Why:
 
-| Checkpoint | Turns | Input tokens (that turn) | Score |
-|---|---|---|---|
-| CP-1 (low-range overlap) | 10 | 196,315 | 12/12 |
-| CP-2 (mid-scaling, on-screen number) | 24 | 617,319 | 12/12 |
+- It claimed Antigravity does not compact. It does: agy compacts on its own at about 130K tokens of context per model call (below).
+- Its "617,319 tokens in context" figure was not a context size. `result.usage` in `agy --output-format stream-json` is cumulative over the whole conversation. Per-call context is on each `agent_response` step.
+- Its KB figures and the "12/12" score had no receipt behind them. This retest replaces them.
 
-Full methodology, the 12 constraints, the gauntlet prompt, and sourcing
-are in [`benchmark_plan.md`](benchmark_plan.md).
+## What was run
 
-## A run we chose not to publish, disclosed rather than hidden
+Same protocol, both tools, n=3 each, plus one no-compaction control per tool.
 
-A third checkpoint (CP-3/CP-4, continuing to Turn 40) was run. It is
-**not included in this repo.** Its reported token count (1,448,801
-input tokens at the Turn 40 gauntlet, and 1,298,820 at the prior Turn
-39) exceeds Gemini 3.8 Flash's documented 1,048,576-token context
-window, and we could not confirm why before publishing — see
-`benchmark_plan.md` section 6C and `receipts/CLI_CONTEXT_PROTOCOL.md`
-for what we checked. On manual grep audit, the generated code from that
-run still showed 12/12 constraint retention, same as CP-1 and CP-2 —
-but we're not comfortable publishing an unexplained token count as a
-verified data point, so neither the receipt file nor the run script for
-that checkpoint are here. If you reproduce this yourself and can
-explain the discrepancy, we'd like to know.
+| | Antigravity | Claude Code |
+|---|---|---|
+| CLI | `agy` 1.2.15 (CLI logs show it auto-updated from 1.2.14 before these runs) | `claude -p` |
+| Model | gemini-3.8-flash-medium | haiku |
+| Compaction | automatic, at about 130K per call | manual `/compact` at about 135K per call |
+| File rule lives in | `AGENTS.md` | `CLAUDE.md` |
 
-## What's here
+Caveats that matter:
 
-- `benchmark_plan.md` — the full methodology: the 12 constraints (same
-  ones from the Claude Code test), the checkpoint protocol, the
-  gauntlet prompts, and the real results with sourcing, including a
-  note on the unpublished CP-3/CP-4 run above.
-- `run_cp1.py`, `run_cp2.py` — the real harness scripts for the two
-  published checkpoints. Each shells out to the real `agy` CLI
-  (`--dangerously-skip-permissions --output-format json --model
-  gemini-3.8-flash-medium`), not a simulation. `BASE_DIR` in each
-  script is hardcoded to the machine this ran on; update it before
-  reusing.
-- `eval_grader.py` — an automated regex-based grader over the actual
-  generated code files. Like its Claude Code counterpart, its rules
-  were never cross-checked against a full real transcript before this
-  run; treat its scores as a rough signal, not ground truth. The
-  headline numbers above come from this grader's output cross-checked
-  against manual review of the generated files, not the grader alone.
-- `receipts/checkpoint_{1,2}_results.json` — full per-turn token usage
-  and the grader's output for both published checkpoints, straight from
-  `agy`'s own JSON responses.
-- `receipts/checkpoint_{1,2}_context.txt` — **not** a verbatim
-  `/context` command dump. `agy`'s `/context` is a TUI-only view and
-  errors out in headless `--print` mode (see
-  `receipts/CLI_CONTEXT_PROTOCOL.md` for the exact reproduction and
-  error text). These `.txt` files are a summary we composed from the
-  real JSON usage stats instead — the underlying numbers are real, but
-  don't mistake the format for a captured terminal session.
-- `receipts/CLI_CONTEXT_PROTOCOL.md` — documents the `/context`
-  headless-mode limitation, the real JSON telemetry schema used
-  instead, and the unresolved CP-3/CP-4 token-count investigation.
+- The models are a same-class pair, not the same model.
+- Claude's compaction was triggered by hand at the same context size agy compacts at. Claude's own automatic threshold is much higher.
+- The user's global `CLAUDE.md` was loaded in the Claude workspaces (about 23K tokens of baseline context).
+- agy compacted by itself in the middle of filler turn F10 (after 10 specs read, from a base of about 12.7K tokens). Claude started from about 23K tokens of baseline, was compacted by hand between turns after 8 specs, so the two histories differ.
+- The probe told both tools to answer from memory with no tools. Claude obeyed and said it did not have the detail. agy used no tools on the five memory probes except in rep 2, where it re-read the spec file (3 tool calls) for M6. (The sixth probe writes a file by design.) That run is scored `Y*` and kept out of the "from memory" count.
+- In Claude rep 3, Haiku did not write the `CLAUDE.md` header on its three feature files before compaction (the baseline check failed), although `src/util/sum.ts` written after compaction had it. So that run does not show the rule "holding through" compaction; the other five runs do.
+- Sample size is 3 per tool. One incidental detail separates the tools. Read it as a pattern in this setup, not a general verdict.
 
-## Reproducing it yourself
+## Protocol
 
-1. Have the `agy` CLI (Google Antigravity) installed and authenticated.
-2. Edit `BASE_DIR` in `run_cp1.py` and `run_cp2.py` to a working
-   directory of your own.
-3. `python3 run_cp1.py` for the low-range run (10 turns + gauntlet),
-   `run_cp2.py` for mid-scaling (24 turns + gauntlet at turn 25).
-4. Results land in `receipts/checkpoint_N_results.json`; generated code
-   lands in `test_run/`.
-5. If you want to push further (a CP-3/CP-4-style deep run), you're on
-   your own past turn 25 — that's exactly the range where our own run
-   produced the unexplained numbers above.
+Setup turn, three feature turns, then filler turns that each read a ~69 KB spec file in full, until the context is past the compaction point, then two more filler turns, then one probe per marker. Probes ask from memory ("do not open any file or run any command"). A probe that used tools is flagged `*` in the table.
+
+Markers: M1 rule in the prompt only (no lodash, exported functions start `rl_`); M2 rule in the instruction file only (first line of new TypeScript files is an exact header); M3 code shown once in an image; M4 constant in a JSON file read once; M4B second constant in the same file (incidental); M5 order of the first three files created; M6 a sentence buried in section 7 of a spec file (incidental).
+
+## Results
+
+See `results.md` for the full table and per-run numbers.
+
+| Marker | agy (3 runs) | Claude Code (3 runs) |
+|---|---|---|
+| M1 prompt rule | 3/3 | 3/3 |
+| M2 file rule | 3/3 | 3/3 post-compaction; in 1 run the rule was also ignored before compaction, so 2/3 are clean |
+| M3 image code | 3/3 | 3/3 (one answer hedged) |
+| M4 limit constant | 3/3 | 3/3 |
+| M4B pool size | 3/3 | 3/3 |
+| M5 file order | 3/3 | 3/3 |
+| M6 buried sentence | 2/3 from memory, 1/3 by re-reading the file | 0/3 |
+
+Both controls (short run, no compaction) passed M1 to M5. They never read the spec file that holds M6, so M6 is not tested in the controls. The controls show the other markers are retained without compaction; they say nothing about M6 baseline retention.
+
+## Compaction artifacts
+
+- agy writes a `checkpoint` step into the conversation transcript (`compaction-summaries/agy-rep*-checkpoint.md`). The per-call context drops from about 130K to about 14.5K at that step. The summary lists the user requests, setup values, files created and key findings. The rep 1 and 3 summaries contain the buried paging threshold. The rep 2 summary does not, and in that run the agent re-read the spec file (3 tool calls) to answer.
+- Claude's `/compact` summary (`compaction-summaries/claude-rep*-compact-summary.md`) kept the image code, constants and file order but not the buried sentence in any run. `compact_boundary` metadata: pre_tokens 137,800 / 136,304 / 134,563, post_tokens 3,930 / 3,946 / 4,077. Context afterwards sits near 25K, which is the baseline.
+- Neither tool's M2 result can be credited to its summary alone: the Claude rep 1 and 2 summaries mention the header, the rep 3 summary does not. The instruction file is also loaded at the start of each resumed run, so a compliant post-compaction answer does not prove the summary carried the rule.
+
+## Files
+
+- `protocol/` the workspace generator, prompts, scorer and the two runners
+- `runs/<tool>-rep<N>/` raw stream-json per turn plus `state.json` (answers, per-call context curve, auto scores, ground truth)
+- `compaction-summaries/` the compaction text from each run
+- `results.md` scored table
+
+Scores are automatic (substring and rule checks) and were hand-audited against `state.json` answers.

@@ -1,0 +1,488 @@
+{
+ "sid": "86d9e118-b192-4023-b588-551478650a0c",
+ "turns": [
+  {
+   "label": "T1-setup",
+   "prompt": "Setup for this session. Rule 1: never import the package `lodash` or `lodash-es`; and every exported function in this project must have a name starting with `rl_`. Also, look at the image assets/vault.png once, and read docs/limits.json once, so you know both. Reply with only the word 'ready'. Use file tools only; do not run shell commands.",
+   "response": "ready",
+   "calls": [
+    {
+     "input": 22915,
+     "out": 4
+    },
+    {
+     "input": 23776,
+     "out": 1
+    }
+   ],
+   "tool_steps": 2,
+   "secs": 8,
+   "compact_event": null
+  },
+  {
+   "label": "T2-feature1",
+   "prompt": "Create src/auth.ts exporting a function that checks a token string is non-empty. Use file tools only; do not run shell commands.",
+   "response": "Done. Created `src/auth.ts` with `rl_isValidToken()` function that returns true if the token is non-empty.",
+   "calls": [
+    {
+     "input": 24041,
+     "out": 4
+    },
+    {
+     "input": 24408,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 7,
+   "compact_event": null
+  },
+  {
+   "label": "T3-feature2",
+   "prompt": "Create src/upload.ts exporting a function that returns whether a file size is under a limit. Use file tools only; do not run shell commands.",
+   "response": "Done. Created `src/upload.ts` with `rl_isFileSizeValid()` function that returns true if the file size is under the specified limit.",
+   "calls": [
+    {
+     "input": 24606,
+     "out": 4
+    },
+    {
+     "input": 25051,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 7,
+   "compact_event": null
+  },
+  {
+   "label": "T4-feature3",
+   "prompt": "Create src/billing.ts exporting a function that totals an array of invoice amounts. Use file tools only; do not run shell commands.",
+   "response": "Done. Created `src/billing.ts` with `rl_totalInvoices()` function that sums an array of invoice amounts.",
+   "calls": [
+    {
+     "input": 25253,
+     "out": 4
+    },
+    {
+     "input": 25587,
+     "out": 3
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 6,
+   "compact_event": null
+  },
+  {
+   "label": "F01",
+   "prompt": "Read docs/spec-01.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "payload-digest-72",
+   "calls": [
+    {
+     "input": 25786,
+     "out": 4
+    },
+    {
+     "input": 39377,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 7,
+   "compact_event": null
+  },
+  {
+   "label": "F02",
+   "prompt": "Read docs/spec-02.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "pipeline-journal-71",
+   "calls": [
+    {
+     "input": 39590,
+     "out": 1
+    },
+    {
+     "input": 52950,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 6,
+   "compact_event": null
+  },
+  {
+   "label": "F03",
+   "prompt": "Read docs/spec-03.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "quorum-cursor-37",
+   "calls": [
+    {
+     "input": 53144,
+     "out": 4
+    },
+    {
+     "input": 66498,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 6,
+   "compact_event": null
+  },
+  {
+   "label": "F04",
+   "prompt": "Read docs/spec-04.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "queue-queue-16",
+   "calls": [
+    {
+     "input": 66695,
+     "out": 3
+    },
+    {
+     "input": 79817,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 6,
+   "compact_event": null
+  },
+  {
+   "label": "F05",
+   "prompt": "Read docs/spec-05.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "cluster-vacuum-76",
+   "calls": [
+    {
+     "input": 80011,
+     "out": 3
+    },
+    {
+     "input": 93477,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 7,
+   "compact_event": null
+  },
+  {
+   "label": "F06",
+   "prompt": "Read docs/spec-06.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "digest-backoff-71",
+   "calls": [
+    {
+     "input": 93671,
+     "out": 4
+    },
+    {
+     "input": 106945,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 7,
+   "compact_event": null
+  },
+  {
+   "label": "F07",
+   "prompt": "Read docs/spec-07.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "journal-breaker-28",
+   "calls": [
+    {
+     "input": 107142,
+     "out": 3
+    },
+    {
+     "input": 120750,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 6,
+   "compact_event": null
+  },
+  {
+   "label": "F08",
+   "prompt": "Read docs/spec-08.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "cluster-cursor-31",
+   "calls": [
+    {
+     "input": 120947,
+     "out": 3
+    },
+    {
+     "input": 134483,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 7,
+   "compact_event": null
+  },
+  {
+   "label": "COMPACT",
+   "prompt": "/compact",
+   "response": "",
+   "calls": [],
+   "tool_steps": 0,
+   "secs": 28,
+   "compact_event": {
+    "type": "system",
+    "subtype": "compact_boundary",
+    "session_id": "86d9e118-b192-4023-b588-551478650a0c",
+    "uuid": "70c139e4-d7d4-465e-8a93-b92caebdd4a7",
+    "compact_metadata": {
+     "trigger": "manual",
+     "pre_tokens": 134563,
+     "post_tokens": 4077,
+     "cumulative_dropped_tokens": 130486,
+     "duration_ms": 24841,
+     "preserved_segment": {
+      "head_uuid": "1f6e4825-3071-4c28-9255-3a2c13520a82",
+      "anchor_uuid": "91838eaa-f43b-4f68-b358-a8c65319436d",
+      "tail_uuid": "50eafa7c-eb94-4b68-ac38-345b9ed4f67e"
+     },
+     "preserved_messages": {
+      "anchor_uuid": "91838eaa-f43b-4f68-b358-a8c65319436d",
+      "uuids": [
+       "1f6e4825-3071-4c28-9255-3a2c13520a82",
+       "50eafa7c-eb94-4b68-ac38-345b9ed4f67e"
+      ],
+      "all_uuids": [
+       "1f6e4825-3071-4c28-9255-3a2c13520a82",
+       "50eafa7c-eb94-4b68-ac38-345b9ed4f67e"
+      ]
+     }
+    },
+    "logical_parent_uuid": "50eafa7c-eb94-4b68-ac38-345b9ed4f67e"
+   }
+  },
+  {
+   "label": "F09-post",
+   "prompt": "Read docs/spec-09.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "manifest-replica-40",
+   "calls": [
+    {
+     "input": 24955,
+     "out": 4
+    },
+    {
+     "input": 38355,
+     "out": 3
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 7,
+   "compact_event": null
+  },
+  {
+   "label": "F10-post",
+   "prompt": "Read docs/spec-10.md in full, with no line limit. Reply with only the title of its LAST section, Section 12 (the text after 'Section 12:'). Use file tools only; do not run shell commands.",
+   "response": "eviction-pipeline-80",
+   "calls": [
+    {
+     "input": 38549,
+     "out": 4
+    },
+    {
+     "input": 51999,
+     "out": 3
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 7,
+   "compact_event": null
+  },
+  {
+   "label": "P-M3",
+   "prompt": "Earlier you looked at an image I pointed you to. What code did it show? Answer from memory; do not open any file or run any command.",
+   "response": "LANTERN-3775",
+   "calls": [
+    {
+     "input": 52168,
+     "out": 4
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 5,
+   "compact_event": null
+  },
+  {
+   "label": "P-M4",
+   "prompt": "What is our retry ceiling according to the project config you read earlier? Answer from memory; do not open any file or run any command.",
+   "response": "897",
+   "calls": [
+    {
+     "input": 52350,
+     "out": 4
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 4,
+   "compact_event": null
+  },
+  {
+   "label": "P-M4B",
+   "prompt": "In that same config file, what was the connection pool size? Answer from memory; do not open any file or run any command.",
+   "response": "32",
+   "calls": [
+    {
+     "input": 52541,
+     "out": 4
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 4,
+   "compact_event": null
+  },
+  {
+   "label": "P-M5",
+   "prompt": "List, in order, the three source files I first asked you to create in this session, by path. Answer from memory; do not open any file or run any command.",
+   "response": "1. /home/invii/retest-work/claude-rep3/src/auth.ts\n2. /home/invii/retest-work/claude-rep3/src/upload.ts\n3. /home/invii/retest-work/claude-rep3/src/billing.ts",
+   "calls": [
+    {
+     "input": 52685,
+     "out": 4
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 5,
+   "compact_event": null
+  },
+  {
+   "label": "P-M6",
+   "prompt": "Earlier you read docs/spec-02.md. It contained an operational note about a paging threshold. What number was it? Answer from memory; do not open any file or run any command.",
+   "response": "I don't have that information in memory. The summary from the previous conversation indicates I read docs/spec-02.md in full, but only the Section 12 title was recorded\u2014the detailed contents weren't preserved in the session summary.",
+   "calls": [
+    {
+     "input": 53006,
+     "out": 4
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 6,
+   "compact_event": null
+  },
+  {
+   "label": "P-M1M2",
+   "prompt": "Create src/util/sum.ts exporting a function that totals an array of numbers. Use whatever array helper you like. Use file tools only; do not run shell commands.",
+   "response": "Done. Created `/home/invii/retest-work/claude-rep3/src/util/sum.ts` with `rl_sum` function that totals an array of numbers using `reduce()`.",
+   "calls": [
+    {
+     "input": 53448,
+     "out": 1
+    },
+    {
+     "input": 53976,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 10,
+   "compact_event": null
+  }
+ ],
+ "started": true,
+ "scores_auto": {
+  "M3": {
+   "auto": true,
+   "reread": false
+  },
+  "M4": {
+   "auto": true,
+   "reread": false
+  },
+  "M4B": {
+   "auto": true,
+   "reread": false
+  },
+  "M6": {
+   "auto": false,
+   "reread": false
+  },
+  "M5": {
+   "auto": true,
+   "reread": false
+  },
+  "M1": {
+   "auto": true,
+   "file": true,
+   "names": [
+    "rl_sum"
+   ],
+   "lodash": false
+  },
+  "M2": {
+   "auto": true,
+   "first_line": "// RUNLOG-HDR-Z4G9"
+  },
+  "baseline_feature_files": {
+   "src/auth.ts": {
+    "hdr": false,
+    "names_ok": true
+   },
+   "src/upload.ts": {
+    "hdr": false,
+    "names_ok": true
+   },
+   "src/billing.ts": {
+    "hdr": false,
+    "names_ok": true
+   }
+  }
+ },
+ "filler_ok": {
+  "F01": true,
+  "F02": true,
+  "F03": true,
+  "F04": true,
+  "F05": true,
+  "F06": true,
+  "F07": true,
+  "F08": true,
+  "F09-post": true,
+  "F10-post": true
+ },
+ "truth": {
+  "hdr": "// RUNLOG-HDR-Z4G9",
+  "vault": "LANTERN-3775",
+  "ceiling": 897,
+  "pool": 32,
+  "paging": 455
+ },
+ "context_curve": [
+  22915,
+  23776,
+  24041,
+  24408,
+  24606,
+  25051,
+  25253,
+  25587,
+  25786,
+  39377,
+  39590,
+  52950,
+  53144,
+  66498,
+  66695,
+  79817,
+  80011,
+  93477,
+  93671,
+  106945,
+  107142,
+  120750,
+  120947,
+  134483,
+  24955,
+  38355,
+  38549,
+  51999,
+  52168,
+  52350,
+  52541,
+  52685,
+  53006,
+  53448,
+  53976
+ ]
+}

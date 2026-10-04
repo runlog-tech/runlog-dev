@@ -1,0 +1,21 @@
+{
+ "name": "big-claude-300000",
+ "secs": 6,
+ "exit": 0,
+ "calls_context": [
+  73459,
+  73459
+ ],
+ "events": [],
+ "status": "success",
+ "is_error": false,
+ "error": null,
+ "response": "COBALT-3158 129 alerts per minute",
+ "stderr": "",
+ "truth": {
+  "vault": "COBALT-3158",
+  "paging": 129
+ },
+ "vault_ok": true,
+ "paging_ok": true
+}

@@ -1,0 +1,12 @@
+agy 1.2.15, run 2026-10-03 as: agy --mode plan --print "/help"
+/agents	List available custom agents
+/changelog	Show release notes and changes
+/config (settings)	Open settings panel
+/credits	Show remaining G1 credits and purchase link
+/effort	Set the reasoning effort
+/help	Show available commands and keybindings
+/hooks	Manage hook configurations for tool events
+/model	Set a model, or run a single prompt on another model
+/permissions	Manage tool permissions
+/skills	List available skills
+/usage (quota)	View model quota usage

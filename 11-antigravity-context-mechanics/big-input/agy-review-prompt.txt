@@ -1,0 +1,11 @@
+You are an independent reviewer. READ-ONLY: do not create, edit or delete any file anywhere. Work only inside /home/invii/retest-work/handoff2 for any scratch output (you should not need any).
+
+Files in /home/invii/retest-work/handoff2: claims.md (claims C1-C7 about your own behaviour), receipts/ (our raw output and summaries for 4 runs; the agy ones are receipts/big-agy-S and big-agy-L), run_big.py (the script that built and sent the prompt).
+
+Task: verify each claim C1-C6 using your own file view, list and search tools, not from our summary. Do NOT run shell commands (headless mode denies them). Copies of your own conversation transcripts are in agy-logs/S/transcript_full.jsonl (run S) and agy-logs/L/transcript_full.jsonl (run L); the user_input line in each is about 190 KB, so read it in ranges (it is one JSON line) or search it for 'truncated' and 'VAULT CODE'. For each claim answer: CONFIRMED, REFUTED or UNVERIFIABLE, with the exact evidence (file, field, number).
+Then answer these, saying for each whether the answer comes from evidence you read or from what you believe about your own design:
+Q1. Where does the 192,000-character cap come from (a limit on user input, a tool-output limit reused for user text, a setting)? Is it configurable?
+Q2. Is the head always kept and the tail always dropped, or can the tail be kept? What does the truncation marker mean for the model?
+Q3. Where does the ~39K per-call context come from (system prompt, tools, the kept 192K characters)? Check the arithmetic against input_tokens.
+Q4. What is the right way to give you a very large document so you can use all of it (file with view tool, chunking, etc.), based on what you can observe?
+Flag any claim in claims.md or receipts/README.md that is overstated. Be concise: a table of C1-C6 then short answers to Q1-Q4.

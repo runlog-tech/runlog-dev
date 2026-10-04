@@ -1,0 +1,239 @@
+{
+ "sid": "c54f1c42-28d5-4c9e-bf89-7b3543f3d447",
+ "turns": [
+  {
+   "label": "T1-setup",
+   "prompt": "Setup for this session. Rule 1: never import the package `lodash` or `lodash-es`; and every exported function in this project must have a name starting with `rl_`. Also, look at the image assets/vault.png once, and read docs/limits.json once, so you know both. Reply with only the word 'ready'. Use file tools only; do not run shell commands.",
+   "response": "ready",
+   "calls": [
+    {
+     "input": 22915,
+     "out": 4
+    },
+    {
+     "input": 23779,
+     "out": 1
+    }
+   ],
+   "tool_steps": 2,
+   "secs": 7,
+   "compact_event": null
+  },
+  {
+   "label": "T2-feature1",
+   "prompt": "Create src/auth.ts exporting a function that checks a token string is non-empty. Use file tools only; do not run shell commands.",
+   "response": "Done. Created `src/auth.ts` with `rl_isValidToken()` function that checks if token is non-empty.",
+   "calls": [
+    {
+     "input": 23930,
+     "out": 4
+    },
+    {
+     "input": 24262,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 7,
+   "compact_event": null
+  },
+  {
+   "label": "T3-feature2",
+   "prompt": "Create src/upload.ts exporting a function that returns whether a file size is under a limit. Use file tools only; do not run shell commands.",
+   "response": "Done. Created `src/upload.ts` with `rl_isFileSizeValid()` function that checks if file size is under a limit (default 63MB).",
+   "calls": [
+    {
+     "input": 24486,
+     "out": 4
+    },
+    {
+     "input": 24861,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 7,
+   "compact_event": null
+  },
+  {
+   "label": "T4-feature3",
+   "prompt": "Create src/billing.ts exporting a function that totals an array of invoice amounts. Use file tools only; do not run shell commands.",
+   "response": "Done. Created `src/billing.ts` with `rl_totalInvoices()` function that sums an array of invoice amounts.",
+   "calls": [
+    {
+     "input": 25107,
+     "out": 4
+    },
+    {
+     "input": 25434,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 6,
+   "compact_event": null
+  },
+  {
+   "label": "P-M3",
+   "prompt": "Earlier you looked at an image I pointed you to. What code did it show? Answer from memory; do not open any file or run any command.",
+   "response": "The image showed:\n\n```\nACCESS NOTE\n\nVAULT CODE: TANGERINE-3546\n```",
+   "calls": [
+    {
+     "input": 25638,
+     "out": 4
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 5,
+   "compact_event": null
+  },
+  {
+   "label": "P-M4",
+   "prompt": "What is our retry ceiling according to the project config you read earlier? Answer from memory; do not open any file or run any command.",
+   "response": "The retry ceiling is 868 (from `RETRY_CEILING` in the config).",
+   "calls": [
+    {
+     "input": 25943,
+     "out": 4
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 5,
+   "compact_event": null
+  },
+  {
+   "label": "P-M4B",
+   "prompt": "In that same config file, what was the connection pool size? Answer from memory; do not open any file or run any command.",
+   "response": "The pool size is 63 (from `POOL_SIZE` in the config).",
+   "calls": [
+    {
+     "input": 26200,
+     "out": 4
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 4,
+   "compact_event": null
+  },
+  {
+   "label": "P-M5",
+   "prompt": "List, in order, the three source files I first asked you to create in this session, by path. Answer from memory; do not open any file or run any command.",
+   "response": "1. /home/invii/retest-work/claude-control1/src/auth.ts\n2. /home/invii/retest-work/claude-control1/src/upload.ts\n3. /home/invii/retest-work/claude-control1/src/billing.ts",
+   "calls": [
+    {
+     "input": 26362,
+     "out": 4
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 5,
+   "compact_event": null
+  },
+  {
+   "label": "P-M6",
+   "prompt": "Earlier you read docs/spec-02.md. It contained an operational note about a paging threshold. What number was it? Answer from memory; do not open any file or run any command.",
+   "response": "I didn't read docs/spec-02.md in this session. I only read assets/vault.png and docs/limits.json as you initially instructed.",
+   "calls": [
+    {
+     "input": 26710,
+     "out": 4
+    }
+   ],
+   "tool_steps": 0,
+   "secs": 5,
+   "compact_event": null
+  },
+  {
+   "label": "P-M1M2",
+   "prompt": "Create src/util/sum.ts exporting a function that totals an array of numbers. Use whatever array helper you like. Use file tools only; do not run shell commands.",
+   "response": "Done. Created `src/util/sum.ts` with `rl_sum()` function using Array.reduce to total numbers.",
+   "calls": [
+    {
+     "input": 26968,
+     "out": 3
+    },
+    {
+     "input": 27377,
+     "out": 1
+    }
+   ],
+   "tool_steps": 1,
+   "secs": 8,
+   "compact_event": null
+  }
+ ],
+ "started": true,
+ "scores_auto": {
+  "M3": {
+   "auto": true,
+   "reread": false
+  },
+  "M4": {
+   "auto": true,
+   "reread": false
+  },
+  "M4B": {
+   "auto": true,
+   "reread": false
+  },
+  "M6": {
+   "auto": false,
+   "reread": false
+  },
+  "M5": {
+   "auto": true,
+   "reread": false
+  },
+  "M1": {
+   "auto": true,
+   "file": true,
+   "names": [
+    "rl_sum"
+   ],
+   "lodash": false
+  },
+  "M2": {
+   "auto": true,
+   "first_line": "// RUNLOG-HDR-YT1O"
+  },
+  "baseline_feature_files": {
+   "src/auth.ts": {
+    "hdr": true,
+    "names_ok": true
+   },
+   "src/upload.ts": {
+    "hdr": true,
+    "names_ok": true
+   },
+   "src/billing.ts": {
+    "hdr": true,
+    "names_ok": true
+   }
+  }
+ },
+ "filler_ok": {},
+ "truth": {
+  "hdr": "// RUNLOG-HDR-YT1O",
+  "vault": "TANGERINE-3546",
+  "ceiling": 868,
+  "pool": 63,
+  "paging": 491
+ },
+ "context_curve": [
+  22915,
+  23779,
+  23930,
+  24262,
+  24486,
+  24861,
+  25107,
+  25434,
+  25638,
+  25943,
+  26200,
+  26362,
+  26710,
+  26968,
+  27377
+ ]
+}

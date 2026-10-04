@@ -1,0 +1,21 @@
+{
+ "name": "big-agy-S",
+ "secs": 12,
+ "exit": 0,
+ "calls_context": [
+  39264
+ ],
+ "events": [],
+ "status": "SUCCESS",
+ "is_error": null,
+ "error": null,
+ "response": "Noted. Vault code `COBALT-3158` has been recorded.\n",
+ "stderr": "",
+ "truth": {
+  "vault": "COBALT-3158",
+  "paging": 129
+ },
+ "vault_ok": true,
+ "paging_ok": false,
+ "rescored": "paging_ok rescored with word-boundary regex (substring match gave a false positive on big-agy-L: COBALT-1159 contains 115)"
+}
