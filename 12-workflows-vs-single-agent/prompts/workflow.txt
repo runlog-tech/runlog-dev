@@ -1,0 +1,1 @@
+Use a workflow: call the Workflow tool with scriptPath {WF} and args {"scriptPath":"{SCRIPT}","maxClaims":8}. Do not fact-check anything yourself. When the workflow finishes, return its result.

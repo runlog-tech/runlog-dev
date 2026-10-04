@@ -1,0 +1,9 @@
+Fact-check the video script at {SCRIPT}. Read-only: edit nothing, and do not run paid model sessions.
+
+Step 1: List the factual claims a viewer would take as true about how tools behave or what was measured (skip transitions, opinions, visual directions). For each give the line number, kind (tool-capability / own-measurement / number / other) and thesisWeight 1-5 (5 = the video's whole argument collapses if false). Prioritise "tool A can / tool B cannot" claims, comparisons, and numbers presented as measured results.
+
+Step 2: Take the top 8 claims by thesisWeight and note which others you dropped. For each, find the PRIMARY source: official docs (WebFetch/WebSearch; Claude Code docs live under https://code.claude.com/docs/en/), vendored docs or source in this repo, raw receipts (JSON/logs) in this repo for own-measurement claims, read-only local commands like `claude --help`. Do not trust the script itself, a harness its author wrote, or a third-party video as evidence. For "A can, B cannot" claims check both sides. Verdict per claim: supported / contradicted / unverifiable, with quoted evidence and source (URL or file:line).
+
+Step 3: For each claim you judged supported, make ONE honest attempt to refute it (a newer docs page, a setting, an exception, an overstated word like "only"/"never"); refuted=true only with concrete contradicting source text.
+
+Return: the extracted claim count, the 8 checked, a table of verdicts (claim id, line, verdict, refuted?, source), and a short list of flagged items. Be concise.
