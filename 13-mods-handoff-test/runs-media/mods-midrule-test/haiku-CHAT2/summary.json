@@ -1,0 +1,7 @@
+{
+ "arm": "haiku-CHAT2",
+ "before_compact_has_tag": true,
+ "after_compact_has_tag": true,
+ "pre": "[RL-7731] It returns a titlecased version of the string where the first character of each word is uppercase and the remaining characters are lowercase.",
+ "post": "[RL-7731] It removes leading and trailing whitespace (or optionally specified characters) from a string."
+}

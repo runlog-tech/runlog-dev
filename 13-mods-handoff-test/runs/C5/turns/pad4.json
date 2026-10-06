@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 69065,
+ "stop_reason": "end_turn",
+ "session_id": "def1f399-5ec7-4e06-992d-42a428b5de33",
+ "total_cost_usd": 0.6297942000000001,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 17063,
+  "cache_read_input_tokens": 171360,
+  "output_tokens": 240,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 17063,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 166,
+    "cache_read_input_tokens": 85946,
+    "cache_creation_input_tokens": 16531,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 16531
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 44,
+   "outputTokens": 7858,
+   "thinkingTokens": 926,
+   "cacheReadInputTokens": 912931,
+   "cacheCreationInputTokens": 92135,
+   "webSearchRequests": 0,
+   "costUSD": 0.6297942000000001,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "- **First line (1):** `op, rejected outright on judgment/context grounds (each step depends on the last screenshot, not one-shot).`\n- **Last line (152):** `**Explicit user call, 2026-09-07 \u2014 the TTL/cache-mechanics explainer stays a full section, not trimmed down because prior art exists.** 1.2K vie`\n\nThe file is cut off mid-word (\"vie\u2026\"). Its first line completes the word \"lo\" + \"op\" from the end of `pad_03.txt`.",
+ "ttft_ms": 1723,
+ "type": "result",
+ "duration_ms": 5573,
+ "uuid": "8e6ef7ab-348f-4311-8226-3f908ae25921",
+ "ttft_stream_ms": 1386,
+ "time_to_request_ms": 61,
+ "first_content_frame_ms": 1386,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

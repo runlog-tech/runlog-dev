@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 49681,
+ "stop_reason": "end_turn",
+ "session_id": "dd882652-ac83-412e-acec-98cad98f2f72",
+ "total_cost_usd": 0.2556408,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 2043,
+  "cache_read_input_tokens": 77871,
+  "output_tokens": 1240,
+  "output_tokens_details": {
+   "thinking_tokens": 133
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 2043,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 241,
+    "cache_read_input_tokens": 39416,
+    "cache_creation_input_tokens": 1082,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 1082
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 20,
+   "outputTokens": 7600,
+   "thinkingTokens": 810,
+   "cacheReadInputTokens": 328224,
+   "cacheCreationInputTokens": 28489,
+   "webSearchRequests": 0,
+   "costUSD": 0.2556408,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `src/components/StorageChart.tsx` (56 lines). I haven't compiled or tested it.\n\n- **Layout:** Current and Peak cards use `.dashboard-grid`, so 1 column below 768px and 2 above. A full-width card holds the SVG line chart and the net change.\n- **Exports and types:** it has a named export and no `any`.\n- **Shared code:** it reuses `request` and `mb` from `billing-api.ts`, so it inherits the port 8089 base URL and the 8000ms timeout.\n- **Endpoint:** `/v2/storage/history` is invented and doesn't exist yet. It should return `StoragePoint[]`, which is `{ date, usedBytes }[]`.",
+ "ttft_ms": 2579,
+ "type": "result",
+ "duration_ms": 8974,
+ "uuid": "a76c8463-e031-4b65-85cd-419d517cbb3a",
+ "ttft_stream_ms": 1153,
+ "time_to_request_ms": 58,
+ "first_content_frame_ms": 1153,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

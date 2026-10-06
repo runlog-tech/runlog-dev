@@ -1,0 +1,7 @@
+{
+ "arm": "haiku-CLAUDEMD1",
+ "before_compact_has_tag": true,
+ "after_compact_has_tag": true,
+ "pre": "[RL-7731] `str.title()` returns a new string with the first character of each word capitalized and all other characters lowercased.",
+ "post": "[RL-7731] `str.strip()` returns a new string with leading and trailing whitespace (or specified characters) removed."
+}

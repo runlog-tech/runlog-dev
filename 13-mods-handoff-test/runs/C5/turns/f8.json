@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 96403,
+ "stop_reason": "end_turn",
+ "session_id": "dd882652-ac83-412e-acec-98cad98f2f72",
+ "total_cost_usd": 0.4700902,
+ "usage": {
+  "input_tokens": 2,
+  "cache_creation_input_tokens": 320,
+  "cache_read_input_tokens": 47894,
+  "output_tokens": 328,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 320,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 328,
+    "cache_read_input_tokens": 47894,
+    "cache_creation_input_tokens": 320,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 320
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 48,
+   "outputTokens": 13585,
+   "thinkingTokens": 1405,
+   "cacheReadInputTokens": 946621,
+   "cacheCreationInputTokens": 36205,
+   "webSearchRequests": 0,
+   "costUSD": 0.4700902,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 1,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "1. Never `git push --force` or `--force-with-lease`.\n2. Never reference `AWS_S3_BUCKET`. All storage is local disk.\n3. UI grids are 1 or 2 columns only.\n4. No `any` in TypeScript. Define explicit interfaces.\n5. API handlers go in `src/routes/v2/`, never `src/api/`.\n6. Migrations are raw SQL in `migrations/`, with no ORM auto-sync.\n7. Auth header is `Bearer <token>`, never `Token <token>`.\n8. External fetch timeout is 8000ms. Never revert to 30000ms.\n9. Test daemon port is 8089, not 3000.\n10. Temp directory is `scratch/`, never system `/tmp`.\n11. React components use named exports only.\n12. Run unit tests with `npm run test:unit`, never `npm test`.\n\nThese come from `handoff-brief.md`. The same brief also asks for short replies and files under 60 lines.",
+ "ttft_ms": 2875,
+ "type": "result",
+ "duration_ms": 2904,
+ "uuid": "e04aaf6f-642f-4cd4-bf59-82562eb49e47",
+ "ttft_stream_ms": 933,
+ "time_to_request_ms": 65,
+ "first_content_frame_ms": 933,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

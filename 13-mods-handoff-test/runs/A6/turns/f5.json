@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 167537,
+ "stop_reason": "end_turn",
+ "session_id": "db7da845-029b-468f-a54c-5a161dfa9ee0",
+ "total_cost_usd": 2.1107728,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1224,
+  "cache_read_input_tokens": 440138,
+  "output_tokens": 1109,
+  "output_tokens_details": {
+   "thinking_tokens": 51
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1224,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 283,
+    "cache_read_input_tokens": 220226,
+    "cache_creation_input_tokens": 910,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 910
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 92,
+   "outputTokens": 20798,
+   "thinkingTokens": 1768,
+   "cacheReadInputTokens": 5297164,
+   "cacheCreationInputTokens": 210794,
+   "webSearchRequests": 0,
+   "costUSD": 2.1107728,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `src/components/InvoiceList.tsx` (47 lines).\n\n- **Exports:** it has a named `InvoiceList` export, explicit interfaces and no `any`.\n- **Layout:** it's a grid that is 1 column by default and exactly 2 from 768px.\n- **Data:** it fetches `/v2/billing/invoices` from `localhost:8089` using the new `fetchWithTimeout` and `bearerHeader`, so the 8,000ms timeout and `Bearer <token>` format apply.\n- **States:** it shows loading, error and empty states.\n- **Assumed endpoint:** `/v2/billing/invoices` and its `{ id, period, amountUsd }[]` shape are my guess, and `billing.ts` doesn't serve that route yet.\n- **Not run:** I haven't compiled or rendered it.",
+ "ttft_ms": 1822,
+ "type": "result",
+ "duration_ms": 7794,
+ "uuid": "cde40254-1a93-43ed-b224-1b749d4544eb",
+ "ttft_stream_ms": 1098,
+ "time_to_request_ms": 62,
+ "first_content_frame_ms": 1099,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

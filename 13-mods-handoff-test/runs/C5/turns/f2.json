@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 57379,
+ "stop_reason": "end_turn",
+ "session_id": "dd882652-ac83-412e-acec-98cad98f2f72",
+ "total_cost_usd": 0.289444,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1516,
+  "cache_read_input_tokens": 81306,
+  "output_tokens": 1147,
+  "output_tokens_details": {
+   "thinking_tokens": 40
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1516,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 254,
+    "cache_read_input_tokens": 40808,
+    "cache_creation_input_tokens": 1206,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 1206
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 24,
+   "outputTokens": 8747,
+   "thinkingTokens": 850,
+   "cacheReadInputTokens": 409530,
+   "cacheCreationInputTokens": 30005,
+   "webSearchRequests": 0,
+   "costUSD": 0.289444,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 5,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Added `src/utils/fetchWithTimeout.ts` and switched `notifyClient` in `src/routes/v2/billing-export.ts` to use it. I haven't compiled or tested either file.\n\n- **Wrapper:** `fetchWithTimeout(url, init?, timeoutMs?)` defaults to the exported `EXTERNAL_TIMEOUT_MS`, which is 8000ms.\n- **Billing route:** I removed its local `NOTIFY_TIMEOUT_MS` constant.\n- **Not changed:** `auth.ts`, `healthcheck.ts`, `Dashboard.tsx` and `billing-api.ts` still set their own 8000ms timeouts. I can move them onto the wrapper too if you want.",
+ "ttft_ms": 1690,
+ "type": "result",
+ "duration_ms": 7772,
+ "uuid": "1fc86170-cd7c-4d9c-be26-05b164b1eaae",
+ "ttft_stream_ms": 1036,
+ "time_to_request_ms": 64,
+ "first_content_frame_ms": 1037,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

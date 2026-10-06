@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 191541,
+ "stop_reason": "end_turn",
+ "session_id": "ed36e7bf-9a6e-4d30-8833-74e4e555dd27",
+ "total_cost_usd": 1.8636570000000001,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1120,
+  "cache_read_input_tokens": 79302,
+  "output_tokens": 887,
+  "output_tokens_details": {
+   "thinking_tokens": 111
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1120,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 254,
+    "cache_read_input_tokens": 39854,
+    "cache_creation_input_tokens": 714,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 714
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 20413,
+   "outputTokens": 25336,
+   "thinkingTokens": 2184,
+   "cacheReadInputTokens": 3240525,
+   "cacheCreationInputTokens": 230370,
+   "webSearchRequests": 0,
+   "costUSD": 1.8636570000000001,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `scripts/cleanup.sh` (25 lines). I haven't run it, and it isn't executable yet, so run `chmod +x scripts/cleanup.sh` or call it with `bash`.\n\n- **Usage:** `scripts/cleanup.sh [--dry-run] [max_age_days]`, default 7 days.\n- **Scope:** it only touches regular files directly under `scratch/` older than that many days. It skips dotfiles such as `.gitkeep` and anything in subdirectories.\n- **Output:** it prints each path it deletes.\n- **Dry run:** use `--dry-run` first to list what would go.\n- **Path:** it resolves `scratch/` relative to the project root, not the current directory, so it doesn't matter where you run it from.",
+ "ttft_ms": 2173,
+ "type": "result",
+ "duration_ms": 7235,
+ "uuid": "75783d97-6eb3-4fa7-b324-479eb27c12e5",
+ "ttft_stream_ms": 1120,
+ "time_to_request_ms": 56,
+ "first_content_frame_ms": 1120,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

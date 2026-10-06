@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 211019,
+ "stop_reason": "end_turn",
+ "session_id": "00d6a882-01d5-43ee-be35-9412985f148c",
+ "total_cost_usd": 2.1062644,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 749,
+  "cache_read_input_tokens": 441028,
+  "output_tokens": 574,
+  "output_tokens_details": {
+   "thinking_tokens": 52
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 749,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 245,
+    "cache_read_input_tokens": 220683,
+    "cache_creation_input_tokens": 411,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 411
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 92,
+   "outputTokens": 20599,
+   "thinkingTokens": 2426,
+   "cacheReadInputTokens": 5285412,
+   "cacheCreationInputTokens": 210752,
+   "webSearchRequests": 0,
+   "costUSD": 2.1062644,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "I created `src/routes/v2/status.ts` (20 lines). I haven't compiled or tested it.\n\n- `statusHandler()` returns a 200 with `{ online, port, uptimeSeconds }`.\n- The port comes from `PORT` and defaults to `8089`.\n- `uptimeSeconds` is the Node process uptime.\n- It takes no request and has no auth, so it works as a healthcheck.\n\nThe route has no path of its own yet, because there's no server to register it with. Both `Dashboard.tsx` and `scripts/healthcheck.ts` request `/status`. `Dashboard.tsx` expects `{ online, uptimeSeconds }`, which this body still satisfies. The extra `port` field is ignored there.",
+ "ttft_ms": 3200,
+ "type": "result",
+ "duration_ms": 7653,
+ "uuid": "037d9de2-2043-4429-aaa0-eb75f8d3ed7a",
+ "ttft_stream_ms": 2370,
+ "time_to_request_ms": 56,
+ "first_content_frame_ms": 2370,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 80053,
+ "stop_reason": "end_turn",
+ "session_id": "def1f399-5ec7-4e06-992d-42a428b5de33",
+ "total_cost_usd": 0.867739,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 17401,
+  "cache_read_input_tokens": 239817,
+  "output_tokens": 576,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 17401,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 502,
+    "cache_read_input_tokens": 120144,
+    "cache_creation_input_tokens": 16930,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 16930
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 52,
+   "outputTokens": 8912,
+   "thinkingTokens": 926,
+   "cacheReadInputTokens": 1357935,
+   "cacheCreationInputTokens": 126732,
+   "webSearchRequests": 0,
+   "costUSD": 0.867739,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "- **First line (1):** `C_BASE_URL` (the env var that redirects Claude Code to a custom endpoint) is session-wide, not per-subagent. There's an open, unresolved GitHub feature request for exactly this (`anthropics/claude-code#38698`). Real use cases for a local Qwen/Qwen-Coder via Lemonade instead: (1) a fully separate Claude Code session (different terminal, whole session pointed at Lemonade via `ANTHROPIC_BASE_URL`) for throwaway/private work, not mixed into a real session; (2) any non-Claude-Code tool/script that calls an LLM API directly, redirected to local Qwen to cut cost on mechanical tasks; (3) genuinely offline/private work; (4) `Qwen3-Embedding-*` for local RAG/search, not chat at all; (5) a real head-to-head cost/quality test (Haiku vs. local Qwen-Coder on an identical task, same methodology as video 6/8's real cost tests) as the video's own honest finding, rather than implying a drop-in Claude Code subagent swap.`\n- **Last line (82):** `**Not yet ticketed.** Chosen 2026-09-15 as the video after the AMD skills video (11), which uploads 2026-09-16; this one targets 2026-09-17 (see `\n\nThe file is cut off again, after \"(see\". Its first line finishes the word \"ANTHROPI\" + \"C_BASE_URL\" from `pad_05.txt`.",
+ "ttft_ms": 1860,
+ "type": "result",
+ "duration_ms": 6175,
+ "uuid": "1c65b3cd-ba35-4f4f-bbf9-c82d5a1e19e3",
+ "ttft_stream_ms": 1526,
+ "time_to_request_ms": 63,
+ "first_content_frame_ms": 1527,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 48007,
+ "stop_reason": "end_turn",
+ "session_id": "def1f399-5ec7-4e06-992d-42a428b5de33",
+ "total_cost_usd": 0.23853960000000002,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1513,
+  "cache_read_input_tokens": 67689,
+  "output_tokens": 1245,
+  "output_tokens_details": {
+   "thinking_tokens": 265
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1513,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 266,
+    "cache_read_input_tokens": 34024,
+    "cache_creation_input_tokens": 1154,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 1154
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 26,
+   "outputTokens": 6420,
+   "thinkingTokens": 816,
+   "cacheReadInputTokens": 374718,
+   "cacheCreationInputTokens": 24836,
+   "webSearchRequests": 0,
+   "costUSD": 0.23853960000000002,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 3,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `scripts/healthcheck.ts` (20 lines) and `package.json` (22 lines).\n\n- **Healthcheck:** it hits `http://localhost:8089/v2/status` with the 8,000ms timeout and exits 1 if the request fails or the server reports offline. `TEST_DAEMON_PORT` can override the port.\n- **Scripts:** `test:unit` (vitest), `healthcheck` (tsx) and `typecheck`. There is no generic `test` script, so `npm test` won't run anything.\n- **Dependencies:** I picked vitest, tsx, TypeScript and React 18. Say so if you want different ones. I haven't run `npm install`.\n- **Dev server:** there's no `dev` script, because you haven't chosen a server framework or bundler yet.",
+ "ttft_ms": 3515,
+ "type": "result",
+ "duration_ms": 9139,
+ "uuid": "ae5d1fd6-7a4c-470c-93ff-5a7fe503be2c",
+ "ttft_stream_ms": 957,
+ "time_to_request_ms": 76,
+ "first_content_frame_ms": 957,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

@@ -1,0 +1,16 @@
+{
+ "arm": "FILE1",
+ "memory": {
+  "hit": 12,
+  "of": 12,
+  "missing": []
+ },
+ "natural": {
+  "hit": 12,
+  "of": 12,
+  "missing": []
+ },
+ "natural_turns": 1,
+ "answer_memory": "1. Codename: Kestrel\n2. Port: 4817\n3. Retention: staging rows kept 19 days before cleanup\n4. Owner: Mina Okafor\n5. Timeout: 2750 ms on upstream calls\n6. Branch: release/q4-lantern\n7. Cache: 384 MB in-memory cap\n8. Region: eu-north-3\n9. Rollback token: ZX-4410 (emergency)\n10. Retries: at most 6 for failed pulls\n11. Log level: WARN (normal)\n12. Sprint: S-52\n\nThese come from the summary of the earlier conversation, not from re-reading the file.",
+ "answer_natural": "1. Codename: Kestrel\n2. Port: 4817\n3. Retention: staging rows kept 19 days before cleanup\n4. Owner: Mina Okafor\n5. Timeout: 2750 ms on upstream calls\n6. Branch: release/q4-lantern\n7. Cache: 384 MB in-memory cap\n8. Region: eu-north-3\n9. Rollback token: ZX-4410 (emergency)\n10. Retries: at most 6 for failed pulls\n11. Log level: WARN (normal)\n12. Sprint: S-52"
+}

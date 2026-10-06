@@ -1,0 +1,16 @@
+{
+ "arm": "IMG3",
+ "memory": {
+  "hit": 5,
+  "of": 5,
+  "missing": []
+ },
+ "natural": {
+  "hit": 5,
+  "of": 5,
+  "missing": []
+ },
+ "natural_turns": 2,
+ "answer_memory": "From my notes of the earlier read (the image itself is no longer in my context):\n\n- **Order number:** 7731\n- **Shapes:** a red circle (A), a blue square (B) and a green inverted triangle (C)\n- **Ship-by date:** 14 Nov",
+ "answer_natural": "I re-read the image to confirm.\n\n- **Order number:** 7731\n- **Shapes:** A is a red circle, B is a blue square, and C is a green inverted triangle.\n- **Ship-by date:** 14 Nov"
+}

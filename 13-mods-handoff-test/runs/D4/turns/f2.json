@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 183590,
+ "stop_reason": "end_turn",
+ "session_id": "8facf8e1-02e1-44dd-a885-f1ee7fe8ce32",
+ "total_cost_usd": 2.0085427,
+ "usage": {
+  "input_tokens": 6,
+  "cache_creation_input_tokens": 3036,
+  "cache_read_input_tokens": 651535,
+  "output_tokens": 1878,
+  "output_tokens_details": {
+   "thinking_tokens": 161
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 3036,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 410,
+    "cache_read_input_tokens": 217886,
+    "cache_creation_input_tokens": 1796,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 1796
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 94,
+   "outputTokens": 22818,
+   "thinkingTokens": 1369,
+   "cacheReadInputTokens": 4312611,
+   "cacheCreationInputTokens": 241457,
+   "webSearchRequests": 0,
+   "costUSD": 2.0085427,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 7,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `src/utils/fetchWithTimeout.ts` (17 lines) and wired it into `src/routes/v2/billingExport.ts`. I haven't compiled or run either file.\n\n- **Wrapper:** `fetchWithTimeout<T>(url, { token, method?, body? })` always sends `Authorization: Bearer <token>` with an 8000ms timeout. It throws on a non-2xx response and returns the parsed JSON.\n- **Route change:** the billing route had no external call before, so I added one. It now fetches `${BILLING_SERVICE_URL}/invoices/<id>` through the wrapper, forwarding the caller's token. It writes that data plus `exportedAt` to `scratch/billing/`. `BILLING_SERVICE_URL` defaults to `http://localhost:8089`.\n- **Route size:** `billingExport.ts` is now about 45 lines, still under the limit.\n\nAn upstream failure falls into the route's existing catch and returns 500. A 502 would be more accurate for that case, so say if you want that changed.\n\nThe `/invoices/<id>` path and the `InvoiceData` shape (`invoice`, `amountCents`) are my assumptions. Adjust them to match the real service.",
+ "ttft_ms": 1681,
+ "type": "result",
+ "duration_ms": 12972,
+ "uuid": "22e67bc3-a653-49bb-b6fd-fd1f0076d505",
+ "ttft_stream_ms": 1091,
+ "time_to_request_ms": 61,
+ "first_content_frame_ms": 1091,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

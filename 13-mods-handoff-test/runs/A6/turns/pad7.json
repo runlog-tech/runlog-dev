@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 87758,
+ "stop_reason": "end_turn",
+ "session_id": "db7da845-029b-468f-a54c-5a161dfa9ee0",
+ "total_cost_usd": 1.01583,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 17734,
+  "cache_read_input_tokens": 276644,
+  "output_tokens": 393,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 17734,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 319,
+    "cache_read_input_tokens": 138614,
+    "cache_creation_input_tokens": 17150,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 17150
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 56,
+   "outputTokens": 10375,
+   "thinkingTokens": 1010,
+   "cacheReadInputTokens": 1651400,
+   "cacheCreationInputTokens": 145422,
+   "webSearchRequests": 0,
+   "costUSD": 1.01583,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "**First line (1):** `` `pending_decisions.md` \u2014 that date is likely slipping, not yet formally revised). Hook must open on tension per the retention-curve finding logged in `pending_decisions.md` (opusplan's 65%\u219252% plateau vs. doctor/subagent-scout/RTK-vs-Caveman's early-cliff pattern) \u2014 lead with the 268K-view claim + personal-cost tension, not setup/backstory. ``\n\n**Last line (131):** `**Final pre-publish QC, 2026-09-26: the Antigravity handoff (`HANDOFF_CLAUDE_CODE.md`) claimed the video was fully executed and ready to upload, but a second pass caught two real gaps it missed.** (1) `captions.srt` had never been generated \u2014 no forced `\n\nThis file also ends mid-sentence, at \"no forced\". Line 1 completes \"(see\" from `pad_06.txt`, so it is the next chunk of the same document.",
+ "ttft_ms": 1850,
+ "type": "result",
+ "duration_ms": 4974,
+ "uuid": "edc06448-d97b-4f8a-b394-2c8b1ecb1b27",
+ "ttft_stream_ms": 1489,
+ "time_to_request_ms": 56,
+ "first_content_frame_ms": 1489,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

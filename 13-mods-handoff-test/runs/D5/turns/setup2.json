@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 11832,
+ "stop_reason": "end_turn",
+ "session_id": "3635f8d6-ef24-4210-a2dd-4dbe3e2f8b45",
+ "total_cost_usd": 0.11136380000000001,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1051,
+  "cache_read_input_tokens": 56351,
+  "output_tokens": 949,
+  "output_tokens_details": {
+   "thinking_tokens": 135
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1051,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 144,
+    "cache_read_input_tokens": 28257,
+    "cache_creation_input_tokens": 888,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 888
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 10,
+   "outputTokens": 1163,
+   "thinkingTokens": 135,
+   "cacheReadInputTokens": 122509,
+   "cacheCreationInputTokens": 18803,
+   "webSearchRequests": 0,
+   "costUSD": 0.11136380000000001,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `src/routes/v2/auth.ts` (49 lines). It has:\n- Explicit interfaces and no `any`.\n- Named exports only.\n- `Bearer <token>` parsing on the incoming header and on the outgoing call.\n- An 8000ms timeout on the external fetch.\n- A default service URL on port 8089, overridable with `AUTH_SERVICE_URL`.\n\nI haven't run or compiled it.",
+ "ttft_ms": 2520,
+ "type": "result",
+ "duration_ms": 7410,
+ "uuid": "2dc557c5-be6f-4914-bc18-68b9c9b9644e",
+ "ttft_stream_ms": 946,
+ "time_to_request_ms": 66,
+ "first_content_frame_ms": 946,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

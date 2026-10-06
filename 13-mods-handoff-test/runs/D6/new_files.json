@@ -1,0 +1,1 @@
+["README.md", "scripts/cleanup.sh", "scripts/deploy.sh", "scripts/test-and-push.sh", "src/components/BillingSummary.tsx", "src/components/InvoiceList.tsx", "src/components/StorageChart.tsx", "src/components/billing-api.ts", "src/daemon.ts", "src/routes/v2/billing-export.ts", "src/routes/v2/status.ts", "src/utils/fetchWithTimeout.ts"]

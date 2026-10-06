@@ -1,0 +1,7 @@
+{
+ "arm": "haiku-CHAT1",
+ "before_compact_has_tag": true,
+ "after_compact_has_tag": true,
+ "pre": "[RL-7731] `str.title()` returns a new string with the first letter of each word capitalized and all other letters lowercase.",
+ "post": "[RL-7731] `str.strip()` removes leading and trailing whitespace (or specified characters) from a string and returns the result."
+}

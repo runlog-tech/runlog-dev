@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 174739,
+ "stop_reason": "end_turn",
+ "session_id": "00d6a882-01d5-43ee-be35-9412985f148c",
+ "total_cost_usd": 1.7860424000000004,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1756,
+  "cache_read_input_tokens": 429941,
+  "output_tokens": 1265,
+  "output_tokens_details": {
+   "thinking_tokens": 63
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1756,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 299,
+    "cache_read_input_tokens": 215324,
+    "cache_creation_input_tokens": 1049,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 1049
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 80,
+   "outputTokens": 16714,
+   "thinkingTokens": 1768,
+   "cacheReadInputTokens": 3973092,
+   "cacheCreationInputTokens": 206031,
+   "webSearchRequests": 0,
+   "costUSD": 1.7860424000000004,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "I created `src/components/StorageChart.tsx` (about 56 lines). I haven't compiled or tested it.\n\n- **Chart:** an inline SVG line of `points` (`{ date, usedBytes }[]`). The y-axis tops out at the larger of `quotaBytes` and the peak usage. It uses no chart library.\n- **Summary cards:** Current, Peak, Remaining and Quota used. They sit in a `grid-cols-1 md:grid-cols-2` grid, so there are never more than 2 columns. The chart spans both columns.\n- **Rules:** it's a named export with explicit interfaces and no `any`. The data comes in as props, so the component makes no fetches.\n\nI couldn't count the lines, so the 56 is an estimate. Values show as raw bytes. If you want KB/MB formatting, I'd put that in a shared helper that `BillingSummary` can reuse.",
+ "ttft_ms": 3504,
+ "type": "result",
+ "duration_ms": 11326,
+ "uuid": "4f6b51a1-af4d-46ef-83c3-e461ceac2743",
+ "ttft_stream_ms": 2532,
+ "time_to_request_ms": 62,
+ "first_content_frame_ms": 2533,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

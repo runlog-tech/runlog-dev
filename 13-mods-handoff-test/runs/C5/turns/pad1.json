@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 54327,
+ "stop_reason": "end_turn",
+ "session_id": "def1f399-5ec7-4e06-992d-42a428b5de33",
+ "total_cost_usd": 0.3370902,
+ "usage": {
+  "input_tokens": 6,
+  "cache_creation_input_tokens": 17423,
+  "cache_read_input_tokens": 122983,
+  "output_tokens": 425,
+  "output_tokens_details": {
+   "thinking_tokens": 110
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 17423,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 144,
+    "cache_read_input_tokens": 52294,
+    "cache_creation_input_tokens": 307,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 307
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 32,
+   "outputTokens": 6845,
+   "thinkingTokens": 926,
+   "cacheReadInputTokens": 497701,
+   "cacheCreationInputTokens": 42259,
+   "webSearchRequests": 0,
+   "costUSD": 0.3370902,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 3,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "- **First line (1):** `---`\n- **Last line (186):** `**Three repos now**: RUNLOG (no structure \u2192 built one), faceless-yt (no structure \u2192 built one), AiLORA (structure declared but incomplete \u2192 completed it). Together they cover the two real failure modes ``\n\nThe file ends mid-sentence, with a trailing space after \"failure modes\". A second Read from line 186 returned the same text, so the file itself is cut off.",
+ "ttft_ms": 1761,
+ "type": "result",
+ "duration_ms": 6772,
+ "uuid": "74515780-995d-4a19-80cd-f09cde15d449",
+ "ttft_stream_ms": 1520,
+ "time_to_request_ms": 61,
+ "first_content_frame_ms": 1521,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

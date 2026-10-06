@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 18614,
+ "stop_reason": "end_turn",
+ "session_id": "64a18aec-27b9-4560-8688-6dc770292fef",
+ "total_cost_usd": 0.123052,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1627,
+  "cache_read_input_tokens": 56972,
+  "output_tokens": 1348,
+  "output_tokens_details": {
+   "thinking_tokens": 279
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1627,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 276,
+    "cache_read_input_tokens": 28722,
+    "cache_creation_input_tokens": 1155,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 1155
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 10,
+   "outputTokens": 2025,
+   "thinkingTokens": 279,
+   "cacheReadInputTokens": 123210,
+   "cacheCreationInputTokens": 19535,
+   "webSearchRequests": 0,
+   "costUSD": 0.123052,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `src/routes/v2/auth.ts` (56 lines). I haven't compiled it or run any tests.\n\n- **Auth header:** requests must send `Bearer <token>`, and the outgoing verification call sends the same format.\n- **Timeout:** the external fetch uses `AbortSignal.timeout(8000)`. `FETCH_TIMEOUT_MS` can override it, but 8000 is the default.\n- **Verification URL:** the call goes to `AUTH_SERVICE_URL`, which defaults to `http://localhost:8089/verify`. I picked that default because port 8089 is the test daemon, and the `/verify` path is my guess.\n- **Types:** there is no `any`. The request and response types are minimal interfaces I defined, since no framework is set up yet.\n- **Exports:** all exports are named.",
+ "ttft_ms": 3872,
+ "type": "result",
+ "duration_ms": 10789,
+ "uuid": "ab7cc3cf-b45c-428c-a8ae-c2cb6078d0a6",
+ "ttft_stream_ms": 1517,
+ "time_to_request_ms": 53,
+ "first_content_frame_ms": 1517,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

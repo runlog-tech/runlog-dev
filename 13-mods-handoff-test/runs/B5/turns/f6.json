@@ -1,0 +1,106 @@
+{
+ "duration_api_ms": 198444,
+ "stop_reason": "end_turn",
+ "session_id": "6f36c041-de0d-4265-9424-1006efe53226",
+ "total_cost_usd": 1.8859221999999995,
+ "usage": {
+  "input_tokens": 8,
+  "cache_creation_input_tokens": 1469,
+  "cache_read_input_tokens": 161269,
+  "output_tokens": 887,
+  "output_tokens_details": {
+   "thinking_tokens": 57
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1469,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 202,
+    "cache_read_input_tokens": 40962,
+    "cache_creation_input_tokens": 306,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 306
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 20429,
+   "outputTokens": 23021,
+   "thinkingTokens": 1842,
+   "cacheReadInputTokens": 3502481,
+   "cacheCreationInputTokens": 228618,
+   "webSearchRequests": 0,
+   "costUSD": 1.8859221999999995,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [
+  {
+   "tool_name": "Bash",
+   "tool_use_id": "toolu_01RHrTe2SQmxFpxL3PVaVpt3",
+   "tool_input": {
+    "command": "rtk ls /tmp/mods-pilot/B5/work /tmp/mods-pilot/B5/work/src"
+   }
+  }
+ ],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 6,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "I added `start` and `cleanup` scripts to `package.json` and created `README.md` with a short Running section. I haven't run any of it.\n\n- **`start`:** runs `PORT=8089 tsx src/server.ts`, the same command as the existing `dev` script. It fails until `src/server.ts` exists.\n- **`cleanup`:** runs `scripts/cleanup.sh`, which is a dry run unless you pass `--delete`.\n- **`README.md`:** there wasn't one, so I created it. It covers `npm run test:unit`, `npm start`, the healthcheck and the cleanup script.",
+ "ttft_ms": 1961,
+ "type": "result",
+ "duration_ms": 9269,
+ "uuid": "7c96e304-305c-4998-9499-978c27b31ad4",
+ "ttft_stream_ms": 1289,
+ "time_to_request_ms": 64,
+ "first_content_frame_ms": 1289,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

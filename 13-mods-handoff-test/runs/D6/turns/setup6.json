@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 57734,
+ "stop_reason": "end_turn",
+ "session_id": "64a18aec-27b9-4560-8688-6dc770292fef",
+ "total_cost_usd": 0.24739559999999997,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1529,
+  "cache_read_input_tokens": 68673,
+  "output_tokens": 1225,
+  "output_tokens_details": {
+   "thinking_tokens": 388
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1529,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 265,
+    "cache_read_input_tokens": 34533,
+    "cache_creation_input_tokens": 1136,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 1136
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 26,
+   "outputTokens": 7008,
+   "thinkingTokens": 1146,
+   "cacheReadInputTokens": 379778,
+   "cacheCreationInputTokens": 25327,
+   "webSearchRequests": 0,
+   "costUSD": 0.24739559999999997,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 3,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "I created `package.json` and `scripts/healthcheck.mjs`, both well under 60 lines. I haven't run either.\n\n- **`test:unit`:** it uses Node's built-in test runner, so I added no test-framework dependency. It needs Node 22.6 or newer, because it runs the `.ts` tests with `--experimental-strip-types`. There is no generic `test` script.\n- **`healthcheck`:** it requests `http://localhost:8089/status` with the 8000ms timeout. It exits 1 if the server is unhealthy and 0 otherwise. `TEST_DAEMON_PORT` can override the port.\n- **Dependencies:** `package.json` lists none. I left out React and TypeScript because adding them would be a major-dependency decision for you to make. Say if you want them added.",
+ "ttft_ms": 5185,
+ "type": "result",
+ "duration_ms": 10903,
+ "uuid": "70f2b650-fd58-45bf-a6d4-44e02593ed0d",
+ "ttft_stream_ms": 1943,
+ "time_to_request_ms": 54,
+ "first_content_frame_ms": 1943,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

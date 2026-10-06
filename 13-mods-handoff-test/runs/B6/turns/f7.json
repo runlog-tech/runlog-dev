@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 217853,
+ "stop_reason": "end_turn",
+ "session_id": "ed36e7bf-9a6e-4d30-8833-74e4e555dd27",
+ "total_cost_usd": 1.9944854000000003,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 766,
+  "cache_read_input_tokens": 88132,
+  "output_tokens": 627,
+  "output_tokens_details": {
+   "thinking_tokens": 26
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 766,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 239,
+    "cache_read_input_tokens": 44215,
+    "cache_creation_input_tokens": 468,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 468
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 20433,
+   "outputTokens": 28292,
+   "thinkingTokens": 2259,
+   "cacheReadInputTokens": 3664367,
+   "cacheCreationInputTokens": 234485,
+   "webSearchRequests": 0,
+   "costUSD": 1.9944854000000003,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `scripts/deploy.sh` (15 lines). I haven't run it, and it isn't executable yet, so run `chmod +x scripts/deploy.sh` or call it with `bash`.\n\n- **Flow:** it runs `npm run test:unit`, then `git push -u origin <current branch>`. It stops if the tests fail or you're on a detached HEAD.\n- **No forcing:** if the remote has diverged, the push is rejected and the script tells you to run `git pull --rebase origin <branch>` and retry. Overwriting stale remote work would need a manual step on your side.\n- **Git repo:** this directory isn't a git repo yet, so `git init` and an `origin` remote are needed before the script can push.",
+ "ttft_ms": 1238,
+ "type": "result",
+ "duration_ms": 5654,
+ "uuid": "21d94485-bf3c-4264-a0c9-1c76622799db",
+ "ttft_stream_ms": 1101,
+ "time_to_request_ms": 57,
+ "first_content_frame_ms": 1101,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

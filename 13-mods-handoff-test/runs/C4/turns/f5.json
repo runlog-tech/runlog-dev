@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 73357,
+ "stop_reason": "end_turn",
+ "session_id": "ef71935f-001d-4885-9280-6616d33a1bc3",
+ "total_cost_usd": 0.3241584,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 935,
+  "cache_read_input_tokens": 87687,
+  "output_tokens": 705,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 935,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 227,
+    "cache_read_input_tokens": 44030,
+    "cache_creation_input_tokens": 562,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 562
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 28,
+   "outputTokens": 8992,
+   "thinkingTokens": 888,
+   "cacheReadInputTokens": 519252,
+   "cacheCreationInputTokens": 32583,
+   "webSearchRequests": 0,
+   "costUSD": 0.3241584,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `src/components/InvoiceList.tsx`. I haven't run or type-checked it.\n\n- **Layout:** each invoice is a card in a grid that is 1 column by default and 2 columns from 768px.\n- **Props:** it takes `invoices` (`{ id, issuedAt, totalCents }[]`) and an `onDownload(id)` callback. It doesn't fetch anything itself.\n- **Empty list:** it renders \"No invoices.\"\n- **Not wired in:** `BillingSummary.tsx` still has its own inline invoice list. I can swap it for this component if you want.\n- **Rules:** it uses a named export, has no `any`, and is under 60 lines.",
+ "ttft_ms": 3050,
+ "type": "result",
+ "duration_ms": 5371,
+ "uuid": "be391e81-91a1-412a-bf8e-127712aaf7a1",
+ "ttft_stream_ms": 1071,
+ "time_to_request_ms": 59,
+ "first_content_frame_ms": 1071,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

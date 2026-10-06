@@ -1,0 +1,11 @@
+{
+ "arm": "sonnet-PASTE_SILENT3",
+ "hit": 2,
+ "of": 5,
+ "missing": [
+  "red",
+  "blue",
+  "green"
+ ],
+ "answer": "- **Order number:** 7731, per my summary of the image.\n- **Ship-by date:** 14 Nov, per the same summary.\n- **Shape colors:** I don't remember them. The summary says the shapes were labeled A, B and C, but it doesn't record their colors, and I can't see the image anymore."
+}

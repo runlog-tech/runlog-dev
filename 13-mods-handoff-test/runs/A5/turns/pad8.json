@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 95254,
+ "stop_reason": "end_turn",
+ "session_id": "c275ab41-3ce1-4636-b52b-5885a91170aa",
+ "total_cost_usd": 1.1372951999999998,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 18280,
+  "cache_read_input_tokens": 309663,
+  "output_tokens": 646,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 18280,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 572,
+    "cache_read_input_tokens": 155023,
+    "cache_creation_input_tokens": 17897,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 17897
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 60,
+   "outputTokens": 9893,
+   "thinkingTokens": 990,
+   "cacheReadInputTokens": 1939666,
+   "cacheCreationInputTokens": 162578,
+   "webSearchRequests": 0,
+   "costUSD": 1.1372951999999998,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "- **First line (1):** ` alignment had been run at all for this video, despite the handoff listing packaging as complete. Built this video's own `align_captions.py`/`run_alignments.py`/`hyperframes/generate_srt.py` (per-video copy, matching every other video's pattern) and generated it for real: 207 cues, 397.8s, matching the master render's duration exactly. (2) `upload-notes.md` had only 3 title A/B variants against the channel's 8-20 convention, plus a leftover \"Arm F\" reference in the pinned comment and a wrong model name (`qwen 2.5 coder` instead of `qwen3.6`) in the tags \u2014 all fixed, 7 more variants (D-J) added, all grounded in the real script content. Lesson: a handoff doc's own \"completed\" checklist is not sufficient evidence something is actually done \u2014 verify artifacts exist (`ls`, not the doc's own claim) before treating a video as publish-ready.`\n- **Last line (95/96 region):** the file's last numbered line is 95, and it ends mid-sentence: `\u2026 Shorts not started, deferred as previously logge`\n\nThe Read output's final line is actually line 95 (the video 8 row of the status table), which I've abbreviated above. Its exact ending is: `**Published 2026-09-03** \u2014 real video ID confirmed via Data API 2026-09-04: `7zoi6XIpfZM`, `publishedAt` 2026-09-03T19:00:09Z. Pinned engagement comment posted 2026-09-04. Shorts not started, deferred as previously logge`\n\nThe file is cut off again, mid-word at \"logge\". Line 1 completes the \"no forced\" left hanging at the end of pad_07.txt.",
+ "ttft_ms": 1919,
+ "type": "result",
+ "duration_ms": 7056,
+ "uuid": "fb46df2c-da19-4004-add8-f1cdb94a8965",
+ "ttft_stream_ms": 1413,
+ "time_to_request_ms": 68,
+ "first_content_frame_ms": 1414,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

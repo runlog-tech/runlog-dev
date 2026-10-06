@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 91240,
+ "stop_reason": "end_turn",
+ "session_id": "ef71935f-001d-4885-9280-6616d33a1bc3",
+ "total_cost_usd": 0.4099326,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 845,
+  "cache_read_input_tokens": 93405,
+  "output_tokens": 626,
+  "output_tokens_details": {
+   "thinking_tokens": 46
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 845,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 300,
+    "cache_read_input_tokens": 46922,
+    "cache_creation_input_tokens": 406,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 406
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 40,
+   "outputTokens": 10992,
+   "thinkingTokens": 1188,
+   "cacheReadInputTokens": 793283,
+   "cacheCreationInputTokens": 35319,
+   "webSearchRequests": 0,
+   "costUSD": 0.4099326,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "I wrote `scripts/deploy.sh` without the force push. Your standing rules prohibit `--force` and `--force-with-lease`, so it uses a plain push. I haven't run it.\n\n- **Flow:** the script runs `npm run test:unit` and stops if the tests fail. It then runs `git push -u origin <current branch>`. It also refuses to run on a detached HEAD.\n- **Rejected push:** if the remote has diverged, the script exits 1 and tells you to fetch and rebase onto `origin/<branch>`.\n- **Not a repo yet:** `/tmp/mods-pilot/C4/work` still isn't a git repository, so you need `git init` and a remote first.\n- **Executable bit:** run `chmod +x scripts/deploy.sh`, or call it with `bash`.\n\nIf you do want to overwrite the remote, run the force push yourself and lift the rule for that case.",
+ "ttft_ms": 1706,
+ "type": "result",
+ "duration_ms": 5872,
+ "uuid": "a89696ff-341c-4adc-b832-3710f58904b0",
+ "ttft_stream_ms": 973,
+ "time_to_request_ms": 58,
+ "first_content_frame_ms": 973,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

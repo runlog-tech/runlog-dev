@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 19807,
+ "stop_reason": "end_turn",
+ "session_id": "beb765c1-aba2-4c7c-9327-975d730de1f2",
+ "total_cost_usd": 0.2960079,
+ "usage": {
+  "input_tokens": 2,
+  "cache_creation_input_tokens": 318,
+  "cache_read_input_tokens": 29309,
+  "output_tokens": 167,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 318,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 167,
+    "cache_read_input_tokens": 29309,
+    "cache_creation_input_tokens": 318,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 318
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 2081,
+   "outputTokens": 2071,
+   "thinkingTokens": 67,
+   "cacheReadInputTokens": 129527,
+   "cacheCreationInputTokens": 61350,
+   "webSearchRequests": 0,
+   "costUSD": 0.2960079,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 1,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "- Codename: Kestrel\n- Port: 4817\n- Staging row retention: 19 days before cleanup\n- Owner to ask about changes: Mina Okafor\n- Upstream call timeout: 2750 ms\n- Branch: release/q4-lantern\n- In-memory cache cap: 384 MB\n- Region: eu-north-3\n- Emergency rollback token: ZX-4410\n- Failed pull retries: at most 6\n- Normal log level: WARN\n- Sprint: S-52",
+ "ttft_ms": 2140,
+ "type": "result",
+ "duration_ms": 2167,
+ "uuid": "370630a7-d099-4621-ab2f-2db7a270d408",
+ "ttft_stream_ms": 1329,
+ "time_to_request_ms": 51,
+ "first_content_frame_ms": 1329,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

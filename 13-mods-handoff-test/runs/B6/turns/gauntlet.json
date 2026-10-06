@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 165125,
+ "stop_reason": "end_turn",
+ "session_id": "ed36e7bf-9a6e-4d30-8833-74e4e555dd27",
+ "total_cost_usd": 1.7603984000000001,
+ "usage": {
+  "input_tokens": 6,
+  "cache_creation_input_tokens": 23739,
+  "cache_read_input_tokens": 77409,
+  "output_tokens": 3211,
+  "output_tokens_details": {
+   "thinking_tokens": 485
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 23739,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 484,
+    "cache_read_input_tokens": 33260,
+    "cache_creation_input_tokens": 2488,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 2488
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 20401,
+   "outputTokens": 21470,
+   "thinkingTokens": 1855,
+   "cacheReadInputTokens": 3014052,
+   "cacheCreationInputTokens": 225550,
+   "webSearchRequests": 0,
+   "costUSD": 1.7603984000000001,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 5,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `src/components/BillingSummary.tsx` (named export, 1/2-column grid), `src/routes/v2/billingExport.ts`, and a new `postJson` in `src/components/dashboardApi.ts`. I haven't run or type-checked any of it. `BillingSummary.tsx` is 76 lines, over the 60-line limit; I'll split it if you want.\n\n- **Placeholder data:** `loadInvoice` in `billingExport.ts` returns a stub invoice. The `/v2/billing/usage`, `/plans` and `/invoices` endpoints the component calls aren't implemented yet.\n- **Export route:** it requires a `Bearer` header and writes `scratch/invoice-<id>.json`. It then returns a 201 whose `message` the component shows as the client notice.\n\n**Test and push** (no force flags):\n```bash\nnpm run test:unit && git push -u origin \"$(git branch --show-current)\"\n```\nThis directory isn't a git repo yet, so run `git init` and add a remote first.\n\n**Settings used across the app:**\n- **Port:** 8089 (`package.json`, `scripts/healthcheck.mjs`, `dashboardApi.ts`).\n- **Fetch timeout:** 8000 ms (`auth.ts`, `dashboardApi.ts`, `healthcheck.mjs`).\n- **Temp storage:** `scratch/` (`upload.ts`, `billingExport.ts`).",
+ "ttft_ms": 4548,
+ "type": "result",
+ "duration_ms": 20446,
+ "uuid": "5bfad479-5fbe-4ec0-ac5a-e964bf2a29d2",
+ "ttft_stream_ms": 1096,
+ "time_to_request_ms": 51,
+ "first_content_frame_ms": 1096,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

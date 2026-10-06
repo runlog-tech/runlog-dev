@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 75243,
+ "stop_reason": "end_turn",
+ "session_id": "ed36e7bf-9a6e-4d30-8833-74e4e555dd27",
+ "total_cost_usd": 0.5654906000000001,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 16306,
+  "cache_read_input_tokens": 143190,
+  "output_tokens": 559,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 16306,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 485,
+    "cache_read_input_tokens": 71712,
+    "cache_creation_input_tokens": 16072,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 16072
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 42,
+   "outputTokens": 9976,
+   "thinkingTokens": 1370,
+   "cacheReadInputTokens": 779393,
+   "cacheCreationInputTokens": 77442,
+   "webSearchRequests": 0,
+   "costUSD": 0.5654906000000001,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "**First line (1):** `definitions exist across the two repos (`broll-scout`, `upload-notes-auditor`, `trend-research`, `strategist` in faceless-yt; `topic-scout`, `packaging-auditor`, `firewall-auditor`, `strategist` here), each pinned to a specific model tier: Haiku for narrow/stateless/verifiable lookups, Opus for bounded tradeoff-and-sequencing calls with clear scoring criteria, Sonnet (the default) for everything needing accumulated session context, judgment, or interactive back-and-forth. The general pattern this demonstrates is usually called model routing or tiered/heterogeneous multi-agent orchestration \u2014 matching each subtask to the cheapest model that reliably does it, rather than running every step through one flagship model.`\n\n**Last line (146):** `- Two candidates correctly **rejected**, not just accepted, giving the checklist real discriminating power to show on screen: `Bash:grep \u2192 Read:md` technically passes all 4 checklist boxes but is rejected because it's already cheap inline (delegation overhead would exceed the saving) \u2014 a \"passing the checklist isn't the whole story\" beat; and a repeated `mcp__claude-in-chrome__computer` browser-automation lo`\n\nThe file is cut off mid-word at line 146, and it picks up mid-sentence from where `pad_02.txt` ended. All three files appear to be consecutive chunks of one longer document.",
+ "ttft_ms": 2058,
+ "type": "result",
+ "duration_ms": 6339,
+ "uuid": "a1ab7c5c-53a9-4dfa-89e6-fbea2713a4da",
+ "ttft_stream_ms": 1721,
+ "time_to_request_ms": 56,
+ "first_content_frame_ms": 1721,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

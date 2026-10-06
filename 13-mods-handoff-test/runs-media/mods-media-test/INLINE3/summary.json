@@ -1,0 +1,16 @@
+{
+ "arm": "INLINE3",
+ "memory": {
+  "hit": 12,
+  "of": 12,
+  "missing": []
+ },
+ "natural": {
+  "hit": 12,
+  "of": 12,
+  "missing": []
+ },
+ "natural_turns": 1,
+ "answer_memory": "- Codename: Kestrel\n- Port: 4817\n- Staging row retention: 19 days before cleanup\n- Owner to ask about changes: Mina Okafor\n- Upstream call timeout: 2750 ms\n- Branch: release/q4-lantern\n- In-memory cache cap: 384 MB\n- Region: eu-north-3\n- Emergency rollback token: ZX-4410\n- Failed pull retries: at most 6\n- Normal log level: WARN\n- Sprint: S-52",
+ "answer_natural": "- Codename: Kestrel\n- Port: 4817\n- Staging row retention: 19 days before cleanup\n- Owner to ask about changes: Mina Okafor\n- Upstream call timeout: 2750 ms\n- Branch: release/q4-lantern\n- In-memory cache cap: 384 MB\n- Region: eu-north-3\n- Emergency rollback token: ZX-4410\n- Failed pull retries: at most 6\n- Normal log level: WARN\n- Sprint: S-52"
+}

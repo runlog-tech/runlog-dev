@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 146274,
+ "stop_reason": "end_turn",
+ "session_id": "db7da845-029b-468f-a54c-5a161dfa9ee0",
+ "total_cost_usd": 1.8097769999999997,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1560,
+  "cache_read_input_tokens": 433479,
+  "output_tokens": 1095,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1560,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 234,
+    "cache_read_input_tokens": 216910,
+    "cache_creation_input_tokens": 1219,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 1219
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 80,
+   "outputTokens": 18212,
+   "thinkingTokens": 1645,
+   "cacheReadInputTokens": 3981745,
+   "cacheCreationInputTokens": 207787,
+   "webSearchRequests": 0,
+   "costUSD": 1.8097769999999997,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 5,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `src/utils/fetchWithTimeout.ts` (9 lines) and switched `src/routes/v2/billing.ts` to use it.\n\n- **Wrapper:** `fetchWithTimeout(url, init)` applies the 8,000ms timeout, `FETCH_TIMEOUT_MS` is exported, and `bearerHeader(token)` builds the `Bearer <token>` header.\n- **Billing route:** it now calls the wrapper, and its own timeout constant is removed.\n- **Not switched:** `auth.ts` and the three components still use their own inline `fetch` with the same timeout. Say if you want them moved over too.\n- **Not run:** I haven't compiled it.",
+ "ttft_ms": 2575,
+ "type": "result",
+ "duration_ms": 8058,
+ "uuid": "77ed0a9a-79c7-42f4-9636-4129aa8132f5",
+ "ttft_stream_ms": 1258,
+ "time_to_request_ms": 56,
+ "first_content_frame_ms": 1258,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

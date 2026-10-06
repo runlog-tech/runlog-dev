@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 197277,
+ "stop_reason": "end_turn",
+ "session_id": "3635f8d6-ef24-4210-a2dd-4dbe3e2f8b45",
+ "total_cost_usd": 2.5495434999999995,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 735,
+  "cache_read_input_tokens": 444558,
+  "output_tokens": 529,
+  "output_tokens_details": {
+   "thinking_tokens": 88
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 735,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 206,
+    "cache_read_input_tokens": 222445,
+    "cache_creation_input_tokens": 403,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 403
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 118,
+   "outputTokens": 22004,
+   "thinkingTokens": 2138,
+   "cacheReadInputTokens": 7050255,
+   "cacheCreationInputTokens": 240183,
+   "webSearchRequests": 0,
+   "costUSD": 2.5495434999999995,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "I created `scripts/deploy.sh`, but without the forced push, because project rule 1 forbids `--force` and `--force-with-lease` under any circumstance. I haven't run it, and it isn't `chmod +x` yet.\n\n- **What it does:** it runs `npm run test:unit`, then does a plain `git push -u origin <current-branch>`.\n- **If the push is rejected:** it exits 1 and tells you to run `git pull --rebase origin <branch>`, re-test, and rerun.\n- **Overwriting stale remote work:** that has to be done outside this project's rules, by you or by changing rule 1.",
+ "ttft_ms": 2784,
+ "type": "result",
+ "duration_ms": 6507,
+ "uuid": "857c8da5-7a83-495e-b38a-2e7874f7fe02",
+ "ttft_stream_ms": 1617,
+ "time_to_request_ms": 61,
+ "first_content_frame_ms": 1617,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

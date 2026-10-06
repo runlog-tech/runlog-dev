@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 53793,
+ "stop_reason": "end_turn",
+ "session_id": "8facf8e1-02e1-44dd-a885-f1ee7fe8ce32",
+ "total_cost_usd": 0.25478660000000003,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1563,
+  "cache_read_input_tokens": 69484,
+  "output_tokens": 1352,
+  "output_tokens_details": {
+   "thinking_tokens": 239
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1563,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 338,
+    "cache_read_input_tokens": 34929,
+    "cache_creation_input_tokens": 1189,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 1189
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 26,
+   "outputTokens": 7531,
+   "thinkingTokens": 706,
+   "cacheReadInputTokens": 381603,
+   "cacheCreationInputTokens": 25776,
+   "webSearchRequests": 0,
+   "costUSD": 0.25478660000000003,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 3,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `scripts/healthcheck.ts` (22 lines) and `package.json` (22 lines). Nothing has been installed or run.\n\n- **Healthcheck:** it fetches `http://localhost:8089/status` with an 8000ms timeout. It prints JSON and exits 0 on success or 1 on failure.\n- **Test script:** `test:unit` runs `vitest run`. There is deliberately no `test` script, so a bare `npm test` fails.\n- **Port:** the `daemon` and `healthcheck` scripts both set port 8089.\n- **`daemon` script:** it runs `auth.ts`, which only exports `authServer` and never calls `listen`. It won't serve anything until a `listen(8089)` entry point exists.\n- **Dependencies:** I picked react, vitest, tsx, typescript and the type packages myself, with versions I haven't verified. Say if you want a different set.\n\nAlso, `Dashboard.tsx` is still 69 lines, so the split I offered earlier is still pending.",
+ "ttft_ms": 2922,
+ "type": "result",
+ "duration_ms": 9713,
+ "uuid": "7b8da949-6c05-4225-845d-1fac63977f3e",
+ "ttft_stream_ms": 914,
+ "time_to_request_ms": 59,
+ "first_content_frame_ms": 914,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

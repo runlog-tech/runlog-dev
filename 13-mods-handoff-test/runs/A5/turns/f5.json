@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 180386,
+ "stop_reason": "end_turn",
+ "session_id": "c275ab41-3ce1-4636-b52b-5885a91170aa",
+ "total_cost_usd": 2.1326158,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1622,
+  "cache_read_input_tokens": 437623,
+  "output_tokens": 1443,
+  "output_tokens_details": {
+   "thinking_tokens": 626
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1622,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 264,
+    "cache_read_input_tokens": 218991,
+    "cache_creation_input_tokens": 1263,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 1263
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 94,
+   "outputTokens": 19993,
+   "thinkingTokens": 3194,
+   "cacheReadInputTokens": 5464249,
+   "cacheCreationInputTokens": 209912,
+   "webSearchRequests": 0,
+   "costUSD": 2.1326158,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "I created `src/components/InvoiceList.tsx` (about 33 lines). I haven't compiled or run it.\n\n- **Content:** each invoice shows its period, amount, status and a Download button.\n- **Layout:** a flex-wrap layout that is 2 columns when wide and 1 column below roughly 540px. Each item has a basis just under half the row, so it can never go to 3 columns. It needs no JavaScript or media query.\n- **Download:** the component doesn't fetch anything. The parent supplies `onDownload(id)`, so `BillingSummary` could call its export logic from there.\n- **Types:** it has a named export and explicit interfaces, with no `any`. `InvoiceItem` is separate from `Invoice` in `BillingSummary.tsx` because it adds amount and status.",
+ "ttft_ms": 7185,
+ "type": "result",
+ "duration_ms": 12935,
+ "uuid": "fb0c422b-ce44-4240-a201-690233a6e89f",
+ "ttft_stream_ms": 1427,
+ "time_to_request_ms": 62,
+ "first_content_frame_ms": 1427,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

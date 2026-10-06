@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 52746,
+ "stop_reason": "end_turn",
+ "session_id": "6f36c041-de0d-4265-9424-1006efe53226",
+ "total_cost_usd": 0.2441028,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1700,
+  "cache_read_input_tokens": 67060,
+  "output_tokens": 1550,
+  "output_tokens_details": {
+   "thinking_tokens": 499
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1700,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 325,
+    "cache_read_input_tokens": 33680,
+    "cache_creation_input_tokens": 1400,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 1400
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 28,
+   "outputTokens": 6439,
+   "thinkingTokens": 1053,
+   "cacheReadInputTokens": 403524,
+   "cacheCreationInputTokens": 24738,
+   "webSearchRequests": 0,
+   "costUSD": 0.2441028,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 3,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `scripts/healthcheck.ts` (24 lines) and `package.json` (18 lines). Neither has been run, and no dependencies are installed.\n\n- **Healthcheck:** it fetches `/status` on port 8089 with the 8000ms timeout and exits 0 on success or 1 on failure. The `/status` path is the same assumption as in the dashboard.\n- **Scripts:** `test:unit`, `healthcheck`, `dev` and `typecheck`. The `dev` and `healthcheck` scripts set `PORT=8089`. There is deliberately no generic `test` script, so `npm test` won't run anything.\n- **Dependencies:** I picked `vitest`, `tsx`, `typescript` and `@types/node` as dev dependencies, and the version ranges are guesses. You haven't approved a test runner, so confirm or swap them before installing.\n- **Missing file:** `dev` points to `src/server.ts`, which doesn't exist yet.",
+ "ttft_ms": 5722,
+ "type": "result",
+ "duration_ms": 12101,
+ "uuid": "60bc1b5a-0c4b-41ac-83f9-154f236ee7e8",
+ "ttft_stream_ms": 1055,
+ "time_to_request_ms": 62,
+ "first_content_frame_ms": 1055,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

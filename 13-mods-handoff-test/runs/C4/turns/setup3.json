@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 23504,
+ "stop_reason": "end_turn",
+ "session_id": "d9097ea9-06bb-4eaf-a4a2-337e167fa13c",
+ "total_cost_usd": 0.14830700000000002,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1402,
+  "cache_read_input_tokens": 59474,
+  "output_tokens": 1237,
+  "output_tokens_details": {
+   "thinking_tokens": 71
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1402,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 302,
+    "cache_read_input_tokens": 29929,
+    "cache_creation_input_tokens": 1018,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 1018
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 14,
+   "outputTokens": 2938,
+   "thinkingTokens": 274,
+   "cacheReadInputTokens": 182395,
+   "cacheCreationInputTokens": 20605,
+   "webSearchRequests": 0,
+   "costUSD": 0.14830700000000002,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `src/routes/v2/upload.ts` (60 lines).\n\n- **Storage:** files are written to local `scratch/` only, with no cloud storage. `UPLOAD_DIR` can override the directory.\n- **Quota:** it sums the current size of `scratch/` and returns 413 if the new file would push it over `UPLOAD_QUOTA_BYTES`. The default is 100 MB.\n- **Filenames:** stored names are a UUID plus the sanitized original name, which blocks path traversal.\n- **Types:** explicit interfaces, no `any`, named exports.\n- **Not run:** I haven't compiled or run it. It expects `req.file` to be a parsed `{ originalName, data: Buffer }`, so you'll need multipart middleware to supply that.\n- **Quota check:** it isn't atomic. Two concurrent uploads can both pass the check and together exceed the quota.",
+ "ttft_ms": 1611,
+ "type": "result",
+ "duration_ms": 8406,
+ "uuid": "a3f17454-4f07-4630-9a94-20ed2722b742",
+ "ttft_stream_ms": 917,
+ "time_to_request_ms": 54,
+ "first_content_frame_ms": 917,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

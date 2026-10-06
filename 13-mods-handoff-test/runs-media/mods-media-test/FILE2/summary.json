@@ -1,0 +1,16 @@
+{
+ "arm": "FILE2",
+ "memory": {
+  "hit": 12,
+  "of": 12,
+  "missing": []
+ },
+ "natural": {
+  "hit": 12,
+  "of": 12,
+  "missing": []
+ },
+ "natural_turns": 1,
+ "answer_memory": "From the summary of the brief, which I'm treating as memory:\n\n1. **Codename:** Kestrel\n2. **Port:** 4817\n3. **Retention:** staging rows are kept 19 days before cleanup\n4. **Owner:** Mina Okafor, the person to ask about changes\n5. **Timeout:** upstream calls time out after 2750 ms\n6. **Branch:** release/q4-lantern\n7. **Cache:** in-memory cache capped at 384 MB\n8. **Region:** eu-north-3\n9. **Rollback token:** ZX-4410 (emergency)\n10. **Retries:** a failed pull is retried at most 6 times\n11. **Log level:** WARN\n12. **Sprint:** S-52",
+ "answer_natural": "1. **Codename:** Kestrel\n2. **Port:** 4817\n3. **Retention:** staging rows are kept 19 days before cleanup\n4. **Owner:** Mina Okafor, the person to ask about changes\n5. **Timeout:** upstream calls time out after 2750 ms\n6. **Branch:** release/q4-lantern\n7. **Cache:** in-memory cache capped at 384 MB\n8. **Region:** eu-north-3\n9. **Rollback token:** ZX-4410 (emergency)\n10. **Retries:** a failed pull is retried at most 6 times\n11. **Log level:** WARN\n12. **Sprint:** S-52"
+}

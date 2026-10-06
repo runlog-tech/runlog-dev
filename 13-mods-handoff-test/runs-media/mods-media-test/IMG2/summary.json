@@ -1,0 +1,16 @@
+{
+ "arm": "IMG2",
+ "memory": {
+  "hit": 5,
+  "of": 5,
+  "missing": []
+ },
+ "natural": {
+  "hit": 5,
+  "of": 5,
+  "missing": []
+ },
+ "natural_turns": 2,
+ "answer_memory": "- **Order number:** 7731\n- **Shape colors:** red circle (A), blue square (B), green inverted triangle (C)\n- **Ship-by date:** 14 Nov\n\nThis comes from my earlier look at the image, as carried in my notes, not from a fresh view.",
+ "answer_natural": "- **Order number:** 7731\n- **Shape colors:** A is a red circle, B is a blue square, and C is a green inverted triangle.\n- **Ship-by date:** 14 Nov\n\nI re-opened the image to confirm."
+}

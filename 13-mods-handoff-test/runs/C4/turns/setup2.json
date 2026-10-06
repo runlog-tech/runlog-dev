@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 15159,
+ "stop_reason": "end_turn",
+ "session_id": "d9097ea9-06bb-4eaf-a4a2-337e167fa13c",
+ "total_cost_usd": 0.11842620000000001,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1309,
+  "cache_read_input_tokens": 56708,
+  "output_tokens": 1274,
+  "output_tokens_details": {
+   "thinking_tokens": 168
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1309,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 284,
+    "cache_read_input_tokens": 28472,
+    "cache_creation_input_tokens": 1073,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 1073
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 10,
+   "outputTokens": 1701,
+   "thinkingTokens": 203,
+   "cacheReadInputTokens": 122921,
+   "cacheCreationInputTokens": 19203,
+   "webSearchRequests": 0,
+   "costUSD": 0.11842620000000001,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `src/routes/v2/auth.ts` (58 lines).\n\n- **Types:** explicit interfaces, no `any`, named exports only.\n- **Token handling:** it rejects anything not formatted `Bearer <token>`.\n- **External call:** `verifyToken` sends `Authorization: Bearer <token>` with an 8000ms `AbortSignal.timeout`.\n- **Service URL:** `AUTH_SERVICE_URL` defaults to `http://localhost:8089/verify`.\n- **Responses:** it returns 401 for a missing, invalid or expired token, and 504 if the call fails or times out.\n- **Not run:** I haven't compiled or run it. The project has no framework or `tsconfig` yet, so `AuthRequest` and `AuthResponse` are minimal local interfaces to swap for your framework's types.",
+ "ttft_ms": 2782,
+ "type": "result",
+ "duration_ms": 9588,
+ "uuid": "196b2b54-7157-451e-a21d-032ce58a3f20",
+ "ttft_stream_ms": 1331,
+ "time_to_request_ms": 66,
+ "first_content_frame_ms": 1331,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

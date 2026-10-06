@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 70263,
+ "stop_reason": "end_turn",
+ "session_id": "3635f8d6-ef24-4210-a2dd-4dbe3e2f8b45",
+ "total_cost_usd": 0.7282016000000002,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 17196,
+  "cache_read_input_tokens": 203163,
+  "output_tokens": 481,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 17196,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 407,
+    "cache_read_input_tokens": 101698,
+    "cache_creation_input_tokens": 16963,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 16963
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 48,
+   "outputTokens": 7428,
+   "thinkingTokens": 855,
+   "cacheReadInputTokens": 1102748,
+   "cacheCreationInputTokens": 108319,
+   "webSearchRequests": 0,
+   "costUSD": 0.7282016000000002,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "**First line (1):** `ws on the one real prior video is a small slice of the addressable audience \u2014 a hook-vs-body distinction, not a content cut: the animated beginner explainer (locked above) is still built in full, same design/effort as if no prior art existed. What prior art actually changes is narrower and specific: don't *title/open* the video on \"here's how TTL buckets work\" as if it were the novel finding, since that specific framing is where Readheights already has real, accurate, sourced coverage. The mechanic itself is still genuinely useful to teach and still reaches a broad audience this channel's own viewers haven't seen elsewhere.`\n\n**Last line (127):** `**Real, sourced correction on the LLM side (Qwen-Coder etc.)**: confirmed directly against Claude Code's own docs (`code.claude.com/docs/en/model-config`) that per-subagent provider routing to a local model is **not possible today** \u2014 a subagent's `model:` field only accepts Anthropic's own model names/aliases or `inherit`, and `ANTHROPI``\n\nThe file ends mid-word at line 127 (\"ANTHROPI\"). Line 1 completes the \"1.2K vie\" cut-off from the end of `pad_04.txt`.",
+ "ttft_ms": 1834,
+ "type": "result",
+ "duration_ms": 5546,
+ "uuid": "2a4a22e7-d1e2-4e76-9255-81f510066f84",
+ "ttft_stream_ms": 1369,
+ "time_to_request_ms": 60,
+ "first_content_frame_ms": 1370,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

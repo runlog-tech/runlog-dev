@@ -1,0 +1,113 @@
+{
+ "duration_api_ms": 8074,
+ "stop_reason": "end_turn",
+ "session_id": "6f36c041-de0d-4265-9424-1006efe53226",
+ "total_cost_usd": 0.0960508,
+ "usage": {
+  "input_tokens": 8,
+  "cache_creation_input_tokens": 18010,
+  "cache_read_input_tokens": 94524,
+  "output_tokens": 509,
+  "output_tokens_details": {
+   "thinking_tokens": 47
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 18010,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 143,
+    "cache_read_input_tokens": 28254,
+    "cache_creation_input_tokens": 98,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 98
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 8,
+   "outputTokens": 509,
+   "cacheReadInputTokens": 94524,
+   "cacheCreationInputTokens": 18010,
+   "webSearchRequests": 0,
+   "costUSD": 0.0960508,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "thinkingTokens": 47,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [
+  {
+   "tool_name": "Bash",
+   "tool_use_id": "toolu_01AvNczUTxWXw3uQ8viRPHBB",
+   "tool_input": {
+    "command": "mkdir -p /tmp/mods-pilot/B5/work/src/routes/v2 /tmp/mods-pilot/B5/work/migrations /tmp/mods-pilot/B5/work/scratch && touch /tmp/mods-pilot/B5/work/migrations/.gitkeep /tmp/mods-pilot/B5/work/scratch/.gitkeep && rtk find /tmp/mods-pilot/B5/work -type d"
+   }
+  },
+  {
+   "tool_name": "Bash",
+   "tool_use_id": "toolu_017nWiBbYXwwJ8vdkhc2FBtw",
+   "tool_input": {
+    "command": "rtk ls -R src migrations scratch"
+   }
+  }
+ ],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 4,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "I acknowledge all 12 constraints and will follow them.\n\nI ran `mkdir -p src/routes/v2 migrations scratch` in `/tmp/mods-pilot/B5/work`, and it completed without errors. I couldn't confirm the folders exist, because the `ls` and `find` checks were blocked pending approval. I also didn't add `.gitkeep` files: the first command that would have created them was blocked before it ran.",
+ "ttft_ms": 2637,
+ "type": "result",
+ "duration_ms": 8233,
+ "uuid": "8543c5e5-2bf4-4cb0-876a-78beba8ee287",
+ "ttft_stream_ms": 1420,
+ "time_to_request_ms": 54,
+ "first_content_frame_ms": 1420,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

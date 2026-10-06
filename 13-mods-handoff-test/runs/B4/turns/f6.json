@@ -1,0 +1,107 @@
+{
+ "duration_api_ms": 307288,
+ "stop_reason": "end_turn",
+ "session_id": "dc71e236-6a49-4442-ab7d-ff217eb50378",
+ "total_cost_usd": 1.9658074,
+ "usage": {
+  "input_tokens": 8,
+  "cache_creation_input_tokens": 2213,
+  "cache_read_input_tokens": 175244,
+  "output_tokens": 1635,
+  "output_tokens_details": {
+   "thinking_tokens": 166
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 2213,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 433,
+    "cache_read_input_tokens": 44403,
+    "cache_creation_input_tokens": 1016,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 1016
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 20427,
+   "outputTokens": 28393,
+   "thinkingTokens": 2347,
+   "cacheReadInputTokens": 3529827,
+   "cacheCreationInputTokens": 233793,
+   "webSearchRequests": 0,
+   "costUSD": 1.9658074,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [
+  {
+   "tool_name": "Bash",
+   "tool_use_id": "toolu_012b6BPLdH5fi3yE6JPyygGW",
+   "tool_input": {
+    "command": "rtk ls /tmp/mods-pilot/B4/work /tmp/mods-pilot/B4/work/src /tmp/mods-pilot/B4/work/src/routes/v2",
+    "description": "List project files"
+   }
+  }
+ ],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 7,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "I added scripts to `package.json`, created `README.md`, and created `src/server.ts`. I haven't run any of it. I couldn't list the directory, and no `node_modules` or `tsconfig.json` exists yet.\n\n- **Scripts:** `daemon` runs `tsx src/server.ts`, and `cleanup` runs `scripts/cleanup.sh`. `test:unit`, `healthcheck` and `typecheck` were already there.\n- **README:** it has a short section on running `npm run test:unit` and starting the daemon on port 8089. It also covers `healthcheck` and `cleanup`.\n- **Unrequested file:** no daemon entrypoint existed, so `npm run daemon` had nothing to start. `src/server.ts` (19 lines) is a minimal `node:http` server on port 8089. It serves `GET /status` through `statusHandler` and returns 404 for everything else. None of the other routes (auth, upload, billing) are registered on it yet.\n- **Before first run:** `src/routes/v2/status.ts` has no `.js` extension in its import and there's no `tsconfig.json`. The server uses an extensionless import (`./routes/v2/status`), and the package is `\"type\": \"module\"`. `tsx` usually resolves that, but I haven't confirmed it here.",
+ "ttft_ms": 2235,
+ "type": "result",
+ "duration_ms": 16462,
+ "uuid": "fc7ffb71-f545-45bf-9875-e783266f6726",
+ "ttft_stream_ms": 1950,
+ "time_to_request_ms": 54,
+ "first_content_frame_ms": 1950,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

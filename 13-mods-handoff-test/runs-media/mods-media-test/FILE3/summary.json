@@ -1,0 +1,28 @@
+{
+ "arm": "FILE3",
+ "memory": {
+  "hit": 1,
+  "of": 12,
+  "missing": [
+   "codename",
+   "port",
+   "retention",
+   "owner",
+   "timeout",
+   "branch",
+   "cache",
+   "region",
+   "rollback",
+   "retries",
+   "sprint"
+  ]
+ },
+ "natural": {
+  "hit": 12,
+  "of": 12,
+  "missing": []
+ },
+ "natural_turns": 2,
+ "answer_memory": "I can't give you those twelve details. After the context compaction I only kept a summary of the brief, and it doesn't include them.\n\nI don't remember any of these: codename, port, retention, owner, timeout, branch, cache, region, rollback token, retries, log level, sprint.\n\nI remember the brief as a billing sync service spec: a nightly batch job, an alphabetical account walk that skips dormant accounts, deferral of slow accounts, invoice total diffing into a staging table, idempotent re-runs, money as integer minor units, custom billing calendars, WARN-level logging, and an end-of-run summary. I won't guess values for the twelve.\n\nYou didn't want files opened, so I haven't. If you let me re-read `spec.md`, I can list all twelve exactly.",
+ "answer_natural": "Details from `spec.md`:\n\n| Detail | Value |\n|---|---|\n| Codename | Kestrel |\n| Port | 4817 |\n| Retention | Staging rows kept 19 days before cleanup |\n| Owner | Mina Okafor |\n| Timeout | Upstream calls time out after 2750 ms |\n| Branch | `release/q4-lantern` |\n| Cache | In-memory cache capped at 384 MB |\n| Region | eu-north-3 |\n| Rollback token | ZX-4410 |\n| Retries | Failed pull retried at most 6 times |\n| Log level | WARN |\n| Sprint | S-52 |"
+}

@@ -1,0 +1,16 @@
+{
+ "arm": "IMG1",
+ "memory": {
+  "hit": 5,
+  "of": 5,
+  "missing": []
+ },
+ "natural": {
+  "hit": 5,
+  "of": 5,
+  "missing": []
+ },
+ "natural_turns": 2,
+ "answer_memory": "Going from my notes of the earlier look at the image:\n\n- **Order number:** 7731\n- **Shape colors:** red (circle), blue (square) and green (downward triangle)\n- **Ship-by date:** 14 Nov\n\nI'm relying on the summary of that earlier look, not on a fresh view of the image.",
+ "answer_natural": "Order 7731. The shapes are a red circle (A), a blue square (B) and a green downward triangle (C). Ship by 14 Nov."
+}

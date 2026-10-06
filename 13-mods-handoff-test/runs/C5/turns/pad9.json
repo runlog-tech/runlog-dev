@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 99980,
+ "stop_reason": "end_turn",
+ "session_id": "def1f399-5ec7-4e06-992d-42a428b5de33",
+ "total_cost_usd": 1.2888871999999998,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 18146,
+  "cache_read_input_tokens": 347131,
+  "output_tokens": 450,
+  "output_tokens_details": {
+   "thinking_tokens": 76
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 18146,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 376,
+    "cache_read_input_tokens": 174034,
+    "cache_creation_input_tokens": 17209,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 17209
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 64,
+   "outputTokens": 10720,
+   "thinkingTokens": 1281,
+   "cacheReadInputTokens": 2289776,
+   "cacheCreationInputTokens": 180901,
+   "webSearchRequests": 0,
+   "costUSD": 1.2888871999999998,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "- **First line (1):** `d. |`\n- **Last line (3):** the video 10 row of the status table. It starts `| 10 | Context/cache management for a Pro subscriber \u2014 TTL mechanics, the hidden subagent cache tax | 1 | Folder: `scripts/cache-ttl-mechanics/`. **Locked as next video 2026-09-07** \u2026` and ends `\u2026 Long-form thumbnail also resolved this session: user saved the approved render locally as `render/out/cache-ttl-mechanic.jpeg`, resized to spec 1280x720 and locked as `render/out/thumbnail-locked.png`. **Long-form published 2026-09-09** (video ID `lbrDal`\n\nThe file has only 3 lines and is cut off mid-ID (\"lbrDal\u2026\"). Its first line, \"d. |\", finishes the word \"logge\" + \"d.\" from `pad_08.txt`.",
+ "ttft_ms": 2055,
+ "type": "result",
+ "duration_ms": 6280,
+ "uuid": "2f7cb057-11b0-413a-9c2a-fdd7b1ca9319",
+ "ttft_stream_ms": 1690,
+ "time_to_request_ms": 78,
+ "first_content_frame_ms": 1690,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

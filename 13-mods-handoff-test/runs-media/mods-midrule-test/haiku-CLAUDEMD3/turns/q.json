@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 23754,
+ "stop_reason": "end_turn",
+ "session_id": "c580c1eb-1bf4-41cf-bef5-6b45bea22469",
+ "total_cost_usd": 0.05476715,
+ "usage": {
+  "input_tokens": 10,
+  "cache_creation_input_tokens": 7889,
+  "cache_read_input_tokens": 17876,
+  "output_tokens": 118,
+  "output_tokens_details": {
+   "thinking_tokens": 79
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 7889,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 10,
+    "output_tokens": 118,
+    "cache_read_input_tokens": 17876,
+    "cache_creation_input_tokens": 7889,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 7889
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-haiku-4-5-20251001": {
+   "inputTokens": 1521,
+   "outputTokens": 2270,
+   "thinkingTokens": 1466,
+   "cacheReadInputTokens": 110994,
+   "cacheCreationInputTokens": 15437,
+   "webSearchRequests": 0,
+   "costUSD": 0.05476715,
+   "contextWindow": 200000,
+   "maxOutputTokens": 32000,
+   "canonicalModel": "claude-haiku-4-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 1,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "[RL-7731] `str.strip()` removes leading and trailing whitespace (or specified characters) from a string and returns a new string.",
+ "ttft_ms": 1412,
+ "type": "result",
+ "duration_ms": 1664,
+ "uuid": "26b22fba-f9be-4209-9554-c92cbca05491",
+ "ttft_stream_ms": 746,
+ "time_to_request_ms": 48,
+ "first_content_frame_ms": 746,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 68051,
+ "stop_reason": "end_turn",
+ "session_id": "ef71935f-001d-4885-9280-6616d33a1bc3",
+ "total_cost_usd": 0.295823,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 882,
+  "cache_read_input_tokens": 85920,
+  "output_tokens": 746,
+  "output_tokens_details": {
+   "thinking_tokens": 76
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 882,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 316,
+    "cache_read_input_tokens": 43145,
+    "cache_creation_input_tokens": 512,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 512
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 24,
+   "outputTokens": 8287,
+   "thinkingTokens": 888,
+   "cacheReadInputTokens": 431565,
+   "cacheCreationInputTokens": 31648,
+   "webSearchRequests": 0,
+   "costUSD": 0.295823,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Added `src/routes/v2/status.ts` with `statusHandler`. I haven't run or type-checked it.\n\n- **Response:** it returns 200 with `{ status: \"ok\", uptimeSeconds, port }`. `uptimeSeconds` comes from `process.uptime()`.\n- **Port:** it reads `TEST_DAEMON_PORT` and falls back to 8089. This is the same variable `scripts/healthcheck.mjs` uses. It reports the configured port, not the one the server actually bound, so if your server is started on a different port than that variable says, the value will be wrong.\n- **Status:** it always reports `\"ok\"`. There are no dependency checks, so `\"degraded\"` and `\"down\"` are never returned.\n- **Auth:** it needs none, which suits a health probe.\n- **Wiring:** it isn't attached to a router yet. `Dashboard.tsx` expects it at `/health` and ignores the extra `port` field.",
+ "ttft_ms": 1822,
+ "type": "result",
+ "duration_ms": 6307,
+ "uuid": "b52cfcdf-dfdc-45e7-8e8f-638b89f56577",
+ "ttft_stream_ms": 1140,
+ "time_to_request_ms": 60,
+ "first_content_frame_ms": 1140,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

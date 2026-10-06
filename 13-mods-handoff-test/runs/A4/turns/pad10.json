@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 132511,
+ "stop_reason": "end_turn",
+ "session_id": "00d6a882-01d5-43ee-be35-9412985f148c",
+ "total_cost_usd": 1.4564218000000002,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 18707,
+  "cache_read_input_tokens": 383903,
+  "output_tokens": 443,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 18707,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 369,
+    "cache_read_input_tokens": 192103,
+    "cache_creation_input_tokens": 18404,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 18404
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 68,
+   "outputTokens": 11676,
+   "thinkingTokens": 1071,
+   "cacheReadInputTokens": 2694329,
+   "cacheCreationInputTokens": 200165,
+   "webSearchRequests": 0,
+   "costUSD": 1.4564218000000002,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "**First line (1):** `IJvlQ`). **Short 1 uploaded and scheduled 2026-09-10** via Studio browser automation (title/description/tags/cover/related-video-link/AI-disclosure all set, category Education, \"not Made for Kids\") \u2014 video ID `MzY-OJVtWEo`, scheduled public 2026-09-11 07:00 (user set the date/time manually per the standing Schedule-widget gotcha). ... still needs the cover regen (open decision, `pending_decisions.md`) and the re-upload/replace of the still-private `MzY-OJVtWEo`. |`\n\nI abbreviated the middle of line 1 with \"...\" because it is one very long table row.\n\n**Last line (110):** `- Shorts: **resolve the technical proof, cliffhang the verdict** \u2014 RUNLOG's own variant of the shared playbook's default (full withhold). Always close on the long-form's still-unresolved pay`\n\nThe file ends mid-word (\"pay\"). Line 1 continues straight on from where `pad_09.txt` stopped (\"lbrDal\" + \"IJvlQ\").",
+ "ttft_ms": 3249,
+ "type": "result",
+ "duration_ms": 8209,
+ "uuid": "60864766-eb9a-4904-a1b5-4eabfd5d688e",
+ "ttft_stream_ms": 2899,
+ "time_to_request_ms": 56,
+ "first_content_frame_ms": 2899,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

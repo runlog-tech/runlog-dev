@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 100186,
+ "stop_reason": "end_turn",
+ "session_id": "3635f8d6-ef24-4210-a2dd-4dbe3e2f8b45",
+ "total_cost_usd": 1.426243,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 18620,
+  "cache_read_input_tokens": 379780,
+  "output_tokens": 1341,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 18620,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 1267,
+    "cache_read_input_tokens": 189998,
+    "cache_creation_input_tokens": 18404,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 18404
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 68,
+   "outputTokens": 10474,
+   "thinkingTokens": 855,
+   "cacheReadInputTokens": 2645635,
+   "cacheCreationInputTokens": 198060,
+   "webSearchRequests": 0,
+   "costUSD": 1.426243,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "**First line (1):** `IJvlQ`). **Short 1 uploaded and scheduled 2026-09-10** via Studio browser automation (title/description/tags/cover/related-video-link/AI-disclosure all set, category Education, \"not Made for Kids\") \u2014 video ID `MzY-OJVtWEo`, scheduled public 2026-09-11 07:00 (user set the date/time manually per the standing Schedule-widget gotcha). **Real correction found and applied, 2026-09-11**: the long-form's claim \"Pro, Max, even a company's Enterprise seats\" all get the same 5h allowance overgeneralized \u2014 Anthropic also offers a separate usage-based Enterprise plan with no included allowance at all (every token billed from the start, admin spend-limit only). Correction added to the long-form's live description (source: support.claude.com/en/articles/9797531-what-is-the-claude-enterprise-plan). Short 1 made the same overgeneralized claim more prominently (\"every plan... same mechanism, any plan, any tier\") \u2014 pulled private, narration corrected (\"most plans... seat-based Enterprise\"), old Scene C payoff (repeated the false claim visually) cut, rebuilt end to end (37.5s -> 34.8s). Two more real-render fixes same day: pronoun \"her\" -> \"his\" throughout (script/TTS/on-screen/description), and the `*SEAT-BASED PLANS` caveat restyled from a small muted footnote into a bordered pill (38px) after direct feedback about empty space. **Corrected and re-locked 2026-09-11.** `upload-notes.md`/`script.md` updated to match. Re-upload not yet done. Shorts 2-5 not yet uploaded; Short 5 packaged 2026-09-11 (title/description/tags added to `upload-notes.md`), user planning to upload it next. **Short 1 rescripted and rebuilt again 2026-09-13**: the \"full price... shrinks your cache window too\" line was too vague to teach anything, so it was replaced with two real cross-checked numbers \u2014 the price jump now cites the long-form's own verified Section 5 example ($0.08 in-plan-warm vs. $1.00 on-credits-cache-cold for a 400k-context message, ~12x, reused not recalculated) and the cache shrink is spelled out as the real 1 hour \u2192 5 minutes drop. Two new scenes built (a count-up price card landing on \"12x THE PRICE,\" and a depleting conic-gradient \"cache ring\" counting 60 \u2192 5 and landing on \"5 MIN\" \u2014 searched the HyperFrames catalog first, found `conic-progress-ring`/`count-up` as the closest existing primitives, then hand-built matching motion since this project doesn't use registry installs). Also added a like/subscribe line before the link-below close. Passed a `/humanizer` pass before rebuild (trimmed 2 of 4 em dashes to match Short 5's own ~1-per-45-words rate). New TTS + fresh forced alignment, `check` clean (0 errors, 25/25 WCAG AA, 0 layout issues), rendered to `hyperframes/renders/short1.mp4` (53.9s, up from 34.8s) \u2014 still needs the cover regen (open decision, `pending_decisions.md`) and the re-upload/replace of the still-private `MzY-OJVtWEo`. |`\n\n**Last line (110):** `- Shorts: **resolve the technical proof, cliffhang the verdict** \u2014 RUNLOG's own variant of the shared playbook's default (full withhold). Always close on the long-form's still-unresolved pay`\n\nThe file ends mid-word at line 110 (\"pay\"). Line 1 completes the \"`lbrDal`\" cut-off from the end of `pad_09.txt`.",
+ "ttft_ms": 2040,
+ "type": "result",
+ "duration_ms": 9398,
+ "uuid": "81093a51-7662-4511-ad1b-cfee46a380bc",
+ "ttft_stream_ms": 1660,
+ "time_to_request_ms": 65,
+ "first_content_frame_ms": 1660,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

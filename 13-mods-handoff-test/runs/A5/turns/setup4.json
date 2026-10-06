@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 29822,
+ "stop_reason": "end_turn",
+ "session_id": "c275ab41-3ce1-4636-b52b-5885a91170aa",
+ "total_cost_usd": 0.17005760000000003,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1257,
+  "cache_read_input_tokens": 61477,
+  "output_tokens": 1027,
+  "output_tokens_details": {
+   "thinking_tokens": 33
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1257,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 219,
+    "cache_read_input_tokens": 30921,
+    "cache_creation_input_tokens": 892,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 892
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 18,
+   "outputTokens": 3551,
+   "thinkingTokens": 368,
+   "cacheReadInputTokens": 243138,
+   "cacheCreationInputTokens": 21471,
+   "webSearchRequests": 0,
+   "costUSD": 0.17005760000000003,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `migrations/001_initial_schema.sql` (38 lines). I haven't run it against a database.\n\n- **Dialect:** you didn't name a database, so I wrote it as PostgreSQL. It uses `BIGSERIAL`, `TIMESTAMPTZ` and `TEXT[]`, so a different engine would need edits.\n- **Tokens:** `api_tokens` stores `token_hash`, never the raw token.\n- **Deletes:** deleting a user cascades to their tokens. In `storage_logs`, `user_id` is set to NULL, so the log rows stay.\n- **Transaction:** the whole file runs in one transaction.",
+ "ttft_ms": 1950,
+ "type": "result",
+ "duration_ms": 7863,
+ "uuid": "38c6d05f-4ce0-4b29-adc2-bd8e13fa23b2",
+ "ttft_stream_ms": 1209,
+ "time_to_request_ms": 64,
+ "first_content_frame_ms": 1209,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 117568,
+ "stop_reason": "end_turn",
+ "session_id": "cb48657d-34e4-4cc6-a83f-789d0ef98ddf",
+ "total_cost_usd": 1.5684662,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 4005,
+  "cache_read_input_tokens": 425331,
+  "output_tokens": 2985,
+  "output_tokens_details": {
+   "thinking_tokens": 380
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 4005,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 99,
+    "cache_read_input_tokens": 213186,
+    "cache_creation_input_tokens": 2964,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 2964
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 70,
+   "outputTokens": 13415,
+   "thinkingTokens": 1248,
+   "cacheReadInputTokens": 3054721,
+   "cacheCreationInputTokens": 205808,
+   "webSearchRequests": 0,
+   "costUSD": 1.5684662,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "I saved the handoff brief to `./handoff-brief.md`.\n\nNo Handoff Numbers section was in the context, so the brief contains no token figures. I also left out the files and commits sections, as instructed.\n\nThe brief records the last task request as the `pad_10.txt` read, not the handoff request itself.",
+ "ttft_ms": 4602,
+ "type": "result",
+ "duration_ms": 22322,
+ "uuid": "0582bf14-0a69-48bf-8c51-4e8164c6acb2",
+ "ttft_stream_ms": 1127,
+ "time_to_request_ms": 57,
+ "first_content_frame_ms": 1127,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

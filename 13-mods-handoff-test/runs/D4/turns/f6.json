@@ -1,0 +1,107 @@
+{
+ "duration_api_ms": 222718,
+ "stop_reason": "end_turn",
+ "session_id": "8facf8e1-02e1-44dd-a885-f1ee7fe8ce32",
+ "total_cost_usd": 2.5257864999999997,
+ "usage": {
+  "input_tokens": 8,
+  "cache_creation_input_tokens": 2542,
+  "cache_read_input_tokens": 895580,
+  "output_tokens": 1844,
+  "output_tokens_details": {
+   "thinking_tokens": 273
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 2542,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 415,
+    "cache_read_input_tokens": 224565,
+    "cache_creation_input_tokens": 1177,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 1177
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 114,
+   "outputTokens": 27678,
+   "thinkingTokens": 1965,
+   "cacheReadInputTokens": 6534430,
+   "cacheCreationInputTokens": 247517,
+   "webSearchRequests": 0,
+   "costUSD": 2.5257864999999997,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [
+  {
+   "tool_name": "Bash",
+   "tool_use_id": "toolu_01XNmjj21hu4cMAQg2ms8ohj",
+   "tool_input": {
+    "command": "rtk ls /tmp/mods-pilot/D4/work",
+    "description": "List project root"
+   }
+  }
+ ],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 7,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "I updated `package.json`, added `README.md`, and added `src/server.ts` so `npm run daemon` has something to start. I haven't run any of it, and nothing is installed.\n\n- **Scripts:** `test:unit`, `typecheck`, `daemon` and `healthcheck` were already in `package.json`. I didn't add any, but I changed `daemon` to run `src/server.ts` with `TEST_DAEMON_PORT=8089`.\n- **Why the change:** the old `daemon` script ran `auth.ts`, which never calls `listen()`, so the daemon would have exited immediately.\n- **`src/server.ts` (new):** listens on `DAEMON_PORT` and routes `/status`, `/v2/auth`, `POST /v2/upload` and `/v2/billing/export`. Anything else gets a 404. It does not serve `/v2/billing`, `/v2/billing/invoices` or `/v2/storage/history`, which the React components still call.\n- **`README.md` (new):** it has a \"Running unit tests\" section (`npm run test:unit`, with a note that there is no `npm test`). A second section covers starting the daemon, with the port 8089, the 8000ms timeout, `scratch/`, and the cleanup script.",
+ "ttft_ms": 2571,
+ "type": "result",
+ "duration_ms": 15697,
+ "uuid": "83cab3a3-c1f7-4f71-8c00-219e4df89d78",
+ "ttft_stream_ms": 1307,
+ "time_to_request_ms": 59,
+ "first_content_frame_ms": 1307,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

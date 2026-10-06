@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 210937,
+ "stop_reason": "end_turn",
+ "session_id": "64a18aec-27b9-4560-8688-6dc770292fef",
+ "total_cost_usd": 1.8810708999999999,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 2165,
+  "cache_read_input_tokens": 434472,
+  "output_tokens": 1574,
+  "output_tokens_details": {
+   "thinking_tokens": 104
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 2165,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 294,
+    "cache_read_input_tokens": 217637,
+    "cache_creation_input_tokens": 1363,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 1363
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 86,
+   "outputTokens": 22489,
+   "thinkingTokens": 2473,
+   "cacheReadInputTokens": 3698847,
+   "cacheCreationInputTokens": 241301,
+   "webSearchRequests": 0,
+   "costUSD": 1.8810708999999999,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `src/components/StorageChart.tsx` (about 67 lines). That's over your 60-line limit by roughly 7 lines, and I haven't compiled or run it.\n\n- **Layout:** four summary cards (Current, Quota used, Peak, Quota) sit in a grid with at most 2 columns, and it drops to 1 on narrow screens. An inline SVG line chart of usage over time sits below them.\n- **Rules:** it has a named export and no `any`. Fetches send a `Bearer` header with the 8000ms timeout against `localhost:8089`.\n- **Endpoint:** I made up `/v2/storage/history`, which expects `{ quotaBytes, points: [{ date, usedBytes }] }`. That route doesn't exist yet, so adjust it to your real one.\n\nI can trim it under 60 lines, for example by moving the grid style into a shared helper.",
+ "ttft_ms": 3106,
+ "type": "result",
+ "duration_ms": 11804,
+ "uuid": "01b2e9a2-a537-4ba4-980b-e86338f28059",
+ "ttft_stream_ms": 2043,
+ "time_to_request_ms": 54,
+ "first_content_frame_ms": 2043,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

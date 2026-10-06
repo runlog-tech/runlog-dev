@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 29883,
+ "stop_reason": "end_turn",
+ "session_id": "db7da845-029b-468f-a54c-5a161dfa9ee0",
+ "total_cost_usd": 0.18132940000000003,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1347,
+  "cache_read_input_tokens": 62823,
+  "output_tokens": 1119,
+  "output_tokens_details": {
+   "thinking_tokens": 35
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1347,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 267,
+    "cache_read_input_tokens": 31617,
+    "cache_creation_input_tokens": 936,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 936
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 18,
+   "outputTokens": 4337,
+   "thinkingTokens": 222,
+   "cacheReadInputTokens": 245397,
+   "cacheCreationInputTokens": 22211,
+   "webSearchRequests": 0,
+   "costUSD": 0.18132940000000003,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `migrations/001_initial_schema.sql` (37 lines), raw SQL in a single transaction.\n\n- **Database:** I assumed PostgreSQL, because it uses `gen_random_uuid()`, `TIMESTAMPTZ` and `BIGSERIAL`. Tell me if you're on something else.\n- **`users`:** unique email, password hash, and a per-user `quota_bytes` that defaults to 100MB, matching the upload handler.\n- **`api_tokens`:** stores only the token hash, with expiry and revocation columns. Rows cascade-delete with the user.\n- **`storage_logs`:** records `upload` and `delete` actions with a size. It is indexed on `(user_id, created_at DESC)`.\n- **Not run:** I haven't run it against a database.",
+ "ttft_ms": 1415,
+ "type": "result",
+ "duration_ms": 7133,
+ "uuid": "51c2d207-4d51-4817-a012-f75377c159f2",
+ "ttft_stream_ms": 798,
+ "time_to_request_ms": 62,
+ "first_content_frame_ms": 798,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

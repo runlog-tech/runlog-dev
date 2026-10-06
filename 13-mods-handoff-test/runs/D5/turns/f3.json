@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 166042,
+ "stop_reason": "end_turn",
+ "session_id": "3635f8d6-ef24-4210-a2dd-4dbe3e2f8b45",
+ "total_cost_usd": 2.1043863,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 903,
+  "cache_read_input_tokens": 435733,
+  "output_tokens": 736,
+  "output_tokens_details": {
+   "thinking_tokens": 91
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 903,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 189,
+    "cache_read_input_tokens": 218004,
+    "cache_creation_input_tokens": 628,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 628
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 100,
+   "outputTokens": 18846,
+   "thinkingTokens": 1587,
+   "cacheReadInputTokens": 5066869,
+   "cacheCreationInputTokens": 235967,
+   "webSearchRequests": 0,
+   "costUSD": 2.1043863,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `scripts/cleanup.sh` (19 lines). I haven't run it, and it isn't `chmod +x` yet.\n\n- **Dry run by default:** it only lists files. Deleting requires `--apply`.\n- **Scope:** it removes regular files in `scratch/` older than 7 days. `UPLOAD_DIR` changes the directory and `CLEANUP_MAX_AGE_DAYS` changes the age.\n- **Safety:** it refuses an absolute path, a path containing `..`, or an empty `UPLOAD_DIR`.",
+ "ttft_ms": 2386,
+ "type": "result",
+ "duration_ms": 6602,
+ "uuid": "d2d8cd5c-6beb-4f9d-b4ee-6c75fa188b47",
+ "ttft_stream_ms": 1240,
+ "time_to_request_ms": 69,
+ "first_content_frame_ms": 1240,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

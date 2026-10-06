@@ -1,0 +1,1 @@
+{ "name": "context-meter", "version": "0.1.0", "description": "Logs the live context size, rate limits and cost after every turn to the file named by CONTEXT_METER_LOG (measurement only, changes nothing)." }

@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 64362,
+ "stop_reason": "end_turn",
+ "session_id": "00d6a882-01d5-43ee-be35-9412985f148c",
+ "total_cost_usd": 0.2522828,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1752,
+  "cache_read_input_tokens": 68876,
+  "output_tokens": 1468,
+  "output_tokens_details": {
+   "thinking_tokens": 363
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1752,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 315,
+    "cache_read_input_tokens": 34650,
+    "cache_creation_input_tokens": 1328,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 1328
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 26,
+   "outputTokens": 7368,
+   "thinkingTokens": 954,
+   "cacheReadInputTokens": 380034,
+   "cacheCreationInputTokens": 25636,
+   "webSearchRequests": 0,
+   "costUSD": 0.2522828,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 3,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "I created `scripts/healthcheck.ts` (21 lines) and `package.json` (23 lines). I haven't installed dependencies or run anything.\n\n- **Healthcheck:** it fetches `http://localhost:8089/status` with an 8000ms timeout. It exits 0 if the response is OK and 1 if it isn't or the server is unreachable.\n- **Test script:** `test:unit` runs `vitest run` with `TMPDIR=scratch`, so temp files stay out of `/tmp`. There is no generic `test` script, which keeps `npm test` unavailable.\n- **Port:** `dev` and `healthcheck` both set `PORT=8089`.\n- **Other scripts:** `typecheck` runs `tsc --noEmit`.\n\n`dev` points at `src/server.ts`, which doesn't exist yet. `Dashboard.tsx` is still 64 lines, over the 60-line limit. I haven't changed it.",
+ "ttft_ms": 5046,
+ "type": "result",
+ "duration_ms": 11957,
+ "uuid": "78df1c90-1c20-4e8a-9930-353c1046357f",
+ "ttft_stream_ms": 1446,
+ "time_to_request_ms": 54,
+ "first_content_frame_ms": 1446,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

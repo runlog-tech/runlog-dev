@@ -1,0 +1,13 @@
+{
+ "arm": "sonnet-PASTE_DESCRIBED2",
+ "hit": 0,
+ "of": 5,
+ "missing": [
+  "order",
+  "red",
+  "blue",
+  "green",
+  "date"
+ ],
+ "answer": "I don't remember. My context from before the compaction only records that I described the image in one sentence, not what was in it. I can't tell you the order number, the three shape colors or the ship-by date without guessing. If you re-paste the image, I'll read them off it."
+}

@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 63420,
+ "stop_reason": "end_turn",
+ "session_id": "8facf8e1-02e1-44dd-a885-f1ee7fe8ce32",
+ "total_cost_usd": 0.4319804,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 16649,
+  "cache_read_input_tokens": 106958,
+  "output_tokens": 238,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 16649,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 164,
+    "cache_read_input_tokens": 53652,
+    "cache_creation_input_tokens": 16303,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 16303
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 34,
+   "outputTokens": 8122,
+   "thinkingTokens": 850,
+   "cacheReadInputTokens": 561202,
+   "cacheCreationInputTokens": 59613,
+   "webSearchRequests": 0,
+   "costUSD": 0.4319804,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "First line (1): `the video should name explicitly, not just \"add a memory folder.\"`\n\nLast line (92): `**Origin:** live, not researched \u2014 set up for real on both this repo and faceless-yt in the same session. Six `.claude/agents/*.md` `\n\nThe file cuts off mid-sentence after \"`.claude/agents/*.md`\", and the read returned 92 lines with no truncation notice. pad_02 starts mid-sentence, so it continues pad_01, which also ended mid-sentence.",
+ "ttft_ms": 1961,
+ "type": "result",
+ "duration_ms": 4876,
+ "uuid": "fe1b986b-0527-4e94-abe2-88fa1b78d8da",
+ "ttft_stream_ms": 1720,
+ "time_to_request_ms": 67,
+ "first_content_frame_ms": 1721,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

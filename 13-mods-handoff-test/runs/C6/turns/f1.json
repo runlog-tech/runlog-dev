@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 31272,
+ "stop_reason": "end_turn",
+ "session_id": "e02389bc-e6f0-41b8-bf9b-39d85ea5787f",
+ "total_cost_usd": 0.1916296,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1715,
+  "cache_read_input_tokens": 73787,
+  "output_tokens": 1065,
+  "output_tokens_details": {
+   "thinking_tokens": 59
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1715,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 226,
+    "cache_read_input_tokens": 37290,
+    "cache_creation_input_tokens": 922,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 922
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 14,
+   "outputTokens": 4507,
+   "thinkingTokens": 307,
+   "cacheReadInputTokens": 208598,
+   "cacheCreationInputTokens": 26203,
+   "webSearchRequests": 0,
+   "costUSD": 0.1916296,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `src/components/StorageChart.tsx` (about 47 lines). It hasn't been type-checked or run.\n\n- **Props:** `points` (`{ date, usedBytes }[]`) and `quotaBytes`.\n- **Cards:** Current, Peak, Change and Quota used, in a grid that is 1 column by default and 2 from 768px up.\n- **Chart:** an inline SVG line that spans the full grid width. The y-axis runs from 0 to the quota, so the line shows how close usage is to the limit.\n- **Empty data:** it renders \"No storage data.\" when `points` is empty.\n- **Dependencies:** none added. It is a named export with no `any`.",
+ "ttft_ms": 1935,
+ "type": "result",
+ "duration_ms": 8005,
+ "uuid": "e1e4ef3e-4cc0-4001-826e-96618058d38e",
+ "ttft_stream_ms": 1104,
+ "time_to_request_ms": 55,
+ "first_content_frame_ms": 1104,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

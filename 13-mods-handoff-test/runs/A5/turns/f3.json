@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 160672,
+ "stop_reason": "end_turn",
+ "session_id": "c275ab41-3ce1-4636-b52b-5885a91170aa",
+ "total_cost_usd": 1.9271494,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1217,
+  "cache_read_input_tokens": 433557,
+  "output_tokens": 1104,
+  "output_tokens_details": {
+   "thinking_tokens": 249
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1217,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 343,
+    "cache_read_input_tokens": 216966,
+    "cache_creation_input_tokens": 842,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 842
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 86,
+   "outputTokens": 17899,
+   "thinkingTokens": 2495,
+   "cacheReadInputTokens": 4590617,
+   "cacheCreationInputTokens": 207466,
+   "webSearchRequests": 0,
+   "costUSD": 1.9271494,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "I wrote `scripts/cleanup.sh` but haven't run it or made it executable. Run it with `bash scripts/cleanup.sh`, or `chmod +x` it first.\n\n- **What it deletes:** files older than `MAX_AGE_DAYS` (default 7) under `scratch/`, including `scratch/invoices/`. It lists each file as it deletes it. Empty directories are left in place.\n- **Preview first:** `DRY_RUN=1 bash scripts/cleanup.sh` lists what would be deleted without removing anything.\n- **Safety guard:** it refuses to run if `TEMP_DIR` is empty, `/`, `.`, or `/tmp`. It also exits if the directory doesn't exist.\n- **Temp directory:** it reads `UPLOAD_DIR`, the same override `upload.ts` uses, and defaults to `scratch/`. Don't point it at anything else.\n- **Relative path:** `scratch/` resolves against the directory you run the script from, so run it from the project root.",
+ "ttft_ms": 3725,
+ "type": "result",
+ "duration_ms": 10361,
+ "uuid": "397b31d0-8293-4bbc-85fd-d49c82f2a9b0",
+ "ttft_stream_ms": 1351,
+ "time_to_request_ms": 62,
+ "first_content_frame_ms": 1351,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

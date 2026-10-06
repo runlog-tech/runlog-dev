@@ -1,0 +1,12 @@
+{
+ "arm": "sonnet-PASTE_SILENT1",
+ "hit": 1,
+ "of": 5,
+ "missing": [
+  "red",
+  "blue",
+  "green",
+  "date"
+ ],
+ "answer": "Order number: 7731, going by my earlier notes, which describe the image as \"ORDER 7731\". I don't remember the colors of the three shapes or the ship-by date."
+}

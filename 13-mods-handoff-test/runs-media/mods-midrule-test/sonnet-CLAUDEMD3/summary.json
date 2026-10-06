@@ -1,0 +1,7 @@
+{
+ "arm": "sonnet-CLAUDEMD3",
+ "before_compact_has_tag": true,
+ "after_compact_has_tag": true,
+ "pre": "[RL-7731] `str.title()` returns a copy of the string with the first letter of each word capitalized and the remaining letters lowercased.",
+ "post": "[RL-7731] `str.strip()` returns a copy of the string with leading and trailing whitespace (or specified characters) removed."
+}

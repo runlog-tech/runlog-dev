@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 178917,
+ "stop_reason": "end_turn",
+ "session_id": "3635f8d6-ef24-4210-a2dd-4dbe3e2f8b45",
+ "total_cost_usd": 2.3007258999999998,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 1032,
+  "cache_read_input_tokens": 438915,
+  "output_tokens": 831,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 1032,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 158,
+    "cache_read_input_tokens": 219595,
+    "cache_creation_input_tokens": 757,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 757
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 108,
+   "outputTokens": 20262,
+   "thinkingTokens": 1674,
+   "cacheReadInputTokens": 5943287,
+   "cacheCreationInputTokens": 237687,
+   "webSearchRequests": 0,
+   "costUSD": 2.3007258999999998,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 2,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "Created `src/components/InvoiceList.tsx` (46 lines). I haven't compiled or rendered it.\n\n- **Layout:** a 2-column grid that drops to 1 column at 640px or narrower.\n- **Per invoice:** id, date, amount (in dollars) and status (`paid`, `pending` or `failed`).\n- **Empty list:** it shows \"No invoices yet.\"\n- **Code rules:** named export only, with explicit interfaces and no `any`.",
+ "ttft_ms": 4543,
+ "type": "result",
+ "duration_ms": 7128,
+ "uuid": "5531c704-bed3-4649-90d4-739080839505",
+ "ttft_stream_ms": 1601,
+ "time_to_request_ms": 60,
+ "first_content_frame_ms": 1601,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

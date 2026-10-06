@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 42373,
+ "stop_reason": "end_turn",
+ "session_id": "e02389bc-e6f0-41b8-bf9b-39d85ea5787f",
+ "total_cost_usd": 0.2324694,
+ "usage": {
+  "input_tokens": 4,
+  "cache_creation_input_tokens": 2072,
+  "cache_read_input_tokens": 76719,
+  "output_tokens": 1720,
+  "output_tokens_details": {
+   "thinking_tokens": 349
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 2072,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 301,
+    "cache_read_input_tokens": 38507,
+    "cache_creation_input_tokens": 1777,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 1777
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 18,
+   "outputTokens": 6227,
+   "thinkingTokens": 656,
+   "cacheReadInputTokens": 285317,
+   "cacheCreationInputTokens": 28275,
+   "webSearchRequests": 0,
+   "costUSD": 0.2324694,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 5,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "I created `src/utils/fetchWithTimeout.ts`, but I didn't use it in the billing route. `src/routes/v2/invoices.ts` makes no external call, because it only writes the invoice file to disk. I haven't type-checked or run any of this.\n\n- **Wrapper:** `fetchWithTimeout(url, init?, timeoutMs?)` aborts the request after `FETCH_TIMEOUT_MS`, which defaults to 8000ms. It clears the timer when the request finishes.\n- **Where it's used:** I switched `verifyToken` in `src/routes/v2/auth.ts` to the wrapper. That is the only external call in the repo, and it replaces the inline `AbortController` code, so behaviour is the same.\n- **Billing route:** if you want invoices to call an external service, such as token verification or a billing provider, tell me which one and I'll wire it through the wrapper.",
+ "ttft_ms": 3740,
+ "type": "result",
+ "duration_ms": 11164,
+ "uuid": "21387124-70c9-41cc-b156-d52bb1b98e07",
+ "ttft_stream_ms": 1088,
+ "time_to_request_ms": 53,
+ "first_content_frame_ms": 1088,
+ "queued_turn_count": 0,
+ "result_index": 0
+}

@@ -1,0 +1,98 @@
+{
+ "duration_api_ms": 118676,
+ "stop_reason": "end_turn",
+ "session_id": "d9097ea9-06bb-4eaf-a4a2-337e167fa13c",
+ "total_cost_usd": 1.5677081999999998,
+ "usage": {
+  "input_tokens": 6,
+  "cache_creation_input_tokens": 28794,
+  "cache_read_input_tokens": 550618,
+  "output_tokens": 382,
+  "output_tokens_details": {
+   "thinking_tokens": 56
+  },
+  "server_tool_use": {
+   "web_search_requests": 0,
+   "web_fetch_requests": 0
+  },
+  "service_tier": "standard",
+  "cache_creation": {
+   "ephemeral_1h_input_tokens": 28794,
+   "ephemeral_5m_input_tokens": 0
+  },
+  "inference_geo": "not_available",
+  "iterations": [
+   {
+    "input_tokens": 2,
+    "output_tokens": 212,
+    "cache_read_input_tokens": 195181,
+    "cache_creation_input_tokens": 11078,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 11078
+    },
+    "type": "message"
+   }
+  ],
+  "speed": "standard",
+  "fallback_credit": null
+ },
+ "modelUsage": {
+  "claude-sonnet-5-5": {
+   "inputTokens": 80,
+   "outputTokens": 11193,
+   "thinkingTokens": 1102,
+   "cacheReadInputTokens": 3359751,
+   "cacheCreationInputTokens": 195917,
+   "webSearchRequests": 0,
+   "costUSD": 1.5677081999999998,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "canonicalModel": "claude-sonnet-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "permission_denials": [],
+ "terminal_reason": "completed",
+ "fast_mode_state": "off",
+ "fast_mode_disabled_reason": "sdk_opt_in_required",
+ "subagent_stats": {
+  "spawned": 0,
+  "requested": {
+   "background": 0,
+   "foreground": 0,
+   "unset": 0
+  },
+  "started_in_background": 0,
+  "max_depth": 0,
+  "spawned_by_subagents": 0,
+  "completed": 0,
+  "failed": 0,
+  "killed": {
+   "parent": 0,
+   "user": 0,
+   "system": 0
+  },
+  "refused": {
+   "depth_limit": 0,
+   "concurrency_limit": 0,
+   "budget": 0
+  },
+  "by_type": {}
+ },
+ "is_error": false,
+ "num_turns": 3,
+ "subtype": "success",
+ "api_error_status": null,
+ "result": "- **First line:** `d. |` (line 1). It's the tail of the video 8 table row cut off at the end of `pad_08.txt`.\n- **Last line:** the video 10 table row, line 3. It begins `| 10 | Context/cache management for a Pro subscriber \u2014 ...` and ends `...**Long-form published 2026-09-09** (video ID `lbrDal`. The file has only 3 lines in total, and it ends mid-token, with no closing `|`.",
+ "ttft_ms": 2003,
+ "type": "result",
+ "duration_ms": 7814,
+ "uuid": "2b94c622-afdf-4198-b96c-71c0722e0e8a",
+ "ttft_stream_ms": 1521,
+ "time_to_request_ms": 57,
+ "first_content_frame_ms": 1522,
+ "queued_turn_count": 0,
+ "result_index": 0
+}
