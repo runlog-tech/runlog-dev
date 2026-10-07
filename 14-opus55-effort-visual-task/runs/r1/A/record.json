@@ -1,0 +1,63 @@
+{
+  "final_tokens": {
+    "in": 56,
+    "cache_write": 88685,
+    "cache_read": 2355903,
+    "out": 24034,
+    "thinking": 11408
+  },
+  "arm": "A",
+  "model": "claude-sonnet-5-5",
+  "effort": "medium",
+  "assistant_turns": 28,
+  "tokens": {
+    "in": 56,
+    "cache_write": 88685,
+    "cache_read": 2355903,
+    "out": 1066
+  },
+  "tokens_total": 2445710,
+  "output_share_pct": 0.04,
+  "peak_context": 116889,
+  "tool_calls": {
+    "Read": 6,
+    "Bash": 3
+  },
+  "denied": 1,
+  "cost_usd": 1.0663725999999998,
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 56,
+      "outputTokens": 24034,
+      "cacheReadInputTokens": 2355903,
+      "cacheCreationInputTokens": 88685,
+      "webSearchRequests": 0,
+      "costUSD": 1.0663725999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 11408,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "duration_s": 532,
+  "num_turns_reported": 34,
+  "is_error": false,
+  "final_text": "Both sections are written, voiced, framed and rendered. Both pass `check` (lint, layout and contrast all clean), and I looked at snapshots of the key beats.\n\n- **Section 04 (the bill):** narration is about 57s (render 59.3s).\n  - Bars show cost after the reset for all six setups: $0.95, $0.53, $0.57, $0.66, $0.73 and $1.20.\n  - A second beat compares context left after the reset: handoff-compact 60 to 69k against `/compact` about 47k.\n- **Section 05 (the rules):** narration is about 61s (render 63.0s), a few seconds over your 50 to 60 target.\n  - Sonnet shows 0 of 3 broken for each reset setup (0 of 4 for claude-auto-handoff) and 1 of 3 for no reset, with Sonnet's reply to the force-push request quoted.\n  - Haiku shows its refusal with no reset, the `deploy.sh` it wrote after `/compact`, and 0 of 3, 3 of 3, 3 of 3 and 5 of 5 as runs that broke a rule.\n  - It closes with the rule 1 rewording from the pilot, flagged on screen as one run, a guess and not a finding.\n- **Slip:** I ran `generate_tts.py` without `ONLY`, so it regenerated the audio for sections 01 to 03, 06 and 07. File sizes match the old ones, but I can't prove the audio is identical. No alignment files existed for those sections before, so I generated them. If you have backups of the old audio, compare them.\n- **Not verified:**\n  - I did not listen to the audio, and I judged timing from the alignment files and snapshots only.\n  - The brief's rewording quote on screen comes from PILOT_RESULTS.md, not from an exhibi",
+  "quota": {
+    "5h_start": 26,
+    "5h_end": 32,
+    "week_start": 49,
+    "week_end": 49
+  },
+  "outputs": {
+    "hyperframes/compositions/frames/04-result-one-the-bill.html": true,
+    "hyperframes/compositions/frames/05-result-two-the-rules.html": true,
+    "hyperframes/renders/04-result-one-the-bill.mp4": true,
+    "hyperframes/renders/05-result-two-the-rules.mp4": true,
+    "hyperframes/audio/04-result-one-the-bill.wav": true,
+    "hyperframes/audio/05-result-two-the-rules.wav": true
+  },
+  "stopped_by_rule": false
+}

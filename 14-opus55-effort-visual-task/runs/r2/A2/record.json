@@ -1,0 +1,63 @@
+{
+  "final_tokens": {
+    "in": 42,
+    "cache_write": 85382,
+    "cache_read": 1321587,
+    "out": 16268,
+    "thinking": 6928
+  },
+  "arm": "A2",
+  "model": "claude-sonnet-5-5",
+  "effort": "medium",
+  "assistant_turns": 21,
+  "tokens": {
+    "in": 42,
+    "cache_write": 85382,
+    "cache_read": 1321587,
+    "out": 825
+  },
+  "tokens_total": 1407836,
+  "output_share_pct": 0.06,
+  "peak_context": 95726,
+  "tool_calls": {
+    "Bash": 2,
+    "Read": 2
+  },
+  "denied": 0,
+  "cost_usd": 0.7686094000000001,
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 42,
+      "outputTokens": 16268,
+      "cacheReadInputTokens": 1321587,
+      "cacheCreationInputTokens": 85382,
+      "webSearchRequests": 0,
+      "costUSD": 0.7686094000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 6928,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "duration_s": 415,
+  "num_turns_reported": 28,
+  "is_error": false,
+  "final_text": "Sections 04 and 05 are written, voiced, framed and rendered. Both pass `check`, and I looked at snapshots for each.\n\n- **Script:** `script.md` now has both blocks. 04 runs 51.8s and 05 runs 57.1s. The numbers come from `PILOT_RESULTS.md`.\n- **Audio:** TTS and alignments are done for all sections. I re-ran `generate_tts.py` for the whole script, which rewrote every section's wav. The text of the others was unchanged.\n- **Frames:** I added `sec04()` and `sec05()` to `hyperframes/sections.py`.\n  - 04 has six counted-up cost bars and a tokens-left comparison.\n  - 05 has Sonnet and Haiku rule-break scoreboards, the paraphrase \"No force push\", and the Haiku refusal beside the `deploy.sh` that wrote the force push.\n- **Output:** the renders are in `hyperframes/renders/`, named for each section id (`04-result-one-the-bill.mp4`, `05-result-two-the-rules.mp4`).\n- **Not verified, and judgment calls:**\n  - The angle says mods \"roughly halve\" the cost, but the numbers don't. Only `/compact` ($0.53 against $0.95) comes close; the mods land at $0.66 and $0.73. The narration says \"a reset does cut the bill\" and that `/compact` cut it most.\n  - The `sonnet-A6-f7.txt` exhibit comes from a no-reset run, and its caption says so.\n  - \"Every Haiku mod run broke a rule\" rests on 5 runs (`claude-auto-handoff` \u00d73, `context-relay`, `handoff-compact`). The 5 is not in the narration.\n  - I didn't watch the full renders or listen to the audio. I only checked snapshots and the duration.",
+  "quota": {
+    "5h_start": 52,
+    "5h_end": 56,
+    "week_start": 51,
+    "week_end": 51
+  },
+  "outputs": {
+    "hyperframes/compositions/frames/04-result-one-the-bill.html": true,
+    "hyperframes/compositions/frames/05-result-two-the-rules.html": true,
+    "hyperframes/renders/04-result-one-the-bill.mp4": true,
+    "hyperframes/renders/05-result-two-the-rules.mp4": true,
+    "hyperframes/audio/04-result-one-the-bill.wav": true,
+    "hyperframes/audio/05-result-two-the-rules.wav": true
+  },
+  "stopped_by_rule": false
+}

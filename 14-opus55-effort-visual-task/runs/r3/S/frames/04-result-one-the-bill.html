@@ -1,0 +1,173 @@
+<template id="04-result-one-the-bill-template">
+<div id="root" data-composition-id="04-result-one-the-bill" data-start="0" data-duration="64.5" data-width="1920" data-height="1080">
+<style>
+#root{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;background:#08090c;color:#f2f3f5;font-family:'IBM Plex Mono',monospace}
+#root .bgglow{position:absolute;inset:0;background:radial-gradient(900px 600px at 20% 30%,#14202a 0%,transparent 70%),radial-gradient(800px 600px at 90% 90%,#1b1426 0%,transparent 70%)}
+#root .abs{position:absolute}
+#root .badge{left:90px;top:52px;display:flex;align-items:center;gap:0;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:30px;letter-spacing:4px}
+#root .badge .a{background:#ffb02e;color:#08090c;padding:12px 24px}
+#root .badge .b{border:2px solid #ffb02e;color:#ffb02e;padding:10px 24px}
+#root .title{left:90px;top:150px;font-family:'Archivo Black',sans-serif;font-size:50px;line-height:1.1}
+#root .sub{left:90px;top:214px;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:26px;color:#8a93a0}
+#root .row{left:90px;width:1040px;height:84px}
+#root .lab{position:absolute;left:0;top:0;width:340px;height:84px;display:flex;flex-direction:column;justify-content:center;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:28px}
+#root .lab small{font-size:20px;color:#8a93a0;font-weight:500;margin-top:4px}
+#root .track{position:absolute;left:350px;top:12px;height:60px;width:560px}
+#root .bar{position:absolute;left:0;top:0;height:60px;width:0;border-radius:0 8px 8px 0}
+#root .val{position:absolute;top:0;height:60px;line-height:60px;font-family:'Archivo Black',sans-serif;font-size:40px;opacity:0}
+#root .axis{left:440px;top:268px;width:2px;height:640px;background:#2a2f38}
+#root .ref{left:0;top:262px;width:0;height:650px;border-left:3px dashed #8a93a0;opacity:0}
+#root .reflab{top:900px;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:22px;color:#8a93a0;opacity:0;white-space:nowrap}
+#root .panel{left:1190px;top:150px;width:640px;height:760px}
+#root .card{position:absolute;inset:0;border:2px solid #2a2f38;background:#0e1116;border-radius:18px;padding:40px 44px}
+#root .card h3{font-family:'IBM Plex Mono',monospace;font-size:24px;letter-spacing:3px;color:#ffb02e;margin-bottom:34px}
+#root .ln{margin-bottom:34px;opacity:0}
+#root .ln .k{font-family:'IBM Plex Mono',monospace;font-size:22px;color:#8a93a0;letter-spacing:2px;margin-bottom:8px}
+#root .ln .v{font-family:'IBM Plex Mono',monospace;font-weight:800;font-size:32px;line-height:1.25}
+#root .why{position:absolute;inset:0;opacity:0}
+#root .wb{position:absolute;left:0;width:640px;border:2px solid #2a2f38;background:#0e1116;border-radius:18px;padding:28px 36px;opacity:0}
+#root .wb .k{font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:2px;color:#ffb02e;margin-bottom:10px}
+#root .wb .v{font-weight:800;font-size:28px;line-height:1.2}
+#root .tb{position:relative;height:44px;margin-top:16px;width:560px}
+#root .tb .tl{position:absolute;left:0;top:0;height:44px;line-height:44px;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:22px;color:#08090c;padding-left:12px;white-space:nowrap}
+#root .tb .tr{position:absolute;top:0;height:44px}
+#root .tb .tv{position:absolute;top:0;height:44px;line-height:44px;font-family:'Archivo Black',sans-serif;font-size:28px;white-space:nowrap}
+#root .chip{position:absolute;font-family:'IBM Plex Mono',monospace;font-weight:800;font-size:22px;letter-spacing:2px;padding:6px 14px;border-radius:6px;opacity:0;white-space:nowrap}
+#root .banner{left:90px;top:950px;width:1740px;height:86px;border-radius:14px;background:#12301f;border:2px solid #3ddc84;display:flex;align-items:center;justify-content:center;font-family:"Archivo Black",sans-serif;font-size:40px;opacity:0;gap:18px}
+</style>
+<div class="bgglow"></div>
+<div class="abs badge" id="bd"><span class="a">RESULT 01</span><span class="b">THE BILL</span></div>
+<div class="abs title" id="ti">Cost after the reset point</div>
+<div class="abs sub" id="su">8 follow-up turns · mean of the runs · Sonnet 5.5</div>
+<div class="abs axis" id="ax"></div>
+<div id="rows"></div>
+<div class="abs ref" id="ref"></div>
+<div class="abs reflab" id="reflab">NO RESET $0.95</div>
+
+<div class="abs panel">
+  <div class="card" id="metric">
+    <h3>WHAT IS COMPARED</h3>
+    <div class="ln" id="m1"><div class="k">MEASURE</div><div class="v">Cost of every turn after the reset point</div></div>
+    <div class="ln" id="m2"><div class="k">SOURCE</div><div class="v">Usage ledger</div></div>
+    <div class="ln" id="m3"><div class="k">AGGREGATE</div><div class="v">Mean of the runs</div></div>
+    <div class="ln" id="m4"><div class="k">MODEL</div><div class="v">Sonnet 5.5</div></div>
+  </div>
+  <div class="why" id="why">
+    <div class="wb" id="w1" style="top:0;height:190px"><div class="k">WHY 1 · EXTRA CALL</div><div class="v">claude-auto-handoff makes an extra model call to write its brief</div></div>
+    <div class="wb" id="w2" style="top:215px;height:545px"><div class="k">WHY 2 · CONTEXT LEFT AFTER RESET</div>
+      <div class="v" style="font-size:28px;color:#aab2bd">tokens in context</div>
+      <div class="tb" id="t1"><div class="tr" id="t1a"></div><div class="tr" id="t1b"></div><div class="tl" id="t1l">handoff-compact</div><div class="tv" id="t1v">60k to 69k</div></div>
+      <div class="tb" id="t2"><div class="tr" id="t2a"></div><div class="tl" id="t2l">/compact</div><div class="tv" id="t2v">about 47k</div></div>
+      <div class="v" id="grew" style="margin-top:34px;opacity:0;font-size:28px">Then the context grew back</div>
+      <div class="tb" id="t3" style="opacity:0"><div class="tr" id="t3a"></div><div class="tr" id="t3b"></div><div class="tl" id="t3l">handoff-compact, end</div><div class="tv" id="t3v">76k to 93k</div></div>
+      <div class="v" id="pays" style="margin-top:26px;opacity:0;font-size:24px;color:#aab2bd">every follow-up pays for what's in there</div>
+    </div>
+  </div>
+</div>
+<div class="abs banner" id="bn"><span>Mods save you money.</span><span style="color:#3ddc84">/compact saves a little more.</span></div>
+
+<script>
+(function(){
+const rows=[
+ {n:'no reset',s:'do nothing',v:0.95,t:9.0,c:'#8a93a0',d:'$0.95'},
+ {n:'subagent',s:'most of any setup',v:1.20,t:11.8,c:'#ff5d5d',d:'$1.20'},
+ {n:'/compact',s:'built in',v:0.53,t:14.7,c:'#3ddc84',d:'$0.53'},
+ {n:'brief handoff',s:'',v:0.57,t:17.04,c:'#5aa9ff',d:'$0.57'},
+ {n:'claude-auto-handoff',s:'mod',v:0.66,t:18.8,c:'#5aa9ff',d:'$0.66'},
+ {n:'handoff-compact',s:'mod',v:0.73,t:20.86,c:'#5aa9ff',d:'$0.73'}
+];
+const SC=560/1.2, Y0=268, RH=100;
+const host=document.getElementById('rows');
+rows.forEach((r,i)=>{
+  const e=document.createElement('div');e.className='abs row';e.id='row'+i;e.style.top=(Y0+i*RH)+'px';
+  e.innerHTML='<div class="lab" style="opacity:0" id="lab'+i+'">'+r.n+(r.s?'<small>'+r.s+'</small>':'')+'</div><div class="track"><div class="bar" id="bar'+i+'" style="background:'+r.c+'"></div><div class="val" id="val'+i+'" style="left:'+(r.v*SC+18)+'px;color:'+r.c+'">'+r.d+'</div></div>';
+  host.appendChild(e);
+});
+const chipC=document.createElement('div');chipC.className='chip';chipC.id='chipC';chipC.textContent='CHEAPEST';chipC.style.cssText+=';left:'+(90+350+0.53*SC+160)+'px;top:'+(Y0+2*RH+22)+'px;background:#3ddc84;color:#08090c';host.appendChild(chipC);
+const chipN=document.createElement('div');chipN.className='chip';chipN.id='chipN';chipN.textContent='NOTHING TO INSTALL';chipN.style.cssText+=';left:'+(90+350+0.53*SC+160)+'px;top:'+(Y0+2*RH+22)+'px;border:2px solid #3ddc84;color:#3ddc84;';chipN.style.opacity=0;host.appendChild(chipN);
+chipC.style.left=chipN.style.left=(90+350+0.53*SC+150)+'px';
+['4','5'].forEach(k=>{});
+const refX=90+350+0.95*SC;
+const ref=document.getElementById('ref');ref.style.left=refX+'px';
+const rl=document.getElementById('reflab');rl.style.left=(refX-90)+'px';
+
+// token bars
+const T=4; // px per k
+function tr(id,from,to,col,op){const e=document.getElementById(id);e.style.left=(from*T)+'px';e.style.width='0px';e.style.background=col;e.style.opacity=op;e.dataset.w=(to-from)*T;}
+tr('t1a',0,60,'#5aa9ff',1);tr('t1b',60,69,'#5aa9ff',.45);tr('t2a',0,47,'#3ddc84',1);tr('t3a',0,76,'#5aa9ff',1);tr('t3b',76,93,'#5aa9ff',.45);
+// token labels sit on bar, value to the right
+document.getElementById('t1v').style.left=(69*T+16)+'px';document.getElementById('t1v').style.color='#5aa9ff';
+document.getElementById('t2v').style.left=(47*T+16)+'px';document.getElementById('t2v').style.color='#3ddc84';
+document.getElementById('t3v').style.left='0px';document.getElementById('t3v').style.display='none';
+document.getElementById('t3l').style.display='none';
+['t1v','t2v'].forEach(i=>document.getElementById(i).style.opacity=0);
+['t1l','t2l'].forEach(i=>document.getElementById(i).style.opacity=0);
+['t1','t2'].forEach(i=>{});
+
+const tl=gsap.timeline({paused:true});
+const E='power3.out';
+tl.from('#bd',{x:-60,opacity:0,duration:.7,ease:E},0.26);
+tl.from('#ti',{y:20,opacity:0,duration:.6,ease:E},1.08);
+tl.from('#su',{opacity:0,duration:.6},4.4);
+tl.from('#metric',{opacity:0,y:24,duration:.6,ease:E},1.5);
+tl.to('#m1',{opacity:1,duration:.5},2.06);
+tl.to('#m2',{opacity:1,duration:.5},2.9);
+tl.to('#m3',{opacity:1,duration:.5},4.46);
+tl.to('#m4',{opacity:1,duration:.5},5.9);
+tl.from('#ax',{scaleY:0,transformOrigin:'top',duration:.8,ease:E},6.4);
+rows.forEach((r,i)=>{
+  tl.to('#lab'+i,{opacity:1,duration:.4},r.t-0.2);
+  tl.to('#bar'+i,{width:r.v*SC,duration:.9,ease:'power2.out'},r.t);
+  tl.to('#val'+i,{opacity:1,duration:.3},r.t+0.6);
+});
+// reset halves
+tl.to('#ref',{opacity:1,duration:.5},24.4);
+tl.to('#reflab',{opacity:1,duration:.5},24.4);
+[2,3,4,5].forEach(i=>tl.to('#bar'+i,{opacity:.75,duration:.2,yoyo:true,repeat:1},25.3+ (i-2)*0.1));
+// cheapest
+[0,1,3,4,5].forEach(i=>tl.to('#row'+i,{opacity:.35,duration:.6},32.4));
+tl.to('#reflab',{opacity:0,duration:.4},32.4);
+tl.to('#ref',{opacity:.25,duration:.4},32.4);
+tl.to('#chipC',{opacity:1,duration:.4},32.9);
+tl.to('#chipC',{opacity:0,duration:.3},36.5);
+tl.to('#chipN',{opacity:1,duration:.4},36.72);
+// beat both mods
+[4,5].forEach(i=>tl.to('#row'+i,{opacity:.7,duration:.5},38.4));
+// why
+tl.to('#metric',{opacity:0,y:-20,duration:.5},41.3);
+tl.to('#why',{opacity:1,duration:.1},41.8);
+tl.to('#w1',{opacity:1,duration:.5},41.86);
+tl.to('#row4',{opacity:1,duration:.4},42.7);
+tl.to('#row0,#row1,#row3,#row2,#row5',{opacity:.35,duration:.4},41.8);
+tl.to('#w2',{opacity:1,duration:.5},45.36);
+tl.to('#row5',{opacity:1,duration:.4},45.4);
+tl.to('#row4',{opacity:.35,duration:.4},45.4);
+['t1l','t1v'].forEach(i=>tl.to('#'+i,{opacity:1,duration:.3},46.3));
+tl.to('#t1a',{width:60*T,duration:.8,ease:'power2.out'},46.3);
+tl.to('#t1b',{width:9*T,duration:.3},47.0);
+tl.to('#row2',{opacity:1,duration:.4},50.0);
+tl.to('#row5',{opacity:.35,duration:.4},50.0);
+['t2l','t2v'].forEach(i=>tl.to('#'+i,{opacity:1,duration:.3},50.1));
+tl.to('#t2a',{width:47*T,duration:.8,ease:'power2.out'},50.1);
+tl.to('#grew',{opacity:1,duration:.5},54.16);
+tl.to('#t3',{opacity:1,duration:.1},54.4);
+tl.to('#t3a',{width:76*T,duration:1.0,ease:'power2.out'},54.5);
+tl.to('#t3b',{width:17*T,duration:.6,ease:'none'},55.5);
+tl.set('#t3v',{display:'block'},55.5);
+tl.set('#t3v',{left:(93*T+16)+'px'},55.5);
+tl.to('#t3v',{opacity:0,duration:.01},55.5);
+tl.to('#t3v',{opacity:1,duration:.4},56.1);
+tl.set('#t3v',{color:'#5aa9ff'},0);
+tl.to('#pays',{opacity:1,duration:.5},56.9);
+// finale
+tl.to('#why',{opacity:.6,duration:.5},59.7);
+tl.to('#row2',{opacity:1,duration:.4},59.8);
+tl.to('#bn',{opacity:1,duration:.6},59.9);
+tl.fromTo('#bn',{y:30},{y:0,duration:.6,ease:E},59.9);
+tl.to({}, {duration:.01},64.4);
+window.__timelines=window.__timelines||{};
+window.__timelines["04-result-one-the-bill"]=tl;
+})();
+</script>
+</div>
+</template>

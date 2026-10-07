@@ -1,0 +1,1080 @@
+{
+  "runs": [
+    {
+      "round": "r1",
+      "arm": "A",
+      "label": "Sonnet medium",
+      "model": "claude-sonnet-5-5",
+      "effort": "medium",
+      "turns": 34,
+      "tokens": {
+        "input": 56,
+        "cache_write": 88685,
+        "cache_read": 2355903,
+        "output": 24034,
+        "thinking": 11408
+      },
+      "cost_usd": 1.07,
+      "duration_s": 532,
+      "out_tok_per_s": 45.2,
+      "meter_5h": [
+        26,
+        32
+      ],
+      "meter_week": [
+        49,
+        49
+      ],
+      "meta_5h_before": 26,
+      "is_error": false,
+      "phase_turns": {
+        "other": 12,
+        "tts": 5,
+        "render": 11
+      },
+      "phase_input_tokens": {
+        "other": 1050561,
+        "tts": 299864,
+        "render": 1094219
+      }
+    },
+    {
+      "round": "r1",
+      "arm": "B",
+      "label": "Opus low",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "turns": 25,
+      "tokens": {
+        "input": 34,
+        "cache_write": 104963,
+        "cache_read": 1354808,
+        "output": 16371,
+        "thinking": 4831
+      },
+      "cost_usd": 1.44,
+      "duration_s": 562,
+      "out_tok_per_s": 29.1,
+      "meter_5h": [
+        32,
+        40
+      ],
+      "meter_week": [
+        49,
+        50
+      ],
+      "meta_5h_before": 32,
+      "is_error": false,
+      "phase_turns": {
+        "other": 7,
+        "tts": 3,
+        "render": 7
+      },
+      "phase_input_tokens": {
+        "other": 596582,
+        "tts": 177497,
+        "render": 685726
+      }
+    },
+    {
+      "round": "r1",
+      "arm": "C",
+      "label": "Opus medium",
+      "model": "claude-opus-5-5",
+      "effort": "medium",
+      "turns": 33,
+      "tokens": {
+        "input": 52,
+        "cache_write": 109263,
+        "cache_read": 2115769,
+        "output": 25908,
+        "thinking": 12156
+      },
+      "cost_usd": 1.82,
+      "duration_s": 577,
+      "out_tok_per_s": 44.9,
+      "meter_5h": [
+        41,
+        50
+      ],
+      "meter_week": [
+        50,
+        51
+      ],
+      "meta_5h_before": 41,
+      "is_error": false,
+      "phase_turns": {
+        "other": 8,
+        "tts": 6,
+        "script": 1,
+        "frames": 1,
+        "render": 10
+      },
+      "phase_input_tokens": {
+        "other": 676847,
+        "tts": 377698,
+        "script": 72549,
+        "frames": 82089,
+        "render": 1015901
+      }
+    },
+    {
+      "round": "r2",
+      "arm": "A2",
+      "label": "Sonnet medium",
+      "model": "claude-sonnet-5-5",
+      "effort": "medium",
+      "turns": 28,
+      "tokens": {
+        "input": 42,
+        "cache_write": 85382,
+        "cache_read": 1321587,
+        "output": 16268,
+        "thinking": 6928
+      },
+      "cost_usd": 0.77,
+      "duration_s": 415,
+      "out_tok_per_s": 39.2,
+      "meter_5h": [
+        52,
+        56
+      ],
+      "meter_week": [
+        51,
+        51
+      ],
+      "meta_5h_before": 51,
+      "is_error": false,
+      "phase_turns": {
+        "other": 9,
+        "tts": 5,
+        "render": 7
+      },
+      "phase_input_tokens": {
+        "other": 550749,
+        "tts": 261382,
+        "render": 594880
+      }
+    },
+    {
+      "round": "r2",
+      "arm": "B2",
+      "label": "Opus low",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "turns": 19,
+      "tokens": {
+        "input": 36,
+        "cache_write": 68634,
+        "cache_read": 1070102,
+        "output": 12396,
+        "thinking": 3826
+      },
+      "cost_usd": 1.01,
+      "duration_s": 376,
+      "out_tok_per_s": 33.0,
+      "meter_5h": [
+        56,
+        61
+      ],
+      "meter_week": [
+        51,
+        52
+      ],
+      "meta_5h_before": 56,
+      "is_error": false,
+      "phase_turns": {
+        "other": 8,
+        "tts": 5,
+        "render": 5
+      },
+      "phase_input_tokens": {
+        "other": 511188,
+        "tts": 266718,
+        "render": 360866
+      }
+    },
+    {
+      "round": "r2",
+      "arm": "C2",
+      "label": "Opus medium",
+      "model": "claude-opus-5-5",
+      "effort": "medium",
+      "turns": 42,
+      "tokens": {
+        "input": 70,
+        "cache_write": 114159,
+        "cache_read": 3019276,
+        "output": 28950,
+        "thinking": 12011
+      },
+      "cost_usd": 2.1,
+      "duration_s": 597,
+      "out_tok_per_s": 48.5,
+      "meter_5h": [
+        62,
+        72
+      ],
+      "meter_week": [
+        52,
+        53
+      ],
+      "meta_5h_before": 61,
+      "is_error": false,
+      "phase_turns": {
+        "other": 16,
+        "tts": 3,
+        "script": 1,
+        "frames": 2,
+        "render": 13
+      },
+      "phase_input_tokens": {
+        "other": 1275245,
+        "tts": 195458,
+        "script": 69760,
+        "frames": 184196,
+        "render": 1408846
+      }
+    },
+    {
+      "round": "r2",
+      "arm": "D2",
+      "label": "Opus high",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "turns": 52,
+      "tokens": {
+        "input": 70,
+        "cache_write": 169047,
+        "cache_read": 3739379,
+        "output": 43167,
+        "thinking": 21382
+      },
+      "cost_usd": 2.96,
+      "duration_s": 789,
+      "out_tok_per_s": 54.7,
+      "meter_5h": [
+        74,
+        89
+      ],
+      "meter_week": [
+        53,
+        54
+      ],
+      "meta_5h_before": 74,
+      "is_error": false,
+      "phase_turns": {
+        "other": 17,
+        "tts": 6,
+        "render": 11,
+        "frames": 1
+      },
+      "phase_input_tokens": {
+        "other": 1868762,
+        "tts": 425169,
+        "render": 1528689,
+        "frames": 85876
+      }
+    },
+    {
+      "round": "r2",
+      "arm": "E2",
+      "label": "Sonnet high",
+      "model": "claude-sonnet-5-5",
+      "effort": "high",
+      "turns": 31,
+      "tokens": {
+        "input": 44,
+        "cache_write": 122190,
+        "cache_read": 1854014,
+        "output": 29160,
+        "thinking": 17639
+      },
+      "cost_usd": 1.15,
+      "duration_s": 473,
+      "out_tok_per_s": 61.6,
+      "meter_5h": [
+        29,
+        36
+      ],
+      "meter_week": [
+        58,
+        58
+      ],
+      "meta_5h_before": 29,
+      "is_error": false,
+      "phase_turns": {
+        "other": 12,
+        "tts": 3,
+        "render": 7
+      },
+      "phase_input_tokens": {
+        "other": 1047177,
+        "tts": 161794,
+        "render": 767277
+      }
+    },
+    {
+      "round": "r3",
+      "arm": "H",
+      "label": "Opus high",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "turns": 29,
+      "tokens": {
+        "input": 48,
+        "cache_write": 88450,
+        "cache_read": 1554732,
+        "output": 28583,
+        "thinking": 9310
+      },
+      "cost_usd": 1.59,
+      "duration_s": 326,
+      "out_tok_per_s": 87.7,
+      "meter_5h": [
+        2,
+        10
+      ],
+      "meter_week": [
+        55,
+        56
+      ],
+      "meta_5h_before": 2,
+      "is_error": false,
+      "phase_turns": {
+        "other": 15,
+        "render": 8,
+        "frames": 1
+      },
+      "phase_input_tokens": {
+        "other": 957594,
+        "render": 629189,
+        "frames": 56447
+      }
+    },
+    {
+      "round": "r3",
+      "arm": "L",
+      "label": "Opus low",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "turns": 13,
+      "tokens": {
+        "input": 22,
+        "cache_write": 40594,
+        "cache_read": 421071,
+        "output": 8859,
+        "thinking": 986
+      },
+      "cost_usd": 0.59,
+      "duration_s": 173,
+      "out_tok_per_s": 51.2,
+      "meter_5h": [
+        11,
+        14
+      ],
+      "meter_week": [
+        56,
+        56
+      ],
+      "meta_5h_before": 11,
+      "is_error": false,
+      "phase_turns": {
+        "other": 5,
+        "render": 4,
+        "frames": 2
+      },
+      "phase_input_tokens": {
+        "other": 209402,
+        "render": 171456,
+        "frames": 80829
+      }
+    },
+    {
+      "round": "r3",
+      "arm": "M",
+      "label": "Opus medium",
+      "model": "claude-opus-5-5",
+      "effort": "medium",
+      "turns": 19,
+      "tokens": {
+        "input": 34,
+        "cache_write": 67275,
+        "cache_read": 911884,
+        "output": 17084,
+        "thinking": 3215
+      },
+      "cost_usd": 1.06,
+      "duration_s": 231,
+      "out_tok_per_s": 74.0,
+      "meter_5h": [
+        17,
+        22
+      ],
+      "meter_week": [
+        57,
+        57
+      ],
+      "meta_5h_before": 17,
+      "is_error": false,
+      "phase_turns": {
+        "other": 9,
+        "render": 7,
+        "frames": 1
+      },
+      "phase_input_tokens": {
+        "other": 500171,
+        "render": 430284,
+        "frames": 48738
+      }
+    },
+    {
+      "round": "r3",
+      "arm": "S",
+      "label": "Sonnet medium",
+      "model": "claude-sonnet-5-5",
+      "effort": "medium",
+      "turns": 11,
+      "tokens": {
+        "input": 18,
+        "cache_write": 52463,
+        "cache_read": 374950,
+        "output": 11366,
+        "thinking": 3033
+      },
+      "cost_usd": 0.4,
+      "duration_s": 163,
+      "out_tok_per_s": 69.7,
+      "meter_5h": [
+        14,
+        17
+      ],
+      "meter_week": [
+        56,
+        57
+      ],
+      "meta_5h_before": 14,
+      "is_error": false,
+      "phase_turns": {
+        "other": 5,
+        "render": 4
+      },
+      "phase_input_tokens": {
+        "other": 229036,
+        "render": 198395
+      }
+    },
+    {
+      "round": "r3",
+      "arm": "SH",
+      "label": "Sonnet high",
+      "model": "claude-sonnet-5-5",
+      "effort": "high",
+      "turns": 28,
+      "tokens": {
+        "input": 36,
+        "cache_write": 102589,
+        "cache_read": 1257095,
+        "output": 29571,
+        "thinking": 11878
+      },
+      "cost_usd": 0.96,
+      "duration_s": 342,
+      "out_tok_per_s": 86.5,
+      "meter_5h": [
+        23,
+        29
+      ],
+      "meter_week": [
+        57,
+        58
+      ],
+      "meta_5h_before": 23,
+      "is_error": false,
+      "phase_turns": {
+        "other": 9,
+        "render": 8,
+        "frames": 1
+      },
+      "phase_input_tokens": {
+        "other": 643520,
+        "render": 664867,
+        "frames": 51333
+      }
+    },
+    {
+      "round": "r3b",
+      "arm": "H",
+      "label": "Opus high",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "turns": 34,
+      "tokens": {
+        "input": 66,
+        "cache_write": 117620,
+        "cache_read": 2778296,
+        "output": 39305,
+        "thinking": 14845
+      },
+      "cost_usd": 2.28,
+      "duration_s": 474,
+      "out_tok_per_s": 82.9,
+      "meter_5h": [
+        38,
+        50
+      ],
+      "meter_week": [
+        59,
+        60
+      ],
+      "meta_5h_before": 38,
+      "is_error": false,
+      "phase_turns": {
+        "other": 20,
+        "render": 12,
+        "frames": 1
+      },
+      "phase_input_tokens": {
+        "other": 1704759,
+        "render": 1130719,
+        "frames": 60504
+      }
+    },
+    {
+      "round": "r3b",
+      "arm": "L",
+      "label": "Opus low",
+      "model": "claude-opus-5-5",
+      "effort": "low",
+      "turns": 9,
+      "tokens": {
+        "input": 18,
+        "cache_write": 48296,
+        "cache_read": 389677,
+        "output": 9025,
+        "thinking": 1247
+      },
+      "cost_usd": 0.64,
+      "duration_s": 133,
+      "out_tok_per_s": 67.9,
+      "meter_5h": [
+        61,
+        65
+      ],
+      "meter_week": [
+        61,
+        61
+      ],
+      "meta_5h_before": 61,
+      "is_error": false,
+      "phase_turns": {
+        "other": 4,
+        "render": 4,
+        "frames": 1
+      },
+      "phase_input_tokens": {
+        "other": 187398,
+        "render": 203087,
+        "frames": 47506
+      }
+    },
+    {
+      "round": "r3b",
+      "arm": "M",
+      "label": "Opus medium",
+      "model": "claude-opus-5-5",
+      "effort": "medium",
+      "turns": 40,
+      "tokens": {
+        "input": 60,
+        "cache_write": 102396,
+        "cache_read": 2138562,
+        "output": 23366,
+        "thinking": 4418
+      },
+      "cost_usd": 1.71,
+      "duration_s": 333,
+      "out_tok_per_s": 70.2,
+      "meter_5h": [
+        51,
+        60
+      ],
+      "meter_week": [
+        60,
+        60
+      ],
+      "meta_5h_before": 51,
+      "is_error": false,
+      "phase_turns": {
+        "other": 15,
+        "render": 14,
+        "frames": 1
+      },
+      "phase_input_tokens": {
+        "other": 1031471,
+        "render": 1154847,
+        "frames": 54700
+      }
+    },
+    {
+      "round": "r3b",
+      "arm": "S",
+      "label": "Sonnet medium",
+      "model": "claude-sonnet-5-5",
+      "effort": "medium",
+      "turns": 15,
+      "tokens": {
+        "input": 22,
+        "cache_write": 57280,
+        "cache_read": 523759,
+        "output": 11317,
+        "thinking": 1511
+      },
+      "cost_usd": 0.45,
+      "duration_s": 142,
+      "out_tok_per_s": 79.7,
+      "meter_5h": [
+        73,
+        76
+      ],
+      "meter_week": [
+        61,
+        62
+      ],
+      "meta_5h_before": 73,
+      "is_error": false,
+      "phase_turns": {
+        "other": 5,
+        "render": 5,
+        "frames": 1
+      },
+      "phase_input_tokens": {
+        "other": 239123,
+        "render": 289208,
+        "frames": 52730
+      }
+    },
+    {
+      "round": "r3b",
+      "arm": "SH",
+      "label": "Sonnet high",
+      "model": "claude-sonnet-5-5",
+      "effort": "high",
+      "turns": 37,
+      "tokens": {
+        "input": 50,
+        "cache_write": 128025,
+        "cache_read": 2062687,
+        "output": 35893,
+        "thinking": 18059
+      },
+      "cost_usd": 1.28,
+      "duration_s": 372,
+      "out_tok_per_s": 96.5,
+      "meter_5h": [
+        65,
+        73
+      ],
+      "meter_week": [
+        61,
+        61
+      ],
+      "meta_5h_before": 65,
+      "is_error": false,
+      "phase_turns": {
+        "other": 16,
+        "render": 8,
+        "frames": 1
+      },
+      "phase_input_tokens": {
+        "other": 1344520,
+        "render": 786298,
+        "frames": 59944
+      }
+    }
+  ],
+  "frames": {
+    "r1/A": {
+      "decls": 39,
+      "min": 24.0,
+      "median": 48.0,
+      "max": 110.0,
+      "under_40": 8,
+      "ge_84": 5,
+      "border_decls": 4,
+      "em_en_dashes": 0
+    },
+    "r1/B": {
+      "decls": 52,
+      "min": 24.0,
+      "median": 44.0,
+      "max": 170.0,
+      "under_40": 8,
+      "ge_84": 4,
+      "border_decls": 5,
+      "em_en_dashes": 0
+    },
+    "r1/C": {
+      "decls": 41,
+      "min": 24.0,
+      "median": 44.0,
+      "max": 180.0,
+      "under_40": 9,
+      "ge_84": 3,
+      "border_decls": 4,
+      "em_en_dashes": 0
+    },
+    "r2/A2": {
+      "decls": 36,
+      "min": 24.0,
+      "median": 40.0,
+      "max": 210.0,
+      "under_40": 12,
+      "ge_84": 2,
+      "border_decls": 3,
+      "em_en_dashes": 0
+    },
+    "r2/B2": {
+      "decls": 44,
+      "min": 24.0,
+      "median": 44.0,
+      "max": 200.0,
+      "under_40": 9,
+      "ge_84": 6,
+      "border_decls": 4,
+      "em_en_dashes": 0
+    },
+    "r2/C2": {
+      "decls": 47,
+      "min": 24.0,
+      "median": 44.0,
+      "max": 170.0,
+      "under_40": 10,
+      "ge_84": 1,
+      "border_decls": 4,
+      "em_en_dashes": 0
+    },
+    "r2/D2": {
+      "decls": 56,
+      "min": 24.0,
+      "median": 41.0,
+      "max": 130.0,
+      "under_40": 22,
+      "ge_84": 3,
+      "border_decls": 2,
+      "em_en_dashes": 0
+    },
+    "r2/E2": {
+      "decls": 43,
+      "min": 24.0,
+      "median": 40.0,
+      "max": 110.0,
+      "under_40": 13,
+      "ge_84": 2,
+      "border_decls": 8,
+      "em_en_dashes": 0
+    },
+    "r3/H": {
+      "decls": 34,
+      "min": 18.0,
+      "median": 24.0,
+      "max": 68.0,
+      "under_40": 29,
+      "ge_84": 0,
+      "border_decls": 12,
+      "em_en_dashes": 2
+    },
+    "r3/L": {
+      "decls": 19,
+      "min": 18.0,
+      "median": 26.0,
+      "max": 64.0,
+      "under_40": 14,
+      "ge_84": 0,
+      "border_decls": 6,
+      "em_en_dashes": 0
+    },
+    "r3/M": {
+      "decls": 24,
+      "min": 19.0,
+      "median": 27.0,
+      "max": 92.0,
+      "under_40": 17,
+      "ge_84": 3,
+      "border_decls": 5,
+      "em_en_dashes": 0
+    },
+    "r3/S": {
+      "decls": 19,
+      "min": 20.0,
+      "median": 28.0,
+      "max": 50.0,
+      "under_40": 16,
+      "ge_84": 0,
+      "border_decls": 5,
+      "em_en_dashes": 0
+    },
+    "r3/SH": {
+      "decls": 43,
+      "min": 17.0,
+      "median": 26.0,
+      "max": 132.0,
+      "under_40": 32,
+      "ge_84": 5,
+      "border_decls": 6,
+      "em_en_dashes": 0
+    },
+    "r3b/H": {
+      "decls": 27,
+      "min": 20.0,
+      "median": 32.0,
+      "max": 160.0,
+      "under_40": 17,
+      "ge_84": 3,
+      "border_decls": 2,
+      "em_en_dashes": 0
+    },
+    "r3b/L": {
+      "decls": 16,
+      "min": 20.0,
+      "median": 33.0,
+      "max": 160.0,
+      "under_40": 11,
+      "ge_84": 1,
+      "border_decls": 1,
+      "em_en_dashes": 0
+    },
+    "r3b/M": {
+      "decls": 27,
+      "min": 20.0,
+      "median": 38.0,
+      "max": 160.0,
+      "under_40": 14,
+      "ge_84": 5,
+      "border_decls": 1,
+      "em_en_dashes": 0
+    },
+    "r3b/S": {
+      "decls": 7,
+      "min": 36.0,
+      "median": 72.0,
+      "max": 110.0,
+      "under_40": 1,
+      "ge_84": 1,
+      "border_decls": 1,
+      "em_en_dashes": 0
+    },
+    "r3b/SH": {
+      "decls": 31,
+      "min": 20.0,
+      "median": 44.0,
+      "max": 190.0,
+      "under_40": 14,
+      "ge_84": 9,
+      "border_decls": 1,
+      "em_en_dashes": 0
+    }
+  },
+  "scripts": {
+    "r1/A": {
+      "04": {
+        "words": 112,
+        "sentences": 16,
+        "audio_s": 59.3,
+        "wpm": 113,
+        "em_en_dashes": 0,
+        "key_figures_present": [
+          "$0.95 no reset",
+          "$1.20 subagent",
+          "$0.53 /compact",
+          "$0.57 brief",
+          "$0.66 mod",
+          "$0.73 mod"
+        ]
+      },
+      "05": {
+        "words": 141,
+        "sentences": 16,
+        "audio_s": 63.0,
+        "wpm": 134,
+        "em_en_dashes": 0,
+        "key_figures_present": null
+      }
+    },
+    "r1/B": {
+      "04": {
+        "words": 117,
+        "sentences": 17,
+        "audio_s": 62.6,
+        "wpm": 112,
+        "em_en_dashes": 0,
+        "key_figures_present": [
+          "$0.95 no reset",
+          "$1.20 subagent",
+          "$0.53 /compact",
+          "$0.57 brief",
+          "$0.66 mod",
+          "$0.73 mod"
+        ]
+      },
+      "05": {
+        "words": 139,
+        "sentences": 17,
+        "audio_s": 65.8,
+        "wpm": 127,
+        "em_en_dashes": 0,
+        "key_figures_present": null
+      }
+    },
+    "r1/C": {
+      "04": {
+        "words": 132,
+        "sentences": 16,
+        "audio_s": 58.9,
+        "wpm": 134,
+        "em_en_dashes": 0,
+        "key_figures_present": [
+          "$0.95 no reset",
+          "$1.20 subagent",
+          "$0.53 /compact",
+          "$0.57 brief",
+          "$0.66 mod",
+          "$0.73 mod"
+        ]
+      },
+      "05": {
+        "words": 139,
+        "sentences": 16,
+        "audio_s": 60.9,
+        "wpm": 137,
+        "em_en_dashes": 0,
+        "key_figures_present": null
+      }
+    },
+    "r2/A2": {
+      "04": {
+        "words": 176,
+        "sentences": 19,
+        "audio_s": 51.8,
+        "wpm": 204,
+        "em_en_dashes": 0,
+        "key_figures_present": [
+          "$0.95 no reset",
+          "$1.20 subagent",
+          "$0.53 /compact",
+          "$0.57 brief",
+          "$0.66 mod",
+          "$0.73 mod"
+        ]
+      },
+      "05": {
+        "words": 203,
+        "sentences": 22,
+        "audio_s": 57.1,
+        "wpm": 213,
+        "em_en_dashes": 0,
+        "key_figures_present": null
+      }
+    },
+    "r2/B2": {
+      "04": {
+        "words": 165,
+        "sentences": 18,
+        "audio_s": 52.1,
+        "wpm": 190,
+        "em_en_dashes": 0,
+        "key_figures_present": [
+          "$0.95 no reset",
+          "$1.20 subagent",
+          "$0.53 /compact",
+          "$0.57 brief",
+          "$0.66 mod",
+          "$0.73 mod"
+        ]
+      },
+      "05": {
+        "words": 177,
+        "sentences": 18,
+        "audio_s": 49.1,
+        "wpm": 216,
+        "em_en_dashes": 0,
+        "key_figures_present": null
+      }
+    },
+    "r2/C2": {
+      "04": {
+        "words": 181,
+        "sentences": 15,
+        "audio_s": 58.6,
+        "wpm": 185,
+        "em_en_dashes": 0,
+        "key_figures_present": [
+          "$0.95 no reset",
+          "$1.20 subagent",
+          "$0.53 /compact",
+          "$0.57 brief",
+          "$0.66 mod",
+          "$0.73 mod"
+        ]
+      },
+      "05": {
+        "words": 227,
+        "sentences": 18,
+        "audio_s": 60.7,
+        "wpm": 224,
+        "em_en_dashes": 0,
+        "key_figures_present": null
+      }
+    },
+    "r2/D2": {
+      "04": {
+        "words": 169,
+        "sentences": 19,
+        "audio_s": 49.4,
+        "wpm": 205,
+        "em_en_dashes": 0,
+        "key_figures_present": [
+          "$0.95 no reset",
+          "$1.20 subagent",
+          "$0.53 /compact",
+          "$0.57 brief",
+          "$0.66 mod",
+          "$0.73 mod"
+        ]
+      },
+      "05": {
+        "words": 185,
+        "sentences": 17,
+        "audio_s": 54.8,
+        "wpm": 203,
+        "em_en_dashes": 0,
+        "key_figures_present": null
+      }
+    },
+    "r2/E2": {
+      "04": {
+        "words": 182,
+        "sentences": 20,
+        "audio_s": 53.3,
+        "wpm": 205,
+        "em_en_dashes": 0,
+        "key_figures_present": [
+          "$0.95 no reset",
+          "$1.20 subagent",
+          "$0.53 /compact",
+          "$0.57 brief",
+          "$0.66 mod",
+          "$0.73 mod"
+        ]
+      },
+      "05": {
+        "words": 185,
+        "sentences": 18,
+        "audio_s": 51.5,
+        "wpm": 216,
+        "em_en_dashes": 0,
+        "key_figures_present": null
+      }
+    }
+  }
+}

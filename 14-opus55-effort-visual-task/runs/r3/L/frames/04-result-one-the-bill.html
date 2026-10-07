@@ -1,0 +1,131 @@
+<template id="04-result-one-the-bill-template">
+<div data-composition-id="04-result-one-the-bill" data-start="0" data-duration="64.52" data-width="1920" data-height="1080">
+<style>
+  [data-composition-id="04-result-one-the-bill"] { position:absolute; inset:0; width:1920px; height:1080px; background:radial-gradient(1200px 700px at 70% 30%, #12161f 0%, #08090c 70%); color:#e8ebf2; font-family:'IBM Plex Mono',monospace; overflow:hidden; }
+  .b-badge { position:absolute; left:96px; top:64px; display:flex; gap:0; font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:26px; letter-spacing:3px; }
+  .b-badge span { padding:10px 20px; }
+  .b-badge .n { background:#ffb547; color:#08090c; }
+  .b-badge .t { border:2px solid #ffb547; color:#ffb547; }
+  .b-card { position:absolute; left:96px; top:150px; width:1728px; padding:26px 36px; border:1px solid #2a3140; border-radius:14px; background:#0e1219; display:flex; align-items:center; gap:48px; }
+  .b-card h1 { font-family:'Archivo Black',sans-serif; font-size:44px; font-weight:400; line-height:1.1; }
+  .b-card .tags { display:flex; gap:14px; margin-left:auto; }
+  .b-card .tag { font-family:'IBM Plex Mono',monospace; font-size:22px; color:#9aa4b8; border:1px solid #2a3140; border-radius:8px; padding:8px 14px; }
+  .b-card .tag b { color:#e8ebf2; }
+  .b-chart { position:absolute; left:96px; top:330px; width:1728px; }
+  .b-row { position:relative; height:96px; display:flex; align-items:center; }
+  .b-lbl { width:400px; font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:30px; color:#c9d0de; }
+  .b-lbl small { display:block; font-size:18px; color:#6f7a90; font-weight:500; }
+  .b-track { position:relative; flex:1; height:58px; }
+  .b-bar { position:absolute; left:0; top:0; height:58px; border-radius:6px; background:#3a4558; transform-origin:left center; }
+  .b-val { position:absolute; top:4px; font-family:'IBM Plex Mono',monospace; font-weight:800; font-size:40px; }
+  .r-none .b-bar { background:#6b7385; } .r-sub .b-bar { background:#e0565b; }
+  .r-cmp .b-bar { background:#3ddc97; } .r-mod .b-bar { background:#5aa9ff; }
+  .b-cheap { position:absolute; font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:24px; color:#08090c; background:#3ddc97; padding:6px 14px; border-radius:6px; top:12px; }
+  .b-ring { position:absolute; left:-14px; right:-14px; top:4px; bottom:4px; border:3px solid #3ddc97; border-radius:12px; }
+  .b-half { position:absolute; left:1340px; top:640px; width:480px; font-family:'Archivo Black',sans-serif; font-size:56px; line-height:1.05; color:#3ddc97; text-align:right; }
+  .b-half small { display:block; font-family:'IBM Plex Mono',monospace; font-size:24px; color:#9aa4b8; margin-top:12px; }
+  .b-builtin { position:absolute; left:1340px; top:700px; width:480px; text-align:right; font-family:'IBM Plex Mono',monospace; font-size:28px; color:#e8ebf2; }
+  .b-builtin b { color:#3ddc97; }
+  .b-why { position:absolute; left:96px; top:330px; width:1728px; }
+  .b-why h2 { font-family:'Archivo Black',sans-serif; font-weight:400; font-size:64px; color:#ffb547; margin-bottom:28px; }
+  .b-why .p { display:flex; gap:40px; }
+  .b-pane { flex:1; border:1px solid #2a3140; border-radius:14px; background:#0e1219; padding:30px 36px; }
+  .b-pane h3 { font-family:'IBM Plex Mono',monospace; font-size:30px; color:#5aa9ff; margin-bottom:22px; }
+  .b-flow { display:flex; align-items:center; gap:12px; font-family:'IBM Plex Mono',monospace; font-size:22px; }
+  .b-step { white-space:nowrap; border:2px solid #3a4558; border-radius:10px; padding:16px 18px; }
+  .b-step.x { border-color:#ffb547; color:#ffb547; }
+  .b-ctx { display:flex; align-items:center; gap:18px; margin:14px 0; font-family:'IBM Plex Mono',monospace; font-size:26px; }
+  .b-ctx .k { width:250px; white-space:nowrap; font-size:22px; color:#c9d0de; }
+  .b-ctx .bar { height:44px; border-radius:6px; transform-origin:left center; }
+  .b-ctx .v { font-weight:800; font-size:28px; white-space:nowrap; }
+  .b-grow { font-family:'IBM Plex Mono',monospace; font-size:24px; color:#9aa4b8; margin-top:18px; }
+  .b-grow b { color:#e0565b; }
+  .b-end { position:absolute; left:96px; right:96px; bottom:80px; text-align:center; font-family:'Archivo Black',sans-serif; font-size:52px; }
+  .b-end .g { color:#3ddc97; }
+  .b-src { position:absolute; right:96px; bottom:30px; font-family:'IBM Plex Mono',monospace; font-size:18px; color:#8a94a8; }
+</style>
+
+<div class="b-badge"><span class="n">RESULT 01</span><span class="t">THE BILL</span></div>
+<div class="b-card">
+  <h1>Cost of every turn<br>after the reset point</h1>
+  <div class="tags">
+    <div class="tag">source <b>usage ledger</b></div>
+    <div class="tag">stat <b>mean of runs</b></div>
+    <div class="tag">model <b>Sonnet 5.5</b></div>
+  </div>
+</div>
+
+<div class="b-chart">
+  <div class="b-row r-none"><div class="b-lbl">no reset<small>n=3</small></div><div class="b-track"><div class="b-bar" style="width:712px"></div><div class="b-val" style="left:732px">$0.95</div></div></div>
+  <div class="b-row r-sub"><div class="b-lbl">subagent<small>n=3</small></div><div class="b-track"><div class="b-bar" style="width:900px"></div><div class="b-val" style="left:920px">$1.20</div></div></div>
+  <div class="b-row r-cmp"><div class="b-ring"></div><div class="b-lbl">/compact<small>built in · n=3</small></div><div class="b-track"><div class="b-bar" style="width:397px"></div><div class="b-val" style="left:417px">$0.53</div><div class="b-cheap" style="left:580px">CHEAPEST</div></div></div>
+  <div class="b-row r-brief"><div class="b-lbl">brief handoff<small>n=3</small></div><div class="b-track"><div class="b-bar" style="width:427px"></div><div class="b-val" style="left:447px">$0.57</div></div></div>
+  <div class="b-row r-mod r-cah"><div class="b-lbl">claude-auto-handoff<small>mod · n=4</small></div><div class="b-track"><div class="b-bar" style="width:495px"></div><div class="b-val" style="left:515px">$0.66</div></div></div>
+  <div class="b-row r-mod r-hc"><div class="b-lbl">handoff-compact<small>mod · n=3</small></div><div class="b-track"><div class="b-bar" style="width:547px"></div><div class="b-val" style="left:567px">$0.73</div></div></div>
+</div>
+<div class="b-half">a reset ≈ halves it<small>$0.95 → $0.53 to $0.73</small></div>
+<div class="b-builtin">nothing to install,<br><b>beat both mods</b></div>
+
+<div class="b-why">
+  <h2>Why the mods cost more</h2>
+  <div class="p">
+    <div class="b-pane p1">
+      <h3>claude-auto-handoff</h3>
+      <div class="b-flow"><div class="b-step">reset</div>→<div class="b-step x">+ extra model call<br>writes the brief</div>→<div class="b-step">fresh session</div></div>
+    </div>
+    <div class="b-pane p2">
+      <h3>context left after the reset</h3>
+      <div class="b-ctx c1"><div class="k">handoff-compact</div><div class="bar" style="width:300px;background:#5aa9ff"></div><div class="v">60k to 69k</div></div>
+      <div class="b-ctx c2"><div class="k">/compact</div><div class="bar" style="width:205px;background:#3ddc97"></div><div class="v">~47k</div></div>
+      <div class="b-grow">then it grows back (handoff-compact: <b>76k to 93k</b>)<br>and every follow-up pays for it</div>
+    </div>
+  </div>
+</div>
+
+<div class="b-end">The mods save you money. <span class="g">/compact saves a little more.</span></div>
+<div class="b-src">n = 3 to 4 per setup · one task · cost from $.session.usage ledger deltas</div>
+
+<script>
+(function(){
+  const R = '[data-composition-id="04-result-one-the-bill"] ';
+  const q = s => document.querySelectorAll(R + s);
+  const tl = gsap.timeline({ paused: true });
+  tl.from(q('.b-badge'), { x:-40, opacity:0, duration:0.5, ease:'power3.out' }, 0.2);
+  tl.from(q('.b-card'), { y:30, opacity:0, duration:0.6, ease:'power3.out' }, 1.6);
+  tl.from(q('.b-card .tag'), { y:16, opacity:0, duration:0.4, stagger:0.9, ease:'power2.out' }, 2.6);
+  tl.from(q('.b-src'), { opacity:0, duration:0.5 }, 4.5);
+  const rows = [['.r-none',8.9],['.r-sub',11.7],['.r-cmp',14.7],['.r-brief',17.0],['.r-cah',18.8],['.r-hc',20.7]];
+  rows.forEach(([c,t]) => {
+    tl.from(q(c+' .b-lbl'), { opacity:0, x:-20, duration:0.35 }, t);
+    tl.from(q(c+' .b-bar'), { scaleX:0, duration:0.8, ease:'power3.out' }, t+0.1);
+    tl.from(q(c+' .b-val'), { opacity:0, duration:0.3 }, t+0.7);
+  });
+  tl.from(q('.b-half'), { opacity:0, y:20, duration:0.5 }, 24.3);
+  tl.to(q('.r-none, .r-sub'), { opacity:0.45, duration:0.5 }, 24.3);
+  tl.to(q('.b-half'), { opacity:0, duration:0.4 }, 30.6);
+  tl.to(q('.r-brief, .r-mod'), { opacity:0.45, duration:0.5 }, 31.1);
+  tl.from(q('.r-cmp .b-ring'), { opacity:0, scale:1.04, duration:0.5 }, 31.1);
+  tl.from(q('.b-cheap'), { opacity:0, x:-20, duration:0.4 }, 31.2);
+  tl.from(q('.b-builtin'), { opacity:0, y:20, duration:0.5 }, 36.7);
+  tl.to(q('.r-mod'), { opacity:1, duration:0.4 }, 38.4);
+  // phase 3: why
+  tl.to(q('.b-chart, .b-builtin'), { opacity:0, y:-30, duration:0.5 }, 41.2);
+  tl.from(q('.b-why h2'), { opacity:0, y:20, duration:0.5 }, 41.5);
+  tl.from(q('.b-why .p1'), { opacity:0, y:30, duration:0.5 }, 41.9);
+  tl.from(q('.b-step.x'), { opacity:0, scale:0.8, duration:0.4, ease:'back.out(2)' }, 43.1);
+  tl.from(q('.b-why .p2'), { opacity:0, y:30, duration:0.5 }, 45.3);
+  tl.from(q('.c1 .bar'), { scaleX:0, duration:0.8, ease:'power3.out' }, 46.3);
+  tl.from(q('.c1 .v'), { opacity:0, duration:0.3 }, 46.6);
+  tl.from(q('.c2'), { opacity:0, duration:0.3 }, 49.7);
+  tl.from(q('.c2 .bar'), { scaleX:0, duration:0.8, ease:'power3.out' }, 50.3);
+  tl.from(q('.b-grow'), { opacity:0, y:14, duration:0.5 }, 54.1);
+  tl.to(q('.c1 .bar'), { width:405, duration:1.2, ease:'power2.inOut' }, 55.0);
+  tl.from(q('.b-end'), { opacity:0, y:20, duration:0.5 }, 59.9);
+  tl.from(q('.b-end .g'), { opacity:0, duration:0.4 }, 61.5);
+  tl.set({}, {}, 64.52);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["04-result-one-the-bill"] = tl;
+})();
+</script>
+</div>
+</template>

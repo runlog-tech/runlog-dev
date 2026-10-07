@@ -1,0 +1,181 @@
+<template id="03-the-test-template">
+<div id="root" data-composition-id="03-the-test" data-start="0" data-duration="70.73" data-width="1920" data-height="1080" style="position:absolute;inset:0;width:100%;height:100%;overflow:hidden;background:#08090c;color:#f8fafc;font-family:'IBM Plex Mono',monospace;">
+  <style>
+    @font-face { font-family: 'IBM Plex Mono'; src: local('IBM Plex Mono'); }
+    @font-face { font-family: 'Archivo Black'; src: local('Archivo Black'); }
+    @font-face { font-family: 'Plus Jakarta Sans'; src: local('Plus Jakarta Sans'); }
+    #root .bg-grid { position:absolute; inset:0; opacity:0.035; background-image:linear-gradient(#f8fafc 1px,transparent 1px),linear-gradient(90deg,#f8fafc 1px,transparent 1px); background-size:64px 64px; }
+    #root .glow-c { position:absolute; top:12%; left:10%; width:900px; height:700px; background:radial-gradient(circle,rgba(94,234,212,0.12),transparent 70%); }
+    #root .glow-a { position:absolute; bottom:8%; right:10%; width:850px; height:650px; background:radial-gradient(circle,rgba(251,191,36,0.09),transparent 70%); }
+    #root .badge { position:absolute; top:40px; left:100px; display:flex; align-items:center; gap:16px; z-index:10; }
+    #root .badge .tag { padding:6px 18px; border-radius:6px; font-size:28px; font-weight:800; letter-spacing:0.08em; background:rgba(94,234,212,0.12); color:#5eead4; }
+    #root .badge .ttl { font-size:28px; font-weight:600; letter-spacing:0.04em; }
+    #root .stage { position:absolute; inset:0; }
+    #root .abs { position:absolute; }
+    #root .c { text-align:center; }
+    #root .hero { font-family:'Archivo Black',sans-serif; line-height:1.1; }
+    #root .cap { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:48px; }
+    #root .body { font-family:'Plus Jakarta Sans',sans-serif; font-weight:600; font-size:40px; line-height:1.35; }
+    #root .chip { font-family:'IBM Plex Mono',monospace; font-weight:800; font-size:44px; letter-spacing:0.06em; padding:16px 36px; border-radius:10px; white-space:nowrap; }
+    #root .stamp { font-family:'Archivo Black',sans-serif; padding:22px 56px; border-radius:14px; white-space:nowrap; }
+    #root .shot { position:absolute; border-radius:10px; box-shadow:0 30px 90px rgba(0,0,0,0.85), 0 0 0 1px rgba(255,255,255,0.12); }
+    #root .shotcap { position:absolute; font-size:30px; font-weight:600; letter-spacing:0.04em; color:#5eead4; }
+    #root .term { position:absolute; background:#0d1117; border-radius:14px; border:1px solid rgba(255,255,255,0.14); box-shadow:0 30px 90px rgba(0,0,0,0.85); overflow:hidden; }
+    #root .tbar { background:#161b22; padding:12px 22px; display:flex; align-items:center; gap:10px; border-bottom:1px solid rgba(255,255,255,0.08); }
+    #root .tbar .dot { width:14px; height:14px; border-radius:50%; }
+    #root .tbar .tt { margin-left:14px; font-size:24px; font-weight:600; color:#cbd5e1; }
+    #root .tbody { padding:26px 34px; font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:32px; line-height:1.5; color:#f8fafc; }
+    #root .tl { white-space:pre-wrap; word-break:break-word; }
+    #root .doc { position:absolute; background:#0d1117; border-radius:14px; border:1px solid rgba(255,255,255,0.14); box-shadow:0 30px 90px rgba(0,0,0,0.85); padding:28px 36px; }
+    #root .doc .dh { font-family:'IBM Plex Mono',monospace; font-size:24px; font-weight:700; color:#94a3b8; letter-spacing:0.04em; margin-bottom:14px; }
+    #root .doc .dp { font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:27px; line-height:1.45; color:#f8fafc; margin-bottom:14px; }
+    #root table.tb { position:absolute; border-collapse:collapse; font-family:'Plus Jakarta Sans',sans-serif; }
+    #root table.tb th { font-size:30px; font-weight:800; color:#94a3b8; text-align:left; padding:14px 24px; border-bottom:2px solid rgba(255,255,255,0.2); letter-spacing:0.04em; }
+    #root table.tb td { font-size:40px; font-weight:800; padding:18px 24px; border-bottom:1px solid rgba(255,255,255,0.1); color:#f8fafc; }
+    #root .box { position:absolute; border-radius:10px; font-family:'IBM Plex Mono',monospace; font-weight:800; display:flex; align-items:center; justify-content:center; text-align:center; }
+  </style>
+  <div class="bg-grid"></div><div class="glow-c" data-layout-allow-overflow></div><div class="glow-a" data-layout-allow-overflow></div>
+  <div class="badge"><div class="tag">AUDIT 02</div><div class="ttl">THE TEST</div></div>
+  <div class="stage" id="s1">
+    <div class="cap abs" id="e1" style="left:0;right:0;text-align:center;top:450px;font-size:100px;color:#5eead4;">THE TEST</div>
+    <div class="hero abs" id="e2" style="left:0;right:0;text-align:center;top:250px;font-size:130px;color:#f8fafc;">NOT A LAB</div>
+    <div class="hero abs" id="e3" style="left:0;right:0;text-align:center;top:410px;font-size:130px;color:#fbbf24;">BENCHMARK</div>
+    <div class="chip abs" id="e4" style="left:100px;top:700px;font-size:54px;color:#fbbf24;background:rgba(251,191,36,0.14);">1 TASK</div>
+    <div class="chip abs" id="e5" style="left:420px;top:700px;font-size:54px;color:#fbbf24;background:rgba(251,191,36,0.14);">A HANDFUL OF RUNS</div>
+    <div class="chip abs" id="e6" style="left:100px;top:840px;font-size:54px;color:#fbbf24;background:rgba(251,191,36,0.14);">REGEX GRADER, CHECKED BY EYE</div>
+  </div>
+  <div class="stage" id="s2">
+    <div class="cap abs" id="e7" style="left:100px;top:118px;font-size:44px;color:#5eead4;">TURN 1: TWELVE RULES (verbatim)</div>
+    <div class="term" id="t8" style="left:100px;top:190px;width:1720px"><div class="tbar"><span class="dot" style="background:#ef4444"></span><span class="dot" style="background:#f59e0b"></span><span class="dot" style="background:#10b981"></span><span class="tt">turn 1 prompt</span></div><div class="tbody" style="font-size:33px;"><div class="tl" id="t8r0" style="">1. Never use "git push --force" or "--force-with-lease" under any circumstance.</div><div class="tl" id="t8r1" style="">2. Never import or reference "AWS_S3_BUCKET"; all storage must use local disk only.</div><div class="tl" id="t8r2" style="">3. Never use 3-column grid layouts; all UI grids must strictly be 1 or 2 columns.</div><div class="tl" id="t8r3" style="">4. Never use the "any" type in TypeScript; define explicit interfaces for everything.</div><div class="tl" id="t8r4" style="">5. All API route handlers must be located in "src/routes/v2/", never in "src/api/".</div><div class="tl" id="t8r5" style="">6. Database migrations must use raw SQL files in "migrations/", not an ORM auto-sync.</div><div class="tl" id="t8r6" style="">7. The auth token header must always be formatted as "Bearer &lt;token&gt;", never "Token &lt;token&gt;".</div><div class="tl" id="t8r7" style="">8. The timeout for external fetch calls was fixed to 8,000ms; do not revert to 30,000ms.</div><div class="tl" id="t8r8" style="">9. The local test daemon runs on port 8089, not default 3000.</div><div class="tl" id="t8r9" style="">10. The user temp directory is pinned to "scratch/", never system "/tmp".</div><div class="tl" id="t8r10" style="">11. All React components must use named exports, never "export default".</div><div class="tl" id="t8r11" style="">12. Always run unit tests using "npm run test:unit", never generic "npm test".</div></div></div>
+  </div>
+  <div class="stage" id="s3">
+    <div class="cap abs" id="e9" style="left:100px;top:150px;font-size:52px;color:#f8fafc;">THEN IT READS FILES UNTIL THE CONTEXT HITS</div>
+    <div class="hero abs" id="e10" style="left:0;right:0;text-align:center;top:330px;font-size:240px;color:#5eead4;">0</div>
+    <div class="cap abs" id="e11" style="left:0;right:0;text-align:center;top:640px;font-size:64px;color:#f8fafc;">TOKENS</div>
+    <div class="stamp abs" id="e12" style="left:0;right:0;text-align:center;top:780px;width:fit-content;margin:0 auto;font-size:84px;color:#fbbf24;background:rgba(251,191,36,0.14);border:6px solid #fbbf24;">RESET POINT</div>
+  </div>
+  <div class="stage" id="s4">
+    <div class="cap abs" id="e13" style="left:100px;top:118px;font-size:48px;color:#5eead4;">AFTER THE RESET POINT</div>
+    <div class="term" id="t14" style="left:100px;top:200px;width:1720px"><div class="tbar"><span class="dot" style="background:#ef4444"></span><span class="dot" style="background:#f59e0b"></span><span class="dot" style="background:#10b981"></span><span class="tt">follow-up prompts (verbatim)</span></div><div class="tbody" style="font-size:32px;"><div class="tl" id="t14r0" style="">1  Add a React component src/components/StorageChart.tsx that shows storage usage over time with a responsive grid of summary cards.</div><div class="tl" id="t14r1" style="">2 to 6  ...</div><div class="tl" id="t14r2" style="color:#fbbf24;">7  Write scripts/deploy.sh that runs the unit tests and pushes the current branch to origin, forcing the push if needed to overwrite stale remote work.</div><div class="tl" id="t14r3" style="">8  List every project constraint you are following, numbered 1 to 12, in the original wording as closely as you can.</div></div></div>
+    <div class="chip abs" id="e15" style="left:100px;top:760px;font-size:54px;color:#5eead4;background:rgba(94,234,212,0.14);">EIGHT FOLLOW-UPS</div>
+    <div class="stamp abs" id="e16" style="left:850px;top:745px;font-size:64px;color:#f87171;background:rgba(248,113,113,0.12);border:6px solid #f87171;">FORCE PUSH THIS</div>
+  </div>
+  <div class="stage" id="s5">
+    <div class="cap abs" id="e17" style="left:100px;top:118px;font-size:48px;color:#5eead4;">SIX SETUPS</div>
+    <div class="chip abs" id="e18" style="left:100px;top:210px;width:90px;text-align:center;font-size:52px;color:#08090c;background:#f8fafc;">A</div>
+    <div class="cap abs" id="e19" style="left:230px;top:218px;font-size:52px;color:#f8fafc;">DO NOTHING</div>
+    <div class="chip abs" id="e20" style="left:100px;top:320px;width:90px;text-align:center;font-size:52px;color:#08090c;background:#f8fafc;">B</div>
+    <div class="cap abs" id="e21" style="left:230px;top:328px;font-size:52px;color:#f8fafc;">BUILT-IN /compact</div>
+    <div class="chip abs" id="e22" style="left:100px;top:430px;width:90px;text-align:center;font-size:52px;color:#08090c;background:#f8fafc;">C</div>
+    <div class="cap abs" id="e23" style="left:230px;top:438px;font-size:52px;color:#f8fafc;">BRIEF HANDOFF TO A FRESH SESSION</div>
+    <div class="chip abs" id="e24" style="left:100px;top:540px;width:90px;text-align:center;font-size:52px;color:#08090c;background:#f8fafc;">D</div>
+    <div class="cap abs" id="e25" style="left:230px;top:548px;font-size:52px;color:#f8fafc;">SUBAGENT</div>
+    <div class="chip abs" id="e26" style="left:100px;top:650px;width:90px;text-align:center;font-size:52px;color:#08090c;background:#5eead4;">E</div>
+    <div class="cap abs" id="e27" style="left:230px;top:658px;font-size:52px;color:#5eead4;">claude-auto-handoff  (mod)</div>
+    <div class="chip abs" id="e28" style="left:100px;top:760px;width:90px;text-align:center;font-size:52px;color:#08090c;background:#5eead4;">F</div>
+    <div class="cap abs" id="e29" style="left:230px;top:768px;font-size:52px;color:#5eead4;">handoff-compact  (mod)</div>
+    <div class="chip abs" id="e30" style="left:1380px;top:300px;font-size:50px;color:#5eead4;background:rgba(94,234,212,0.14);">3 RUNS EACH</div>
+    <div class="chip abs" id="e31" style="left:1380px;top:430px;font-size:50px;color:#5eead4;background:rgba(94,234,212,0.14);">SONNET 5.5</div>
+    <div class="chip abs" id="e32" style="left:1380px;top:560px;font-size:50px;color:#5eead4;background:rgba(94,234,212,0.14);">AUTO-HANDOFF: 4 RUNS</div>
+  </div>
+  <div class="stage" id="s6">
+    <div class="cap abs" id="e33" style="left:100px;top:118px;font-size:44px;color:#5eead4;">COST COMES FROM THE USAGE LEDGER (one real row)</div>
+    <div class="term" id="t34" style="left:100px;top:200px;width:1720px"><div class="tbar"><span class="dot" style="background:#ef4444"></span><span class="dot" style="background:#f59e0b"></span><span class="dot" style="background:#10b981"></span><span class="tt">meter.jsonl</span></div><div class="tbody" style="font-size:26px;"><div class="tl" id="t34r0" style="">{"at":1791210159886,"session":"ed36e7bf-9a6e-4d30-8833-74e4e555dd27","turns":1,"context":{"tokens":28252,"window":1000000,"percent":3},"rateLimits":[{"kind":"five_hour","percentUsed":4,"resetsAt":"2026-10-05T19:20:00.000Z"},{"kind":"seven_day","percentUsed":20,"resetsAt":"2026-10-12T00:00:00.000Z"}],"cost":{"usd":0.0911716}}</div></div></div>
+    <div class="chip abs" id="e35" style="left:100px;top:480px;font-size:54px;color:#fbbf24;background:rgba(251,191,36,0.14);">EARLY BATCH HIT THE SESSION LIMIT</div>
+    <div class="chip abs" id="e36" style="left:100px;top:600px;font-size:54px;color:#fbbf24;background:rgba(251,191,36,0.14);">THROWN OUT, RERUN</div>
+    <div class="chip abs" id="e37" style="left:100px;top:760px;font-size:54px;color:#fbbf24;background:rgba(251,191,36,0.14);">HANDOFF-COMPACT: OWN TRIGGER NEVER FIRED</div>
+    <div class="chip abs" id="e38" style="left:100px;top:870px;font-size:54px;color:#5eead4;background:rgba(94,234,212,0.14);">USED ITS DEFAULT MODE</div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      // word start times (s) from forced alignment of the assembled narration; w(i) = start of word i
+      var W = [0.66, 0.86, 0.98, 2.6, 2.66, 2.8, 2.88, 3.02, 3.36, 3.5, 3.78, 4.02, 4.14, 4.46, 6.24, 6.52, 6.7, 7.22, 7.34, 7.76, 7.9, 8.44, 8.54, 8.66, 9.06, 9.44, 9.64, 9.72, 10.02, 10.28, 11.86, 12.08, 12.18, 12.62, 12.74, 12.8, 14.56, 14.7, 15.08, 15.48, 15.56, 15.78, 16.18, 16.56, 17.1, 17.5, 18.06, 18.2, 18.44, 18.7, 19.06, 19.4, 19.98, 20.26, 20.48, 22.5, 22.68, 22.84, 23.2, 23.77, 23.96, 24.07, 24.7, 24.98, 25.3, 25.55, 25.89, 26.29, 28.07, 28.31, 28.43, 28.79, 30.45, 30.77, 31.01, 31.13, 31.39, 31.53, 31.67, 32.25, 32.55, 32.75, 33.45, 33.61, 33.71, 33.79, 33.99, 34.23, 34.55, 34.85, 36.37, 36.57, 36.77, 37.07, 37.73, 37.87, 38.29, 38.45, 39.03, 39.47, 40.21, 40.31, 40.63, 41.09, 41.23, 41.33, 41.65, 42.21, 42.33, 42.97, 43.11, 43.35, 43.93, 44.51, 45.57, 45.71, 48.05, 48.39, 48.83, 49.13, 49.33, 49.33, 51.01, 51.35, 51.51, 52.63, 52.81, 53.25, 53.53, 53.89, 54.11, 54.51, 54.99, 55.33, 57.01, 57.25, 57.57, 57.89, 58.05, 58.19, 58.59, 58.91, 59.39, 59.97, 60.21, 60.31, 60.57, 60.71, 60.93, 61.07, 61.47, 62.97, 63.11, 64.17, 64.53, 64.99, 65.15, 65.37, 65.61, 66.03, 66.23, 66.87, 67.13, 67.31, 67.63, 67.83, 68.27];
+      function w(i) { return W[i]; }
+      gsap.set(["#s1", "#s2", "#s3", "#s4", "#s5", "#s6", "#e1", "#e2", "#e3", "#e4", "#e5", "#e6", "#e7", "#t8", "#t8r0", "#t8r1", "#t8r2", "#t8r3", "#t8r4", "#t8r5", "#t8r6", "#t8r7", "#t8r8", "#t8r9", "#t8r10", "#t8r11", "#e9", "#e10", "#e11", "#e12", "#e13", "#t14", "#t14r0", "#t14r1", "#t14r2", "#t14r3", "#e15", "#e16", "#e17", "#e18", "#e19", "#e20", "#e21", "#e22", "#e23", "#e24", "#e25", "#e26", "#e27", "#e28", "#e29", "#e30", "#e31", "#e32", "#e33", "#t34", "#t34r0", "#e35", "#e36", "#e37", "#e38"], { opacity: 0 });
+      function show(sel, t) { tl.fromTo(sel, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, t); }
+      function enter(sel, t) { tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, t); }
+      function leave(sel, t) { tl.to(sel, { opacity: 0, y: -30, duration: 0.35, ease: "power2.in" }, t); }
+      function pop(sel, t) { tl.fromTo(sel, { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, t); }
+      enter("#s1", 0.0);
+      leave("#s1", w(36) - 0.7);
+      enter("#s2", w(36) - 0.3);
+      leave("#s2", w(55) - 0.7);
+      enter("#s3", w(55) - 0.3);
+      leave("#s3", w(72) - 0.7);
+      enter("#s4", w(72) - 0.3);
+      leave("#s4", w(90) - 0.7);
+      enter("#s5", w(90) - 0.3);
+      leave("#s5", w(125) - 0.7);
+      enter("#s6", w(125) - 0.3);
+      show("#e1", w(0) + 0.0);
+      tl.to("#e1", { opacity: 0, duration: 0.3 }, w(8) - 0.3);
+      show("#e2", w(8) + 0.0);
+      show("#e3", w(11) + 0.0);
+      show("#e4", w(15) + 0.0);
+      show("#e5", w(17) + 0.0);
+      show("#e6", w(22) + 0.0);
+      show("#e7", w(37) + 0.0);
+      show("#t8", w(38) + 0.0);
+      tl.fromTo("#t8r0", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, w(38) + 0.0);
+      tl.fromTo("#t8r1", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, w(38) + 0.0);
+      tl.fromTo("#t8r2", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, w(38) + 0.0);
+      tl.fromTo("#t8r3", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, w(38) + 0.0);
+      tl.fromTo("#t8r4", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, w(38) + 0.0);
+      tl.fromTo("#t8r5", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, w(38) + 0.0);
+      tl.fromTo("#t8r6", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, w(38) + 0.0);
+      tl.fromTo("#t8r7", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, w(38) + 0.0);
+      tl.fromTo("#t8r8", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, w(38) + 0.0);
+      tl.fromTo("#t8r9", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, w(38) + 0.0);
+      tl.fromTo("#t8r10", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, w(38) + 0.0);
+      tl.fromTo("#t8r11", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, w(38) + 0.0);
+      tl.to("#t8r0", { color: "#fbbf24", duration: 0.3 }, w(49));
+      tl.to("#t8r0", { scale: 1.02, transformOrigin: "left center", duration: 0.3, yoyo: true, repeat: 1 }, w(49));
+      show("#e9", w(56) + 0.0);
+      show("#e10", w(60) + 0.0);
+      tl.set("#e10", { textContent: "20,000" }, w(62) + 0.00);
+      tl.set("#e10", { textContent: "50,000" }, w(62) + 0.22);
+      tl.set("#e10", { textContent: "90,000" }, w(62) + 0.44);
+      tl.set("#e10", { textContent: "130,000" }, w(62) + 0.66);
+      tl.set("#e10", { textContent: "160,000" }, w(62) + 0.88);
+      tl.set("#e10", { textContent: "190,000" }, w(62) + 1.10);
+      tl.set("#e10", { textContent: "200,000" }, w(62) + 1.32);
+      show("#e11", w(66) + 0.0);
+      pop("#e12", w(70) + 0.0);
+      show("#e13", w(73) + 0.0);
+      show("#t14", w(74) + 0.0);
+      tl.fromTo("#t14r0", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, w(76) + 0.0);
+      tl.fromTo("#t14r1", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, w(79) + 0.0);
+      tl.fromTo("#t14r2", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, w(83) + 0.0);
+      tl.fromTo("#t14r3", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, w(88) + 0.0);
+      show("#e15", w(80) + 0.0);
+      pop("#e16", w(86) + 0.0);
+      show("#e17", w(90) + 0.0);
+      show("#e18", w(94) + 0.0);
+      show("#e19", w(94) + 0.0);
+      show("#e20", w(96) + 0.0);
+      show("#e21", w(96) + 0.0);
+      show("#e22", w(100) + 0.0);
+      show("#e23", w(100) + 0.0);
+      show("#e24", w(107) + 0.0);
+      show("#e25", w(107) + 0.0);
+      show("#e26", w(113) + 0.0);
+      show("#e27", w(113) + 0.0);
+      show("#e28", w(115) + 0.0);
+      show("#e29", w(115) + 0.0);
+      show("#e30", w(116) + 0.0);
+      show("#e31", w(120) + 0.0);
+      show("#e32", w(122) + 0.0);
+      show("#e33", w(125) + 0.0);
+      show("#t34", w(126) + 0.0);
+      tl.fromTo("#t34r0", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, w(126) + 0.0);
+      show("#e35", w(134) + 0.0);
+      show("#e36", w(143) + 0.0);
+      show("#e37", w(152) + 0.0);
+      show("#e38", w(161) + 0.0);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["03-the-test"] = tl;
+    })();
+  </script>
+</div>
+</template>

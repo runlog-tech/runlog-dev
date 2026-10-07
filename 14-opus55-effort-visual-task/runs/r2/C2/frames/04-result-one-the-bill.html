@@ -1,0 +1,240 @@
+<template id="04-result-one-the-bill-template">
+<div id="root" data-composition-id="04-result-one-the-bill" data-start="0" data-duration="58.65" data-width="1920" data-height="1080" style="position:absolute;inset:0;width:100%;height:100%;overflow:hidden;background:#08090c;color:#f8fafc;font-family:'IBM Plex Mono',monospace;">
+  <style>
+    @font-face { font-family: 'IBM Plex Mono'; src: local('IBM Plex Mono'); }
+    @font-face { font-family: 'Archivo Black'; src: local('Archivo Black'); }
+    @font-face { font-family: 'Plus Jakarta Sans'; src: local('Plus Jakarta Sans'); }
+    #root .bg-grid { position:absolute; inset:0; opacity:0.035; background-image:linear-gradient(#f8fafc 1px,transparent 1px),linear-gradient(90deg,#f8fafc 1px,transparent 1px); background-size:64px 64px; }
+    #root .glow-c { position:absolute; top:12%; left:10%; width:900px; height:700px; background:radial-gradient(circle,rgba(94,234,212,0.12),transparent 70%); }
+    #root .glow-a { position:absolute; bottom:8%; right:10%; width:850px; height:650px; background:radial-gradient(circle,rgba(251,191,36,0.09),transparent 70%); }
+    #root .badge { position:absolute; top:40px; left:100px; display:flex; align-items:center; gap:16px; z-index:10; }
+    #root .badge .tag { padding:6px 18px; border-radius:6px; font-size:28px; font-weight:800; letter-spacing:0.08em; background:rgba(94,234,212,0.12); color:#5eead4; }
+    #root .badge .ttl { font-size:28px; font-weight:600; letter-spacing:0.04em; }
+    #root .stage { position:absolute; inset:0; }
+    #root .abs { position:absolute; }
+    #root .c { text-align:center; }
+    #root .hero { font-family:'Archivo Black',sans-serif; line-height:1.1; }
+    #root .cap { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:48px; }
+    #root .body { font-family:'Plus Jakarta Sans',sans-serif; font-weight:600; font-size:40px; line-height:1.35; }
+    #root .chip { font-family:'IBM Plex Mono',monospace; font-weight:800; font-size:44px; letter-spacing:0.06em; padding:16px 36px; border-radius:10px; white-space:nowrap; }
+    #root .stamp { font-family:'Archivo Black',sans-serif; padding:22px 56px; border-radius:14px; white-space:nowrap; }
+    #root .shot { position:absolute; border-radius:10px; box-shadow:0 30px 90px rgba(0,0,0,0.85), 0 0 0 1px rgba(255,255,255,0.12); }
+    #root .shotcap { position:absolute; font-size:30px; font-weight:600; letter-spacing:0.04em; color:#5eead4; }
+    #root .term { position:absolute; background:#0d1117; border-radius:14px; border:1px solid rgba(255,255,255,0.14); box-shadow:0 30px 90px rgba(0,0,0,0.85); overflow:hidden; }
+    #root .tbar { background:#161b22; padding:12px 22px; display:flex; align-items:center; gap:10px; border-bottom:1px solid rgba(255,255,255,0.08); }
+    #root .tbar .dot { width:14px; height:14px; border-radius:50%; }
+    #root .tbar .tt { margin-left:14px; font-size:24px; font-weight:600; color:#cbd5e1; }
+    #root .tbody { padding:26px 34px; font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:32px; line-height:1.5; color:#f8fafc; }
+    #root .tl { white-space:pre-wrap; word-break:break-word; }
+    #root .doc { position:absolute; background:#0d1117; border-radius:14px; border:1px solid rgba(255,255,255,0.14); box-shadow:0 30px 90px rgba(0,0,0,0.85); padding:28px 36px; }
+    #root .doc .dh { font-family:'IBM Plex Mono',monospace; font-size:24px; font-weight:700; color:#94a3b8; letter-spacing:0.04em; margin-bottom:14px; }
+    #root .doc .dp { font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:27px; line-height:1.45; color:#f8fafc; margin-bottom:14px; }
+    #root table.tb { position:absolute; border-collapse:collapse; font-family:'Plus Jakarta Sans',sans-serif; }
+    #root table.tb th { font-size:30px; font-weight:800; color:#94a3b8; text-align:left; padding:14px 24px; border-bottom:2px solid rgba(255,255,255,0.2); letter-spacing:0.04em; }
+    #root table.tb td { font-size:40px; font-weight:800; padding:18px 24px; border-bottom:1px solid rgba(255,255,255,0.1); color:#f8fafc; }
+    #root .box { position:absolute; border-radius:10px; font-family:'IBM Plex Mono',monospace; font-weight:800; display:flex; align-items:center; justify-content:center; text-align:center; }
+  </style>
+  <div class="bg-grid"></div><div class="glow-c" data-layout-allow-overflow></div><div class="glow-a" data-layout-allow-overflow></div>
+  <div class="badge"><div class="tag">RESULT 01</div><div class="ttl">THE BILL</div></div>
+  <div class="stage" id="s1">
+    <div class="hero abs" id="e1" style="left:0;right:0;text-align:center;top:170px;font-size:170px;color:#5eead4;">THE BILL</div>
+    <div class="cap abs" id="e2" style="left:0;right:0;text-align:center;top:420px;font-size:56px;color:#f8fafc;">WHAT EACH SETUP COST AFTER THE RESET POINT</div>
+    <div class="chip abs" id="e3" style="left:250px;top:560px;font-size:50px;color:#5eead4;background:rgba(94,234,212,0.14);">THE FEATURE</div>
+    <div class="chip abs" id="e4" style="left:740px;top:560px;font-size:50px;color:#5eead4;background:rgba(94,234,212,0.14);">+ 8 FOLLOW-UPS</div>
+    <div class="chip abs" id="e5" style="left:1300px;top:560px;font-size:50px;color:#5eead4;background:rgba(94,234,212,0.14);">SONNET 5.5</div>
+    <div class="chip abs" id="e6" style="left:0;right:0;text-align:center;top:690px;width:fit-content;margin:0 auto;font-size:46px;color:#f8fafc;background:rgba(248,250,252,0.08);">SOURCE: CLAUDE CODE USAGE LEDGER</div>
+    <div class="chip abs" id="e7" style="left:0;right:0;text-align:center;top:820px;width:fit-content;margin:0 auto;font-size:46px;color:#fbbf24;background:rgba(251,191,36,0.14);">AVERAGE OF 3 RUNS  ·  claude-auto-handoff: 4</div>
+  </div>
+  <div class="stage" id="s2">
+    <div class="cap abs" id="e8" style="left:100px;top:118px;font-size:40px;color:#94a3b8;">COST AFTER THE RESET POINT  ·  SONNET 5.5  ·  MEAN PER SETUP</div>
+    <div class="abs" id="e9" style="left:1370px;top:190px;width:3px;height:700px;background:repeating-linear-gradient(180deg,rgba(148,163,184,0.4) 0 14px,transparent 14px 26px);transform-origin:top center;"></div>
+    <div class="cap abs" id="e10" style="left:100px;top:210px;width:520px;font-size:40px;color:#f8fafc;">DO NOTHING</div>
+    <div id="e11" class="abs" style="left:640px;top:216px;height:46px;width:730px;background:#94a3b8;border-radius:6px;transform-origin:left center;"></div>
+    <div class="hero abs" id="e12" style="left:1400px;top:206px;font-size:56px;color:#94a3b8;">$0.00</div>
+    <div class="cap abs" id="e13" style="left:100px;top:325px;width:520px;font-size:40px;color:#f8fafc;">/compact</div>
+    <div id="e14" class="abs" style="left:640px;top:331px;height:46px;width:407px;background:#5eead4;border-radius:6px;transform-origin:left center;"></div>
+    <div class="hero abs" id="e15" style="left:1077px;top:321px;font-size:56px;color:#5eead4;">$0.00</div>
+    <div class="cap abs" id="e16" style="left:100px;top:440px;width:520px;font-size:40px;color:#f8fafc;">BRIEF HANDOFF</div>
+    <div id="e17" class="abs" style="left:640px;top:446px;height:46px;width:438px;background:#f8fafc;border-radius:6px;transform-origin:left center;"></div>
+    <div class="hero abs" id="e18" style="left:1108px;top:436px;font-size:56px;color:#f8fafc;">$0.00</div>
+    <div class="cap abs" id="e19" style="left:100px;top:555px;width:520px;font-size:40px;color:#f8fafc;">claude-auto-handoff</div>
+    <div id="e20" class="abs" style="left:640px;top:561px;height:46px;width:507px;background:#fbbf24;border-radius:6px;transform-origin:left center;"></div>
+    <div class="hero abs" id="e21" style="left:1177px;top:551px;font-size:56px;color:#fbbf24;">$0.00</div>
+    <div class="cap abs" id="e22" style="left:100px;top:670px;width:520px;font-size:40px;color:#f8fafc;">handoff-compact</div>
+    <div id="e23" class="abs" style="left:640px;top:676px;height:46px;width:561px;background:#fbbf24;border-radius:6px;transform-origin:left center;"></div>
+    <div class="hero abs" id="e24" style="left:1231px;top:666px;font-size:56px;color:#fbbf24;">$0.00</div>
+    <div class="cap abs" id="e25" style="left:100px;top:785px;width:520px;font-size:40px;color:#f8fafc;">SUBAGENT</div>
+    <div id="e26" class="abs" style="left:640px;top:791px;height:46px;width:923px;background:#f87171;border-radius:6px;transform-origin:left center;"></div>
+    <div class="hero abs" id="e27" style="left:1593px;top:781px;font-size:56px;color:#f87171;">$0.00</div>
+    <div class="cap abs" id="e28" style="left:1220px;top:895px;width:300px;text-align:center;font-size:26px;color:#94a3b8;">DOING NOTHING</div>
+    <div class="stamp abs" id="e29" style="left:100px;top:930px;font-size:56px;color:#5eead4;background:rgba(94,234,212,0.14);border:6px solid #5eead4;">ROUGHLY HALF THE BILL</div>
+    <div class="chip abs" id="e30" style="left:100px;top:945px;font-size:48px;color:#5eead4;background:rgba(94,234,212,0.14);">/compact, 3 RUNS: $0.50 TO $0.56</div>
+    <div class="chip abs" id="e31" style="left:100px;top:945px;font-size:48px;color:#fbbf24;background:rgba(251,191,36,0.14);">MODS CUT THE BILL</div>
+    <div class="chip abs" id="e32" style="left:720px;top:945px;font-size:48px;color:#5eead4;background:rgba(94,234,212,0.14);">BUT DON'T BEAT /compact</div>
+  </div>
+  <div class="stage" id="s3">
+    <div class="cap abs" id="e33" style="left:100px;top:118px;font-size:48px;color:#5eead4;">WHY THE MODS COST MORE</div>
+    <div class="term" id="t34" style="left:100px;top:200px;width:1720px"><div class="tbar"><span class="dot" style="background:#ef4444"></span><span class="dot" style="background:#f59e0b"></span><span class="dot" style="background:#10b981"></span><span class="tt">claude plugin validate .  (claude-auto-handoff)</span></div><div class="tbody" style="font-size:32px;"><div class="tl" id="t34r0" style="">❯ ./register.tsx calls: … $.fs.read, $.fs.write, <span style="color:#fbbf24">$.model.complete (via handoff)</span>, …</div></div></div>
+    <div class="chip abs" id="e35" style="left:100px;top:380px;font-size:46px;color:#fbbf24;background:rgba(251,191,36,0.14);">+1 MODEL CALL TO WRITE THE BRIEF</div>
+    <div class="cap abs" id="e36" style="left:100px;top:520px;font-size:40px;color:#94a3b8;">TOKENS LEFT IN CONTEXT RIGHT AFTER THE RESET</div>
+    <div class="cap abs" id="e37" style="left:100px;top:610px;width:480px;font-size:42px;color:#fbbf24;">handoff-compact</div>
+    <div id="e38" class="abs" style="left:600px;top:615px;height:50px;width:600px;background:#fbbf24;border-radius:6px;transform-origin:left center;"></div>
+    <div id="e39" class="abs" style="left:1200px;top:615px;height:50px;width:90px;background:repeating-linear-gradient(45deg,rgba(251,191,36,0.75) 0 10px,rgba(251,191,36,0.3) 10px 20px);border-radius:0 6px 6px 0;"></div>
+    <div class="hero abs" id="e40" style="left:1320px;top:604px;font-size:58px;color:#fbbf24;">60k TO 69k</div>
+    <div class="cap abs" id="e41" style="left:100px;top:730px;width:480px;font-size:42px;color:#5eead4;">/compact</div>
+    <div id="e42" class="abs" style="left:600px;top:735px;height:50px;width:470px;background:#5eead4;border-radius:6px;transform-origin:left center;"></div>
+    <div class="hero abs" id="e43" style="left:1100px;top:724px;font-size:58px;color:#5eead4;">ABOUT 47k</div>
+    <div class="chip abs" id="e44" style="left:100px;top:850px;font-size:44px;color:#fbbf24;background:rgba(251,191,36,0.14);">EVERY LATER TURN PAYS FOR THE GAP</div>
+    <div class="stamp abs" id="e45" style="left:100px;top:950px;font-size:50px;color:#5eead4;background:rgba(94,234,212,0.14);border:6px solid #5eead4;">CHEAPEST RESET: ALREADY BUILT IN</div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      // word start times (s) from forced alignment of the assembled narration; w(i) = start of word i
+      var W = [0.24, 0.66, 0.82, 0.94, 1.38, 1.5, 1.82, 2.0, 2.22, 2.5, 2.82, 3.02, 3.14, 3.44, 3.8, 3.9, 4.22, 4.36, 4.48, 4.66, 5.18, 5.32, 5.32, 6.46, 6.64, 6.78, 6.92, 7.24, 7.86, 8.06, 8.28, 8.38, 8.54, 8.84, 8.92, 9.16, 9.52, 9.74, 9.88, 10.94, 11.12, 11.4, 11.7, 11.98, 12.28, 12.9, 13.0, 13.4, 13.74, 14.18, 14.46, 14.78, 15.02, 15.5, 15.72, 16.0, 16.18, 16.28, 16.48, 16.74, 16.94, 17.04, 17.36, 17.46, 17.74, 18.36, 18.44, 18.54, 18.8, 19.3, 19.64, 19.88, 20.24, 20.36, 20.58, 20.72, 20.96, 21.26, 21.5, 22.64, 22.88, 23.06, 23.16, 23.42, 23.92, 24.06, 24.4, 24.76, 25.38, 25.5, 25.62, 25.84, 26.32, 27.29, 27.45, 27.82, 28.07, 28.39, 28.5, 29.46, 29.62, 29.96, 30.59, 30.68, 31.12, 31.41, 31.52, 31.79, 31.91, 32.15, 32.24, 32.61, 33.03, 33.21, 33.37, 33.65, 34.25, 34.37, 34.47, 34.83, 35.01, 35.21, 35.31, 35.59, 35.73, 35.91, 36.09, 36.33, 36.71, 37.59, 38.53, 38.87, 38.99, 39.17, 39.53, 39.87, 40.17, 40.29, 40.53, 40.67, 41.87, 42.89, 43.23, 43.65, 43.81, 44.27, 44.59, 45.07, 45.61, 45.75, 46.71, 47.11, 47.45, 47.85, 48.19, 48.67, 48.87, 49.29, 50.13, 50.33, 50.63, 51.03, 51.27, 51.53, 51.93, 52.03, 52.15, 53.03, 53.19, 53.29, 53.45, 53.73, 53.93, 54.07, 54.55, 55.07, 55.21, 55.65, 55.99, 56.17, 56.57];
+      function w(i) { return W[i]; }
+      gsap.set(["#s1", "#s2", "#s3", "#e1", "#e2", "#e3", "#e4", "#e5", "#e6", "#e7", "#e8", "#e9", "#e10", "#e11", "#e12", "#e13", "#e14", "#e15", "#e16", "#e17", "#e18", "#e19", "#e20", "#e21", "#e22", "#e23", "#e24", "#e25", "#e26", "#e27", "#e28", "#e29", "#e30", "#e31", "#e32", "#e33", "#t34", "#t34r0", "#e35", "#e36", "#e37", "#e38", "#e39", "#e40", "#e41", "#e42", "#e43", "#e44", "#e45"], { opacity: 0 });
+      function show(sel, t) { tl.fromTo(sel, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, t); }
+      function enter(sel, t) { tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, t); }
+      function leave(sel, t) { tl.to(sel, { opacity: 0, y: -30, duration: 0.35, ease: "power2.in" }, t); }
+      function pop(sel, t) { tl.fromTo(sel, { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, t); }
+      enter("#s1", 0.0);
+      leave("#s1", w(39) - 0.7);
+      enter("#s2", w(39) - 0.3);
+      leave("#s2", w(129) - 0.7);
+      enter("#s3", w(129) - 0.3);
+      show("#e1", w(0) + 0.0);
+      show("#e2", w(5) + 0.0);
+      show("#e3", w(14) + 0.0);
+      show("#e4", w(17) + 0.0);
+      show("#e5", w(20) + 0.0);
+      show("#e6", w(23) + 0.0);
+      show("#e7", w(28) + 0.0);
+      show("#e8", w(39) + 0.0);
+      tl.fromTo("#e9", { opacity: 0 }, { opacity: 1, duration: 0.4 }, w(44) + 0.0);
+      tl.fromTo("#e9", { scaleY: 0 }, { scaleY: 1, duration: 0.5, ease: "power2.out" }, w(44) + 0.0);
+      show("#e10", w(39) + 0.0);
+      show("#e11", w(39) + 0.0);
+      tl.fromTo("#e11", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, w(39) + 0.1);
+      show("#e12", w(39) + 0.0);
+      tl.set("#e12", { textContent: "$0.08" }, w(39) + 0.00);
+      tl.set("#e12", { textContent: "$0.16" }, w(39) + 0.05);
+      tl.set("#e12", { textContent: "$0.24" }, w(39) + 0.10);
+      tl.set("#e12", { textContent: "$0.32" }, w(39) + 0.15);
+      tl.set("#e12", { textContent: "$0.40" }, w(39) + 0.20);
+      tl.set("#e12", { textContent: "$0.47" }, w(39) + 0.25);
+      tl.set("#e12", { textContent: "$0.55" }, w(39) + 0.30);
+      tl.set("#e12", { textContent: "$0.63" }, w(39) + 0.35);
+      tl.set("#e12", { textContent: "$0.71" }, w(39) + 0.40);
+      tl.set("#e12", { textContent: "$0.79" }, w(39) + 0.45);
+      tl.set("#e12", { textContent: "$0.87" }, w(39) + 0.50);
+      tl.set("#e12", { textContent: "$0.95" }, w(39) + 0.55);
+      show("#e13", w(45) + 0.0);
+      show("#e14", w(45) + 0.0);
+      tl.fromTo("#e14", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, w(45) + 0.1);
+      show("#e15", w(45) + 0.0);
+      tl.set("#e15", { textContent: "$0.04" }, w(45) + 0.00);
+      tl.set("#e15", { textContent: "$0.09" }, w(45) + 0.05);
+      tl.set("#e15", { textContent: "$0.13" }, w(45) + 0.10);
+      tl.set("#e15", { textContent: "$0.18" }, w(45) + 0.15);
+      tl.set("#e15", { textContent: "$0.22" }, w(45) + 0.20);
+      tl.set("#e15", { textContent: "$0.27" }, w(45) + 0.25);
+      tl.set("#e15", { textContent: "$0.31" }, w(45) + 0.30);
+      tl.set("#e15", { textContent: "$0.35" }, w(45) + 0.35);
+      tl.set("#e15", { textContent: "$0.40" }, w(45) + 0.40);
+      tl.set("#e15", { textContent: "$0.44" }, w(45) + 0.45);
+      tl.set("#e15", { textContent: "$0.49" }, w(45) + 0.50);
+      tl.set("#e15", { textContent: "$0.53" }, w(45) + 0.55);
+      show("#e16", w(79) + 0.0);
+      show("#e17", w(79) + 0.0);
+      tl.fromTo("#e17", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, w(79) + 0.1);
+      show("#e18", w(79) + 0.0);
+      tl.set("#e18", { textContent: "$0.05" }, w(79) + 0.00);
+      tl.set("#e18", { textContent: "$0.09" }, w(79) + 0.05);
+      tl.set("#e18", { textContent: "$0.14" }, w(79) + 0.10);
+      tl.set("#e18", { textContent: "$0.19" }, w(79) + 0.15);
+      tl.set("#e18", { textContent: "$0.24" }, w(79) + 0.20);
+      tl.set("#e18", { textContent: "$0.28" }, w(79) + 0.25);
+      tl.set("#e18", { textContent: "$0.33" }, w(79) + 0.30);
+      tl.set("#e18", { textContent: "$0.38" }, w(79) + 0.35);
+      tl.set("#e18", { textContent: "$0.43" }, w(79) + 0.40);
+      tl.set("#e18", { textContent: "$0.47" }, w(79) + 0.45);
+      tl.set("#e18", { textContent: "$0.52" }, w(79) + 0.50);
+      tl.set("#e18", { textContent: "$0.57" }, w(79) + 0.55);
+      show("#e19", w(92) + 0.0);
+      show("#e20", w(92) + 0.0);
+      tl.fromTo("#e20", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, w(92) + 0.1);
+      show("#e21", w(92) + 0.0);
+      tl.set("#e21", { textContent: "$0.06" }, w(92) + 0.00);
+      tl.set("#e21", { textContent: "$0.11" }, w(92) + 0.05);
+      tl.set("#e21", { textContent: "$0.17" }, w(92) + 0.10);
+      tl.set("#e21", { textContent: "$0.22" }, w(92) + 0.15);
+      tl.set("#e21", { textContent: "$0.28" }, w(92) + 0.20);
+      tl.set("#e21", { textContent: "$0.33" }, w(92) + 0.25);
+      tl.set("#e21", { textContent: "$0.39" }, w(92) + 0.30);
+      tl.set("#e21", { textContent: "$0.44" }, w(92) + 0.35);
+      tl.set("#e21", { textContent: "$0.50" }, w(92) + 0.40);
+      tl.set("#e21", { textContent: "$0.55" }, w(92) + 0.45);
+      tl.set("#e21", { textContent: "$0.61" }, w(92) + 0.50);
+      tl.set("#e21", { textContent: "$0.66" }, w(92) + 0.55);
+      show("#e22", w(98) + 0.0);
+      show("#e23", w(98) + 0.0);
+      tl.fromTo("#e23", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, w(98) + 0.1);
+      show("#e24", w(98) + 0.0);
+      tl.set("#e24", { textContent: "$0.06" }, w(98) + 0.00);
+      tl.set("#e24", { textContent: "$0.12" }, w(98) + 0.05);
+      tl.set("#e24", { textContent: "$0.18" }, w(98) + 0.10);
+      tl.set("#e24", { textContent: "$0.24" }, w(98) + 0.15);
+      tl.set("#e24", { textContent: "$0.30" }, w(98) + 0.20);
+      tl.set("#e24", { textContent: "$0.36" }, w(98) + 0.25);
+      tl.set("#e24", { textContent: "$0.43" }, w(98) + 0.30);
+      tl.set("#e24", { textContent: "$0.49" }, w(98) + 0.35);
+      tl.set("#e24", { textContent: "$0.55" }, w(98) + 0.40);
+      tl.set("#e24", { textContent: "$0.61" }, w(98) + 0.45);
+      tl.set("#e24", { textContent: "$0.67" }, w(98) + 0.50);
+      tl.set("#e24", { textContent: "$0.73" }, w(98) + 0.55);
+      show("#e25", w(102) + 0.0);
+      show("#e26", w(102) + 0.0);
+      tl.fromTo("#e26", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, w(102) + 0.1);
+      show("#e27", w(102) + 0.0);
+      tl.set("#e27", { textContent: "$0.10" }, w(102) + 0.00);
+      tl.set("#e27", { textContent: "$0.20" }, w(102) + 0.05);
+      tl.set("#e27", { textContent: "$0.30" }, w(102) + 0.10);
+      tl.set("#e27", { textContent: "$0.40" }, w(102) + 0.15);
+      tl.set("#e27", { textContent: "$0.50" }, w(102) + 0.20);
+      tl.set("#e27", { textContent: "$0.60" }, w(102) + 0.25);
+      tl.set("#e27", { textContent: "$0.70" }, w(102) + 0.30);
+      tl.set("#e27", { textContent: "$0.80" }, w(102) + 0.35);
+      tl.set("#e27", { textContent: "$0.90" }, w(102) + 0.40);
+      tl.set("#e27", { textContent: "$1.00" }, w(102) + 0.45);
+      tl.set("#e27", { textContent: "$1.10" }, w(102) + 0.50);
+      tl.set("#e27", { textContent: "$1.20" }, w(102) + 0.55);
+      show("#e28", w(44) + 0.0);
+      pop("#e29", w(53) + 0.0);
+      tl.to("#e29", { opacity: 0, duration: 0.3 }, w(69) - 0.3);
+      show("#e30", w(69) + 0.0);
+      tl.to("#e30", { opacity: 0, duration: 0.3 }, w(116) - 0.3);
+      show("#e31", w(117) + 0.0);
+      show("#e32", w(123) + 0.0);
+      show("#e33", w(129) + 0.0);
+      show("#t34", w(130) + 0.0);
+      tl.fromTo("#t34r0", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, w(130) + 0.0);
+      show("#e35", w(133) + 0.0);
+      show("#e36", w(140) + 0.0);
+      show("#e37", w(140) + 0.0);
+      show("#e38", w(141) + 0.0);
+      tl.fromTo("#e38", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, w(141) + 0.1);
+      tl.fromTo("#e39", { opacity: 0 }, { opacity: 1, duration: 0.4 }, w(144) + 0.2);
+      show("#e40", w(142) + 0.0);
+      show("#e41", w(150) + 0.0);
+      show("#e42", w(151) + 0.0);
+      tl.fromTo("#e42", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, w(151) + 0.1);
+      show("#e43", w(152) + 0.0);
+      show("#e44", w(159) + 0.0);
+      pop("#e45", w(173) + 0.0);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["04-result-one-the-bill"] = tl;
+    })();
+  </script>
+</div>
+</template>

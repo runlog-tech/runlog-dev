@@ -1,0 +1,1 @@
+{"at":1791349217918,"session":"12edc265-6275-419e-81b0-5432a48e5d28","turns":1,"context":{"tokens":77619,"window":1000000,"percent":8},"rateLimits":[{"kind":"five_hour","percentUsed":22,"resetsAt":"2026-10-07T09:30:00.000Z"},{"kind":"seven_day","percentUsed":57,"resetsAt":"2026-10-12T00:00:00.000Z"}],"cost":{"usd":1.0623927999999998}}

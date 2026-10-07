@@ -1,0 +1,63 @@
+{
+  "final_tokens": {
+    "in": 36,
+    "cache_write": 68634,
+    "cache_read": 1070102,
+    "out": 12396,
+    "thinking": 3826
+  },
+  "arm": "B2",
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "assistant_turns": 18,
+  "tokens": {
+    "in": 36,
+    "cache_write": 68634,
+    "cache_read": 1070102,
+    "out": 174
+  },
+  "tokens_total": 1138946,
+  "output_share_pct": 0.02,
+  "peak_context": 78978,
+  "tool_calls": {
+    "Bash": 4,
+    "Read": 1
+  },
+  "denied": 0,
+  "cost_usd": 1.0111563999999997,
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 36,
+      "outputTokens": 12396,
+      "cacheReadInputTokens": 1070102,
+      "cacheCreationInputTokens": 68634,
+      "webSearchRequests": 0,
+      "costUSD": 1.0111563999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3826,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "duration_s": 376,
+  "num_turns_reported": 19,
+  "is_error": false,
+  "final_text": "Both sections are written, voiced and rendered, and every number on screen comes from `PILOT_RESULTS.md` and `NOTES.md`.\n\n1. **Script:** I wrote the Section 04 and 05 blocks in `script.md` in the same format as the others. 04 is the cost of each setup after the reset on Sonnet, with slash compact cheapest at $0.53 against $0.95 for no reset. 05 is rule breaks: none on Sonnet, but on Haiku slash compact and the brief handoff broke a rule 3 of 3 and the mods 5 of 5, with \"never\" dropped from the force-push rule. Both passed the banned-word lint.\n2. **Audio:** 04 runs 52.1s and 05 runs 49.1s. 05 is slightly under your 50 to 60 second target. Word timings are rebuilt.\n3. **Frames:** I added `sec04()` and `sec05()` to `hyperframes/sections.py`. 04 has a definition card, a six-bar cost chart, a \"$0.95 \u2192 $0.53, roughly half\" beat, and why the mods cost more. 05 shows rule-break counts for each setup on Sonnet then Haiku. Then come Haiku's refusal next to the force-push line it wrote into `deploy.sh` after compacting (both from the exhibit files), and the original rule beside the brief's version without \"never\".\n4. **Checks:** both `check` runs pass with 0 errors. I fixed an overlapping \"cheapest\" stamp and a cramped terminal panel after the snapshots. One minor note remains in 04's first scene: a caption sits 10px over the top edge. I only spot-checked about five frames per section and haven't watched either full render.\n5. **Things to know:**\n   - The first TTS run regenerated the ",
+  "quota": {
+    "5h_start": 56,
+    "5h_end": 61,
+    "week_start": 51,
+    "week_end": 52
+  },
+  "outputs": {
+    "hyperframes/compositions/frames/04-result-one-the-bill.html": true,
+    "hyperframes/compositions/frames/05-result-two-the-rules.html": true,
+    "hyperframes/renders/04-result-one-the-bill.mp4": true,
+    "hyperframes/renders/05-result-two-the-rules.mp4": true,
+    "hyperframes/audio/04-result-one-the-bill.wav": true,
+    "hyperframes/audio/05-result-two-the-rules.wav": true
+  },
+  "stopped_by_rule": false
+}

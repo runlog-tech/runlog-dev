@@ -1,0 +1,415 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Plus Jakarta Sans";
+          src: url("assets/fonts/PlusJakartaSans-latin.woff2") format("woff2");
+          font-weight: 200 800;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: #08090c;
+          color: #eae6da;
+          font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        #rb-grid {
+          position: absolute;
+          inset: 0;
+          opacity: 0.035;
+          background-image:
+            linear-gradient(#eae6da 1px, transparent 1px),
+            linear-gradient(90deg, #eae6da 1px, transparent 1px);
+          background-size: 64px 64px;
+        }
+        #rb-spot {
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(ellipse 900px 520px at 50% 55%, rgba(94, 234, 212, 0.08), transparent);
+        }
+        #rb-header {
+          position: absolute;
+          left: 96px;
+          top: 64px;
+          display: flex;
+          align-items: center;
+          gap: 24px;
+          font-family: "IBM Plex Mono", monospace;
+          font-weight: 800;
+          font-size: 26px;
+          letter-spacing: 0.08em;
+        }
+        #rb-header .num { color: #5eead4; }
+        #rb-header .sep { width: 2px; height: 30px; background: #4a4326; }
+        #rb-foot {
+          position: absolute;
+          left: 96px;
+          right: 96px;
+          bottom: 48px;
+          font-family: "IBM Plex Mono", monospace;
+          font-weight: 600;
+          font-size: 20px;
+          letter-spacing: 0.04em;
+          display: flex;
+          justify-content: space-between;
+        }
+        .rb-stage {
+          position: absolute;
+          left: 96px;
+          right: 96px;
+          top: 150px;
+          bottom: 110px;
+          opacity: 0;
+        }
+        .rb-eyebrow {
+          font-family: "IBM Plex Mono", monospace;
+          font-weight: 800;
+          font-size: 26px;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+        .rb-headline {
+          font-family: "Archivo Black", sans-serif;
+          font-size: 72px;
+          line-height: 1.1;
+        }
+        .rb-divider {
+          height: 2px;
+          background: linear-gradient(to right, transparent, rgba(74, 67, 38, 0.9), transparent);
+        }
+        .cy { color: #5eead4; }
+        .am { color: #fbbf24; }
+        .rd { color: #f87171; }
+
+        /* Stage A: what is measured */
+        #rb-a { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        #rb-a-title { font-family: "Archivo Black", sans-serif; font-size: 150px; line-height: 1; }
+        #rb-a-def { margin-top: 40px; font-family: "Archivo Black", sans-serif; font-size: 64px; line-height: 1.15; max-width: 1500px; }
+        #rb-a-div { width: 900px; margin-top: 48px; }
+        #rb-a-tags { margin-top: 44px; display: flex; gap: 72px; justify-content: center; }
+        .rb-tag { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+        .rb-tag .k { font-family: "IBM Plex Mono", monospace; font-weight: 800; font-size: 22px; letter-spacing: 0.08em; }
+        .rb-tag .v { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 800; font-size: 40px; }
+
+        /* Stage B: ranked chart */
+        #rb-b-head { display: flex; justify-content: space-between; align-items: baseline; }
+        #rb-rows { position: absolute; left: 0; right: 0; top: 96px; }
+        .rb-row { position: absolute; left: 0; right: 0; height: 104px; display: flex; align-items: center; opacity: 0; }
+        .rb-row .rank { width: 90px; font-family: "Archivo Black", sans-serif; font-size: 40px; }
+        .rb-row .name { width: 500px; font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 34px; }
+        .rb-row .track { position: relative; width: 900px; height: 56px; }
+        .rb-row .bar { position: absolute; left: 0; top: 0; height: 56px; border-radius: 0 6px 6px 0; transform-origin: left center; }
+        .rb-row .val { margin-left: 28px; font-family: "Archivo Black", sans-serif; font-size: 60px; min-width: 200px; }
+        .rb-row .flag { position: absolute; top: 12px; font-family: "IBM Plex Mono", monospace; font-weight: 800; font-size: 22px; letter-spacing: 0.08em; white-space: nowrap; }
+        .rb-row .hl { position: absolute; left: -24px; right: -24px; top: 4px; bottom: 4px; border-radius: 10px; opacity: 0; }
+        #rb-half { position: absolute; top: -8px; height: 660px; z-index: 2; width: 0; border-left: 3px dashed #fbbf24; opacity: 0; }
+        #rb-half-l { position: absolute; top: -46px; z-index: 2; font-family: "IBM Plex Mono", monospace; font-weight: 800; font-size: 22px; letter-spacing: 0.08em; color: #fbbf24; white-space: nowrap; opacity: 0; }
+
+        /* Stage C: cheapest */
+        #rb-c { display: flex; flex-direction: column; align-items: center; text-align: center; }
+        #rb-c-name { margin-top: 28px; font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 96px; color: #5eead4; text-shadow: 0 0 40px rgba(94, 234, 212, 0.35); }
+        #rb-c-val { font-family: "Archivo Black", sans-serif; font-size: 160px; line-height: 1.05; }
+        #rb-c-sub { margin-top: 8px; font-size: 40px; font-weight: 800; }
+        #rb-c-pills { margin-top: 44px; display: flex; gap: 48px; }
+        .rb-pill { padding: 14px 30px; border-radius: 999px; background: rgba(94, 234, 212, 0.1); font-family: "IBM Plex Mono", monospace; font-weight: 800; font-size: 26px; letter-spacing: 0.06em; }
+        #rb-c-vs { margin-top: 40px; width: 1100px; }
+        .rb-vs { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 0; font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 34px; }
+        .rb-vs .v { font-family: "Archivo Black", sans-serif; font-size: 52px; }
+
+        /* Stage D: extra call */
+        #rb-d { display: flex; flex-direction: column; justify-content: center; }
+        #rb-term { margin-top: 56px; background: #12140f; border: 2px solid #4a4326; border-radius: 14px; overflow: hidden; }
+        #rb-term-bar { height: 52px; display: flex; align-items: center; gap: 10px; padding: 0 22px; border-bottom: 2px solid #4a4326; }
+        #rb-term-bar i { width: 10px; height: 10px; border-radius: 50%; display: block; }
+        #rb-term-bar span { margin-left: 18px; font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 22px; }
+        #rb-term-body { padding: 36px 40px; font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 40px; line-height: 1.5; }
+        .rb-line { opacity: 0; white-space: nowrap; }
+        #rb-call { position: relative; display: inline-block; padding: 2px 12px; border-radius: 8px; }
+        #rb-call-glow { position: absolute; inset: 0; border-radius: 8px; background: rgba(251, 191, 36, 0.16); box-shadow: 0 0 0 3px #fbbf24; opacity: 0; }
+
+        /* Stage E: context left */
+        #rb-e-rows { margin-top: 70px; display: flex; flex-direction: column; gap: 60px; }
+        .rb-ctx .lbl { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 18px; }
+        .rb-ctx .who { font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 38px; }
+        .rb-ctx .amt { font-family: "Archivo Black", sans-serif; font-size: 110px; line-height: 1; }
+        .rb-ctx .track { position: relative; height: 64px; width: 1728px; background: rgba(74, 67, 38, 0.25); border-radius: 8px; }
+        .rb-ctx .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 8px; transform-origin: left center; }
+        .rb-ctx .grow { position: absolute; top: 0; bottom: 0; border-radius: 0 8px 8px 0; transform-origin: left center; background: repeating-linear-gradient(45deg, rgba(251, 191, 36, 0.55) 0 14px, rgba(251, 191, 36, 0.25) 14px 28px); }
+        #rb-e-grow-l { position: absolute; top: 80px; font-family: "IBM Plex Mono", monospace; font-weight: 800; font-size: 24px; letter-spacing: 0.08em; color: #fbbf24; white-space: nowrap; opacity: 0; }
+        #rb-e-turns { margin-top: 56px; display: flex; align-items: center; gap: 22px; opacity: 0; }
+        #rb-e-turns .t { width: 150px; height: 44px; border-radius: 8px; background: rgba(74, 67, 38, 0.5); display: flex; align-items: center; justify-content: center; font-family: "IBM Plex Mono", monospace; font-weight: 800; font-size: 20px; }
+        #rb-e-turns .lab { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 800; font-size: 32px; margin-right: 12px; }
+
+        /* Stage F: close */
+        #rb-f { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 56px; }
+        .rb-close { font-family: "Archivo Black", sans-serif; font-size: 96px; line-height: 1.1; opacity: 0; }
+      </style>
+
+      <div id="root" data-composition-id="04-result-one-the-bill" data-width="1920" data-height="1080">
+        <div id="rb-grid"></div>
+        <div id="rb-spot"></div>
+
+        <div id="rb-header">
+          <span class="num">RESULT 01</span><span class="sep"></span><span>THE BILL</span>
+        </div>
+
+        <!-- A: what is measured -->
+        <div id="rb-a" class="rb-stage">
+          <div id="rb-a-title">The bill</div>
+          <div id="rb-a-def">Cost of every turn <span class="cy">after the reset point</span></div>
+          <div id="rb-a-div" class="rb-divider"></div>
+          <div id="rb-a-tags">
+            <div class="rb-tag" id="rb-a-t1"><span class="k am">AVERAGED</span><span class="v">Mean of the runs</span></div>
+            <div class="rb-tag" id="rb-a-t2"><span class="k am">MODEL</span><span class="v">Sonnet 5.5</span></div>
+            <div class="rb-tag" id="rb-a-t3"><span class="k am">SOURCE</span><span class="v">usage ledger</span></div>
+          </div>
+        </div>
+
+        <!-- B: ranked chart -->
+        <div id="rb-b" class="rb-stage">
+          <div id="rb-b-head">
+            <div class="rb-eyebrow">Cost after the reset point, mean per setup</div>
+            <div class="rb-eyebrow am">8 follow-up turns</div>
+          </div>
+          <div id="rb-rows">
+            <div id="rb-half"></div>
+            <div id="rb-half-l">HALF OF NO RESET</div>
+          </div>
+        </div>
+
+        <!-- C: cheapest -->
+        <div id="rb-c" class="rb-stage">
+          <div class="rb-eyebrow am" id="rb-c-eye">Cheapest of all six</div>
+          <div id="rb-c-name">/compact</div>
+          <div id="rb-c-val">$0.53</div>
+          <div id="rb-c-sub">The one you already have.</div>
+          <div id="rb-c-pills">
+            <div class="rb-pill" id="rb-c-p1">NOTHING TO INSTALL</div>
+            <div class="rb-pill" id="rb-c-p2">BEAT BOTH MODS</div>
+          </div>
+          <div id="rb-c-vs">
+            <div class="rb-vs" id="rb-c-v1"><span>claude-auto-handoff</span><span class="v">$0.66</span></div>
+            <div class="rb-divider"></div>
+            <div class="rb-vs" id="rb-c-v2"><span>handoff-compact</span><span class="v">$0.73</span></div>
+          </div>
+        </div>
+
+        <!-- D: why 1, the extra call -->
+        <div id="rb-d" class="rb-stage">
+          <div class="rb-eyebrow am">Why 1 of 2 &nbsp;|&nbsp; claude-auto-handoff</div>
+          <div class="rb-headline" style="margin-top: 18px">An extra model call to write its brief</div>
+          <div id="rb-term">
+            <div id="rb-term-bar">
+              <i style="background: #ef4444"></i><i style="background: #f59e0b"></i><i style="background: #10b981"></i>
+              <span>validate-claude-auto-handoff.txt</span>
+            </div>
+            <div id="rb-term-body">
+              <div class="rb-line" id="rb-l1">❯ ./register.tsx calls:</div>
+              <div class="rb-line" id="rb-l2">&nbsp;&nbsp;$.command.run (via handoff)</div>
+              <div class="rb-line" id="rb-l3">&nbsp;&nbsp;<span id="rb-call"><span id="rb-call-glow"></span><span style="position: relative">$.model.complete (via handoff)</span></span></div>
+              <div class="rb-line" id="rb-l4">&nbsp;&nbsp;$.session.messages (via handoff)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- E: why 2, context left -->
+        <div id="rb-e" class="rb-stage">
+          <div class="rb-eyebrow am">Why 2 of 2 &nbsp;|&nbsp; handoff-compact</div>
+          <div class="rb-headline" style="margin-top: 18px">Context left after the reset</div>
+          <div id="rb-e-rows">
+            <div class="rb-ctx" id="rb-e-r1">
+              <div class="lbl"><span class="who">handoff-compact</span><span class="amt am" id="rb-e-v1">60k to 69k</span></div>
+              <div class="track"><div class="fill" id="rb-e-f1" style="background: #fbbf24"></div><div class="grow" id="rb-e-g1"></div><div id="rb-e-grow-l">GREW BACK TO 76k TO 93k</div></div>
+            </div>
+            <div class="rb-ctx" id="rb-e-r2">
+              <div class="lbl"><span class="who">/compact</span><span class="amt cy" id="rb-e-v2">about 47k</span></div>
+              <div class="track"><div class="fill" id="rb-e-f2" style="background: #5eead4"></div></div>
+            </div>
+          </div>
+          <div id="rb-e-turns">
+            <span class="lab">Every follow-up pays for it</span>
+          </div>
+        </div>
+
+        <!-- F: close -->
+        <div id="rb-f" class="rb-stage">
+          <div class="rb-close" id="rb-f1">The mods save you money.</div>
+          <div class="rb-close" id="rb-f2"><span class="cy">/compact</span> saves a little more.</div>
+        </div>
+
+        <div id="rb-foot">
+          <span>Sonnet 5.5, reset at about 200k</span>
+          <span>n = 3 to 4 runs per setup, one task</span>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const $ = (s) => document.querySelector(s);
+          const tl = gsap.timeline({ paused: true });
+
+          const show = (sel, t) => tl.fromTo($(sel), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, t);
+          const hide = (sel, t) => tl.to($(sel), { opacity: 0, y: -30, duration: 0.4, ease: "power2.in" }, t);
+          const pop = (sel, t) => {
+            tl.fromTo($(sel), { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1.05, duration: 0.25, ease: "power2.out" }, t);
+            tl.to($(sel), { scale: 1, duration: 0.2, ease: "power1.inOut" }, t + 0.25);
+          };
+          const tick = (el, from, to, t, dur, fmt) => {
+            const o = { v: from };
+            el.textContent = fmt(from);
+            tl.to(o, { v: to, duration: dur, ease: "power2.out", onUpdate: () => { el.textContent = fmt(o.v); } }, t);
+          };
+          const usd = (v) => "$" + v.toFixed(2);
+
+          // Stage A: 0 to 8.6
+          show("#rb-a", 0);
+          tl.fromTo($("#rb-a-title"), { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 0.9);
+          tl.fromTo($("#rb-a-def"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 1.9);
+          tl.fromTo($("#rb-a-div"), { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.out" }, 3.4);
+          pop("#rb-a-t1", 4.4);
+          pop("#rb-a-t2", 6.0);
+          pop("#rb-a-t3", 7.0);
+          hide("#rb-a", 8.4);
+
+          // Stage B: ranked chart, 8.8 to 30.5
+          show("#rb-b", 8.8);
+          const rows = [
+            { name: "/compact", v: 0.53, t: 14.72, tv: 15.96, bar: "#2d6e62" },
+            { name: "brief handoff", v: 0.57, t: 17.04, tv: 17.78, bar: "#2d6e62" },
+            { name: "claude-auto-handoff", v: 0.66, t: 18.82, tv: 19.76, bar: "#2d6e62", mod: true },
+            { name: "handoff-compact", v: 0.73, t: 20.72, tv: 21.8, bar: "#2d6e62", mod: true },
+            { name: "no reset", v: 0.95, t: 8.96, tv: 9.9, bar: "#4a4326" },
+            { name: "subagent", v: 1.2, t: 11.7, tv: 12.62, bar: "#f87171", flag: "MOST OF ANY SETUP", flagT: 13.5, flagC: "rd" },
+          ];
+          const MAXW = 900, MAXV = 1.2;
+          const host = $("#rb-rows");
+          rows.forEach((r, i) => {
+            const row = document.createElement("div");
+            row.className = "rb-row";
+            row.style.top = i * 110 + "px";
+            const w = Math.round((r.v / MAXV) * MAXW);
+            row.innerHTML =
+              '<div class="hl"></div>' +
+              '<div class="rank">0' + (i + 1) + "</div>" +
+              '<div class="name">' + r.name + "</div>" +
+              '<div class="track"><div class="bar" style="width:' + w + "px;background:" + r.bar + '"></div></div>' +
+              '<div class="val">$0.00</div>';
+            host.appendChild(row);
+            r.el = row;
+            tl.fromTo(row, { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power2.out" }, r.t);
+            tl.fromTo(row.querySelector(".bar"), { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power3.out" }, r.tv - 0.1);
+            tick(row.querySelector(".val"), 0, r.v, r.tv - 0.1, 0.9, usd);
+            if (r.flag) {
+              const f = document.createElement("div");
+              f.className = "flag " + r.flagC;
+              f.textContent = r.flag;
+              f.style.left = w + 20 + "px";
+              row.querySelector(".track").appendChild(f);
+              f.style.left = "20px";
+              f.style.color = "#0b0c10";
+              f.style.opacity = 0;
+              tl.set(row.querySelector(".val"), { color: "#f87171" }, r.flagT);
+            }
+            if (r.mod) {
+              const f = document.createElement("div");
+              f.className = "flag am";
+              f.textContent = "MOD";
+              f.style.left = w + 20 + "px";
+              f.style.opacity = 0;
+              row.querySelector(".track").appendChild(f);
+              r.modFlag = f;
+            }
+          });
+          const subFlag = rows[5].el.querySelector(".flag");
+          tl.fromTo(subFlag, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 13.5);
+
+          // "a reset roughly halves": half-of-no-reset marker
+          const halfX = 90 + 500 + Math.round((0.95 / 2 / MAXV) * MAXW);
+          $("#rb-half").style.left = halfX + "px";
+          $("#rb-half-l").style.left = halfX - 150 + "px";
+          tl.fromTo($("#rb-half"), { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.7, ease: "power2.out", transformOrigin: "top center" }, 24.4);
+          tl.fromTo($("#rb-half-l"), { opacity: 0 }, { opacity: 1, duration: 0.4 }, 24.9);
+          for (let i = 0; i < 4; i++) {
+            const hl = rows[i].el.querySelector(".hl");
+            hl.style.background = "rgba(94, 234, 212, 0.07)";
+            tl.fromTo(hl, { opacity: 0 }, { opacity: 1, duration: 0.4 }, 25.3 + i * 0.12);
+          }
+          // "the mods deliver on that"
+          [rows[2], rows[3]].forEach((r, k) => {
+            tl.fromTo(r.modFlag, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 27.84 + k * 0.15);
+            tl.to(r.el.querySelector(".hl"), { background: "rgba(251, 191, 36, 0.12)", duration: 0.3 }, 27.84 + k * 0.15);
+          });
+          // "/compact" winner pulse just before the swap
+          tl.to(rows[0].el.querySelector(".bar"), { background: "#5eead4", duration: 0.4 }, 29.4);
+          tl.to(rows[0].el.querySelector(".val"), { color: "#5eead4", duration: 0.4 }, 29.4);
+          hide("#rb-b", 30.6);
+
+          // Stage C: cheapest, 31.0 to 41.2
+          show("#rb-c", 31.0);
+          tick($("#rb-c-val"), 1.2, 0.53, 31.1, 1.2, usd);
+          tl.fromTo($("#rb-c-name"), { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 32.5);
+          tl.fromTo($("#rb-c-sub"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, 33.8);
+          pop("#rb-c-p1", 36.72);
+          pop("#rb-c-p2", 38.3);
+          tl.fromTo($("#rb-c-vs"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, 38.6);
+          hide("#rb-c", 41.1);
+
+          // Stage D: extra model call, 41.5 to 45.0
+          show("#rb-d", 41.5);
+          ["#rb-l1", "#rb-l2", "#rb-l3", "#rb-l4"].forEach((s, i) => {
+            tl.fromTo($(s), { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.25 }, 42.2 + i * 0.25);
+          });
+          tl.fromTo($("#rb-call-glow"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, 43.5);
+          tl.to($("#rb-call"), { color: "#fbbf24", duration: 0.3 }, 43.5);
+          tl.fromTo($("#rb-call"), { scale: 1 }, { scale: 1.06, duration: 0.2, yoyo: true, repeat: 1 }, 43.86);
+          hide("#rb-d", 45.0);
+
+          // Stage E: context left after reset, 45.4 to 59.4
+          show("#rb-e", 45.4);
+          const W = 1728, MAXK = 100;
+          $("#rb-e-f1").style.width = Math.round((69 / MAXK) * W) + "px";
+          $("#rb-e-f2").style.width = Math.round((47 / MAXK) * W) + "px";
+          $("#rb-e-g1").style.left = Math.round((69 / MAXK) * W) + "px";
+          $("#rb-e-g1").style.width = Math.round(((93 - 69) / MAXK) * W) + "px";
+          $("#rb-e-grow-l").style.left = Math.round((69 / MAXK) * W) + "px";
+          tl.fromTo($("#rb-e-r1"), { opacity: 0 }, { opacity: 1, duration: 0.4 }, 45.6);
+          tl.fromTo($("#rb-e-f1"), { scaleX: 0 }, { scaleX: 60 / 69, duration: 0.7, ease: "power2.out" }, 46.6);
+          tl.to($("#rb-e-f1"), { scaleX: 1, duration: 0.6, ease: "power2.out" }, 47.4);
+          tl.fromTo($("#rb-e-v1"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, 46.6);
+          tl.fromTo($("#rb-e-r2"), { opacity: 0 }, { opacity: 1, duration: 0.4 }, 49.7);
+          tl.fromTo($("#rb-e-f2"), { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.out" }, 50.4);
+          tl.fromTo($("#rb-e-v2"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, 50.4);
+          // "the context grew back"
+          tl.fromTo($("#rb-e-g1"), { scaleX: 0 }, { scaleX: 1, duration: 1.0, ease: "power2.out" }, 54.9);
+          tl.fromTo($("#rb-e-grow-l"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, 55.2);
+          // "every follow-up pays"
+          const turns = $("#rb-e-turns");
+          tl.fromTo(turns, { opacity: 0 }, { opacity: 1, duration: 0.3 }, 55.9);
+          for (let i = 0; i < 8; i++) {
+            const t = document.createElement("div");
+            t.className = "t";
+            t.textContent = "TURN " + (i + 1);
+            t.style.width = "120px";
+            turns.appendChild(t);
+            tl.to(t, { background: "rgba(251, 191, 36, 0.55)", color: "#0b0c10", duration: 0.15 }, 56.3 + i * 0.18);
+          }
+          hide("#rb-e", 59.4);
+
+          // Stage F: close, 59.8 to end
+          show("#rb-f", 59.75);
+          tl.fromTo($("#rb-f1"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 59.9);
+          tl.fromTo($("#rb-f2"), { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 61.5);
+          tl.to({}, { duration: 0.1 }, 64.4);
+
+          window.__timelines["04-result-one-the-bill"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

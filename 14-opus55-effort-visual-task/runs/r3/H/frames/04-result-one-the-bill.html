@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #bill-root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: #08090c;
+          color: #eef0f5;
+          font-family: "Inter", sans-serif;
+        }
+        #bill-root .abs { position: absolute; }
+        #bill-root .mono { font-family: "IBM Plex Mono", monospace; }
+        #bill-root .head { font-family: "Archivo Black", sans-serif; }
+
+        /* background grid */
+        #bill-grid {
+          position: absolute; inset: 0;
+          background-image:
+            linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+          background-size: 80px 80px;
+        }
+
+        /* badge */
+        #bill-badge { left: 96px; top: 56px; display: flex; gap: 0; align-items: stretch; height: 52px; }
+        #bill-badge .b1 { background: #f5c451; color: #08090c; padding: 0 20px; display: flex; align-items: center; font-family: "IBM Plex Mono", monospace; font-weight: 800; font-size: 24px; letter-spacing: 2px; }
+        #bill-badge .b2 { border: 2px solid #f5c451; color: #f5c451; padding: 0 20px; display: flex; align-items: center; font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 24px; letter-spacing: 2px; }
+
+        /* ---------- S1: metric card ---------- */
+        #bill-s1 { left: 0; top: 0; width: 1920px; height: 1080px; }
+        #bill-card {
+          position: absolute; left: 310px; top: 220px; width: 1300px; height: 640px;
+          background: #11131a; border: 2px solid #262a36; border-radius: 28px;
+          padding: 56px 72px;
+        }
+        #bill-card .kicker { font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 24px; letter-spacing: 3px; color: #9aa1b2; }
+        #bill-card .title { font-family: "Archivo Black", sans-serif; font-size: 66px; line-height: 1.12; margin-top: 22px; width: 1150px; }
+        #bill-card .title .hl { color: #f5c451; }
+        #bill-card .fields { position: absolute; left: 72px; right: 72px; top: 340px; display: flex; gap: 24px; }
+        #bill-card .field { flex: 1; background: #181b25; border: 2px solid #2b3040; border-radius: 18px; padding: 24px 26px; height: 220px; }
+        #bill-card .field .k { font-family: "IBM Plex Mono", monospace; font-size: 20px; font-weight: 600; letter-spacing: 2px; color: #9aa1b2; }
+        #bill-card .field .v { font-size: 32px; font-weight: 800; margin-top: 14px; line-height: 1.2; }
+        #bill-card .field .s { font-family: "IBM Plex Mono", monospace; font-size: 20px; color: #b4bac8; margin-top: 10px; }
+
+        /* ---------- S2: bar chart ---------- */
+        #bill-s2 { left: 0; top: 0; width: 1920px; height: 1080px; opacity: 0; }
+        #bill-sub { left: 96px; top: 148px; font-family: "IBM Plex Mono", monospace; font-size: 26px; font-weight: 600; color: #b4bac8; }
+        #bill-sub b { color: #eef0f5; }
+        .bill-row { position: absolute; left: 0; width: 1920px; height: 84px; }
+        .bill-row .name { position: absolute; left: 96px; width: 430px; top: 4px; text-align: right; font-size: 34px; font-weight: 800; line-height: 1.15; white-space: nowrap; }
+        .bill-row .kind { position: absolute; left: 96px; width: 430px; top: 48px; text-align: right; font-family: "IBM Plex Mono", monospace; font-size: 19px; font-weight: 600; letter-spacing: 2px; color: #9aa1b2; }
+        .bill-row .track { position: absolute; left: 560px; top: 10px; width: 1140px; height: 60px; }
+        .bill-row .bar { position: absolute; left: 0; top: 0; height: 60px; border-radius: 0 10px 10px 0; transform-origin: 0 50%; }
+        .bill-row .val { position: absolute; top: 4px; font-family: "IBM Plex Mono", monospace; font-weight: 800; font-size: 40px; line-height: 52px; white-space: nowrap; }
+        .bill-row .tag { position: absolute; top: 12px; height: 38px; padding: 0 14px; border-radius: 8px; font-family: "IBM Plex Mono", monospace; font-weight: 800; font-size: 20px; letter-spacing: 2px; display: flex; align-items: center; white-space: nowrap; }
+
+        #bill-r-none .bar { background: #6b7385; }
+        #bill-r-sub .bar { background: #e2665c; }
+        #bill-r-compact .bar { background: #3ddc97; }
+        #bill-r-brief .bar { background: #7c8db5; }
+        #bill-r-cah .bar { background: #a78bfa; }
+        #bill-r-hc .bar { background: #a78bfa; }
+
+        #bill-groupsep { left: 300px; top: 450px; width: 1520px; height: 2px; background: #262a36; }
+        #bill-axis { left: 560px; top: 866px; width: 1140px; height: 40px; }
+        #bill-axis .tick { position: absolute; top: 0; font-family: "IBM Plex Mono", monospace; font-size: 20px; color: #8d94a6; transform: translateX(-50%); }
+        #bill-axis .line { position: absolute; left: 0; top: -8px; width: 1140px; height: 2px; background: #2b3040; }
+        .bill-vline { position: absolute; width: 0; border-left: 3px dashed; }
+        #bill-v95 { left: 1426px; top: 236px; height: 596px; border-color: #9aa1b2; opacity: 0; }
+        #bill-v53 { left: 1043px; top: 236px; height: 596px; border-color: #3ddc97; opacity: 0; }
+        #bill-v95-l { left: 1426px; top: 200px; font-family: "IBM Plex Mono", monospace; font-size: 20px; font-weight: 700; color: #b4bac8; transform: translateX(-50%); white-space: nowrap; opacity: 0; }
+        #bill-v53-l { left: 1043px; top: 200px; font-family: "IBM Plex Mono", monospace; font-size: 20px; font-weight: 700; color: #3ddc97; transform: translateX(-50%); white-space: nowrap; opacity: 0; }
+
+        #bill-cap { left: 96px; top: 912px; width: 1728px; height: 70px; }
+        #bill-cap .c { position: absolute; left: 0; top: 0; width: 1728px; font-size: 40px; font-weight: 800; line-height: 70px; opacity: 0; white-space: nowrap; }
+        #bill-cap .c .g { color: #3ddc97; }
+        #bill-cap .c .p { color: #c4b5fd; }
+
+        #bill-foot { left: 96px; top: 1006px; width: 1728px; font-family: "IBM Plex Mono", monospace; font-size: 19px; color: #8d94a6; white-space: nowrap; opacity: 0; }
+
+        /* ---------- S3: why ---------- */
+        #bill-s3 { left: 0; top: 0; width: 1920px; height: 1080px; opacity: 0; }
+        #bill-why { left: 96px; top: 140px; font-family: "Archivo Black", sans-serif; font-size: 64px; }
+        #bill-why .q { color: #f5c451; }
+        .bill-panel { position: absolute; top: 260px; width: 840px; height: 700px; background: #11131a; border: 2px solid #262a36; border-radius: 24px; padding: 40px 44px; }
+        #bill-pl { left: 96px; }
+        #bill-pr { left: 984px; }
+        .bill-panel .pname { font-family: "IBM Plex Mono", monospace; font-weight: 800; font-size: 34px; color: #c4b5fd; }
+        .bill-panel .pdesc { font-size: 32px; font-weight: 700; margin-top: 10px; line-height: 1.25; width: 750px; }
+
+        .bill-flow { position: absolute; left: 44px; width: 752px; height: 84px; border-radius: 14px; display: flex; align-items: center; padding: 0 26px; font-size: 28px; font-weight: 700; }
+        #bill-f1 { top: 190px; background: #181b25; border: 2px solid #2b3040; }
+        #bill-f2 { top: 312px; background: #2a2140; border: 3px solid #a78bfa; }
+        #bill-f3 { top: 434px; background: #181b25; border: 2px solid #2b3040; }
+        .bill-flow .n { font-family: "IBM Plex Mono", monospace; font-weight: 800; color: #9aa1b2; margin-right: 18px; }
+        #bill-f2 .n { color: #c4b5fd; }
+        .bill-arrow { position: absolute; left: 400px; width: 4px; height: 30px; background: #3a4050; }
+        #bill-a1 { top: 278px; }
+        #bill-a2 { top: 400px; }
+        #bill-extra { position: absolute; right: 44px; top: 334px; font-family: "IBM Plex Mono", monospace; font-weight: 800; font-size: 20px; letter-spacing: 2px; color: #08090c; background: #f5c451; border-radius: 8px; padding: 6px 12px; }
+        #bill-exh { position: absolute; left: 44px; top: 556px; width: 752px; height: 104px; background: #0b0c10; border: 2px solid #262a36; border-radius: 12px; padding: 14px 20px; font-family: "IBM Plex Mono", monospace; }
+        #bill-exh .t { font-size: 18px; color: #8d94a6; }
+        #bill-exh .l { font-size: 20px; color: #c9ced9; margin-top: 10px; white-space: nowrap; }
+        #bill-exh .l .h { color: #08090c; background: #f5c451; padding: 0 6px; border-radius: 4px; font-weight: 700; }
+
+        .bill-ctx { position: absolute; left: 44px; width: 752px; height: 120px; }
+        .bill-ctx .lab { font-family: "IBM Plex Mono", monospace; font-size: 24px; font-weight: 700; }
+        .bill-ctx .tr { position: absolute; left: 0; top: 40px; width: 640px; height: 56px; background: #181b25; border-radius: 8px; }
+        .bill-ctx .seg { position: absolute; top: 0; height: 56px; transform-origin: 0 50%; }
+        .bill-ctx .num { position: absolute; top: 46px; font-family: "IBM Plex Mono", monospace; font-weight: 800; font-size: 30px; white-space: nowrap; }
+        #bill-ctx-hc { top: 196px; }
+        #bill-ctx-c { top: 340px; }
+        #bill-ctx-hc .lab { color: #c4b5fd; }
+        #bill-ctx-c .lab { color: #3ddc97; }
+        #bill-hc-a { left: 0; width: 384px; background: #a78bfa; border-radius: 8px 0 0 8px; }
+        #bill-hc-b { left: 384px; width: 58px; background: repeating-linear-gradient(45deg, #a78bfa 0 8px, #5b4a8f 8px 16px); }
+        #bill-hc-grow { left: 442px; width: 153px; background: repeating-linear-gradient(45deg, #f5c451 0 8px, #8a6d24 8px 16px); border-radius: 0 8px 8px 0; }
+        #bill-c-a { left: 0; width: 301px; background: #3ddc97; border-radius: 8px; }
+        #bill-hc-num { left: 380px; }
+        #bill-hc-num2 { left: 524px; font-size: 26px !important; color: #f5c451; opacity: 0; }
+        #bill-c-num { left: 324px; top: 52px !important; font-size: 26px !important; color: #3ddc97; }
+        #bill-ctx-scale { position: absolute; left: 44px; top: 486px; width: 640px; font-family: "IBM Plex Mono", monospace; font-size: 18px; color: #8d94a6; }
+        #bill-ctx-scale span { position: absolute; top: 0; transform: translateX(-50%); }
+        #bill-turns { position: absolute; left: 44px; top: 540px; width: 752px; height: 120px; }
+        #bill-turns .tl { font-size: 26px; font-weight: 700; color: #eef0f5; }
+        #bill-turns .row { position: absolute; left: 0; top: 50px; display: flex; gap: 12px; }
+        #bill-turns .t { width: 78px; height: 56px; border-radius: 10px; border: 2px solid #3a4050; background: #181b25; font-family: "IBM Plex Mono", monospace; font-size: 20px; font-weight: 700; color: #9aa1b2; display: flex; align-items: center; justify-content: center; }
+
+        /* ---------- S4: verdict ---------- */
+        #bill-s4 { left: 0; top: 0; width: 1920px; height: 1080px; opacity: 0; }
+        .bill-verdict { position: absolute; left: 160px; width: 1600px; height: 260px; border-radius: 28px; padding: 44px 60px; }
+        #bill-v1 { top: 230px; background: #15121f; border: 2px solid #3b3260; }
+        #bill-v2 { top: 540px; background: #0f1d18; border: 3px solid #3ddc97; }
+        .bill-verdict .h { font-family: "Archivo Black", sans-serif; font-size: 68px; line-height: 1.1; }
+        .bill-verdict .d { font-family: "IBM Plex Mono", monospace; font-size: 30px; font-weight: 600; color: #c9ced9; margin-top: 28px; white-space: nowrap; }
+        .bill-verdict .d b { font-weight: 800; }
+      </style>
+
+      <div id="bill-root" data-composition-id="04-result-one-the-bill" data-width="1920" data-height="1080">
+        <div id="bill-grid"></div>
+
+        <div id="bill-badge" class="abs"><div class="b1">RESULT 01</div><div class="b2">THE BILL</div></div>
+
+        <!-- S1: what is being compared -->
+        <div id="bill-s1" class="abs">
+          <div id="bill-card">
+            <div class="kicker">WHAT'S BEING COMPARED · SIX SETUPS</div>
+            <div class="title">Cost of every turn <span class="hl">after the reset point</span></div>
+            <div class="fields">
+              <div class="field" id="bill-fd1"><div class="k">SOURCE</div><div class="v">Usage ledger</div><div class="s">$.session.usage deltas</div></div>
+              <div class="field" id="bill-fd2"><div class="k">STATISTIC</div><div class="v">Mean of the runs</div><div class="s">n = 3 per setup, 4 for claude-auto-handoff</div></div>
+              <div class="field" id="bill-fd3"><div class="k">MODEL</div><div class="v">Sonnet 5.5</div><div class="s">reset point about 200k tokens</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- S2: bar chart -->
+        <div id="bill-s2" class="abs">
+          <div id="bill-sub" class="abs">Cost after the reset point · <b>mean of the runs</b> · Sonnet 5.5</div>
+
+          <div id="bill-v95" class="bill-vline"></div>
+          <div id="bill-v95-l" class="abs">no reset $0.95</div>
+          <div id="bill-v53" class="bill-vline"></div>
+          <div id="bill-v53-l" class="abs">/compact $0.53</div>
+
+          <div class="bill-row" id="bill-r-none" style="top: 240px;">
+            <div class="name">no reset</div><div class="kind">BASELINE</div>
+            <div class="track"><div class="bar" style="width: 866px;"></div><div class="val" style="left: 886px;">$0.95</div></div>
+          </div>
+          <div class="bill-row" id="bill-r-sub" style="top: 340px;">
+            <div class="name">subagent</div><div class="kind">BASELINE</div>
+            <div class="track"><div class="bar" style="width: 1094px;"></div><div class="val" data-layout-allow-overflow style="left: 1114px; color: #ff8a80;">$1.20</div></div>
+          </div>
+          <div id="bill-sub-tag" class="abs mono" style="left: 1000px; top: 362px; height: 38px; padding: 0 14px; border-radius: 8px; background: #08090c; color: #ff8a80; font-weight: 800; font-size: 20px; letter-spacing: 2px; display: flex; align-items: center;">THE MOST</div>
+
+          <div id="bill-groupsep" class="abs"></div>
+
+          <div class="bill-row" id="bill-r-compact" style="top: 470px;">
+            <div class="name">/compact</div><div class="kind">BUILT IN</div>
+            <div class="track"><div class="bar" style="width: 483px;"></div><div class="val" style="left: 503px; color: #3ddc97;">$0.53</div>
+              <div class="tag" id="bill-cheap" style="left: 650px; background: #3ddc97; color: #08090c;">CHEAPEST OF ALL SIX</div>
+              <div class="tag" id="bill-noinst" style="left: 650px; border: 2px solid #3ddc97; color: #3ddc97;">NOTHING TO INSTALL</div>
+            </div>
+          </div>
+          <div class="bill-row" id="bill-r-brief" style="top: 570px;">
+            <div class="name">brief handoff</div><div class="kind">METHOD</div>
+            <div class="track"><div class="bar" style="width: 520px;"></div><div class="val" style="left: 540px;">$0.57</div></div>
+          </div>
+          <div class="bill-row" id="bill-r-cah" style="top: 670px;">
+            <div class="name">claude-auto-handoff</div><div class="kind">MOD · n = 4</div>
+            <div class="track"><div class="bar" style="width: 602px;"></div><div class="val" style="left: 622px; color: #c4b5fd;">$0.66</div></div>
+          </div>
+          <div class="bill-row" id="bill-r-hc" style="top: 770px;">
+            <div class="name">handoff-compact</div><div class="kind">MOD</div>
+            <div class="track"><div class="bar" style="width: 666px;"></div><div class="val" style="left: 686px; color: #c4b5fd;">$0.73</div></div>
+          </div>
+
+          <div id="bill-axis" class="abs">
+            <div class="line"></div>
+            <div class="tick" style="left: 0px;">$0</div>
+            <div class="tick" style="left: 228px;">$0.25</div>
+            <div class="tick" style="left: 456px;">$0.50</div>
+            <div class="tick" style="left: 684px;">$0.75</div>
+            <div class="tick" style="left: 912px;">$1.00</div>
+          </div>
+
+          <div id="bill-cap" class="abs">
+            <div class="c" id="bill-c1">A reset roughly <span class="g">halves</span> the cost of the turns that follow</div>
+            <div class="c" id="bill-c2">…and the <span class="p">mods</span> deliver on that</div>
+            <div class="c" id="bill-c3">Cheapest of all six: <span class="g">/compact</span>, the one you already have</div>
+            <div class="c" id="bill-c4">Nothing to install, and it <span class="g">beat both mods</span></div>
+          </div>
+        </div>
+
+        <!-- S3: why the mods cost more -->
+        <div id="bill-s3" class="abs">
+          <div id="bill-why" class="abs">Why do the mods cost more<span class="q">?</span></div>
+
+          <div id="bill-pl" class="bill-panel">
+            <div class="pname">claude-auto-handoff</div>
+            <div class="pdesc">An extra model call to write its brief</div>
+            <div class="bill-flow" id="bill-f1"><span class="n">1</span>Session reaches the reset point</div>
+            <div class="bill-arrow" id="bill-a1"></div>
+            <div class="bill-flow" id="bill-f2"><span class="n">2</span>Model call writes the brief</div>
+            <div id="bill-extra">EXTRA CALL</div>
+            <div class="bill-arrow" id="bill-a2"></div>
+            <div class="bill-flow" id="bill-f3"><span class="n">3</span>Fresh session starts from the brief</div>
+            <div id="bill-exh">
+              <div class="t">$ claude plugin validate  ·  claude-auto-handoff</div>
+              <div class="l">❯ ./register.tsx calls: … <span class="h">$.model.complete (via handoff)</span> …</div>
+            </div>
+          </div>
+
+          <div id="bill-pr" class="bill-panel">
+            <div class="pname">handoff-compact</div>
+            <div class="pdesc">Left more in the context after the reset</div>
+            <div class="bill-ctx" id="bill-ctx-hc">
+              <div class="lab">handoff-compact</div>
+              <div class="tr"><div class="seg" id="bill-hc-a"></div><div class="seg" id="bill-hc-b"></div><div class="seg" id="bill-hc-grow"></div></div>
+              <div class="num" id="bill-hc-num" style="top: -2px;">60k–69k</div>
+              <div class="num" id="bill-hc-num2" style="top: -2px;">→ 76k–93k</div>
+            </div>
+            <div class="bill-ctx" id="bill-ctx-c">
+              <div class="lab">/compact</div>
+              <div class="tr"><div class="seg" id="bill-c-a"></div></div>
+              <div class="num" id="bill-c-num">about 47k</div>
+            </div>
+            <div id="bill-ctx-scale"><span style="left: 0px;">0</span><span style="left: 320px;">50k</span><span style="left: 640px;">100k</span></div>
+            <div id="bill-turns">
+              <div class="tl">Every follow-up pays for what's in there</div>
+              <div class="row">
+                <div class="t">f1</div><div class="t">f2</div><div class="t">f3</div><div class="t">f4</div>
+                <div class="t">f5</div><div class="t">f6</div><div class="t">f7</div><div class="t">f8</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- S4: verdict -->
+        <div id="bill-s4" class="abs">
+          <div class="bill-verdict" id="bill-v1">
+            <div class="h">The mods save you money.</div>
+            <div class="d"><b style="color:#c4b5fd;">$0.66</b> claude-auto-handoff · <b style="color:#c4b5fd;">$0.73</b> handoff-compact · vs <b>$0.95</b> no reset</div>
+          </div>
+          <div class="bill-verdict" id="bill-v2">
+            <div class="h">/compact saves you a little more.</div>
+            <div class="d"><b style="color:#3ddc97;">$0.53</b> · built in · nothing to install</div>
+          </div>
+        </div>
+
+        <div id="bill-foot" class="abs">n = 3 runs per setup (claude-auto-handoff n = 4) · one task, 12 rules · cost from $.session.usage ledger deltas</div>
+      </div>
+
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          const q = (s) => document.querySelector(s);
+          const E = "power3.out";
+
+          // badge + S1 card (0.26 "Result one" / 1.64 "This is the cost")
+          tl.fromTo("#bill-badge", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: E }, 0.2);
+          tl.fromTo("#bill-card", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: E }, 1.5);
+          tl.fromTo("#bill-card .hl", { opacity: 0.25 }, { opacity: 1, duration: 0.4 }, 3.16);
+          tl.fromTo("#bill-fd1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, 3.9);
+          tl.fromTo("#bill-fd2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, 4.46);
+          tl.fromTo("#bill-fd3", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, 5.88);
+          tl.to("#bill-s1", { opacity: 0, y: -30, duration: 0.5, ease: "power2.in" }, 8.2);
+
+          // S2 chart in (8.96 "Doing nothing")
+          tl.to("#bill-s2", { opacity: 1, duration: 0.4 }, 8.6);
+          tl.fromTo("#bill-sub", { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.4 }, 8.6);
+          tl.fromTo("#bill-axis", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 8.7);
+          tl.fromTo("#bill-foot", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 9.0);
+
+          const row = (id, tName, tVal) => {
+            tl.fromTo(id + " .name, " + id + " .kind", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: E }, tName);
+            tl.fromTo(id + " .bar", { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.out" }, tName + 0.1);
+            tl.fromTo(id + " .val", { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.35, ease: E }, tVal);
+          };
+          row("#bill-r-none", 8.9, 9.9);
+          row("#bill-r-sub", 11.7, 12.62);
+                    tl.fromTo("#bill-sub-tag", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, 13.5);
+          tl.fromTo("#bill-groupsep", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.5 }, 14.4);
+          row("#bill-r-compact", 14.72, 15.96);
+          row("#bill-r-brief", 17.04, 17.78);
+          row("#bill-r-cah", 18.82, 19.76);
+          row("#bill-r-hc", 20.72, 21.8);
+
+          // beat: reset roughly halves (24.20)
+          tl.fromTo("#bill-v95, #bill-v95-l", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 24.2);
+          tl.fromTo("#bill-c1", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: E }, 24.3);
+          tl.to("#bill-r-none, #bill-r-sub, #bill-sub-tag", { opacity: 0.35, duration: 0.4 }, 25.3);
+          // mods deliver (27.84)
+          tl.to("#bill-c1", { opacity: 0, duration: 0.25 }, 27.5);
+          tl.fromTo("#bill-c2", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: E }, 27.62);
+          tl.fromTo("#bill-r-cah .bar, #bill-r-hc .bar", { boxShadow: "0 0 0px rgba(167,139,250,0)" }, { boxShadow: "0 0 28px rgba(167,139,250,0.7)", duration: 0.4, yoyo: true, repeat: 1 }, 27.84);
+          // cheapest of all six (30.86)
+          tl.to("#bill-c2", { opacity: 0, duration: 0.25 }, 30.6);
+          tl.fromTo("#bill-c3", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: E }, 30.86);
+          tl.to("#bill-r-brief, #bill-r-cah, #bill-r-hc", { opacity: 0.4, duration: 0.4 }, 31.14);
+          tl.to("#bill-v95, #bill-v95-l", { opacity: 0, duration: 0.4 }, 31.14);
+          tl.fromTo("#bill-cheap", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: E }, 31.7);
+          tl.fromTo("#bill-r-compact .bar", { boxShadow: "0 0 0px rgba(61,220,151,0)" }, { boxShadow: "0 0 36px rgba(61,220,151,0.75)", duration: 0.5 }, 31.7);
+          tl.fromTo("#bill-r-compact .kind", { color: "#9aa1b2" }, { color: "#3ddc97", duration: 0.3 }, 34.28);
+          // nothing to install, beat both mods (36.72 / 38.34)
+          tl.to("#bill-c3", { opacity: 0, duration: 0.25 }, 36.45);
+          tl.fromTo("#bill-c4", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: E }, 36.72);
+          tl.to("#bill-cheap", { opacity: 0, duration: 0.25 }, 36.6);
+          tl.fromTo("#bill-noinst", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: E }, 36.72);
+          tl.to("#bill-r-cah, #bill-r-hc", { opacity: 1, duration: 0.3 }, 38.34);
+          tl.fromTo("#bill-v53, #bill-v53-l", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 38.34);
+          tl.to("#bill-s2", { opacity: 0, duration: 0.5, ease: "power2.in" }, 40.8);
+
+          // S3 why (41.50)
+          tl.to("#bill-s3", { opacity: 1, duration: 0.3 }, 41.3);
+          tl.fromTo("#bill-why", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, 41.4);
+          tl.fromTo("#bill-pl", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, 41.86);
+          tl.fromTo("#bill-f1, #bill-a1", { opacity: 0 }, { opacity: 1, duration: 0.35 }, 42.4);
+          tl.fromTo("#bill-f2, #bill-a2", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: E }, 43.14);
+          tl.fromTo("#bill-extra", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, 43.52);
+          tl.fromTo("#bill-f3", { opacity: 0 }, { opacity: 1, duration: 0.35 }, 44.28);
+          tl.fromTo("#bill-exh", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: E }, 44.5);
+
+          tl.fromTo("#bill-pr", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, 45.36);
+          tl.fromTo("#bill-ctx-scale", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 45.6);
+          tl.fromTo("#bill-hc-a", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.out" }, 46.6);
+          tl.fromTo("#bill-hc-b", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power2.out" }, 47.1);
+          tl.fromTo("#bill-hc-num", { opacity: 0 }, { opacity: 1, duration: 0.35 }, 47.46);
+          tl.fromTo("#bill-ctx-c", { opacity: 0 }, { opacity: 1, duration: 0.35 }, 49.74);
+          tl.fromTo("#bill-c-a", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power2.out" }, 50.4);
+          tl.fromTo("#bill-c-num", { opacity: 0 }, { opacity: 1, duration: 0.35 }, 50.74);
+          // context grew back (54.44)
+          tl.fromTo("#bill-hc-grow", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power2.out" }, 54.44);
+          tl.to("#bill-hc-num", { opacity: 0.55, duration: 0.25 }, 54.44);
+          tl.fromTo("#bill-hc-num2", { opacity: 0 }, { opacity: 1, duration: 0.35 }, 55.0);
+          // every follow-up pays (55.80)
+          tl.fromTo("#bill-turns", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 55.7);
+          const turns = document.querySelectorAll("#bill-turns .t");
+          turns.forEach((t, i) => {
+            tl.fromTo(t, { backgroundColor: "#181b25", borderColor: "#3a4050", color: "#9aa1b2" },
+              { backgroundColor: "#3a2f12", borderColor: "#f5c451", color: "#f5c451", duration: 0.2 }, 56.3 + i * 0.2);
+          });
+          tl.to("#bill-s3", { opacity: 0, duration: 0.5, ease: "power2.in" }, 59.2);
+
+          // S4 verdict (59.91 / 61.55)
+          tl.to("#bill-s4", { opacity: 1, duration: 0.2 }, 59.7);
+          tl.fromTo("#bill-v1", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, 59.9);
+          tl.fromTo("#bill-v2", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, 61.55);
+          tl.fromTo("#bill-v2", { boxShadow: "0 0 0px rgba(61,220,151,0)" }, { boxShadow: "0 0 48px rgba(61,220,151,0.45)", duration: 0.6, immediateRender: false }, 62.66);
+
+          window.__timelines["04-result-one-the-bill"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,182 @@
+<template id="04-result-one-the-bill-template">
+<div data-composition-id="04-result-one-the-bill" data-width="1920" data-height="1080">
+<style>
+  @font-face { font-family:'Plus Jakarta Sans'; src: local('Plus Jakarta Sans'); }
+  [data-composition-id="04-result-one-the-bill"] { position:absolute; inset:0; width:1920px; height:1080px; background:#08090c; color:#eae6da; font-family:'Plus Jakarta Sans',sans-serif; overflow:hidden; }
+  .b-grid { position:absolute; inset:0; opacity:.035; background-image:linear-gradient(#eae6da 1px,transparent 1px),linear-gradient(90deg,#eae6da 1px,transparent 1px); background-size:64px 64px; }
+  .b-spot { position:absolute; inset:0; background:radial-gradient(ellipse 700px 400px at 50% 50%, rgba(94,234,212,.08), transparent); }
+  .b-badge { position:absolute; top:56px; left:96px; display:flex; gap:18px; font-family:'IBM Plex Mono',monospace; font-weight:800; font-size:26px; letter-spacing:.08em; }
+  .b-badge .k { color:#5eead4; }
+  .b-stage { position:absolute; inset:0; opacity:0; }
+  .b-center { position:absolute; left:0; right:0; text-align:center; }
+  .b-h { font-family:'Archivo Black',sans-serif; font-size:72px; line-height:1.1; }
+  .b-sub { font-weight:800; font-size:40px; }
+  .b-mono { font-family:'IBM Plex Mono',monospace; font-weight:700; }
+  .b-tag { display:inline-block; font-family:'IBM Plex Mono',monospace; font-weight:800; font-size:26px; letter-spacing:.08em; padding:10px 22px; border-radius:999px; background:rgba(94,234,212,.12); color:#5eead4; }
+  .b-tag.amb { background:rgba(251,191,36,.12); color:#fbbf24; }
+  .b-div { height:2px; width:900px; margin:0 auto; background:linear-gradient(to right,transparent,rgba(74,67,38,.8),transparent); }
+  .b-row { position:absolute; left:120px; width:1680px; height:110px; display:flex; align-items:center; opacity:0; }
+  .b-row .lbl { width:500px; font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:34px; }
+  .b-row .track { position:relative; flex:1; height:56px; }
+  .b-row .bar { position:absolute; left:0; top:0; height:56px; border-radius:6px; width:0; }
+  .b-row .val { position:absolute; top:-6px; font-family:'Archivo Black',sans-serif; font-size:56px; }
+  .b-half { position:absolute; top:150px; bottom:150px; width:0; border-left:3px dashed #5eead4; opacity:0; }
+  .b-halflbl { position:absolute; top:100px; font-family:'IBM Plex Mono',monospace; font-weight:800; font-size:26px; color:#5eead4; opacity:0; white-space:nowrap; }
+  .b-term { position:absolute; left:260px; width:1400px; top:420px; background:#12140f; border:1px solid #4a4326; border-radius:12px; overflow:hidden; }
+  .b-term .bar { height:44px; display:flex; align-items:center; gap:10px; padding:0 18px; border-bottom:1px solid #4a4326; font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:20px; }
+  .b-term .dot { width:10px; height:10px; border-radius:50%; }
+  .b-term .body { padding:28px 32px; font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:32px; line-height:1.5; }
+  .b-ctx { position:absolute; left:220px; width:1480px; height:120px; display:flex; align-items:center; }
+  .b-ctx .lbl { width:420px; font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:34px; }
+  .b-ctx .track { position:relative; flex:1; height:64px; }
+  .b-ctx .fill { position:absolute; left:0; top:0; height:64px; border-radius:6px; }
+  .b-ctx .num { position:absolute; top:-2px; font-family:'Archivo Black',sans-serif; font-size:56px; white-space:nowrap; }
+</style>
+<div class="b-grid"></div><div class="b-spot"></div>
+<div class="b-badge" id="b-badge"><span class="k">RESULT 01</span><span>|</span><span>THE BILL</span></div>
+
+<!-- S1: what is measured -->
+<div class="b-stage" id="s1">
+  <div class="b-center" style="top:300px"><div class="b-h" id="s1h">Cost of every turn<br>after the reset point</div></div>
+  <div class="b-center" style="top:560px"><div class="b-div"></div></div>
+  <div class="b-center b-sub" style="top:610px" id="s1a">Mean of the runs, from the usage ledger</div>
+  <div class="b-center" style="top:710px" id="s1b"><span class="b-tag">SONNET 5.5</span></div>
+</div>
+
+<!-- S2: six setups -->
+<div class="b-stage" id="s2">
+  <div class="b-center b-sub" style="top:130px;font-size:32px">Cost after the reset point, mean per run</div>
+  <div class="b-half" id="half"></div><div class="b-halflbl" id="halflbl">HALF OF NO RESET</div>
+  <div id="rows"></div>
+</div>
+
+<!-- S3: cheapest -->
+<div class="b-stage" id="s3">
+  <div class="b-center" style="top:220px"><span class="b-tag">CHEAPEST OF ALL SIX</span></div>
+  <div class="b-center" style="top:300px;font-family:'Archivo Black';font-size:160px;color:#5eead4;text-shadow:0 0 40px rgba(94,234,212,.35)" id="s3n">$0.53</div>
+  <div class="b-center b-h" style="top:520px" id="s3t">/compact</div>
+  <div class="b-center b-sub" style="top:640px" id="s3a">Built in. Nothing to install.</div>
+  <div class="b-center" style="top:750px;font-family:'IBM Plex Mono';font-weight:700;font-size:34px" id="s3b">
+    beat <span style="position:relative">claude-auto-handoff $0.66<span class="strike" style="position:absolute;left:0;top:52%;height:4px;width:0;background:#f87171"></span></span>
+    &nbsp;and&nbsp; <span style="position:relative">handoff-compact $0.73<span class="strike" style="position:absolute;left:0;top:52%;height:4px;width:0;background:#f87171"></span></span>
+  </div>
+</div>
+
+<!-- S4a: extra call -->
+<div class="b-stage" id="s4a">
+  <div class="b-center" style="top:170px"><span class="b-tag amb">WHY THE MODS COST MORE</span></div>
+  <div class="b-center b-h" style="top:260px">claude-auto-handoff makes<br>an extra model call</div>
+  <div class="b-term" id="term">
+    <div class="bar"><span class="dot" style="background:#EF4444"></span><span class="dot" style="background:#F59E0B"></span><span class="dot" style="background:#10B981"></span><span style="margin-left:14px">~ $ claude plugin validate claude-auto-handoff</span></div>
+    <div class="body">❯ ./register.tsx calls: ...<br><span id="callline" style="padding:2px 10px;border-radius:6px">$.model.complete (via handoff)</span><br>✔ Validation passed</div>
+  </div>
+  <div class="b-center b-sub" style="top:780px;opacity:0" id="s4note">to write its brief</div>
+</div>
+
+<!-- S4b: context left -->
+<div class="b-stage" id="s4b">
+  <div class="b-center b-h" style="top:190px">Context left after the reset</div>
+  <div class="b-ctx" style="top:400px" id="c1"><div class="lbl">handoff-compact</div><div class="track"><div class="fill" id="f1" style="background:#fbbf24;width:0"></div><div class="num" id="n1" style="color:#fbbf24">60k to 69k</div></div></div>
+  <div class="b-ctx" style="top:560px" id="c2"><div class="lbl">/compact</div><div class="track"><div class="fill" id="f2" style="background:#5eead4;width:0"></div><div class="num" id="n2" style="color:#5eead4">about 47k</div></div></div>
+  <div class="b-center b-sub" style="top:760px;opacity:0" id="s4c">Then it grew back to <span style="color:#f87171">76k to 93k</span></div>
+  <div class="b-center b-sub" style="top:840px;opacity:0;font-size:32px" id="s4d">and every follow-up pays for what's in there</div>
+</div>
+
+<!-- S5: verdict -->
+<div class="b-stage" id="s5">
+  <div class="b-center b-h" style="top:330px" id="s5a">The mods save you money.</div>
+  <div class="b-center b-h" style="top:500px;opacity:0" id="s5b"><span style="color:#5eead4">/compact</span> saves a little more.</div>
+  <div class="b-center b-mono" style="top:700px;font-size:26px;opacity:0" id="s5c">n = 3 to 4 per setup, one task, Sonnet 5.5</div>
+</div>
+
+<script>
+(() => {
+  const C = '[data-composition-id="04-result-one-the-bill"] ';
+  const q = s => document.querySelector(C + s);
+  const rows = [
+    { l:'no reset', v:0.95, t:8.96, c:'#f87171' },
+    { l:'subagent', v:1.20, t:11.70, c:'#f87171' },
+    { l:'/compact', v:0.53, t:14.72, c:'#5eead4' },
+    { l:'brief handoff', v:0.57, t:17.04, c:'#eae6da' },
+    { l:'claude-auto-handoff', v:0.66, t:18.82, c:'#fbbf24' },
+    { l:'handoff-compact', v:0.73, t:20.72, c:'#fbbf24' },
+  ];
+  const MAXW = 1000, SCALE = MAXW / 1.20, top0 = 200, gap = 118;
+  const host = q('#rows');
+  rows.forEach((r, i) => {
+    const d = document.createElement('div');
+    d.className = 'b-row'; d.style.top = (top0 + i * gap) + 'px';
+    d.innerHTML = `<div class="lbl">${r.l}</div><div class="track"><div class="bar" style="background:${r.c};opacity:.85"></div><div class="val" style="left:${r.v*SCALE+24}px;color:${r.c}">$${r.v.toFixed(2)}</div></div>`;
+    host.appendChild(d); r.el = d;
+  });
+  const halfX = 120 + 500 + 0.475 * SCALE;
+  q('#half').style.left = halfX + 'px'; q('#halflbl').style.left = (halfX - 120) + 'px';
+
+  const tl = gsap.timeline({ paused: true });
+  const swapIn = (s, t) => tl.fromTo(q(s), { opacity:0, y:30 }, { opacity:1, y:0, duration:.6, ease:'power2.out' }, t);
+  const swapOut = (s, t) => tl.to(q(s), { opacity:0, y:-30, duration:.4, ease:'power2.in' }, t);
+  const pop = (el, t) => tl.fromTo(el, { scale:.8, opacity:0 }, { keyframes:[{ scale:1.05, opacity:1, duration:.25 }, { scale:1, duration:.15 }] }, t);
+
+  // S1
+  tl.from(q('#b-badge'), { opacity:0, x:-30, duration:.5 }, 0.2);
+  swapIn('#s1', 1.6);
+  tl.from(q('#s1a'), { opacity:0, y:20, duration:.5 }, 4.4);
+  pop(q('#s1b span'), 6.08);
+  swapOut('#s1', 8.3);
+
+  // S2 bars
+  swapIn('#s2', 8.7);
+  rows.forEach(r => {
+    tl.to(r.el, { opacity:1, duration:.3 }, r.t);
+    tl.to(r.el.querySelector('.bar'), { width: r.v * SCALE, duration:.8, ease:'power3.out' }, r.t);
+    pop(r.el.querySelector('.val'), r.t + .4);
+  });
+  tl.fromTo(q('#half'), { opacity:0, scaleY:0, transformOrigin:'top' }, { opacity:1, scaleY:1, duration:.6 }, 25.3);
+  tl.to(q('#halflbl'), { opacity:1, duration:.4 }, 25.5);
+  [3,4].forEach(i => tl.to(rows[i].el, { x:20, yoyo:true, repeat:1, duration:.3 }, 27.8));
+  rows.forEach((r, i) => { if (i !== 2) tl.to(r.el, { opacity:.35, duration:.4 }, 31.1); });
+  tl.to(rows[2].el.querySelector('.val'), { scale:1.25, transformOrigin:'left center', duration:.4 }, 31.1);
+  swapOut('#s2', 32.3);
+
+  // S3 cheapest
+  swapIn('#s3', 32.6);
+  pop(q('#s3n'), 32.7);
+  tl.from(q('#s3a'), { opacity:0, y:20, duration:.5 }, 36.7);
+  tl.from(q('#s3b'), { opacity:0, duration:.4 }, 38.0);
+  q('#s3b').querySelectorAll('.strike').forEach((s, i) => tl.to(s, { width:'100%', duration:.35, ease:'power2.out' }, 38.6 + i * .3));
+  swapOut('#s3', 41.0);
+
+  // S4a extra call
+  swapIn('#s4a', 41.4);
+  tl.from(q('#term'), { opacity:0, y:30, duration:.5 }, 42.0);
+  tl.to(q('#callline'), { backgroundColor:'rgba(251,191,36,.25)', color:'#fbbf24', duration:.3 }, 43.5);
+  tl.to(q('#s4note'), { opacity:1, duration:.4 }, 44.3);
+  swapOut('#s4a', 45.0);
+
+  // S4b context
+  swapIn('#s4b', 45.3);
+  const CK = 1000 / 100;
+  tl.to(q('#f1'), { width: 69 * CK, duration:1.0, ease:'power3.out' }, 46.3);
+  tl.set(q('#n1'), { left: 69 * CK + 24 }, 0);
+  pop(q('#n1'), 46.6);
+  tl.to(q('#f2'), { width: 47 * CK, duration:1.0, ease:'power3.out' }, 50.0);
+  tl.set(q('#n2'), { left: 47 * CK + 24 }, 0);
+  pop(q('#n2'), 50.4);
+  tl.to(q('#f1'), { width: 93 * CK, backgroundColor:'#f87171', duration:1.0 }, 55.0);
+  tl.to(q('#n1'), { x: (93 - 69) * CK, duration:1.0 }, 55.0);
+  tl.to(q('#s4c'), { opacity:1, duration:.4 }, 55.0);
+  tl.to(q('#s4d'), { opacity:1, duration:.4 }, 56.8);
+  swapOut('#s4b', 59.4);
+
+  // S5 verdict
+  swapIn('#s5', 59.8);
+  tl.to(q('#s5b'), { opacity:1, duration:.5 }, 61.5);
+  pop(q('#s5b span'), 61.6);
+  tl.to(q('#s5c'), { opacity:1, duration:.4 }, 62.5);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines['04-result-one-the-bill'] = tl;
+})();
+</script>
+</div>
+</template>

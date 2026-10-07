@@ -1,0 +1,63 @@
+{
+  "final_tokens": {
+    "in": 52,
+    "cache_write": 109263,
+    "cache_read": 2115769,
+    "out": 25908,
+    "thinking": 12156
+  },
+  "arm": "C",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "assistant_turns": 26,
+  "tokens": {
+    "in": 52,
+    "cache_write": 109263,
+    "cache_read": 2115769,
+    "out": 255
+  },
+  "tokens_total": 2225339,
+  "output_share_pct": 0.01,
+  "peak_context": 119607,
+  "tool_calls": {
+    "Bash": 4,
+    "Read": 5
+  },
+  "denied": 1,
+  "cost_usd": 1.8156257999999998,
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 52,
+      "outputTokens": 25908,
+      "cacheReadInputTokens": 2115769,
+      "cacheCreationInputTokens": 109263,
+      "webSearchRequests": 0,
+      "costUSD": 1.8156257999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 12156,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "duration_s": 577,
+  "num_turns_reported": 33,
+  "is_error": false,
+  "final_text": "I wrote both sections, generated their audio and word timings, built the frames and rendered both videos: `hyperframes/renders/04-result-one-the-bill.mp4` (58.9s) and `hyperframes/renders/05-result-two-the-rules.mp4` (60.9s).\n\n1. **Script** (`script.md`): Section 04 gives each setup's cost for the 8 follow-ups on Sonnet 5.5, from 95 cents with no reset down to 53 for `/compact`, and lands on \"half the bill, built in.\" Section 05 covers rule breaks: none in any reset setup on Sonnet, against Haiku 4.5 breaking a rule in every `/compact`, brief handoff and community mod run. Every number comes from `PILOT_RESULTS.md`.\n2. **Audio:** the lint passed. I ran `generate_tts.py` with `ONLY=04`/`ONLY=05` so the other sections' audio stayed untouched, and with `GAP_STYLE=reel` because the script's metadata calls for it. `run_alignments.py` also wrote timing files for sections 01\u201303, 06 and 07, which had none before.\n3. **Frames:** I added `sec04()` and `sec05()` plus two helpers to `hyperframes/sections.py`. They show counted-up cost bars, a comparison table and run-by-run dots, plus the real exhibit files (the 12 rules, Sonnet's reply, Haiku's `deploy.sh` with `--force-with-lease` highlighted, and Haiku's refusal). The table headers are overridden to white because `fb.py`'s default is gray.\n4. **Checks:** `check` passes for both with no errors or layout issues, and every contrast check passes. From the snapshots I fixed a chip collision, the empty right side of the closing card, a cram",
+  "quota": {
+    "5h_start": 41,
+    "5h_end": 50,
+    "week_start": 50,
+    "week_end": 51
+  },
+  "outputs": {
+    "hyperframes/compositions/frames/04-result-one-the-bill.html": true,
+    "hyperframes/compositions/frames/05-result-two-the-rules.html": true,
+    "hyperframes/renders/04-result-one-the-bill.mp4": true,
+    "hyperframes/renders/05-result-two-the-rules.mp4": true,
+    "hyperframes/audio/04-result-one-the-bill.wav": true,
+    "hyperframes/audio/05-result-two-the-rules.wav": true
+  },
+  "stopped_by_rule": false
+}

@@ -1,0 +1,63 @@
+{
+  "final_tokens": {
+    "in": 70,
+    "cache_write": 169047,
+    "cache_read": 3739379,
+    "out": 43167,
+    "thinking": 21382
+  },
+  "arm": "D2",
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "assistant_turns": 35,
+  "tokens": {
+    "in": 70,
+    "cache_write": 169047,
+    "cache_read": 3739379,
+    "out": 397
+  },
+  "tokens_total": 3908893,
+  "output_share_pct": 0.01,
+  "peak_context": 179391,
+  "tool_calls": {
+    "Bash": 5,
+    "Read": 5
+  },
+  "denied": 1,
+  "cost_usd": 2.9638718,
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 70,
+      "outputTokens": 43167,
+      "cacheReadInputTokens": 3739379,
+      "cacheCreationInputTokens": 169047,
+      "webSearchRequests": 0,
+      "costUSD": 2.9638718,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 21382,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "duration_s": 789,
+  "num_turns_reported": 52,
+  "is_error": false,
+  "final_text": "I wrote and rendered both sections, and `check` passes on each with 0 errors.\n\n1. **Script:** I filled in the Section 04 and 05 blocks in `script.md` in the same format as the others. The banned-word check passes. 04 covers the cost after the reset on Sonnet: doing nothing $0.95, subagent $1.20, `/compact` $0.53, brief handoff $0.57, claude-auto-handoff $0.66, handoff-compact $0.73. 05 covers the rules: Sonnet broke one rule in total (the grid rule, with no reset), while on Haiku it flipped and the force-push rule was the one that went.\n2. **Audio:** 04 runs 49.4s, just under your 50-second floor. 05 runs 54.8s. Word timings are in `hyperframes/audio/*-alignment.json` (`run_alignments.py` also wrote them for the other five sections).\n3. **Frames:** I added `sec04()` and `sec05()` to `hyperframes/sections.py`. 04 has a bar chart of all six setups (each bar shows the lowest-to-highest run), the `$.model.complete (via handoff)` line from the validate exhibit, and the 47k vs 60k-to-69k context bars. 05 has a dot per run on a Sonnet and a Haiku scoreboard, and the three real exhibits: Sonnet's reply, Haiku's refusal with no reset, and Haiku's deploy script after `/compact`. Every number on screen comes from `PILOT_RESULTS.md` or `NOTES.md`.\n4. **Fixes from the snapshots:** I moved labels that overlapped the price figures and ran off the right edge. I also merged the Haiku scoreboard and its exhibits into one stage, because the scoreboard had been on screen for under 3 seconds.\n5. ",
+  "quota": {
+    "5h_start": 74,
+    "5h_end": 89,
+    "week_start": 53,
+    "week_end": 54
+  },
+  "outputs": {
+    "hyperframes/compositions/frames/04-result-one-the-bill.html": true,
+    "hyperframes/compositions/frames/05-result-two-the-rules.html": true,
+    "hyperframes/renders/04-result-one-the-bill.mp4": true,
+    "hyperframes/renders/05-result-two-the-rules.mp4": true,
+    "hyperframes/audio/04-result-one-the-bill.wav": true,
+    "hyperframes/audio/05-result-two-the-rules.wav": true
+  },
+  "stopped_by_rule": false
+}

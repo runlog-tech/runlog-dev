@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        #s04 { position: absolute; inset: 0; overflow: hidden; background: #08090c; color: #eef1f6; font-family: 'Inter', sans-serif; }
+        #s04 .bg { position: absolute; inset: 0; background:
+          radial-gradient(900px 600px at 85% 10%, rgba(154,140,255,0.10), transparent 70%),
+          radial-gradient(900px 600px at 10% 100%, rgba(61,220,151,0.07), transparent 70%); }
+        #s04 .grid { position: absolute; inset: 0; opacity: .5; background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 80px 80px; }
+        #s04 .mono { font-family: 'IBM Plex Mono', monospace; }
+        #s04 .abs { position: absolute; }
+
+        #s04 .badge { left: 80px; top: 52px; display: flex; align-items: center; gap: 0; border: 2px solid #2a3040; border-radius: 10px; overflow: hidden; font-family: 'IBM Plex Mono', monospace; font-weight: 700; font-size: 28px; letter-spacing: .12em; }
+        #s04 .badge .a { padding: 12px 22px; background: #f2b84b; color: #08090c; }
+        #s04 .badge .b { padding: 12px 22px; color: #eef1f6; background: #11141b; }
+
+        /* phase 1: metric card */
+        #s04 #mc { left: 80px; top: 170px; width: 1760px; height: 800px; }
+        #s04 .kicker { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 26px; letter-spacing: .18em; color: #8b93a5; }
+        #s04 .h1 { font-family: 'Archivo Black', sans-serif; font-size: 96px; line-height: 1.05; letter-spacing: -.01em; }
+        #s04 .h1 .amber { color: #f2b84b; }
+        #s04 #mc .l1 { left: 0; top: 50px; }
+        #s04 #mc .l2 { left: 0; top: 160px; }
+        #s04 #strip { left: 0; top: 400px; width: 1760px; height: 150px; }
+        #s04 .blk { position: absolute; top: 56px; height: 64px; border-radius: 8px; }
+        #s04 .blk.dim { background: #151a23; border: 2px solid #232a38; }
+        #s04 .blk.lit { background: rgba(242,184,75,0.16); border: 2px solid #f2b84b; color: #f2b84b; font-family: 'IBM Plex Mono', monospace; font-weight: 700; font-size: 22px; display: flex; align-items: center; justify-content: center; }
+        #s04 .stripcap { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 22px; letter-spacing: .1em; color: #8b93a5; }
+        #s04 #marker { left: 1000px; top: 20px; width: 4px; height: 130px; background: #eef1f6; border-radius: 2px; }
+        #s04 #marklbl { left: 1012px; top: 0; font-family: 'IBM Plex Mono', monospace; font-weight: 700; font-size: 24px; letter-spacing: .12em; color: #eef1f6; white-space: nowrap; }
+        #s04 .chips { left: 0; top: 650px; display: flex; gap: 24px; }
+        #s04 .chip { border: 2px solid #2a3040; background: #11141b; border-radius: 16px; padding: 18px 30px; }
+        #s04 .chip .k { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 20px; letter-spacing: .16em; color: #7a8296; }
+        #s04 .chip .v { font-weight: 800; font-size: 40px; margin-top: 6px; white-space: nowrap; }
+        #s04 .chip.model { border-color: #9a8cff; background: rgba(154,140,255,0.12); }
+        #s04 .chip.model .v { color: #cbc3ff; }
+
+        /* phase 2: chart */
+        #s04 #chart { left: 80px; top: 170px; width: 1260px; height: 760px; transform-origin: 0 0; }
+        #s04 .chead { left: 0; top: 0; width: 1260px; display: flex; justify-content: space-between; align-items: baseline; }
+        #s04 .chead .t { font-family: 'Archivo Black', sans-serif; font-size: 40px; letter-spacing: .01em; }
+        #s04 .chead .s { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 22px; letter-spacing: .12em; color: #8b93a5; }
+        #s04 .row { left: 0; width: 1260px; height: 84px; }
+        #s04 .rin { position: absolute; inset: 0; }
+        #s04 .nm { position: absolute; left: 0; top: 10px; font-family: 'IBM Plex Mono', monospace; font-weight: 700; font-size: 31px; white-space: nowrap; }
+        #s04 .tg { position: absolute; left: 0; top: 52px; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 17px; letter-spacing: .14em; color: #7a8296; }
+        #s04 .trk { position: absolute; left: 420px; top: 14px; width: 700px; height: 56px; border-radius: 10px; background: rgba(255,255,255,0.035); }
+        #s04 .bar { position: absolute; left: 420px; top: 14px; height: 56px; border-radius: 10px; transform-origin: 0 50%; }
+        #s04 .val { position: absolute; top: 8px; font-family: 'IBM Plex Mono', monospace; font-weight: 800; font-size: 44px; white-space: nowrap; }
+        #s04 .cheap { position: absolute; top: 18px; font-family: 'IBM Plex Mono', monospace; font-weight: 800; font-size: 22px; letter-spacing: .14em; background: #3ddc97; color: #08090c; padding: 8px 16px; border-radius: 8px; white-space: nowrap; }
+        #s04 #refline { left: 974px; top: 66px; width: 0; height: 640px; border-left: 3px dashed rgba(238,241,246,0.55); }
+        #s04 #reflbl { left: 986px; top: 700px; font-family: 'IBM Plex Mono', monospace; font-weight: 700; font-size: 20px; letter-spacing: .1em; color: rgba(238,241,246,0.7); white-space: nowrap; }
+        #s04 #brk { left: 1190px; top: 80px; width: 14px; height: 360px; border: 4px solid #3ddc97; border-left: none; border-radius: 0 8px 8px 0; }
+
+        /* right column panels */
+        #s04 .panel { left: 1200px; top: 240px; width: 640px; height: 800px; }
+        #s04 .eyebrow { font-family: 'IBM Plex Mono', monospace; font-weight: 700; font-size: 24px; letter-spacing: .16em; }
+        #s04 .big { font-family: 'Archivo Black', sans-serif; line-height: 1.04; }
+        #s04 .pill { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-weight: 800; font-size: 22px; letter-spacing: .14em; padding: 9px 18px; border-radius: 8px; }
+        #s04 .card { border: 2px solid #2a3040; background: #0f1218; border-radius: 20px; padding: 26px 30px; }
+        #s04 .cardh { font-family: 'IBM Plex Mono', monospace; font-weight: 700; font-size: 28px; }
+        #s04 .cardt { font-weight: 700; font-size: 30px; line-height: 1.25; margin-top: 8px; color: #dfe4ee; }
+        #s04 .mini { position: relative; height: 40px; margin-top: 14px; }
+        #s04 .mini .ml { position: absolute; left: 0; top: 6px; font-family: 'IBM Plex Mono', monospace; font-weight: 700; font-size: 20px; color: #8b93a5; width: 150px; }
+        #s04 .mini .mb { position: absolute; left: 160px; top: 0; height: 36px; border-radius: 8px; transform-origin: 0 50%; }
+        #s04 .mini .mv { position: absolute; top: 2px; font-family: 'IBM Plex Mono', monospace; font-weight: 800; font-size: 26px; white-space: nowrap; }
+      </style>
+
+      <div id="s04" data-composition-id="04-result-one-the-bill" data-width="1920" data-height="1080">
+        <div class="bg"></div><div class="grid"></div>
+
+        <div class="abs badge" id="badge"><div class="a">RESULT 01</div><div class="b">THE BILL</div></div>
+
+        <!-- PHASE 1: what is being compared -->
+        <div class="abs" id="mc">
+          <div class="abs kicker" id="mckick" style="left:0;top:0">WHAT WE MEASURED</div>
+          <div class="abs h1 l1" id="mcl1">Cost of every turn</div>
+          <div class="abs h1 l2" id="mcl2">after the <span class="amber">reset point</span></div>
+          <div class="abs" id="strip">
+            <div class="abs stripcap" id="cap1" style="left:0;top:20px">SETUP, GAUNTLET, PADDING</div>
+            <div class="blk dim" style="left:0;width:960px"></div>
+            <div class="abs" id="marker"></div>
+            <div class="abs" id="marklbl">RESET POINT</div>
+            <div id="litblks"></div>
+            <div class="abs stripcap" id="cap2" style="left:1040px;top:128px;color:#f2b84b">8 FOLLOW-UP TURNS: THE COST WE ADD UP</div>
+          </div>
+          <div class="abs chips" id="chips">
+            <div class="chip" id="chipA"><div class="k">SOURCE</div><div class="v">usage ledger</div></div>
+            <div class="chip" id="chipB"><div class="k">AVERAGED</div><div class="v">mean of the runs</div></div>
+            <div class="chip model" id="chipC"><div class="k">MODEL</div><div class="v">Sonnet 5.5</div></div>
+          </div>
+        </div>
+
+        <!-- PHASE 2: bar chart -->
+        <div class="abs" id="chart">
+          <div class="abs chead" id="chead"><div class="t">COST AFTER THE RESET POINT</div><div class="s">MEAN OF RUNS · SONNET 5.5</div></div>
+          <div class="abs" id="refline"></div>
+          <div class="abs" id="reflbl">NO RESET $0.95</div>
+          <div class="abs" id="brk"></div>
+          <div id="rows"></div>
+        </div>
+
+        <!-- right column panels -->
+        <div class="abs panel" id="p1">
+          <div class="eyebrow" style="color:#3ddc97">A RESET HALVES THE BILL</div>
+          <div class="big" style="font-size:78px;margin-top:26px">Roughly<br>half.</div>
+          <div class="card" style="margin-top:40px">
+            <div class="mini" style="margin-top:0;height:90px"><div class="ml" style="width:400px;font-size:22px;color:#f08a5d;letter-spacing:.12em">NO RESET</div><div class="mv mono" style="left:0;top:30px;font-size:52px;color:#f08a5d">$0.95</div></div>
+            <div class="mini" style="margin-top:22px;height:90px"><div class="ml" style="width:400px;font-size:22px;color:#3ddc97;letter-spacing:.12em">WITH A RESET</div><div class="mv mono" style="left:0;top:30px;font-size:52px;color:#3ddc97">$0.53 to $0.73</div></div>
+          </div>
+          <div class="cardt" style="margin-top:28px;color:#8b93a5;font-size:26px" id="p1note">The mods deliver on that.</div>
+        </div>
+
+        <div class="abs panel" id="p2">
+          <span class="pill" id="p2pill" style="background:#3ddc97;color:#08090c">CHEAPEST OF ALL SIX</span>
+          <div class="big mono" style="font-family:'IBM Plex Mono',monospace;font-weight:800;font-size:92px;margin-top:30px;color:#3ddc97">/compact</div>
+          <div class="big mono" style="font-family:'IBM Plex Mono',monospace;font-weight:800;font-size:132px;margin-top:6px">$0.53</div>
+          <div class="abs card" id="p2inst" style="left:0;top:390px;width:640px;border-color:#3ddc97;background:rgba(61,220,151,0.08)">
+            <div class="cardh" style="color:#3ddc97">Already installed</div>
+            <div class="cardt">Nothing to install.</div>
+          </div>
+          <div class="abs" id="p2beat" style="left:0;top:560px;width:640px">
+            <div class="eyebrow" style="color:#8b93a5;font-size:22px">IT BEAT BOTH MODS</div>
+            <div class="card" style="margin-top:14px;padding:18px 26px">
+              <div class="mini" style="margin-top:0;height:44px"><div class="ml" style="width:380px;font-size:25px;color:#cbc3ff">claude-auto-handoff</div><div class="mv" style="left:420px;font-size:32px;color:#cbc3ff">$0.66</div></div>
+              <div class="mini" style="margin-top:6px;height:44px"><div class="ml" style="width:380px;font-size:25px;color:#cbc3ff">handoff-compact</div><div class="mv" style="left:420px;font-size:32px;color:#cbc3ff">$0.73</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="abs panel" id="p3">
+          <div class="eyebrow" style="color:#9a8cff">WHY THE MODS COST MORE</div>
+          <div class="abs card" id="cA" style="left:0;top:56px;width:640px;height:200px">
+            <div class="cardh" style="color:#cbc3ff">claude-auto-handoff</div>
+            <div class="cardt" style="font-size:36px">One extra model call to write its brief.</div>
+          </div>
+          <div class="abs card" id="cB" style="left:0;top:290px;width:640px;height:420px">
+            <div class="cardh" style="color:#cbc3ff">handoff-compact</div>
+            <div class="cardt" style="font-size:26px;margin-top:6px">Context left after the reset</div>
+            <div class="mini" id="mB1" style="margin-top:20px"><div class="ml">/compact</div><div class="mb" id="mB1b" style="width:188px;background:#3ddc97"></div><div class="mv" id="mB1v" style="left:174px;color:#08090c;font-size:24px;top:3px">about 47k</div></div>
+            <div class="mini" id="mB2" style="margin-top:12px"><div class="ml">handoff</div><div class="mb" id="mB2b" style="width:276px;background:#9a8cff"></div><div class="mv" id="mB2v" style="left:174px;color:#08090c;font-size:24px;top:3px">60k to 69k</div></div>
+            <div class="cardt" id="mB3t" style="font-size:26px;margin-top:26px;color:#f2b84b">Then the context grew back</div>
+            <div class="mini" id="mB3" style="margin-top:12px"><div class="ml">final</div><div class="mb" id="mB3b" style="width:372px;background:#f2b84b"></div><div class="mv" id="mB3v" style="left:174px;color:#08090c;font-size:24px;top:3px">76k to 93k</div></div>
+            <div class="abs mono" id="mB3n" style="left:30px;top:356px;font-weight:600;font-size:22px;color:#8b93a5;white-space:nowrap">tokens in context at the last follow-up</div>
+          </div>
+        </div>
+
+        <div class="abs panel" id="p4">
+          <div class="big" style="font-size:84px;margin-top:150px" id="p4a">The mods<br>save you<br>money.</div>
+          <div class="big" style="font-size:84px;margin-top:40px;color:#3ddc97" id="p4b">/compact saves a little more.</div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          const $ = (s) => document.querySelector('#s04 ' + s);
+          const E = 'power3.out';
+
+          const COLORS = { noreset: '#f08a5d', subagent: '#f08a5d', compact: '#3ddc97', brief: '#7aa2c9', auto: '#9a8cff', hc: '#9a8cff' };
+          const ROWS = [
+            { id: 'noreset', name: 'no reset', tag: '', v: 0.95, t: 8.96 },
+            { id: 'subagent', name: 'subagent', tag: '', v: 1.20, t: 11.80 },
+            { id: 'compact', name: '/compact', tag: '', v: 0.53, t: 14.72 },
+            { id: 'brief', name: 'brief handoff', tag: '', v: 0.57, t: 17.04 },
+            { id: 'auto', name: 'claude-auto-handoff', tag: 'COMMUNITY MOD', v: 0.66, t: 18.82 },
+            { id: 'hc', name: 'handoff-compact', tag: 'COMMUNITY MOD', v: 0.73, t: 20.72 },
+          ];
+          const SORTED = ['compact', 'brief', 'auto', 'hc', 'noreset', 'subagent'];
+          const ROW_H = 104, ROW_Y0 = 80, BAR_W = 700, MAXV = 1.2;
+
+          // build rows
+          const rowsEl = $('#rows');
+          ROWS.forEach((r, i) => {
+            const el = document.createElement('div');
+            el.className = 'abs row'; el.id = 's04-row-' + r.id;
+            el.innerHTML = '<div class="rin" id="s04-rin-' + r.id + '">' +
+              '<div class="nm" style="color:' + (r.tag ? '#cbc3ff' : '#eef1f6') + '">' + r.name + '</div>' +
+              (r.tag ? '<div class="tg">' + r.tag + '</div>' : '') +
+              '<div class="trk"></div>' +
+              '<div class="bar" id="s04-bar-' + r.id + '" style="width:' + Math.round(r.v / MAXV * BAR_W) + 'px;background:' + COLORS[r.id] + '"></div>' +
+              '<div class="val" id="s04-val-' + r.id + '" style="left:440px;color:#08090c">$0.00</div>' +
+              (r.id === 'compact' ? '<div class="cheap" id="s04-cheap" style="left:' + (420 + Math.round(r.v / MAXV * BAR_W) + 20) + 'px">CHEAPEST</div>' : '') +
+              '</div>';
+            rowsEl.appendChild(el);
+            r.el = el; r.rin = el.querySelector('.rin');
+            r.bar = el.querySelector('.bar'); r.val = el.querySelector('.val');
+            gsap.set(el, { y: ROW_Y0 + i * ROW_H });
+          });
+
+          // lit blocks T1..T8
+          const lit = $('#litblks');
+          for (let i = 0; i < 8; i++) {
+            const b = document.createElement('div');
+            b.className = 'blk lit'; b.id = 's04-t' + i;
+            b.style.left = (1040 + i * 90) + 'px'; b.style.width = '76px';
+            b.textContent = 'T' + (i + 1);
+            lit.appendChild(b);
+          }
+
+          /* initial states */
+          gsap.set(['#s04 #mckick', '#s04 #mcl1', '#s04 #mcl2', '#s04 #cap1', '#s04 #cap2', '#s04 #marker', '#s04 #marklbl', '#s04 #chipA', '#s04 #chipB', '#s04 #chipC', '#s04 .blk', '#s04 #strip'], { opacity: 0 });
+          gsap.set('#s04 #badge', { opacity: 0 });
+          gsap.set(['#s04 #chead', '#s04 #refline', '#s04 #reflbl', '#s04 #brk'], { opacity: 0 });
+          ROWS.forEach((r) => { gsap.set(r.rin, { opacity: 0 }); gsap.set(r.bar, { scaleX: 0 }); gsap.set(r.val, { opacity: 0 }); });
+          gsap.set('#s04 #s04-cheap', { opacity: 0, scale: 0.6, transformOrigin: '0 50%' });
+          gsap.set(['#s04 #p1', '#s04 #p2', '#s04 #p3', '#s04 #p4'], { opacity: 0 });
+          gsap.set(['#s04 #p2pill', '#s04 #p2inst', '#s04 #p2beat', '#s04 #cA', '#s04 #cB', '#s04 #mB1', '#s04 #mB2', '#s04 #mB3', '#s04 #mB3t', '#s04 #mB3n', '#s04 #p1note', '#s04 #p4a', '#s04 #p4b'], { opacity: 0 });
+          gsap.set(['#s04 #mB1b', '#s04 #mB2b', '#s04 #mB3b'], { scaleX: 0 });
+
+          const rise = (sel, t, d = 0.6, y = 30) => tl.fromTo(sel, { opacity: 0, y: y }, { opacity: 1, y: 0, duration: d, ease: E }, t);
+
+          /* ---- phase 1: 0.26 -> 8.4 ---- */
+          tl.fromTo('#s04 #badge', { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.6, ease: E }, 0.26);
+          tl.to('#s04 #mckick', { opacity: 1, duration: 0.5 }, 1.1);
+          rise('#s04 #mcl1', 2.06, 0.7, 40);
+          rise('#s04 #mcl2', 3.16, 0.7, 40);
+          tl.to('#s04 #strip', { opacity: 1, duration: 0.4 }, 3.3);
+          tl.to('#s04 #cap1', { opacity: 1, duration: 0.5 }, 3.3);
+          tl.to('#s04 #strip .blk.dim', { opacity: 1, duration: 0.5 }, 3.3);
+          tl.fromTo('#s04 #marker', { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.4, ease: E, transformOrigin: '50% 100%' }, 3.5);
+          tl.fromTo('#s04 #marklbl', { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.4, ease: E }, 3.7);
+          for (let i = 0; i < 8; i++) tl.fromTo('#s04 #s04-t' + i, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.35, ease: E }, 3.9 + i * 0.1);
+          tl.to('#s04 #cap2', { opacity: 1, duration: 0.5 }, 4.6);
+          rise('#s04 #chipA', 4.16, 0.5, 20);
+          rise('#s04 #chipB', 4.46, 0.5, 20);
+          tl.fromTo('#s04 #chipC', { opacity: 0, y: 20, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: 'back.out(1.8)' }, 6.08);
+
+          // hand over to chart
+          tl.to(['#s04 #mckick', '#s04 #mcl1', '#s04 #mcl2', '#s04 #strip', '#s04 #chips'], { opacity: 0, y: -24, duration: 0.6, ease: 'power2.in' }, 7.7);
+
+          /* ---- phase 2: bars, timed to spoken prices ---- */
+          tl.to('#s04 #chead', { opacity: 1, duration: 0.5 }, 8.1);
+          ROWS.forEach((r, i) => {
+            tl.fromTo(r.rin, { opacity: 0, x: -30 }, { opacity: 0.4, x: 0, duration: 0.5, ease: E }, 8.2 + i * 0.07);
+          });
+          ROWS.forEach((r) => {
+            tl.to(r.rin, { opacity: 1, duration: 0.3 }, r.t - 0.1);
+            tl.to(r.bar, { scaleX: 1, duration: 1.0, ease: 'power3.out' }, r.t);
+            tl.to(r.val, { opacity: 1, duration: 0.2 }, r.t + 0.35);
+            const o = { n: 0 };
+            tl.to(o, { n: r.v, duration: 0.7, ease: 'power2.out', onUpdate: () => { r.val.textContent = '$' + o.n.toFixed(2); } }, r.t + 0.35);
+          });
+
+          // focus helper: highlight a set of rows, dim the rest
+          const focus = (ids, t) => ROWS.forEach((r) => tl.to(r.rin, { opacity: ids.includes(r.id) ? 1 : 0.62, duration: 0.5 }, t));
+          const unfocus = (t) => ROWS.forEach((r) => tl.to(r.rin, { opacity: 1, duration: 0.5 }, t));
+
+          /* ---- 22.4 -> 30: a reset roughly halves it ---- */
+          unfocus(22.9);
+          tl.to('#s04 #chart', { scale: 0.8, y: 70, duration: 1.0, ease: 'power3.inOut' }, 24.0);
+          tl.set('#s04 #p1', { opacity: 1 }, 24.2);
+          rise('#s04 #p1 .eyebrow', 24.4, 0.5, 20);
+          rise('#s04 #p1 .big', 24.9, 0.7, 30);
+          ROWS.forEach((r) => {
+            const k = SORTED.indexOf(r.id);
+            tl.to(r.el, { y: ROW_Y0 + k * ROW_H, duration: 1.0, ease: 'power3.inOut' }, 24.6);
+          });
+          tl.to(['#s04 #refline', '#s04 #reflbl'], { opacity: 1, duration: 0.5 }, 25.6);
+          tl.fromTo('#s04 #refline', { scaleY: 0 }, { scaleY: 1, duration: 0.7, ease: E, transformOrigin: '50% 0' }, 25.6);
+          tl.fromTo('#s04 #brk', { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.7, ease: E, transformOrigin: '50% 0' }, 26.6);
+          tl.fromTo('#s04 #p1 .card', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: E }, 26.4);
+          tl.fromTo('#s04 #p1note', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, 28.2);
+
+          /* ---- 30.8 -> 41: /compact cheapest ---- */
+          tl.to('#s04 #p1', { opacity: 0, x: 40, duration: 0.5, ease: 'power2.in' }, 30.3);
+          tl.to(['#s04 #brk'], { opacity: 0, duration: 0.4 }, 30.6);
+          tl.set('#s04 #p2', { opacity: 1 }, 30.8);
+          tl.fromTo('#s04 #p2pill', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, 31.14);
+          rise('#s04 #p2 .big:nth-of-type(1)', 32.52, 0.6, 30);
+          rise('#s04 #p2 .big:nth-of-type(2)', 33.0, 0.6, 30);
+          focus(['compact'], 31.0);
+          tl.to('#s04 #s04-cheap', { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(2)' }, 31.5);
+          tl.fromTo('#s04 #p2inst', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: E }, 36.72);
+          tl.fromTo('#s04 #p2beat', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: E }, 38.34);
+          focus(['compact', 'auto', 'hc'], 38.4);
+
+          /* ---- 41.4 -> 59.5: why ---- */
+          tl.to('#s04 #p2', { opacity: 0, x: 40, duration: 0.5, ease: 'power2.in' }, 40.8);
+          tl.to('#s04 #s04-cheap', { opacity: 0, duration: 0.3 }, 40.8);
+          tl.set('#s04 #p3', { opacity: 1 }, 41.4);
+          rise('#s04 #p3 .eyebrow', 41.5, 0.5, 20);
+          focus(['auto'], 41.8);
+          tl.fromTo('#s04 #cA', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: E }, 41.86);
+          focus(['hc', 'compact'], 45.3);
+          tl.fromTo('#s04 #cB', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: E }, 45.36);
+          tl.fromTo('#s04 #mB2', { opacity: 0 }, { opacity: 1, duration: 0.3 }, 46.6);
+          tl.to('#s04 #mB2b', { scaleX: 1, duration: 1.0, ease: E }, 46.6);
+          tl.fromTo('#s04 #mB1', { opacity: 0 }, { opacity: 1, duration: 0.3 }, 50.4);
+          tl.to('#s04 #mB1b', { scaleX: 1, duration: 1.0, ease: E }, 50.4);
+          focus(['hc'], 54.1);
+          rise('#s04 #mB3t', 54.44, 0.5, 14);
+          tl.fromTo('#s04 #mB3', { opacity: 0 }, { opacity: 1, duration: 0.3 }, 55.0);
+          tl.to('#s04 #mB3b', { scaleX: 1, duration: 1.2, ease: E }, 55.0);
+          rise('#s04 #mB3n', 55.6, 0.5, 14);
+          tl.to('#s04 #p3 .eyebrow', { color: '#f2b84b', duration: 0.4 }, 56.3);
+
+          /* ---- 59.9 -> end: closing ---- */
+          tl.to('#s04 #p3', { opacity: 0, x: 40, duration: 0.5, ease: 'power2.in' }, 59.3);
+          tl.set('#s04 #p4', { opacity: 1 }, 59.8);
+          focus(['compact', 'brief', 'auto', 'hc'], 59.9);
+          tl.fromTo('#s04 #p4a', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: E }, 59.9);
+          tl.fromTo('#s04 #p4b', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: E }, 61.5);
+          focus(['compact'], 61.6);
+          tl.to('#s04 #s04-cheap', { opacity: 1, duration: 0.4 }, 61.9);
+
+          window.__timelines['04-result-one-the-bill'] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

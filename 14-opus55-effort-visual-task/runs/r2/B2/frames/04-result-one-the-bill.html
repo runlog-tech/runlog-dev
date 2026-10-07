@@ -1,0 +1,224 @@
+<template id="04-result-one-the-bill-template">
+<div id="root" data-composition-id="04-result-one-the-bill" data-start="0" data-duration="52.15" data-width="1920" data-height="1080" style="position:absolute;inset:0;width:100%;height:100%;overflow:hidden;background:#08090c;color:#f8fafc;font-family:'IBM Plex Mono',monospace;">
+  <style>
+    @font-face { font-family: 'IBM Plex Mono'; src: local('IBM Plex Mono'); }
+    @font-face { font-family: 'Archivo Black'; src: local('Archivo Black'); }
+    @font-face { font-family: 'Plus Jakarta Sans'; src: local('Plus Jakarta Sans'); }
+    #root .bg-grid { position:absolute; inset:0; opacity:0.035; background-image:linear-gradient(#f8fafc 1px,transparent 1px),linear-gradient(90deg,#f8fafc 1px,transparent 1px); background-size:64px 64px; }
+    #root .glow-c { position:absolute; top:12%; left:10%; width:900px; height:700px; background:radial-gradient(circle,rgba(94,234,212,0.12),transparent 70%); }
+    #root .glow-a { position:absolute; bottom:8%; right:10%; width:850px; height:650px; background:radial-gradient(circle,rgba(251,191,36,0.09),transparent 70%); }
+    #root .badge { position:absolute; top:40px; left:100px; display:flex; align-items:center; gap:16px; z-index:10; }
+    #root .badge .tag { padding:6px 18px; border-radius:6px; font-size:28px; font-weight:800; letter-spacing:0.08em; background:rgba(94,234,212,0.12); color:#5eead4; }
+    #root .badge .ttl { font-size:28px; font-weight:600; letter-spacing:0.04em; }
+    #root .stage { position:absolute; inset:0; }
+    #root .abs { position:absolute; }
+    #root .c { text-align:center; }
+    #root .hero { font-family:'Archivo Black',sans-serif; line-height:1.1; }
+    #root .cap { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:48px; }
+    #root .body { font-family:'Plus Jakarta Sans',sans-serif; font-weight:600; font-size:40px; line-height:1.35; }
+    #root .chip { font-family:'IBM Plex Mono',monospace; font-weight:800; font-size:44px; letter-spacing:0.06em; padding:16px 36px; border-radius:10px; white-space:nowrap; }
+    #root .stamp { font-family:'Archivo Black',sans-serif; padding:22px 56px; border-radius:14px; white-space:nowrap; }
+    #root .shot { position:absolute; border-radius:10px; box-shadow:0 30px 90px rgba(0,0,0,0.85), 0 0 0 1px rgba(255,255,255,0.12); }
+    #root .shotcap { position:absolute; font-size:30px; font-weight:600; letter-spacing:0.04em; color:#5eead4; }
+    #root .term { position:absolute; background:#0d1117; border-radius:14px; border:1px solid rgba(255,255,255,0.14); box-shadow:0 30px 90px rgba(0,0,0,0.85); overflow:hidden; }
+    #root .tbar { background:#161b22; padding:12px 22px; display:flex; align-items:center; gap:10px; border-bottom:1px solid rgba(255,255,255,0.08); }
+    #root .tbar .dot { width:14px; height:14px; border-radius:50%; }
+    #root .tbar .tt { margin-left:14px; font-size:24px; font-weight:600; color:#cbd5e1; }
+    #root .tbody { padding:26px 34px; font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:32px; line-height:1.5; color:#f8fafc; }
+    #root .tl { white-space:pre-wrap; word-break:break-word; }
+    #root .doc { position:absolute; background:#0d1117; border-radius:14px; border:1px solid rgba(255,255,255,0.14); box-shadow:0 30px 90px rgba(0,0,0,0.85); padding:28px 36px; }
+    #root .doc .dh { font-family:'IBM Plex Mono',monospace; font-size:24px; font-weight:700; color:#94a3b8; letter-spacing:0.04em; margin-bottom:14px; }
+    #root .doc .dp { font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:27px; line-height:1.45; color:#f8fafc; margin-bottom:14px; }
+    #root table.tb { position:absolute; border-collapse:collapse; font-family:'Plus Jakarta Sans',sans-serif; }
+    #root table.tb th { font-size:30px; font-weight:800; color:#94a3b8; text-align:left; padding:14px 24px; border-bottom:2px solid rgba(255,255,255,0.2); letter-spacing:0.04em; }
+    #root table.tb td { font-size:40px; font-weight:800; padding:18px 24px; border-bottom:1px solid rgba(255,255,255,0.1); color:#f8fafc; }
+    #root .box { position:absolute; border-radius:10px; font-family:'IBM Plex Mono',monospace; font-weight:800; display:flex; align-items:center; justify-content:center; text-align:center; }
+  </style>
+  <div class="bg-grid"></div><div class="glow-c" data-layout-allow-overflow></div><div class="glow-a" data-layout-allow-overflow></div>
+  <div class="badge"><div class="tag">RESULT 01</div><div class="ttl">THE BILL</div></div>
+  <div class="stage" id="s1">
+    <div class="cap abs" id="e1" style="left:0;right:0;text-align:center;top:200px;font-size:56px;color:#fbbf24;">WHAT I MEASURED</div>
+    <div class="hero abs" id="e2" style="left:0;right:0;text-align:center;top:320px;font-size:120px;color:#f8fafc;">COST AFTER THE RESET</div>
+    <div class="chip abs" id="e3" style="left:420px;top:560px;font-size:54px;color:#5eead4;background:rgba(94,234,212,0.14);">THE FEATURE</div>
+    <div class="chip abs" id="e4" style="left:900px;top:560px;font-size:54px;color:#5eead4;background:rgba(94,234,212,0.14);">+ 8 FOLLOW-UPS</div>
+    <div class="chip abs" id="e5" style="left:0;right:0;text-align:center;top:740px;width:fit-content;margin:0 auto;font-size:48px;color:#fbbf24;background:rgba(251,191,36,0.14);">SONNET 5.5, ~200k TOKENS IN CONTEXT</div>
+  </div>
+  <div class="stage" id="s2">
+    <div class="cap abs" id="e6" style="left:100px;top:118px;font-size:40px;color:#5eead4;">COST AFTER THE RESET POINT, MEAN PER SETUP (SONNET 5.5)</div>
+    <div class="cap abs" id="e7" style="left:100px;top:210px;width:520px;font-size:40px;color:#f8fafc;">no reset</div>
+    <div id="e8" class="abs" style="left:640px;top:216px;height:46px;width:655px;background:#f8fafc;border-radius:6px;transform-origin:left center;"></div>
+    <div class="hero abs" id="e9" style="left:1325px;top:206px;font-size:56px;color:#f8fafc;">$0.00</div>
+    <div class="cap abs" id="e10" style="left:100px;top:320px;width:520px;font-size:40px;color:#f8fafc;">subagent</div>
+    <div id="e11" class="abs" style="left:640px;top:326px;height:46px;width:827px;background:#f87171;border-radius:6px;transform-origin:left center;"></div>
+    <div class="hero abs" id="e12" style="left:1497px;top:316px;font-size:56px;color:#f87171;">$0.00</div>
+    <div class="cap abs" id="e13" style="left:100px;top:430px;width:520px;font-size:40px;color:#f8fafc;">handoff-compact</div>
+    <div id="e14" class="abs" style="left:640px;top:436px;height:46px;width:503px;background:#fbbf24;border-radius:6px;transform-origin:left center;"></div>
+    <div class="hero abs" id="e15" style="left:1173px;top:426px;font-size:56px;color:#fbbf24;">$0.00</div>
+    <div class="cap abs" id="e16" style="left:100px;top:540px;width:520px;font-size:40px;color:#f8fafc;">claude-auto-handoff</div>
+    <div id="e17" class="abs" style="left:640px;top:546px;height:46px;width:455px;background:#fbbf24;border-radius:6px;transform-origin:left center;"></div>
+    <div class="hero abs" id="e18" style="left:1125px;top:536px;font-size:56px;color:#fbbf24;">$0.00</div>
+    <div class="cap abs" id="e19" style="left:100px;top:650px;width:520px;font-size:40px;color:#f8fafc;">brief handoff</div>
+    <div id="e20" class="abs" style="left:640px;top:656px;height:46px;width:393px;background:#f8fafc;border-radius:6px;transform-origin:left center;"></div>
+    <div class="hero abs" id="e21" style="left:1063px;top:646px;font-size:56px;color:#f8fafc;">$0.00</div>
+    <div class="cap abs" id="e22" style="left:100px;top:760px;width:520px;font-size:40px;color:#f8fafc;">/compact</div>
+    <div id="e23" class="abs" style="left:640px;top:766px;height:46px;width:365px;background:#5eead4;border-radius:6px;transform-origin:left center;"></div>
+    <div class="hero abs" id="e24" style="left:1035px;top:756px;font-size:56px;color:#5eead4;">$0.00</div>
+    <div class="stamp abs" id="e25" style="left:1050px;top:880px;font-size:44px;color:#5eead4;background:#08090c;border:6px solid #5eead4;">CHEAPEST OF ALL SIX</div>
+    <div class="cap abs" id="e26" style="left:100px;top:930px;font-size:30px;color:#94a3b8;">n = 3 per setup, 4 for claude-auto-handoff; one task</div>
+  </div>
+  <div class="stage" id="s3">
+    <div class="hero abs" id="e27" style="left:160px;top:220px;font-size:200px;color:#f8fafc;">$0.95</div>
+    <div class="hero abs" id="e28" style="left:830px;top:220px;font-size:200px;color:#f8fafc;">→</div>
+    <div class="hero abs" id="e29" style="left:1140px;top:220px;font-size:200px;color:#5eead4;">$0.53</div>
+    <div class="stamp abs" id="e30" style="left:0;right:0;text-align:center;top:520px;width:fit-content;margin:0 auto;font-size:80px;color:#fbbf24;background:rgba(251,191,36,0.14);border:6px solid #fbbf24;">ROUGHLY HALF</div>
+    <div class="chip abs" id="e31" style="left:0;right:0;text-align:center;top:780px;width:fit-content;margin:0 auto;font-size:54px;color:#5eead4;background:rgba(94,234,212,0.14);">NO MOD NEEDED: /compact IS BUILT IN</div>
+  </div>
+  <div class="stage" id="s4">
+    <div class="cap abs" id="e32" style="left:100px;top:130px;font-size:64px;color:#fbbf24;">WHY THE MODS COST MORE</div>
+    <div class="chip abs" id="e33" style="left:100px;top:280px;font-size:54px;color:#fbbf24;background:rgba(251,191,36,0.14);">+1 MODEL CALL TO WRITE THE BRIEF</div>
+    <div class="cap abs" id="e34" style="left:100px;top:460px;font-size:40px;color:#f8fafc;">CONTEXT LEFT RIGHT AFTER THE RESET</div>
+    <div class="hero abs" id="e35" style="left:100px;top:540px;font-size:150px;color:#fbbf24;">60k to 69k</div>
+    <div class="cap abs" id="e36" style="left:100px;top:740px;font-size:44px;color:#fbbf24;">handoff-compact</div>
+    <div class="hero abs" id="e37" style="left:1220px;top:540px;font-size:150px;color:#5eead4;">~47k</div>
+    <div class="cap abs" id="e38" style="left:1220px;top:740px;font-size:44px;color:#5eead4;">/compact</div>
+  </div>
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+      // word start times (s) from forced alignment of the assembled narration; w(i) = start of word i
+      var W = [0.24, 0.66, 0.82, 0.94, 1.4, 1.48, 1.8, 1.98, 2.34, 2.56, 2.66, 2.98, 3.2, 3.54, 3.64, 4.0, 4.22, 4.38, 4.56, 5.42, 5.58, 5.7, 5.7, 6.78, 6.9, 7.12, 7.28, 7.54, 7.9, 8.28, 8.38, 9.12, 9.32, 9.6, 9.92, 10.22, 10.54, 11.12, 11.24, 11.64, 11.92, 12.04, 12.36, 12.42, 12.7, 12.98, 13.2, 13.3, 13.56, 13.88, 14.08, 14.3, 14.88, 15.16, 15.46, 15.6, 16.12, 16.92, 17.1, 17.18, 17.28, 17.6, 17.86, 18.38, 19.26, 19.64, 20.16, 20.26, 20.52, 20.9, 21.36, 22.48, 22.62, 23.0, 23.61, 23.91, 24.16, 24.68, 24.8, 25.18, 25.3, 25.5, 26.05, 26.32, 26.59, 26.91, 27.2, 27.48, 27.75, 27.89, 28.12, 28.46, 28.62, 28.69, 29.05, 29.27, 29.61, 29.93, 30.47, 30.59, 30.67, 31.03, 31.35, 31.61, 31.71, 31.99, 32.07, 32.17, 32.47, 32.65, 33.07, 33.17, 33.33, 33.47, 33.55, 33.83, 33.93, 34.31, 34.41, 34.83, 35.27, 35.61, 35.83, 35.97, 36.05, 36.15, 36.29, 36.37, 36.55, 37.09, 37.25, 37.35, 37.45, 37.81, 38.21, 38.63, 38.89, 39.03, 39.27, 39.45, 39.81, 40.15, 40.45, 40.57, 40.81, 40.95, 42.07, 42.21, 43.29, 43.63, 44.05, 44.23, 44.69, 45.05, 45.51, 46.05, 46.21, 47.21, 47.65, 47.99, 48.37, 48.73, 49.25, 49.47, 49.93];
+      function w(i) { return W[i]; }
+      gsap.set(["#s1", "#s2", "#s3", "#s4", "#e1", "#e2", "#e3", "#e4", "#e5", "#e6", "#e7", "#e8", "#e9", "#e10", "#e11", "#e12", "#e13", "#e14", "#e15", "#e16", "#e17", "#e18", "#e19", "#e20", "#e21", "#e22", "#e23", "#e24", "#e25", "#e26", "#e27", "#e28", "#e29", "#e30", "#e31", "#e32", "#e33", "#e34", "#e35", "#e36", "#e37", "#e38"], { opacity: 0 });
+      function show(sel, t) { tl.fromTo(sel, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, t); }
+      function enter(sel, t) { tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, t); }
+      function leave(sel, t) { tl.to(sel, { opacity: 0, y: -30, duration: 0.35, ease: "power2.in" }, t); }
+      function pop(sel, t) { tl.fromTo(sel, { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, t); }
+      enter("#s1", 0.0);
+      leave("#s1", w(31) - 0.7);
+      enter("#s2", w(31) - 0.3);
+      leave("#s2", w(98) - 0.7);
+      enter("#s3", w(98) - 0.3);
+      leave("#s3", w(129) - 0.7);
+      enter("#s4", w(129) - 0.3);
+      show("#e1", w(1) + 0.0);
+      show("#e2", w(4) + 0.0);
+      show("#e3", w(13) + 0.0);
+      show("#e4", w(15) + 0.0);
+      show("#e5", w(21) + 0.0);
+      show("#e6", w(31) + 0.0);
+      show("#e7", w(31) + 0.0);
+      show("#e8", w(31) + 0.0);
+      tl.fromTo("#e8", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, w(31) + 0.1);
+      show("#e9", w(31) + 0.0);
+      tl.set("#e9", { textContent: "$0.08" }, w(31) + 0.00);
+      tl.set("#e9", { textContent: "$0.16" }, w(31) + 0.05);
+      tl.set("#e9", { textContent: "$0.24" }, w(31) + 0.10);
+      tl.set("#e9", { textContent: "$0.32" }, w(31) + 0.15);
+      tl.set("#e9", { textContent: "$0.40" }, w(31) + 0.20);
+      tl.set("#e9", { textContent: "$0.47" }, w(31) + 0.25);
+      tl.set("#e9", { textContent: "$0.55" }, w(31) + 0.30);
+      tl.set("#e9", { textContent: "$0.63" }, w(31) + 0.35);
+      tl.set("#e9", { textContent: "$0.71" }, w(31) + 0.40);
+      tl.set("#e9", { textContent: "$0.79" }, w(31) + 0.45);
+      tl.set("#e9", { textContent: "$0.87" }, w(31) + 0.50);
+      tl.set("#e9", { textContent: "$0.95" }, w(31) + 0.55);
+      show("#e10", w(37) + 0.0);
+      show("#e11", w(37) + 0.0);
+      tl.fromTo("#e11", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, w(37) + 0.1);
+      show("#e12", w(37) + 0.0);
+      tl.set("#e12", { textContent: "$0.10" }, w(37) + 0.00);
+      tl.set("#e12", { textContent: "$0.20" }, w(37) + 0.05);
+      tl.set("#e12", { textContent: "$0.30" }, w(37) + 0.10);
+      tl.set("#e12", { textContent: "$0.40" }, w(37) + 0.15);
+      tl.set("#e12", { textContent: "$0.50" }, w(37) + 0.20);
+      tl.set("#e12", { textContent: "$0.60" }, w(37) + 0.25);
+      tl.set("#e12", { textContent: "$0.70" }, w(37) + 0.30);
+      tl.set("#e12", { textContent: "$0.80" }, w(37) + 0.35);
+      tl.set("#e12", { textContent: "$0.90" }, w(37) + 0.40);
+      tl.set("#e12", { textContent: "$1.00" }, w(37) + 0.45);
+      tl.set("#e12", { textContent: "$1.10" }, w(37) + 0.50);
+      tl.set("#e12", { textContent: "$1.20" }, w(37) + 0.55);
+      show("#e13", w(56) + 0.0);
+      show("#e14", w(56) + 0.0);
+      tl.fromTo("#e14", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, w(56) + 0.1);
+      show("#e15", w(56) + 0.0);
+      tl.set("#e15", { textContent: "$0.06" }, w(56) + 0.00);
+      tl.set("#e15", { textContent: "$0.12" }, w(56) + 0.05);
+      tl.set("#e15", { textContent: "$0.18" }, w(56) + 0.10);
+      tl.set("#e15", { textContent: "$0.24" }, w(56) + 0.15);
+      tl.set("#e15", { textContent: "$0.30" }, w(56) + 0.20);
+      tl.set("#e15", { textContent: "$0.36" }, w(56) + 0.25);
+      tl.set("#e15", { textContent: "$0.43" }, w(56) + 0.30);
+      tl.set("#e15", { textContent: "$0.49" }, w(56) + 0.35);
+      tl.set("#e15", { textContent: "$0.55" }, w(56) + 0.40);
+      tl.set("#e15", { textContent: "$0.61" }, w(56) + 0.45);
+      tl.set("#e15", { textContent: "$0.67" }, w(56) + 0.50);
+      tl.set("#e15", { textContent: "$0.73" }, w(56) + 0.55);
+      show("#e16", w(63) + 0.0);
+      show("#e17", w(63) + 0.0);
+      tl.fromTo("#e17", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, w(63) + 0.1);
+      show("#e18", w(63) + 0.0);
+      tl.set("#e18", { textContent: "$0.06" }, w(63) + 0.00);
+      tl.set("#e18", { textContent: "$0.11" }, w(63) + 0.05);
+      tl.set("#e18", { textContent: "$0.17" }, w(63) + 0.10);
+      tl.set("#e18", { textContent: "$0.22" }, w(63) + 0.15);
+      tl.set("#e18", { textContent: "$0.28" }, w(63) + 0.20);
+      tl.set("#e18", { textContent: "$0.33" }, w(63) + 0.25);
+      tl.set("#e18", { textContent: "$0.39" }, w(63) + 0.30);
+      tl.set("#e18", { textContent: "$0.44" }, w(63) + 0.35);
+      tl.set("#e18", { textContent: "$0.50" }, w(63) + 0.40);
+      tl.set("#e18", { textContent: "$0.55" }, w(63) + 0.45);
+      tl.set("#e18", { textContent: "$0.61" }, w(63) + 0.50);
+      tl.set("#e18", { textContent: "$0.66" }, w(63) + 0.55);
+      show("#e19", w(66) + 0.0);
+      show("#e20", w(66) + 0.0);
+      tl.fromTo("#e20", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, w(66) + 0.1);
+      show("#e21", w(66) + 0.0);
+      tl.set("#e21", { textContent: "$0.05" }, w(66) + 0.00);
+      tl.set("#e21", { textContent: "$0.09" }, w(66) + 0.05);
+      tl.set("#e21", { textContent: "$0.14" }, w(66) + 0.10);
+      tl.set("#e21", { textContent: "$0.19" }, w(66) + 0.15);
+      tl.set("#e21", { textContent: "$0.24" }, w(66) + 0.20);
+      tl.set("#e21", { textContent: "$0.28" }, w(66) + 0.25);
+      tl.set("#e21", { textContent: "$0.33" }, w(66) + 0.30);
+      tl.set("#e21", { textContent: "$0.38" }, w(66) + 0.35);
+      tl.set("#e21", { textContent: "$0.43" }, w(66) + 0.40);
+      tl.set("#e21", { textContent: "$0.47" }, w(66) + 0.45);
+      tl.set("#e21", { textContent: "$0.52" }, w(66) + 0.50);
+      tl.set("#e21", { textContent: "$0.57" }, w(66) + 0.55);
+      show("#e22", w(71) + 0.0);
+      show("#e23", w(71) + 0.0);
+      tl.fromTo("#e23", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, w(71) + 0.1);
+      show("#e24", w(71) + 0.0);
+      tl.set("#e24", { textContent: "$0.04" }, w(71) + 0.00);
+      tl.set("#e24", { textContent: "$0.09" }, w(71) + 0.05);
+      tl.set("#e24", { textContent: "$0.13" }, w(71) + 0.10);
+      tl.set("#e24", { textContent: "$0.18" }, w(71) + 0.15);
+      tl.set("#e24", { textContent: "$0.22" }, w(71) + 0.20);
+      tl.set("#e24", { textContent: "$0.27" }, w(71) + 0.25);
+      tl.set("#e24", { textContent: "$0.31" }, w(71) + 0.30);
+      tl.set("#e24", { textContent: "$0.35" }, w(71) + 0.35);
+      tl.set("#e24", { textContent: "$0.40" }, w(71) + 0.40);
+      tl.set("#e24", { textContent: "$0.44" }, w(71) + 0.45);
+      tl.set("#e24", { textContent: "$0.49" }, w(71) + 0.50);
+      tl.set("#e24", { textContent: "$0.53" }, w(71) + 0.55);
+      pop("#e25", w(77) + 0.0);
+      show("#e26", w(31) + 0.0);
+      show("#e27", w(98) + 0.0);
+      show("#e28", w(100) + 0.0);
+      show("#e29", w(100) + 0.0);
+      pop("#e30", w(102) + 0.0);
+      show("#e31", w(110) + 0.0);
+      show("#e32", w(129) + 0.0);
+      show("#e33", w(135) + 0.0);
+      show("#e34", w(146) + 0.0);
+      show("#e35", w(149) + 0.0);
+      show("#e36", w(147) + 0.0);
+      show("#e37", w(157) + 0.0);
+      show("#e38", w(163) + 0.0);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["04-result-one-the-bill"] = tl;
+    })();
+  </script>
+</div>
+</template>

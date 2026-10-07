@@ -1,0 +1,63 @@
+{
+  "final_tokens": {
+    "in": 34,
+    "cache_write": 104963,
+    "cache_read": 1354808,
+    "out": 16371,
+    "thinking": 4831
+  },
+  "arm": "B",
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "assistant_turns": 17,
+  "tokens": {
+    "in": 34,
+    "cache_write": 104963,
+    "cache_read": 1354808,
+    "out": 894
+  },
+  "tokens_total": 1460699,
+  "output_share_pct": 0.06,
+  "peak_context": 115307,
+  "tool_calls": {
+    "Bash": 1,
+    "Read": 2
+  },
+  "denied": 1,
+  "cost_usd": 1.4382216,
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 34,
+      "outputTokens": 16371,
+      "cacheReadInputTokens": 1354808,
+      "cacheCreationInputTokens": 104963,
+      "webSearchRequests": 0,
+      "costUSD": 1.4382216,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4831,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "duration_s": 562,
+  "num_turns_reported": 25,
+  "is_error": false,
+  "final_text": "1. **Script:** I wrote Sections 04 and 05 in `script.md`. Section 04 covers the Sonnet cost of the 8 follow-up turns: no reset $0.95, `/compact` $0.53, brief handoff $0.57, claude-auto-handoff $0.66, handoff-compact $0.73, subagent $1.20. Section 05 shows Sonnet broke no rules after any reset, then Haiku breaking rules after every reset (3 of 3 runs for `/compact` and the brief handoff), with the \"never force push\" rule as the one that goes. Every number comes from `PILOT_RESULTS.md`.\n2. **Audio:** The banned-word check passed. Section 04 runs 62.6s and Section 05 runs 65.8s, a little over your 50 to 60s target even after one trim; the extra is mostly pauses the script adds between sentences. Both alignment files were written.\n3. **Frames:** I added `sec04()` and `sec05()` to `hyperframes/sections.py`. They show cost bars that count up, a cheapest-first ranking, results tables for Sonnet and Haiku, and the real Haiku `deploy.sh` (run B2) next to Haiku's refusal in the run with no reset (A1). The new table headers are white at 40px rather than the default gray.\n4. **Checks:** Snapshots turned up overlaps, an off-canvas stamp, and the Section 05 tables never appearing; all are fixed and both checks now pass. The only remaining warning is the file-size lint on Section 04. Saying it again: `generate_tts.py` rebuilt the audio for 01\u201303, 06 and 07 too, and I haven't checked those against their existing frames.\n5. **Renders:** `hyperframes/renders/04-result-one-the-bill.mp4` and `05",
+  "quota": {
+    "5h_start": 32,
+    "5h_end": 40,
+    "week_start": 49,
+    "week_end": 50
+  },
+  "outputs": {
+    "hyperframes/compositions/frames/04-result-one-the-bill.html": true,
+    "hyperframes/compositions/frames/05-result-two-the-rules.html": true,
+    "hyperframes/renders/04-result-one-the-bill.mp4": true,
+    "hyperframes/renders/05-result-two-the-rules.mp4": true,
+    "hyperframes/audio/04-result-one-the-bill.wav": true,
+    "hyperframes/audio/05-result-two-the-rules.wav": true
+  },
+  "stopped_by_rule": false
+}

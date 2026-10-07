@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face { font-family: "Plus Jakarta Sans"; font-weight: 600 800; src: url("assets/fonts/plus-jakarta-sans.woff2") format("woff2"); }
+        #s04 { position: absolute; inset: 0; overflow: hidden; background: #08090c; color: #eae6da; font-family: "Plus Jakarta Sans", sans-serif; font-weight: 800; }
+        #s04 .grid { position: absolute; inset: 0; opacity: 0.035; background-image: linear-gradient(#eae6da 1px, transparent 1px), linear-gradient(90deg, #eae6da 1px, transparent 1px); background-size: 64px 64px; }
+        #s04 .glow { position: absolute; left: 50%; top: 50%; width: 1500px; height: 900px; margin: -450px 0 0 -750px; background: radial-gradient(ellipse 600px 350px at center, rgba(94, 234, 212, 0.08), transparent); }
+        #s04 .stage { position: absolute; inset: 0; opacity: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        #s04 .arch { font-family: "Archivo Black", sans-serif; font-weight: 400; line-height: 1.1; }
+        #s04 .mono { font-family: "IBM Plex Mono", monospace; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+        #s04 .cy { color: #5eead4; }
+        #s04 .rd { color: #f87171; }
+        #s04 .am { color: #fbbf24; }
+
+        /* badge */
+        #s04 .badge { position: absolute; top: 46px; left: 0; width: 1920px; display: flex; justify-content: center; align-items: center; gap: 28px; font-size: 26px; opacity: 0; }
+        #s04 .badge i { display: block; width: 3px; height: 30px; background: linear-gradient(to bottom, transparent, #4a4326, transparent); }
+
+        /* stage 0 */
+        #s04 .s0-eyebrow { font-size: 38px; margin-bottom: 10px; }
+        #s04 .s0-hero { font-size: 190px; }
+
+        /* stage 1 */
+        #s04 .s1-head { font-size: 92px; text-align: center; }
+        #s04 .s1-head .ln { display: block; }
+        #s04 .s1-head .w { display: inline-block; margin: 0 14px; }
+        #s04 .s1-meta { margin-top: 70px; display: flex; align-items: center; gap: 44px; font-size: 34px; }
+        #s04 .s1-meta .m { display: block; }
+        #s04 .s1-meta i { display: block; width: 3px; height: 44px; background: linear-gradient(to bottom, transparent, #4a4326, transparent); }
+
+        /* stage 2 chart */
+        #s04 #chart { opacity: 0; }
+        #s04 .c-title { position: absolute; top: 122px; left: 140px; font-size: 26px; }
+        #s04 .c-low { position: absolute; top: 122px; right: 140px; font-size: 26px; }
+        #s04 .ref { position: absolute; top: 196px; width: 3px; height: 800px; transform-origin: top; background: repeating-linear-gradient(to bottom, #eae6da 0 12px, transparent 12px 22px); opacity: 0.7; }
+        #s04 .ref-l { position: absolute; top: 156px; width: 260px; margin-left: -130px; text-align: center; font-size: 22px; }
+        #s04 .row { position: absolute; left: 140px; width: 1700px; height: 100px; display: flex; align-items: center; }
+        #s04 .row .nm { flex: none; width: 600px; font-size: 38px; display: flex; align-items: center; gap: 18px; white-space: nowrap; }
+        #s04 .row .tag { font-size: 20px; padding: 4px 12px; background: rgba(234, 230, 218, 0.14); }
+        #s04 .row .bw { flex: none; display: flex; align-items: center; }
+        #s04 .row .bar { display: block; height: 62px; width: 0; background: rgba(234, 230, 218, 0.85); }
+        #s04 .row .val { text-shadow: 0 0 10px #08090c, 0 0 10px #08090c, 0 0 18px #08090c; font-size: 64px; margin-left: 24px; min-width: 190px; }
+        #s04 .row .note { font-size: 22px; margin-left: 20px; }
+        #s04 .row .hl { position: absolute; left: -30px; right: -20px; top: 0; bottom: 0; background: linear-gradient(to right, rgba(94, 234, 212, 0.16), transparent 80%); opacity: 0; }
+
+        /* stage 3 */
+        #s04 .s3-head { font-size: 120px; text-align: center; }
+        #s04 .s3-head .w { display: inline-block; margin: 0 18px; }
+        #s04 .lb { margin-top: 70px; width: 1400px; display: flex; flex-direction: column; gap: 22px; }
+        #s04 .lb .r { position: relative; display: flex; align-items: center; height: 118px; padding-left: 30px; }
+        #s04 .lb .rk { font-size: 64px; width: 130px; }
+        #s04 .lb .rn { font-size: 46px; flex: 1; }
+        #s04 .lb .rv { font-size: 84px; }
+        #s04 .lb .r .hl { position: absolute; inset: 0; background: linear-gradient(to right, rgba(94, 234, 212, 0.16), transparent 85%); }
+        #s04 .lb svg { position: absolute; left: -90px; top: 24px; width: 70px; height: 70px; }
+
+        /* stage 4a */
+        #s04 .s4a-why { font-size: 150px; }
+        #s04 .s4a-sub { font-size: 46px; margin-top: 8px; text-align: center; }
+        #s04 .term { margin-top: 50px; width: 1640px; background: #12140f; border: 1px solid #4a4326; }
+        #s04 .term .bar { height: 48px; display: flex; align-items: center; gap: 10px; padding-left: 20px; border-bottom: 1px solid #4a4326; }
+        #s04 .term .d { display: block; width: 10px; height: 10px; border-radius: 5px; }
+        #s04 .term .fn { margin-left: 18px; font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 20px; }
+        #s04 .term .body { padding: 28px 30px 30px; font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 28px; line-height: 1.7; }
+        #s04 .term .ln { display: block; white-space: nowrap; }
+        #s04 .term .pill { background: rgba(251, 191, 36, 0.28); color: #fbbf24; padding: 2px 8px; }
+        #s04 .s4a-tag { margin-top: 40px; font-size: 40px; opacity: 0; }
+
+        /* stage 4b */
+        #s04 .s4b { justify-content: flex-start; padding-top: 170px; }
+        #s04 .s4b-eyebrow { font-size: 26px; }
+        #s04 .cx { width: 1640px; margin-top: 46px; }
+        #s04 .cx .top { display: flex; align-items: baseline; gap: 40px; }
+        #s04 .cx .who { font-size: 44px; width: 520px; }
+        #s04 .cx .num { font-size: 132px; }
+        #s04 .cx .tr { margin-top: 12px; height: 70px; width: 1500px; display: flex; }
+        #s04 .cx .seg { display: block; height: 70px; width: 0; }
+        #s04 .cx.b { margin-top: 60px; }
+
+        /* stage 4c */
+        #s04 .s4c-eyebrow { font-size: 26px; }
+        #s04 .s4c-row { margin-top: 60px; display: flex; align-items: flex-start; gap: 50px; }
+        #s04 .s4c-a { font-size: 76px; text-align: center; }
+        #s04 .s4c-b { font-size: 140px; text-align: center; }
+        #s04 .s4c-cap { font-size: 28px; margin-top: 14px; font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; letter-spacing: 0; text-transform: none; }
+        #s04 .s4c-pay { margin-top: 70px; font-size: 56px; text-align: center; }
+
+        /* stage 5 */
+        #s04 .s5-a { font-size: 104px; text-align: center; }
+        #s04 .s5-b { font-size: 104px; text-align: center; margin-top: 26px; position: relative; max-width: 1400px; padding-bottom: 14px; }
+        #s04 .s5-u { position: absolute; left: 0; bottom: -12px; width: 100%; height: 8px; background: #5eead4; transform-origin: left; }
+      </style>
+
+      <div id="s04" data-composition-id="04-result-one-the-bill" data-width="1920" data-height="1080">
+        <div class="grid"></div>
+        <div class="glow"></div>
+
+        <div class="badge mono" id="badge"><span>Result 01</span><i></i><span>The Bill</span></div>
+
+        <!-- stage 0: title -->
+        <div class="stage" id="st0">
+          <div class="s0-eyebrow mono" id="s0e">Result 01</div>
+          <div class="s0-hero arch" id="s0h">THE BILL</div>
+        </div>
+
+        <!-- stage 1: metric card -->
+        <div class="stage" id="st1">
+          <div class="s1-head arch" id="s1h">
+            <span class="ln"><span class="w">COST</span><span class="w">OF</span><span class="w">EVERY</span><span class="w">TURN</span></span>
+            <span class="ln"><span class="w">AFTER</span><span class="w">THE</span><span class="w">RESET</span><span class="w">POINT</span></span>
+          </div>
+          <div class="s1-meta mono">
+            <span class="m" id="m1">Mean of the runs</span><i id="mi1"></i>
+            <span class="m" id="m2">Usage ledger</span><i id="mi2"></i>
+            <span class="m cy" id="m3">Sonnet 5.5</span>
+          </div>
+        </div>
+
+        <!-- stage 2: chart -->
+        <div id="chart">
+          <div class="c-title mono" id="ct">Cost after the reset point, mean</div>
+          <div class="c-low mono" id="cl">Lower is cheaper</div>
+          <div class="ref" id="ref1"></div><div class="ref-l mono" id="ref1l">No reset</div>
+          <div class="ref" id="ref2"></div><div class="ref-l mono" id="ref2l">Half</div>
+        </div>
+
+        <!-- stage 3: nothing to install -->
+        <div class="stage" id="st3">
+          <div class="s3-head arch" id="s3h"><span class="w">NOTHING</span><span class="w">TO</span><span class="w">INSTALL</span></div>
+          <div class="lb" id="lb">
+            <div class="r" id="lb1"><div class="hl"></div>
+              <svg viewBox="0 0 70 70"><path id="lbchk" d="M12 37 L29 54 L58 16" fill="none" stroke="#5eead4" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="rk arch cy">01</div><div class="rn cy">/compact</div><div class="rv arch cy">$0.53</div></div>
+            <div class="r" id="lb2"><div class="rk arch">02</div><div class="rn">claude-auto-handoff</div><div class="rv arch">$0.66</div></div>
+            <div class="r" id="lb3"><div class="rk arch">03</div><div class="rn">handoff-compact</div><div class="rv arch">$0.73</div></div>
+          </div>
+        </div>
+
+        <!-- stage 4a: extra model call -->
+        <div class="stage" id="st4a">
+          <div class="s4a-why arch" id="why">WHY?</div>
+          <div class="s4a-sub" id="whysub">claude-auto-handoff makes an extra model call</div>
+          <div class="term" id="term">
+            <div class="bar"><span class="d" style="background:#EF4444"></span><span class="d" style="background:#F59E0B"></span><span class="d" style="background:#10B981"></span><span class="fn">validate-claude-auto-handoff.txt</span></div>
+            <div class="body">
+              <span class="ln" id="tl1">❯ ./register.tsx hooks: turn.complete, tool.call, turn.step, session.compact, …</span>
+              <span class="ln" id="tl2">❯ ./register.tsx calls: … $.fs.write, <span class="pill" id="pill">$.model.complete (via handoff)</span>, $.process.run …</span>
+              <span class="ln cy" id="tl3">✔ Validation passed</span>
+            </div>
+          </div>
+          <div class="s4a-tag mono am" id="s4atag">Extra call, extra cost</div>
+        </div>
+
+        <!-- stage 4b: context left -->
+        <div class="stage s4b" id="st4b">
+          <div class="s4b-eyebrow mono" id="s4bE">Context left after the reset</div>
+          <div class="cx a" id="cxa">
+            <div class="top"><span class="who">handoff-compact</span><span class="num arch rd" id="numa"><span id="numa1">60k</span><span id="numa2"> to 69k</span></span></div>
+            <div class="tr"><span class="seg" id="sega1" style="background:#f87171"></span><span class="seg" id="sega2" style="background:rgba(248,113,113,0.5)"></span></div>
+          </div>
+          <div class="cx b" id="cxb">
+            <div class="top"><span class="who">/compact</span><span class="num arch cy" id="numb">about 47k</span></div>
+            <div class="tr"><span class="seg" id="segb" style="background:#5eead4"></span></div>
+          </div>
+        </div>
+
+        <!-- stage 4c: context grew back -->
+        <div class="stage" id="st4c">
+          <div class="s4c-eyebrow mono" id="s4cE">handoff-compact, context size</div>
+          <div class="s4c-row">
+            <div id="s4cA"><div class="s4c-a arch">60k to 69k</div><div class="s4c-cap mono">right after the reset</div></div>
+            <svg id="s4cArrow" style="margin-top:40px" width="220" height="80" viewBox="0 0 220 80"><path id="arrowPath" d="M8 40 H196 M162 10 L204 40 L162 70" fill="none" stroke="#f87171" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div id="s4cB"><div class="s4c-b arch rd" id="s4cNum">76k to 93k</div><div class="s4c-cap mono">after the follow-ups</div></div>
+          </div>
+          <div class="s4c-pay" id="s4cPay">Every follow-up pays for it</div>
+        </div>
+
+        <!-- stage 5: close -->
+        <div class="stage" id="st5">
+          <div class="s5-a arch" id="s5a">MODS SAVE YOU MONEY.</div>
+          <div class="s5-b arch cy" id="s5b"><span id="s5bt">SLASH COMPACT SAVES A LITTLE MORE.</span><div class="s5-u" id="s5u"></div></div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          const $ = (s) => document.querySelector("#s04 " + s);
+          const IN = (el, t, d) => tl.fromTo(el, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: d || 0.6, ease: "power2.out" }, t);
+          const OUT = (el, t) => tl.to(el, { opacity: 0, y: -30, duration: 0.4, ease: "power2.in" }, t);
+          const POP = (el, t) => {
+            tl.fromTo(el, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1.05, duration: 0.18, ease: "power2.out" }, t);
+            tl.to(el, { scale: 1, duration: 0.14, ease: "power2.inOut" }, t + 0.18);
+          };
+          const TICK = (el, to, t, d, fmt) => {
+            const o = { v: 0 };
+            tl.fromTo(o, { v: 0 }, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(o.v); } }, t);
+          };
+          const WIPE = (el, t, d) => tl.fromTo(el, { clipPath: "inset(0 100% 0 0)", opacity: 1 }, { clipPath: "inset(0 0% 0 0)", duration: d, ease: "none" }, t);
+
+          // ---- stage 0 (0 to 1.9)
+          IN("#s04 #s0e", 0.26, 0.5);
+          tl.fromTo("#s04 #s0h", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1.04, duration: 0.3, ease: "power2.out" }, 1.0);
+          tl.to("#s04 #s0h", { scale: 1, duration: 0.2 }, 1.3);
+          tl.fromTo("#s04 #st0", { opacity: 1 }, { opacity: 1, duration: 0.01 }, 0);
+          tl.to("#s04 #st0", { opacity: 0, y: -30, duration: 0.4, ease: "power2.in" }, 1.7);
+          tl.fromTo("#s04 #badge", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 1.9);
+
+          // ---- stage 1 (1.9 to 7.4)
+          tl.fromTo("#s04 #st1", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 1.9);
+          const w1 = document.querySelectorAll("#s04 #s1h .w");
+          const t1 = [2.06, 2.36, 2.52, 2.82, 3.16, 3.4, 3.5, 3.86];
+          w1.forEach((w, i) => tl.fromTo(w, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, t1[i]));
+          POP("#s04 #m1", 4.46); tl.fromTo("#s04 #mi1", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 4.6);
+          POP("#s04 #m2", 5.4); tl.fromTo("#s04 #mi2", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 5.6);
+          POP("#s04 #m3", 6.08);
+          OUT("#s04 #st1", 7.2);
+
+          // ---- stage 2 chart (7.7 to 36)
+          const rows = [
+            { id: "noreset", name: "No reset", v: 0.95, t: 8.96, d: 1.5, rank: 4 },
+            { id: "sub", name: "Subagent", v: 1.2, t: 11.7, d: 1.5, rank: 5, color: "#f87171" },
+            { id: "compact", name: "/compact", v: 0.53, t: 14.72, d: 1.4, rank: 0 },
+            { id: "brief", name: "Brief handoff", v: 0.57, t: 17.04, d: 1.2, rank: 1 },
+            { id: "cah", name: "claude-auto-handoff", v: 0.66, t: 18.82, d: 1.3, rank: 2, mod: true },
+            { id: "hc", name: "handoff-compact", v: 0.73, t: 20.72, d: 1.3, rank: 3, mod: true },
+          ];
+          const X0 = 140, LAB = 600, BAR = 800, MAX = 1.2, PITCH = 132, TOP = 215;
+          const chart = $("#chart");
+          rows.forEach((r, i) => {
+            const el = document.createElement("div");
+            el.className = "row";
+            el.id = "row-" + r.id;
+            el.style.top = TOP + i * PITCH + "px";
+            el.innerHTML =
+              '<div class="hl" id="hl-' + r.id + '"></div>' +
+              '<div class="nm" id="nm-' + r.id + '"><span>' + r.name + "</span>" + (r.mod ? '<span class="tag mono" id="mod-' + r.id + '">Mod</span>' : "") + "</div>" +
+              '<div class="bw"><span class="bar" id="bar-' + r.id + '"></span><span class="val arch" id="val-' + r.id + '">$0.00</span></div>';
+            chart.appendChild(el);
+            r.el = el;
+          });
+          const refX = (v) => X0 + LAB + (v / MAX) * BAR;
+          const place = (id, x) => { const e = $(id); e.style.left = x - 1 + "px"; };
+          place("#ref1", refX(0.95)); $("#ref1l").style.left = refX(0.95) + "px";
+          place("#ref2", refX(0.475)); $("#ref2l").style.left = refX(0.475) + "px";
+
+          tl.fromTo("#s04 #chart", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 7.7);
+          tl.fromTo("#s04 #ct", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 7.9);
+          tl.fromTo("#s04 #cl", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 8.3);
+
+          rows.forEach((r) => {
+            tl.fromTo(r.el, { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 0.45, ease: "power2.out" }, r.t - 0.05);
+            tl.fromTo("#s04 #bar-" + r.id, { width: 0 }, { width: (r.v / MAX) * BAR, duration: r.d, ease: "power2.out" }, r.t);
+            TICK($("#val-" + r.id), r.v, r.t, r.d, (v) => "$" + v.toFixed(2));
+            if (r.color) tl.set("#s04 #bar-" + r.id, { backgroundColor: r.color }, r.t);
+          });
+          // subagent: most expensive
+          tl.fromTo("#s04 #val-sub", { color: "#eae6da" }, { color: "#f87171", duration: 0.3 }, 12.9);
+          const most = document.createElement("span");
+          most.className = "note mono rd"; most.id = "most"; most.textContent = "Most";
+          $("#row-sub .bw").appendChild(most);
+          POP("#s04 #most", 13.5);
+
+          // reset halves cost
+          tl.fromTo("#s04 #ref1", { scaleY: 0, opacity: 0.7 }, { scaleY: 1, opacity: 0.7, duration: 0.5, ease: "power2.out" }, 24.46);
+          tl.fromTo("#s04 #ref1l", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4 }, 24.7);
+          tl.fromTo("#s04 #ref2", { scaleY: 0, opacity: 0.7 }, { scaleY: 1, opacity: 0.7, duration: 0.5, ease: "power2.out" }, 25.3);
+          tl.fromTo("#s04 #ref2l", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4 }, 25.5);
+          tl.to("#s04 #cl", { opacity: 0, duration: 0.3 }, 24.2);
+          // the mods deliver
+          POP("#s04 #mod-cah", 27.84); POP("#s04 #mod-hc", 28.1);
+          tl.to("#s04 #ref1", { opacity: 0, duration: 0.4 }, 29.8);
+          tl.to("#s04 #ref1l", { opacity: 0, duration: 0.4 }, 29.8);
+          tl.to("#s04 #ref2", { opacity: 0, duration: 0.4 }, 29.8);
+          tl.to("#s04 #ref2l", { opacity: 0, duration: 0.4 }, 29.8);
+
+          // sort by cost, /compact on top
+          rows.forEach((r, i) => {
+            tl.to(r.el, { y: (r.rank - i) * PITCH, duration: 0.9, ease: "power3.inOut" }, 30.9);
+          });
+          tl.to("#s04 #bar-compact", { backgroundColor: "#5eead4", duration: 0.4 }, 31.9);
+          tl.to("#s04 #val-compact", { color: "#5eead4", duration: 0.4 }, 31.9);
+          tl.to("#s04 #nm-compact", { color: "#5eead4", duration: 0.4 }, 31.9);
+          tl.fromTo("#s04 #hl-compact", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 31.9);
+          const ch = document.createElement("span");
+          ch.className = "note mono cy"; ch.id = "cheap"; ch.textContent = "Cheapest";
+          $("#row-compact .bw").appendChild(ch);
+          POP("#s04 #cheap", 32.55);
+          const bi = document.createElement("span");
+          bi.className = "note mono cy"; bi.id = "builtin"; bi.textContent = "Built in";
+          $("#row-compact .bw").appendChild(bi);
+          POP("#s04 #builtin", 34.2);
+          OUT("#s04 #chart", 35.8);
+
+          // ---- stage 3 (36.2 to 41)
+          tl.fromTo("#s04 #st3", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 36.2);
+          const w3 = document.querySelectorAll("#s04 #s3h .w");
+          [36.72, 37.1, 37.26].forEach((t, i) => tl.fromTo(w3[i], { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, t));
+          tl.fromTo("#s04 #lb1", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 38.1);
+          tl.fromTo("#s04 #lbchk", { strokeDasharray: 100, strokeDashoffset: 100 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out" }, 38.5);
+          tl.fromTo("#s04 #lb2", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 38.66);
+          tl.fromTo("#s04 #lb3", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 39.0);
+          OUT("#s04 #st3", 41.0);
+
+          // ---- stage 4a (41.4 to 45)
+          tl.fromTo("#s04 #st4a", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 41.4);
+          POP("#s04 #why", 41.5);
+          IN("#s04 #whysub", 41.86, 0.5);
+          tl.fromTo("#s04 #term", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 42.3);
+          WIPE("#s04 #tl1", 42.7, 0.5);
+          WIPE("#s04 #tl2", 43.2, 0.8);
+          tl.fromTo("#s04 #pill", { backgroundColor: "rgba(251,191,36,0)" }, { backgroundColor: "rgba(251,191,36,0.28)", duration: 0.3 }, 43.9);
+          tl.fromTo("#s04 #tl3", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 44.4);
+          POP("#s04 #s4atag", 44.2);
+          OUT("#s04 #st4a", 45.0);
+
+          // ---- stage 4b (45.2 to 53.7)
+          tl.fromTo("#s04 #st4b", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 45.2);
+          IN("#s04 #s4bE", 45.2, 0.5);
+          IN("#s04 #cxa .top", 45.36, 0.5);
+          const SC = 1500 / 80; // px per 1k tokens
+          tl.fromTo("#s04 #sega1", { width: 0 }, { width: 60 * SC, duration: 1.0, ease: "power2.out" }, 46.5);
+          tl.fromTo("#s04 #numa1", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 }, 46.6);
+          tl.fromTo("#s04 #sega2", { width: 0 }, { width: 9 * SC, duration: 0.5, ease: "power2.out" }, 47.4);
+          tl.fromTo("#s04 #numa2", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 47.46);
+          tl.fromTo("#s04 #cxb", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 49.8);
+          tl.fromTo("#s04 #segb", { width: 0 }, { width: 47 * SC, duration: 0.9, ease: "power2.out" }, 50.4);
+          POP("#s04 #numb", 50.74);
+          OUT("#s04 #st4b", 53.5);
+
+          // ---- stage 4c (53.9 to 59.4)
+          tl.fromTo("#s04 #st4c", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 53.9);
+          IN("#s04 #s4cE", 53.9, 0.5);
+          IN("#s04 #s4cA", 54.16, 0.5);
+          tl.fromTo("#s04 #arrowPath", { strokeDasharray: 300, strokeDashoffset: 300 }, { strokeDashoffset: 0, duration: 0.6, ease: "power2.out" }, 55.0);
+          tl.fromTo("#s04 #s4cB", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1.05, duration: 0.3, ease: "power2.out" }, 55.4);
+          tl.to("#s04 #s4cB", { scale: 1, duration: 0.2 }, 55.7);
+          POP("#s04 #s4cPay", 56.0);
+          tl.to("#s04 #s4cNum", { scale: 1.06, duration: 0.25, yoyo: true, repeat: 1 }, 57.0);
+          OUT("#s04 #st4c", 59.3);
+
+          // ---- stage 5 (59.7 to end)
+          tl.fromTo("#s04 #st5", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 59.7);
+          IN("#s04 #s5a", 60.0, 0.5);
+          tl.fromTo("#s04 #s5b", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 61.5);
+          tl.fromTo("#s04 #s5u", { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.out" }, 62.9);
+
+          window.__timelines["04-result-one-the-bill"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

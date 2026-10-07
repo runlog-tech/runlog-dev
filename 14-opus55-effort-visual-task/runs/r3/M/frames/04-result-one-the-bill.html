@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #s04 { position: absolute; inset: 0; background: #08090c; color: #eef0f4; font-family: "Inter", sans-serif; overflow: hidden; }
+        #s04 .bg-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 60px 60px; }
+        #s04 .mono { font-family: "IBM Plex Mono", monospace; }
+        #s04 .display { font-family: "Archivo Black", sans-serif; }
+
+        /* badge */
+        #s04-badge { position: absolute; left: 96px; top: 64px; display: flex; gap: 0; font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 26px; letter-spacing: 3px; }
+        #s04-badge span { display: block; padding: 12px 22px; }
+        #s04-badge .b1 { background: #3ddc84; color: #08090c; }
+        #s04-badge .b2 { border: 2px solid #3ddc84; color: #3ddc84; padding: 10px 20px; }
+        #s04-sub { position: absolute; left: 96px; top: 140px; font-size: 30px; font-weight: 600; color: #9aa1ad; }
+        #s04-sub b { color: #eef0f4; font-weight: 700; }
+
+        /* beat 1: metric card */
+        #s04-card { position: absolute; left: 260px; top: 250px; width: 1400px; height: 600px; border: 2px solid #2a2f3a; background: #10131a; border-radius: 18px; padding: 64px 80px; }
+        #s04-card .k { font-family: "IBM Plex Mono", monospace; font-size: 24px; letter-spacing: 4px; color: #3ddc84; font-weight: 700; }
+        #s04-card .title { font-family: "Archivo Black", sans-serif; font-size: 76px; line-height: 1.08; margin-top: 22px; width: 1240px; }
+        #s04-card .rows { position: absolute; left: 80px; right: 80px; bottom: 64px; display: flex; gap: 24px; }
+        #s04-card .chip { flex: 1; border-top: 3px solid #3a4150; padding-top: 18px; }
+        #s04-card .chip .l { font-family: "IBM Plex Mono", monospace; font-size: 20px; letter-spacing: 3px; color: #7d8594; font-weight: 600; }
+        #s04-card .chip .v { font-size: 34px; font-weight: 700; margin-top: 8px; }
+
+        /* beat 2-3: chart */
+        #s04-chart { position: absolute; left: 96px; top: 230px; width: 1728px; height: 690px; }
+        #s04 .row { position: absolute; left: 0; width: 1728px; height: 96px; }
+        #s04 .row .name { position: absolute; left: 0; top: 0; width: 470px; height: 96px; display: flex; flex-direction: column; justify-content: center; }
+        #s04 .row .name .n1 { font-size: 36px; font-weight: 800; }
+        #s04 .row .name .n2 { font-family: "IBM Plex Mono", monospace; font-size: 19px; color: #7d8594; margin-top: 4px; font-weight: 600; }
+        #s04 .row .bar { position: absolute; left: 500px; top: 18px; height: 60px; border-radius: 4px; transform-origin: left center; }
+        #s04 .row .val { position: absolute; top: 14px; font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 50px; line-height: 68px; }
+        #s04 .row .tag { position: absolute; top: 24px; font-family: "IBM Plex Mono", monospace; font-weight: 800; font-size: 22px; letter-spacing: 3px; padding: 8px 14px; border-radius: 4px; }
+        #s04 .base .bar { background: #c2564f; }
+        #s04 .base .val { color: #f08a83; }
+        #s04 .mod .bar { background: #5b8def; }
+        #s04 .mod .val { color: #9bbaf7; }
+        #s04 .cmp .bar { background: #3ddc84; }
+        #s04 .cmp .val { color: #3ddc84; }
+        #s04 .brief .bar { background: #8a93a3; }
+        #s04 .brief .val { color: #c3c9d3; }
+        #s04-half { position: absolute; left: 896px; top: -10px; width: 0; height: 650px; border-left: 3px dashed #eef0f4; }
+        #s04-half-l { position: absolute; left: 912px; top: 612px; font-family: "IBM Plex Mono", monospace; font-size: 22px; font-weight: 700; color: #eef0f4; letter-spacing: 2px; }
+        #s04-axis { position: absolute; left: 500px; top: 0; width: 0; height: 600px; border-left: 2px solid #3a4150; }
+
+        /* beat 4: why */
+        #s04-why { position: absolute; left: 96px; top: 230px; width: 1728px; height: 700px; }
+        #s04-why .q { font-family: "Archivo Black", sans-serif; font-size: 84px; color: #eef0f4; }
+        #s04 .panel { position: absolute; top: 140px; width: 830px; height: 520px; background: #10131a; border: 2px solid #2a2f3a; border-radius: 16px; padding: 40px 44px; }
+        #s04 .panel .h { font-family: "IBM Plex Mono", monospace; font-size: 22px; letter-spacing: 3px; font-weight: 700; color: #9bbaf7; }
+        #s04 .panel .t { font-size: 42px; font-weight: 800; margin-top: 14px; line-height: 1.2; }
+        #s04-code { margin-top: 30px; background: #07080b; border: 1px solid #2a2f3a; border-radius: 8px; padding: 22px 26px; font-family: "IBM Plex Mono", monospace; font-size: 22px; line-height: 1.6; color: #b4bac4; }
+        #s04-code .hl { color: #08090c; background: #ffb020; padding: 2px 6px; font-weight: 700; }
+        #s04-code .dim { color: #8a93a3; }
+        #s04-flow { margin-top: 30px; display: flex; align-items: center; gap: 16px; font-family: "IBM Plex Mono", monospace; font-size: 22px; font-weight: 700; }
+        #s04-flow div { padding: 12px 16px; border: 2px solid #3a4150; border-radius: 6px; color: #c3c9d3; }
+        #s04-flow .x { border-color: #ffb020; color: #ffb020; }
+        #s04-flow .ar { border: none; padding: 0; color: #8a93a3; }
+
+        #s04 .tk { position: absolute; left: 44px; height: 54px; border-radius: 4px; transform-origin: left center; }
+        #s04 .tkl { position: absolute; left: 44px; font-size: 26px; font-weight: 800; }
+        #s04 .tkv { position: absolute; font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 34px; line-height: 54px; }
+        #s04-grow { position: absolute; left: 44px; top: 342px; width: 742px; height: 150px; }
+        #s04-grow .gl { position: absolute; left: 0; top: 112px; font-size: 26px; font-weight: 700; color: #eef0f4; }
+
+        /* beat 5 */
+        #s04-end { position: absolute; left: 96px; top: 280px; width: 1728px; height: 600px; }
+        #s04-end .l1 { font-family: "Archivo Black", sans-serif; font-size: 92px; line-height: 1.1; color: #9bbaf7; }
+        #s04-end .l2 { font-family: "Archivo Black", sans-serif; font-size: 92px; line-height: 1.1; color: #3ddc84; margin-top: 40px; }
+        #s04-end .nums { font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 40px; color: #7d8594; margin-top: 14px; }
+
+        #s04-foot { position: absolute; left: 96px; bottom: 44px; font-family: "IBM Plex Mono", monospace; font-size: 20px; color: #7d8594; letter-spacing: 1px; font-weight: 500; }
+      </style>
+
+      <div id="s04" data-composition-id="04-result-one-the-bill" data-width="1920" data-height="1080">
+        <div class="bg-grid"></div>
+
+        <div id="s04-badge"><span class="b1">RESULT 01</span><span class="b2">THE BILL</span></div>
+        <div id="s04-sub">Cost of every turn after the reset point · <b>mean of the runs</b> · Sonnet 5.5</div>
+
+        <div id="s04-card">
+          <div class="k">WHAT WE'RE COMPARING</div>
+          <div class="title">The cost of every turn after the reset point</div>
+          <div class="rows">
+            <div class="chip" id="s04-c1"><div class="l">TURNS</div><div class="v">8 follow-ups</div></div>
+            <div class="chip" id="s04-c2"><div class="l">SOURCE</div><div class="v mono" style="font-size:28px">$.session.usage</div></div>
+            <div class="chip" id="s04-c3"><div class="l">STAT</div><div class="v">Mean of the runs</div></div>
+            <div class="chip" id="s04-c4"><div class="l">MODEL</div><div class="v">Sonnet 5.5</div></div>
+          </div>
+        </div>
+
+        <div id="s04-chart">
+          <div id="s04-axis"></div>
+          <div class="row base" id="s04-r1" style="top:0px"><div class="name"><div class="n1">No reset</div><div class="n2">n=3</div></div><div class="bar" style="width:792px"></div><div class="val" style="left:1316px">$0.95</div></div>
+          <div class="row base" id="s04-r2" style="top:100px"><div class="name"><div class="n1">Subagent</div><div class="n2">n=3</div></div><div class="bar" style="width:1000px"></div><div class="val" style="left:1524px">$1.20</div><div class="tag" id="s04-most" style="left:1330px; background:#08090c; color:#f08a83;">MOST</div></div>
+          <div class="row cmp" id="s04-r3" style="top:200px"><div class="name"><div class="n1">/compact</div><div class="n2">built in · n=3</div></div><div class="bar" style="width:442px"></div><div class="val" style="left:966px">$0.53</div><div class="tag" id="s04-cheap" style="left:1160px; background:#3ddc84; color:#08090c;">CHEAPEST · BUILT IN</div></div>
+          <div class="row brief" id="s04-r4" style="top:300px"><div class="name"><div class="n1">Brief handoff</div><div class="n2">method · n=3</div></div><div class="bar" style="width:475px"></div><div class="val" style="left:999px">$0.57</div></div>
+          <div class="row mod" id="s04-r5" style="top:400px"><div class="name"><div class="n1">claude-auto-handoff</div><div class="n2">mod · n=4</div></div><div class="bar" style="width:550px"></div><div class="val" style="left:1074px">$0.66</div></div>
+          <div class="row mod" id="s04-r6" style="top:500px"><div class="name"><div class="n1">handoff-compact</div><div class="n2">mod · n=3</div></div><div class="bar" style="width:608px"></div><div class="val" style="left:1132px">$0.73</div></div>
+          <div id="s04-half"></div>
+          <div id="s04-half-l">½ OF NO RESET</div>
+        </div>
+
+        <div id="s04-why">
+          <div class="q" id="s04-q">Why the mods cost more</div>
+          <div class="panel" id="s04-p1" style="left:0">
+            <div class="h">CLAUDE-AUTO-HANDOFF</div>
+            <div class="t">An extra model call to write its brief</div>
+            <div id="s04-flow"><div>reset</div><div class="ar">→</div><div class="x">write brief</div><div class="ar">→</div><div>fresh session</div></div>
+            <div id="s04-code"><div class="dim">$ claude plugin validate</div><div>register.tsx calls: …</div><div><span class="hl">$.model.complete (via handoff)</span></div></div>
+          </div>
+          <div class="panel" id="s04-p2" style="left:898px">
+            <div class="h">CONTEXT LEFT AFTER THE RESET</div>
+            <div class="tkl" style="top:110px">handoff-compact, right after</div>
+            <div class="tk" id="s04-tk1" style="top:152px; width:345px; background:#5b8def"></div>
+            <div class="tkv" style="top:152px; left:405px; color:#9bbaf7">60k to 69k</div>
+            <div class="tkl" style="top:226px">/compact, right after</div>
+            <div class="tk" id="s04-tk2" style="top:268px; width:235px; background:#3ddc84"></div>
+            <div class="tkv" style="top:268px; left:295px; color:#3ddc84">about 47k</div>
+            <div id="s04-grow">
+              <div class="tkl" style="top:0; left:0; color:#ffb020">handoff-compact, after the follow-ups</div>
+              <div class="tk" id="s04-tk3" style="top:42px; left:0; width:465px; background:#ffb020"></div>
+              <div class="tkv" style="top:42px; left:481px; color:#ffb020">76k to 93k</div>
+              <div class="gl">every follow-up pays for what's in there</div>
+            </div>
+</div>
+        </div>
+
+        <div id="s04-end">
+          <div class="l1">The mods save you money.</div>
+          <div class="nums">$0.66 · $0.73 vs $0.95 with no reset</div>
+          <div class="l2">/compact saves a little more.</div>
+          <div class="nums">$0.53 · nothing to install</div>
+        </div>
+
+        <div id="s04-foot">n = 3 to 4 runs per setup · one task · Sonnet 5.5 · cost from $.session.usage ledger deltas</div>
+      </div>
+
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          const q = (s) => document.querySelector(s);
+          const rows = ["#s04-r1", "#s04-r2", "#s04-r3", "#s04-r4", "#s04-r5", "#s04-r6"];
+
+          // initial states
+          gsap.set(["#s04-badge", "#s04-sub", "#s04-card", "#s04-chart", "#s04-why", "#s04-end", "#s04-foot"], { opacity: 0 });
+          gsap.set(["#s04-c1", "#s04-c2", "#s04-c3", "#s04-c4"], { opacity: 0 });
+          rows.forEach((r) => gsap.set(r, { opacity: 0 }, 0));
+          rows.forEach((r) => gsap.set(r + " .bar", { scaleX: 0 }, 0));
+          rows.forEach((r) => gsap.set([r + " .val"], { opacity: 0 }, 0));
+          gsap.set(["#s04-most", "#s04-cheap", "#s04-half", "#s04-half-l"], { opacity: 0 });
+          gsap.set(["#s04-q", "#s04-p1", "#s04-p2", "#s04-grow", "#s04-code", "#s04-flow"], { opacity: 0 });
+          gsap.set(["#s04-tk1", "#s04-tk2", "#s04-tk3"], { scaleX: 0 });
+          gsap.set("#s04-grow .gl", { opacity: 0 });
+          gsap.set("#s04-end > div", { opacity: 0 });
+
+          // beat 1: badge + metric card ("Result one, the bill" / "This is the cost...")
+          tl.fromTo("#s04-badge", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 0.2);
+          tl.fromTo("#s04-card", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 1.6);
+          tl.fromTo("#s04-c1", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4 }, 2.8);
+          tl.fromTo("#s04-c2", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4 }, 3.9);
+          tl.fromTo("#s04-c3", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4 }, 4.46);
+          tl.fromTo("#s04-c4", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4 }, 6.0);
+          tl.fromTo("#s04-foot", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 6.4);
+
+          // beat 2: card collapses into subtitle, chart builds per spoken number
+          tl.to("#s04-card", { opacity: 0, y: -60, scale: 0.94, duration: 0.5, ease: "power2.in" }, 8.3);
+          tl.fromTo("#s04-sub", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5 }, 8.7);
+          tl.set("#s04-chart", { opacity: 1 }, 8.8);
+          const beats = [9.0, 11.7, 14.72, 17.04, 18.82, 20.72];
+          const vals = [9.9, 12.62, 15.96, 17.78, 19.76, 21.8];
+          rows.forEach((r, i) => {
+            tl.fromTo(r, { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, beats[i]);
+            tl.to(r + " .bar", { scaleX: 1, duration: 0.8, ease: "power3.out" }, vals[i] - 0.3);
+            tl.fromTo(r + " .val", { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.35 }, vals[i] + 0.2);
+          });
+          tl.fromTo("#s04-most", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, 13.5);
+          tl.to("#s04-most", { opacity: 0, duration: 0.3 }, 23.6);
+
+          // beat 3: "roughly halves" line, mods deliver, /compact cheapest
+          tl.fromTo("#s04-half", { opacity: 0, scaleY: 0 }, { opacity: 0.8, scaleY: 1, duration: 0.6, ease: "power2.out", transformOrigin: "top" }, 25.2);
+          tl.fromTo("#s04-half-l", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 25.4);
+          tl.to(["#s04-r1", "#s04-r2"], { opacity: 0.35, duration: 0.5 }, 26.0);
+          tl.to(["#s04-r3", "#s04-r4"], { opacity: 0.45, duration: 0.5 }, 27.7);
+          tl.to(["#s04-r5 .bar", "#s04-r6 .bar"], { backgroundColor: "#7aa6ff", duration: 0.3, yoyo: true, repeat: 1 }, 28.2);
+          tl.to(["#s04-r1", "#s04-r2", "#s04-r4", "#s04-r5", "#s04-r6"], { opacity: 0.35, duration: 0.5 }, 31.0);
+          tl.to("#s04-r3", { opacity: 1, duration: 0.4 }, 31.0);
+          tl.fromTo("#s04-r3 .bar", { boxShadow: "0 0 0px rgba(61,220,132,0)" }, { boxShadow: "0 0 40px rgba(61,220,132,0.7)", duration: 0.6 }, 31.14);
+          tl.fromTo("#s04-cheap", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, 31.3);
+          tl.to(["#s04-r5", "#s04-r6"], { opacity: 1, duration: 0.4 }, 38.3);
+
+          // beat 4: why
+          tl.to("#s04-chart", { opacity: 0, y: -30, duration: 0.5, ease: "power2.in" }, 40.7);
+          tl.to("#s04-sub", { opacity: 0, duration: 0.4 }, 40.8);
+          tl.set("#s04-why", { opacity: 1 }, 41.3);
+          tl.fromTo("#s04-q", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 41.4);
+          tl.fromTo("#s04-p1", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 41.86);
+          tl.fromTo("#s04-flow", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 43.1);
+          tl.fromTo("#s04-code", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4 }, 43.8);
+          tl.fromTo("#s04-p2", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 45.3);
+          tl.to("#s04-p1", { opacity: 0.7, duration: 0.4 }, 45.6);
+          tl.to("#s04-tk1", { scaleX: 1, duration: 0.8, ease: "power3.out" }, 46.6);
+          tl.to("#s04-tk2", { scaleX: 1, duration: 0.8, ease: "power3.out" }, 50.4);
+          tl.fromTo("#s04-grow", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4 }, 54.16);
+          tl.to("#s04-tk3", { scaleX: 1, duration: 1.0, ease: "power2.out" }, 54.6);
+          tl.fromTo("#s04-grow .gl", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 56.0);
+
+          // beat 5: takeaway
+          tl.to("#s04-why", { opacity: 0, duration: 0.5 }, 59.2);
+          tl.set("#s04-end", { opacity: 1 }, 59.7);
+          tl.fromTo("#s04-end .l1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 59.9);
+          tl.fromTo("#s04-end .nums:nth-of-type(2)", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 60.6);
+          tl.fromTo("#s04-end .l2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 61.55);
+          tl.fromTo("#s04-end .nums:nth-of-type(4)", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 62.6);
+          tl.to({}, { duration: 0.1 }, 64.4);
+
+          window.__timelines["04-result-one-the-bill"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
