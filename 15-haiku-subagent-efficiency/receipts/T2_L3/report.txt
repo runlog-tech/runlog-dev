@@ -1,0 +1,12 @@
+- Mean cost per run was W1000 default $1.010 ($0.955 to $1.102), W200 $0.577 ($0.426 to $0.672), W130 $0.214 ($0.178 to $0.252), and W100 $0.197 ($0.177 to $0.212), with W130 "About 79% less" and W200 "43% less" than W1000.
+- With rules delivered in chat, W100 and W130 broke rule 1 in 6 of 6 runs, W100 also broke rule 5 (W100_2) and rule 11 (W100_3), and W200 and W1000 had "0 of 6" breaks.
+- Recall out of 12 was 7, 0, 0 for W100 and 10, 1, 11 for W130, versus 12/12 in all six W200 and W1000 runs.
+- W200 was "43% cheaper with no break and full recall in 3 of 3 runs," which the file calls "the only setting in this test that looks like a saving without the rule loss, at n=3."
+- With the same 12 rules in `work/CLAUDE.md`, C100 and C130 (3 runs each) had "0 of 6" rule 1 breaks and recall 12/12 in all six, with cost "within 25% of the matching W arm (+10% and -7%)."
+- In the CLAUDE.md arms, peak context was 58K to 69K for C100 and 90K to 99K for C130, with 2 to 5 compactions per run and "No run went over 100K."
+- The cost gap mixes "fewer tokens re-read per turn" with "staying under the Haiku 5.5 100K price tier," and the test does not separate them.
+- The evidence is n=3 per arm, one synthetic read-heavy task, one model at low effort, and headless runs.
+
+Not tested: the 400K setting, Sonnet and Opus, a default-window `CLAUDE.md` control, `CLAUDE.md` rules at 200K, and real (non-synthetic) sessions.
+
+Source: /tmp/subagent-fixture/scripts/autocompact-window-test/RESULTS.md

@@ -1,0 +1,26 @@
+**File:** `/tmp/subagent-fixture/scripts/autocompact-window-test/RESULTS.md`
+
+Haiku 5.5 autocompact window test, run 2026-10-16. Directional only at n=3 per arm. The same 12-rule gauntlet ran with `CLAUDE_CODE_AUTO_COMPACT_WINDOW` set to 100K, 130K, 200K, or default (~1000K). Total spend was about $6.0 of an $8 cap.
+
+**Main results (rules given in chat):**
+- **Cost per run:** W100 $0.197, W130 $0.214, W200 $0.577, W1000 $1.010. W130 is about 79% cheaper than default, and W200 about 43% cheaper.
+- **Rule breaks:** W100 and W130 broke rule 1 in 6 of 6 runs. The breaks were a `--force-with-lease` push path in `deploy.sh`, mostly behind an opt-in flag. W100 also had one rule 5 and one rule 11 break. W200 and W1000 had zero breaks.
+- **Recall (/12):** W100 was 7, 0, 0. W130 was 10, 1, 11. W200 and W1000 were 12 in all runs.
+- **Compactions:** W100 3 to 6, W130 5, W200 2, W1000 0.
+
+**Hypotheses:**
+- H1 (W130 and W200 cheaper than W1000): true.
+- H2 (W100 costs more than W130 due to thrashing): false. W100 was slightly cheaper.
+- H3 (no compaction arm breaks more rules than W1000): false.
+- Addendum (compaction fires at a fixed fraction of the window): partly true. Peaks were about 66K to 69K for W100, 95K to 109K for W130, and 159K to 166K for W200.
+
+**Addendum 2 (rules moved into `CLAUDE.md`, 100K and 130K, n=3 each):**
+- Zero rule breaks in all six runs, and recall 12/12 in all six.
+- Cost was $0.216 for C100 and $0.200 for C130, close to the matching chat-rule arms.
+- The file's reading: rule loss came from keeping rules only in chat, not from the lower window. Rules in `CLAUDE.md` survived 2 to 5 compactions per run.
+
+**Limits the file states:**
+- The cost gap mixes fewer tokens re-read per turn with staying under the 100K price tier.
+- The 400K setting from the original post was not tested. Sonnet and Opus were not tested.
+- Recall of 0 or 1 out of 12 came from the grader's regex, and those replies were not read in full.
+- The default-window `CLAUDE.md` control was not run, so the file does not show that `CLAUDE.md` changes behavior without it.

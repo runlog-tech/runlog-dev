@@ -1,0 +1,12 @@
+- **Entry 31 (Opus 5.5 effort, video 25):** Round 3b costs were Opus high $2.28 / 34 turns / +12 meter pts, Opus medium $1.71 / 40 / +9, Sonnet high $1.28 / 37 / +8, Opus low $0.64 / 9 / +4, and Sonnet medium $0.45 / 15 / +3.
+- **Entry 31 (verdict):** Cache reads were about 95% of Opus high's counted tokens, and Opus high looked best for this visual task with Sonnet high second, a judgment the entry flags as confounded because the script was also Opus high.
+- **Entry 34 (Haiku 5.5 and /compact):** Haiku 5.5 low and high, with and without /compact, had 0/12 real rule breaks and recall 12/12 in all arms, while the Haiku 4.5 /compact control broke rule 1 in 3/3 runs.
+- **Entry 34 (whole-run cost):** H55 low ~$0.10, H55 high ~$0.14, and H45 ~$0.62, and after the reset only they were H55 low $0.041-0.045, high $0.072-0.090, and H45 $0.242-0.287.
+- **Entry 34 (other results):** Subagent-fit claim verification scored 13/13 in all arms at Haiku $0.004-0.014 versus Sonnet $0.22-0.24, and a Short was published 2026-10-13 as FG_kjSns-qA.
+- **Entry 34 (caveat):** All results are n=3 per arm and direction only, and the video 21 wording was corrected to "On Haiku 4.5."
+- **Entry 35 (100K price cliff, video 26):** Script DRAFT v1 has 7 sections, about 1,050 narration words, and is not locked, and it rests on Haiku 5.5's cost per context token stepping up about 4x at 100K in 24 of 24 crossings.
+- **Entry 35 (autocompact window test):** Across 18 runs, mean costs were $0.197/$0.214/$0.577/$1.010 for windows 100K/130K/200K/default, and chat-only rules were lost at 100K and 130K with force-push code in 6 of 6.
+- **Entry 35 (CLAUDE.md control and prior art):** The same rules in a CLAUDE.md gave 0 of 6 breaks with recall 12/12, and prior art found about 14 YouTube creators covering Haiku 5.5 pricing but about 3 covering the 100K tier, none with a measured run.
+- **Entry 36 (Haiku subagent efficiency, video 27 candidate):** It is an idea with a DRAFT plan at `scripts/haiku-subagent-efficiency/PLAN.md`, not pre-registered and nothing run, and it supersedes entry 35 as the next video while entry 35 is parked pending a High-effort re-run.
+
+Least detail: entry 36, which is a single status paragraph with no measured numbers.

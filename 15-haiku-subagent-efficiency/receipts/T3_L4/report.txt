@@ -1,0 +1,33 @@
+**Tags heading:** 1 fails.
+- `scripts/compact-best-practices-card/upload-notes.md` has only a `- Tags:` bullet (line 22), no `## Tags` heading.
+
+**Primary title line:** 21 of 22 fail if "Primary title" must appear literally. Only `scripts/antigravity-context-mechanics/upload-notes.md:31` has `**Primary Title:**`. The other 21 are listed below.
+
+Each of these has a title line under a different label, such as `## Title`, `**Title**:`, `**Live Title:**`, or `**Locked Title**`:
+- `claude-compact-amnesia`
+- `claude-doctor-checkup`
+- `claude-workflows-pro-plan`
+- `claude-workflows-pro-plan-short-2`
+- `claude-workflows-pro-plan-short-3`
+- `compact-best-practices-card`
+- `haiku55-100k-cliff`
+- `haiku55-compact-short`
+- `jev-vs-kev`
+- `mcp-context-bloat-fixed`
+- `mcp-goes-stateless`
+- `mcp-server-in-20-minutes`
+- `mods-handoff-test`
+- `mods-handoff-test-short-1`
+- `mods-handoff-test-short-2`
+- `opus55-effort-video`
+- `plugin-eval-benchmark`
+- `rebuild-your-claude-md`
+- `rtk-vs-caveman`
+- `subagent-scout`
+- `taste-skill-fact-check`
+
+Two of these, `rtk-vs-caveman` and `claude-doctor-checkup`, use a `## Title (primary, locked)` heading. If that counts as a primary title, they pass.
+
+If you only need some title line present, every file passes except none; all 22 have one.
+
+I made no edits. The checked files are under `/tmp/subagent-fixture/scripts/`.

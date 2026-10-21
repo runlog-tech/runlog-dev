@@ -1,0 +1,1 @@
+Write a Python function slugify(title) in solution.py with pytest tests in test_solution.py. Lowercase, ASCII letters and digits only, everything else becomes a single hyphen, no leading or trailing hyphens, at most 60 characters (cut at a hyphen boundary when possible), empty result becomes 'untitled'.

@@ -1,0 +1,29 @@
+The placeholder in `index.html` is now an animated horizontal bar chart, `npm run check` passes, and the MP4 is rendered.
+
+**Outputs**
+- Composition: `/tmp/subagent-eff/runs/R1_E_max/work/index.html`
+- Video: `/tmp/subagent-eff/runs/R1_E_max/work/out.mp4` (1920x1080, 30 fps, 6.000 s, H.264, 484 KB)
+- QC frames (temp, not in the project): `/tmp/subagent-eff/runs/R1_E_max/qc-frames/`
+
+**What's on screen**
+- Title "Cost per million context tokens" over four rows: 0–50K $0.051, 50–100K $0.068, 100–150K $0.197, 150–250K $0.153.
+- Bars start at a zero baseline on a $0.25 scale. Each value counts up while its bar grows, and the label rides the bar tip. Build finishes at about 3.4 s and holds to 6.0 s.
+- Dark background, single blue hue checked with the dataviz validator against the dark surface.
+
+**Verification**
+- `npm run check` (pinned `hyperframes@0.8.82`) passed on the first run: lint 0/0, runtime 0/0, layout 0 issues, motion 0 errors, contrast 48/48 AA.
+- Render used `npm run render -- --quality looks --output out.mp4`. The summary reports beginframe capture on hardware GPU, 180 frames.
+- I extracted frames from the MP4 at 2.0 s and 5.5 s and checked them: values and bar lengths match the data at the end state, and the mid-build frame shows bars and counters in sync.
+
+**Decisions for you**
+1. **CLI pin not bumped.** The probe reports 0.8.82 → 0.8.167 available. I left the pin alone because it is set for reproducible renders and your rules ask before dependency changes. To apply it: `npx hyperframes@latest upgrade --project .`, then `npm run check`.
+2. **Feedback not sent.** The skill asks for one feedback report after a render. It goes to a public channel, so I held it. The catalog search-miss report is also unsent.
+3. **Data check.** 100–150K ($0.197) is above 150–250K ($0.153). I plotted the values as given; confirm this is not a typo.
+
+**Other notes**
+- Registry: `catalog --query` found no horizontal bar chart. `chart-story` has a horizontal progress form, but it can only suffix units, so it cannot show `$` values. `animated-bar-chart` is a vertical white card. I built the chart by hand.
+- The Arial font stack is mapped to Inter by the HyperFrames font pipeline, so the render uses Inter.
+- Bars are 24 px thick per the dataviz mark spec. Hover tooltips and a table twin are skipped because this is a video.
+- The edit is bracketed in project history (entry `65f37a80`), which created `.hyperframes/` in the project.
+- I did not scaffold CLAUDE.md, memory/, analysis/ or extra commands for this project, since the request did not ask for it.
+- I removed my scratch registry directory.

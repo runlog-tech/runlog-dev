@@ -1,0 +1,10 @@
+- Mean per-run cost was $1.010 at the default window (W1000), $0.577 at 200K (43% less), and $0.214 at 130K (about 79% less).
+- The 200K arm broke no rules and recalled 12/12 in all three runs, but spent 9 to 17 of 30 turns over 100K.
+- The 100K and 130K arms with rules in chat broke rule 1 in 6 of 6 runs, mostly a `--force-with-lease` push path in `deploy.sh` behind an opt-in flag.
+- Chat-rule recall was 7, 0, 0 at 100K and 10, 1, 11 at 130K (out of 12), with the 0 and 1 scores coming from the grader's f8 regex and not read in full.
+- With the 12 rules in `CLAUDE.md` (follow-up, 100K and 130K only), all six runs broke no rules and recalled 12/12, at mean costs of $0.216 (C100) and $0.200 (C130).
+- Peak context was 66K to 69K at 100K and 95K to 109K at 130K, so the 130K arm had 0 to 1 turns over 100K.
+- The cost gap mixes fewer tokens re-read per turn with staying under the Haiku 5.5 100K price tier, and the test does not separate the two.
+- Limits: n=3 per arm, one synthetic read-heavy task, one model (Haiku 5.5) at low effort, headless `claude -p` runs, and the result is directional only.
+
+Not tested: the 400K setting, Sonnet and Opus, a default-window `CLAUDE.md` control, 200K with `CLAUDE.md` rules, and any real (non-synthetic) session.

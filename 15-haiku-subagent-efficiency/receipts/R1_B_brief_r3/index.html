@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #08090c; }
+  #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #08090c; font-family: Arial, Helvetica, sans-serif; }
+  #bg { position: absolute; inset: 0; background: #08090c; }
+  #title { position: absolute; left: 120px; top: 90px; width: 1680px; font-weight: 800; font-size: 88px; line-height: 100px; color: #f8fafc; opacity: 0; }
+  .label { position: absolute; left: 120px; width: 400px; height: 90px; line-height: 90px; font-weight: 700; font-size: 44px; color: #e2e8f0; white-space: nowrap; }
+  .bar { position: absolute; left: 560px; height: 90px; background: #38bdf8; transform-origin: left center; }
+  .bar.accent { background: #f59e0b; }
+  .val { position: absolute; height: 90px; line-height: 90px; font-weight: 800; font-size: 48px; color: #f8fafc; white-space: nowrap; opacity: 0; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="6" data-width="1920" data-height="1080">
+  <div id="bg"></div>
+  <div id="title">COST PER CONTEXT TOKEN</div>
+
+  <div class="label" style="top: 320px;">0 to 50K</div>
+  <div class="bar" id="bar-0" style="top: 320px; width: 259px;"></div>
+  <div class="val" id="val-0" style="top: 320px; left: 843px;">$0.051</div>
+
+  <div class="label" style="top: 470px;">50 to 100K</div>
+  <div class="bar" id="bar-1" style="top: 470px; width: 345px;"></div>
+  <div class="val" id="val-1" style="top: 470px; left: 929px;">$0.068</div>
+
+  <div class="label" style="top: 620px;">100 to 150K</div>
+  <div class="bar accent" id="bar-2" style="top: 620px; width: 1000px;"></div>
+  <div class="val" id="val-2" style="top: 620px; left: 1584px;">$0.197</div>
+
+  <div class="label" style="top: 770px;">150 to 250K</div>
+  <div class="bar" id="bar-3" style="top: 770px; width: 777px;"></div>
+  <div class="val" id="val-3" style="top: 770px; left: 1361px;">$0.153</div>
+</div>
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  tl.to("#title", { opacity: 1, duration: 0.6 }, 0.3);
+  const bars = gsap.utils.toArray(".bar");
+  const vals = gsap.utils.toArray(".val");
+  tl.fromTo(bars, { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.out", stagger: 0.35 }, 0.8);
+  vals.forEach((v, i) => {
+    tl.to(v, { opacity: 1, duration: 0.4 }, 0.8 + i * 0.35 + 0.8);
+  });
+  tl.set({}, {}, 6);
+  window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

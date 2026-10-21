@@ -1,0 +1,38 @@
+Mentions of `meter.jsonl` in `scripts/**/*.py` (31 lines across 17 files):
+
+- scripts/mods-handoff-test/hyperframes/sections.py:276
+- scripts/mods-handoff-test/hyperframes/sections.py:277
+- scripts/haiku55-compact-rules/analyze.py:16
+- scripts/haiku55-compact-rules/run_pilot.py:5
+- scripts/haiku55-compact-rules/run_pilot.py:48
+- scripts/haiku55-compact-rules/run_pilot.py:81
+- scripts/haiku55-compact-rules/run_mod.py:93
+- scripts/opus55-effort-video/run_stage.py:2
+- scripts/opus55-effort-video/run_stage.py:89
+- scripts/opus55-effort-video/precedent/video21_sections.py:276
+- scripts/opus55-effort-video/precedent/video21_sections.py:277
+- scripts/context-cost-100k/analyze.py:5
+- scripts/opus55-pro-usage-check/run_build.py:46
+- scripts/opus55-pro-usage-check/run_build.py:106
+- scripts/opus55-pro-usage-check/run_frames.py:62
+- scripts/autocompact-window-test/run_window.py:6
+- scripts/autocompact-window-test/run_window.py:50
+- scripts/autocompact-window-test/run_window.py:83
+- scripts/haiku-subagent-efficiency/run_round1.py:51
+- scripts/haiku-subagent-efficiency/run_round1.py:84
+- scripts/haiku-subagent-efficiency/run_round1.py:102
+- scripts/haiku-subagent-efficiency/briefs.py:8
+- scripts/haiku-subagent-efficiency/briefs.py:15
+- scripts/you-should-know-test/pilot/analyze.py:15
+- scripts/you-should-know-test/pilot/run_ysk.py:31
+- scripts/you-should-know-test/pilot/run_pilot.py:5
+- scripts/you-should-know-test/pilot/run_pilot.py:47
+- scripts/you-should-know-test/pilot/run_pilot.py:80
+- scripts/you-should-know-test/pilot/run_mod.py:93
+- scripts/claude-code-mods-audit/pilot/analyze.py:15
+- scripts/claude-code-mods-audit/pilot/run_pilot.py:5
+- scripts/claude-code-mods-audit/pilot/run_pilot.py:47
+- scripts/claude-code-mods-audit/pilot/run_pilot.py:80
+- scripts/claude-code-mods-audit/pilot/run_mod.py:93
+
+The total is 34 lines. I miscounted the 31 above. The 17-file count is also wrong: the list covers 20 files.

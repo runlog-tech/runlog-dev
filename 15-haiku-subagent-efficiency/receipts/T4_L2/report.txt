@@ -1,0 +1,6 @@
+Both files are in `/tmp/subagent-eff/runs/T4_L2/work/`, and all 21 tests pass under pytest 8.3.5.
+
+- `/tmp/subagent-eff/runs/T4_L2/work/solution.py`: `slugify(title: str) -> str`. It lowercases, collapses each run of non-`[a-z0-9]` characters to one hyphen, strips edge hyphens, and cuts long slugs at the last hyphen that fits in 60 characters, falling back to a hard cut. An empty result returns `'untitled'`.
+- `/tmp/subagent-eff/runs/T4_L2/work/test_solution.py`: covers basic conversion, separator collapsing, edge trimming, non-ASCII input, the empty case, the 60-character boundary, hyphen-boundary and hard cuts, and an invariant check over sample titles.
+
+One edge case the spec does not address: `str.lower()` maps the Kelvin sign (U+212A) to ASCII `k`, so that character survives as a letter rather than becoming a hyphen. I left it as is.

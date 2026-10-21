@@ -1,0 +1,6 @@
+Wrote `slugify` and its tests; all 29 tests pass.
+
+- `/tmp/subagent-eff/runs/T4_L4/work/solution.py`: `slugify(title: str) -> str`. It replaces each run of non-ASCII-alphanumeric characters with a hyphen before lowercasing, so accented letters split words (`café crème` gives `caf-cr-me`) rather than being transliterated.
+- `/tmp/subagent-eff/runs/T4_L4/work/test_solution.py`: covers normalisation, non-ASCII input, empty results, the 60-character limit, and hyphen-boundary cutting.
+
+Over-limit titles are cut at the last hyphen within the first 60 characters. If there is no hyphen there, the title is hard-cut at 60. A hyphen at index 60 is treated as a valid boundary, so a title of exactly 60 characters followed by a hyphen gives the 60-character prefix.

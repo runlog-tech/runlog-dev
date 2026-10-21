@@ -1,0 +1,35 @@
+22 files match `scripts/*/script.md`. Eleven have no status line. Where a file has more than one status statement, I give the most recent or authoritative one. Paths are under `/tmp/subagent-fixture`.
+
+**Files with a status line**
+
+| File | Title | Status |
+|---|---|---|
+| `scripts/claude-doctor-checkup/script.md:3` | /doctor (a.k.a. /checkup) — full script draft | Full line-by-line narration drafted 2026-09-04, following the locked structure. Concept-teaching check applied. |
+| `scripts/haiku55-100k-cliff/script.md:3` | Haiku 5.5's 100K Price Cliff, and the Autocompact Window Test (Video 26, DRAFT NARRATION v1) | PARKED 2026-10-17. The next video moved to Haiku subagent efficiency. It needs a High-effort re-run and a reworded Section 07 before it can lock. Draft v1 from 2026-10-16, not locked. |
+| `scripts/haiku55-compact-short/script.md:3` | Idea 34 Short: Haiku 4.5 broke rule 1 after /compact, Haiku 5.5 did not | Narration v4 LOCKED 2026-10-13. Cover LOCKED 2026-10-13. v4 built and rendered (41.9 s). Receipts audit and live-page check done. Cover, upload-notes and Private upload are still to do. |
+| `scripts/mcp-context-bloat-fixed/script.md:89` | Claude Code Already Fixed Your MCP Context Bloat | v2 built and rendered 2026-08-19 (6:42, all 7 sections real). A timing bug was found and fixed during verification. |
+| `scripts/mcp-goes-stateless/script.md:78` | MCP Goes Stateless | TTS, rendering and packaging are all complete. Only the user's own upload/publish action remains. |
+| `scripts/opusplan-tax/script.md:5` | opusplan-tax | Locked and fully built (8 sections, 413.0 s / 6:53 stitched final). Revised 2026-09-02. Title and thumbnail locked. Ready for upload. |
+| `scripts/rebuild-your-claude-md/script.md:113` | Rebuild Your CLAUDE.md, Don't Accrete It | Updated 2026-08-21 to close a content gap by rewriting Sections 3 and 5. Updated 2026-08-22 with a full production day. It ends at 7:46.5 and was published that night. |
+| `scripts/rtk-vs-caveman/script.md:5` | rtk-vs-caveman | Narration TTS'd (real total 7:58). Long-form, title, thumbnail and all 3 Shorts are locked. Only packaging and upload remain. |
+| `scripts/subagent-scout/script.md:5` | subagent-scout | Line 5 says not yet rendered, narration draft pending TTS/render. The `## Status` section at line 108 says drafted 2026-08-26, still no TTS, render, title/thumbnail, captions, chapters, upload-notes or Short. |
+
+**Files with no status line**
+
+| File | Title |
+|---|---|
+| `scripts/antigravity-context-mechanics/script.md` | How Google Antigravity Actually Manages Context (Video 18) |
+| `scripts/claude-compact-amnesia/script.md` | We Tried to Break Claude Code's Memory. It Mostly Held. (Video 17) |
+| `scripts/claude-workflows-pro-plan/script.md` | Are Claude Code Workflows Worth the Tokens? Pro Plan Is the Sharpest Case (Video 20) |
+| `scripts/claude-workflows-pro-plan-short-2/script.md` | Video 20 Short 2: the same job, $0.27 vs $1.37 |
+| `scripts/claude-workflows-pro-plan-short-3/script.md` | Video 20 Short 3: up to 18x the tokens (token race) |
+| `scripts/jev-vs-kev/script.md` | Video 16 Script: Claude Code vs. Antigravity (Jev vs. Local Kev) |
+| `scripts/mcp-server-in-20-minutes/script.md` | Build Your First MCP Server in 20 Minutes |
+| `scripts/mods-handoff-test/script.md` | I Tested the Auto-Handoff Mods Everyone Is Building (Video 21, DRAFT NARRATION) |
+| `scripts/mods-handoff-test-short-1/script.md` | Video 21 Short 1: the bill, ranked |
+| `scripts/mods-handoff-test-short-2/script.md` | Video 21 Short 2: ask for the rules back |
+| `scripts/opus55-effort-video/script.md` | Same Task, Five Model and Effort Settings (Video 25, DRAFT NARRATION) |
+| `scripts/plugin-eval-benchmark/script.md` | Video 13: I Tested 5 Claude Code Skills. Only 1 Beat Plain Claude. |
+| `scripts/taste-skill-fact-check/script.md` | Video 14 — I Fact-Checked the Viral "Anti-Slop" Claude Code Skill |
+
+Several of these only carry a status in the title, such as "DRAFT NARRATION".

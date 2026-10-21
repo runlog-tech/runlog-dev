@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #08090c; }
+  #bg { position: absolute; inset: 0;
+        background: radial-gradient(ellipse 1200px 700px at 70% 30%, rgba(34,211,238,0.07), transparent 70%),
+                    #08090c; }
+  .abs { position: absolute; font-family: Arial, Helvetica, sans-serif; white-space: nowrap; }
+  #eyebrow { left: 120px; top: 96px; font-size: 22px; font-weight: 700; letter-spacing: 6px; color: #22d3ee; opacity: 0; }
+  #title { left: 120px; top: 132px; font-size: 72px; font-weight: 800; color: #f8fafc; opacity: 0; }
+  #subtitle { left: 120px; top: 228px; font-size: 30px; color: #94a3b8; opacity: 0; }
+  .grid { position: absolute; top: 330px; width: 1px; height: 570px; background: rgba(148,163,184,0.14); opacity: 0; }
+  .tick { top: 916px; width: 120px; margin-left: -60px; text-align: center; font-size: 22px; color: #8b99ad; opacity: 0; }
+  #axis { left: 520px; top: 900px; width: 1080px; height: 1px; background: rgba(148,163,184,0.35); opacity: 0; }
+  .track { left: 520px; width: 1080px; height: 80px; border-radius: 10px; background: rgba(255,255,255,0.04); opacity: 0; }
+  .rowlabel { left: 120px; width: 360px; height: 80px; display: flex; flex-direction: column; justify-content: center; opacity: 0; }
+  .rowlabel .range { font-size: 40px; font-weight: 700; color: #f8fafc; }
+  .rowlabel .tag { margin-top: 6px; font-size: 18px; font-weight: 700; letter-spacing: 3px; color: #fbbf24; }
+  .bar { left: 520px; width: 0px; height: 80px; border-radius: 10px; background: linear-gradient(90deg, #0ea5e9, #22d3ee); }
+  .bar.peak { background: linear-gradient(90deg, #f97316, #fbbf24); box-shadow: 0 0 40px rgba(251,191,36,0.35); }
+  .val { left: 544px; font-size: 44px; font-weight: 800; color: #e2e8f0; }
+  .val.peak { color: #fbbf24; }
+  #footnote { left: 120px; top: 1000px; font-size: 20px; color: #8b99ad; opacity: 0; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="6" data-width="1920" data-height="1080">
+  <div id="bg"></div>
+
+  <div id="eyebrow" class="abs">CONTEXT PRICING</div>
+  <div id="title" class="abs">Cost per million context tokens</div>
+  <div id="subtitle" class="abs">Price per 1M tokens by context window size (USD)</div>
+
+  <div class="grid" style="left: 520px;"></div>
+  <div class="grid" style="left: 736px;"></div>
+  <div class="grid" style="left: 952px;"></div>
+  <div class="grid" style="left: 1168px;"></div>
+  <div class="grid" style="left: 1384px;"></div>
+  <div class="grid" style="left: 1600px;"></div>
+  <div id="axis" class="abs"></div>
+  <div class="abs tick" style="left: 520px;">$0.00</div>
+  <div class="abs tick" style="left: 736px;">$0.05</div>
+  <div class="abs tick" style="left: 952px;">$0.10</div>
+  <div class="abs tick" style="left: 1168px;">$0.15</div>
+  <div class="abs tick" style="left: 1384px;">$0.20</div>
+  <div class="abs tick" style="left: 1600px;">$0.25</div>
+
+  <!-- Row 0: 0 to 50K -->
+  <div class="abs rowlabel" style="top: 340px;"><div class="range">0 – 50K</div></div>
+  <div class="abs track" style="top: 375px;"></div>
+  <div class="abs bar" style="top: 375px;" data-value="0.051" data-index="0"></div>
+  <div class="abs val" style="top: 380px;" data-value-label="0"></div>
+
+  <!-- Row 1: 50 to 100K -->
+  <div class="abs rowlabel" style="top: 490px;"><div class="range">50 – 100K</div></div>
+  <div class="abs track" style="top: 525px;"></div>
+  <div class="abs bar" style="top: 525px;" data-value="0.068" data-index="1"></div>
+  <div class="abs val" style="top: 530px;" data-value-label="1"></div>
+
+  <!-- Row 2: 100 to 150K (peak) -->
+  <div class="abs rowlabel" style="top: 640px;"><div class="range">100 – 150K</div><div class="tag">PEAK</div></div>
+  <div class="abs track" style="top: 675px;"></div>
+  <div class="abs bar peak" style="top: 675px;" data-value="0.197" data-index="2"></div>
+  <div class="abs val peak" style="top: 680px;" data-value-label="2"></div>
+
+  <!-- Row 3: 150 to 250K -->
+  <div class="abs rowlabel" style="top: 790px;"><div class="range">150 – 250K</div></div>
+  <div class="abs track" style="top: 825px;"></div>
+  <div class="abs bar" style="top: 825px;" data-value="0.153" data-index="3"></div>
+  <div class="abs val" style="top: 830px;" data-value-label="3"></div>
+
+  <div id="footnote" class="abs">Bars scaled to $0.25 per million tokens</div>
+</div>
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+
+  const TRACK_X = 520;
+  const TRACK_W = 1080;
+  const SCALE_MAX = 0.25;
+  const LABEL_GAP = 24;
+
+  // Header
+  tl.fromTo("#eyebrow", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.1);
+  tl.fromTo("#title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 0.25);
+  tl.fromTo("#subtitle", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.out" }, 0.6);
+
+  // Axis and gridlines
+  tl.fromTo(".grid", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out", stagger: 0.05 }, 0.7);
+  tl.fromTo(".tick", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out", stagger: 0.05 }, 0.8);
+  tl.fromTo("#axis", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, 0.7);
+  tl.fromTo("#footnote", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }, 1.4);
+
+  // Rows: label + track fade in, bar grows, value counts up and rides the bar tip
+  const bars = gsap.utils.toArray(".bar");
+  bars.forEach((bar, i) => {
+    const start = 1.0 + i * 0.22;
+    const value = parseFloat(bar.dataset.value);
+    const fullW = (value / SCALE_MAX) * TRACK_W;
+    const label = document.querySelector('[data-value-label="' + i + '"]');
+    const rowLabel = document.querySelectorAll(".rowlabel")[i];
+    const track = document.querySelectorAll(".track")[i];
+
+    tl.fromTo(rowLabel, { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, start);
+    tl.fromTo(track, { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power1.out" }, start);
+
+    const state = { p: 0 };
+    tl.fromTo(state, { p: 0 }, {
+      p: 1,
+      duration: 1.3,
+      ease: "power3.out",
+      onUpdate: () => {
+        const w = fullW * state.p;
+        bar.style.width = w + "px";
+        label.style.left = (TRACK_X + w + LABEL_GAP) + "px";
+        label.textContent = "$" + (value * state.p).toFixed(3);
+      }
+    }, start);
+  });
+
+  // Peak emphasis after the bars settle
+  tl.fromTo(".bar.peak", { filter: "brightness(1)" }, { filter: "brightness(1.25)", duration: 0.4, ease: "sine.inOut", yoyo: true, repeat: 1 }, 3.4);
+
+  window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

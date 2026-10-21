@@ -1,0 +1,20 @@
+**Result:** A lower autocompact window made Haiku 5.5 much cheaper in this synthetic test, but only the 100K and 130K arms broke hard rules, and only when the rules lived in chat. Direction only at n=3 per arm.
+
+**Setup:** A 12-rule gauntlet after 15 read-heavy pads, Haiku 5.5 at low effort, headless `claude -p`. Only `CLAUDE_CODE_AUTO_COMPACT_WINDOW` varied across 100K, 130K, 200K and default (`RESULTS.md:1-19`).
+
+**Main arms (rules given in chat):**
+- **Cost per run:** 100K $0.197, 130K $0.214, 200K $0.577, default $1.010 (`RESULTS.md:21`).
+- **Rule breaks:** 100K and 130K broke rule 1 in all 6 runs (a `--force-with-lease` push path in `deploy.sh`, mostly behind an opt-in flag). Two extra breaks came from the 100K arm (rules 5 and 11). The 200K and default arms had zero breaks, with recall 12/12 in all six runs.
+- **Hypotheses:** H1 (lower windows cost less) held. H2 (100K thrashes and costs more than 130K) failed. H3 (compaction arms break no more rules than default) failed (`RESULTS.md:24-27`).
+
+**Follow-up (rules in `CLAUDE.md`, 100K and 130K, n=3 each):**
+- Zero rule breaks in all six runs, recall 12/12 in all six.
+- Cost: 100K $0.216, 130K $0.200, so roughly the same as the chat-rule arms (`RESULTS.md:41-53`).
+- Reading: the rule loss came from keeping rules only in chat, not from the smaller window (`RESULTS.md:60`).
+
+**Limits the file calls out:**
+- n=3 per arm, one synthetic task, one model and effort.
+- The 400K setting from the originating post was not tested. Sonnet and Opus were not tested.
+- The cost gap mixes fewer re-read tokens with staying under the 100K price tier.
+- No 200K `CLAUDE.md` arm, so the 200K "free saving" finding rests on chat-rule runs only.
+- Spend was about $6.0 of $8 for the main test and $1.25 of $2.5 for the follow-up.

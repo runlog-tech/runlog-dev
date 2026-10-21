@@ -1,0 +1,1 @@
+In this HyperFrames project, replace the placeholder scene in index.html with an animated horizontal bar chart of the cost per million context tokens for four context sizes: 0 to 50K $0.051, 50 to 100K $0.068, 100 to 150K $0.197, 150 to 250K $0.153. Make it look good and keep the 6 second duration. Run the check until it passes, then render it to an mp4.

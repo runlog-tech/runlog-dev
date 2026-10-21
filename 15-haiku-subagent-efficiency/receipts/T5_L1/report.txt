@@ -1,0 +1,29 @@
+22 scripts, 9 with a status line. Paths are under `/tmp/subagent-fixture/scripts/<slug>/script.md`.
+
+**With status line**
+
+1. **claude-doctor-checkup**: "/doctor (a.k.a. /checkup) — full script draft". Status: full line-by-line narration drafted 2026-09-04; title/thumbnail not started.
+2. **haiku55-100k-cliff**: "Haiku 5.5's 100K Price Cliff, and the Autocompact Window Test (Video 26, DRAFT NARRATION v1)". Status: PARKED 2026-10-17; draft v1, not locked; needs High-effort re-run and reworded Section 07.
+3. **haiku55-compact-short**: "Idea 34 Short: Haiku 4.5 broke rule 1 after /compact, Haiku 5.5 did not". Status: narration v4 and cover LOCKED 2026-10-13; v4 built (41.9 s); receipts audit done; cover, upload-notes, Private upload still to do.
+4. **mcp-context-bloat-fixed**: "Claude Code Already Fixed Your MCP Context Bloat". Status: v2 built and rendered 2026-08-19 (6:42); review/trim and packaging not done.
+5. **mcp-goes-stateless**: "MCP Goes Stateless". Status: TTS, render, packaging complete; only the user's upload/publish left.
+6. **opusplan-tax**: H1 is "opusplan-tax". Status: locked and fully built (413.0 s / 6:53); title and thumbnail locked; ready for upload per `upload-notes.md`.
+7. **rebuild-your-claude-md**: "Rebuild Your CLAUDE.md, Don't Accrete It". Status section (2026-08-22): full production done, ends at 7:46.5, published that night.
+8. **rtk-vs-caveman**: H1 is "rtk-vs-caveman". Status: narration TTS'd (7:58); long-form locked; title and thumbnail locked; all 3 Shorts locked; only packaging/upload remains.
+9. **subagent-scout**: H1 is "subagent-scout". Status: not yet rendered; narration draft pending TTS/render; title/thumbnail, captions, upload-notes, Shorts not done.
+
+**No status line (title only)**
+
+- **antigravity-context-mechanics**: "How Google Antigravity Actually Manages Context (Video 18)"
+- **claude-compact-amnesia**: "We Tried to Break Claude Code's Memory. It Mostly Held. (Video 17)"
+- **claude-workflows-pro-plan**: "Are Claude Code Workflows Worth the Tokens? Pro Plan Is the Sharpest Case (Video 20)"
+- **claude-workflows-pro-plan-short-2**: "Video 20 Short 2: the same job, $0.27 vs $1.37"
+- **claude-workflows-pro-plan-short-3**: "Video 20 Short 3: up to 18x the tokens (token race)"
+- **jev-vs-kev**: "Video 16 Script: Claude Code vs. Antigravity (Jev vs. Local Kev)"
+- **mcp-server-in-20-minutes**: "Build Your First MCP Server in 20 Minutes"
+- **mods-handoff-test**: "I Tested the Auto-Handoff Mods Everyone Is Building (Video 21, DRAFT NARRATION)"
+- **mods-handoff-test-short-1**: "Video 21 Short 1: the bill, ranked"
+- **mods-handoff-test-short-2**: "Video 21 Short 2: ask for the rules back"
+- **opus55-effort-video**: "Same Task, Five Model and Effort Settings (Video 25, DRAFT NARRATION)"
+- **plugin-eval-benchmark**: "Video 13: I Tested 5 Claude Code Skills. Only 1 Beat Plain Claude."
+- **taste-skill-fact-check**: "Video 14 — I Fact-Checked the Viral "Anti-Slop" Claude Code Skill"

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #08090c; }
+  #bg { position: absolute; inset: 0; background: #08090c; }
+  #title { position: absolute; left: 120px; top: 104px; width: 1680px; font-family: Arial, Helvetica, sans-serif; font-weight: 800; font-size: 84px; line-height: 1.1; color: #f8fafc; opacity: 0; }
+  #subtitle { position: absolute; left: 120px; top: 206px; width: 1680px; font-family: Arial, Helvetica, sans-serif; font-weight: 400; font-size: 34px; color: #94a3b8; opacity: 0; }
+  .head { position: absolute; top: 336px; font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 4px; color: #64748b; opacity: 0; }
+  .label { position: absolute; left: 120px; width: 400px; height: 80px; line-height: 80px; text-align: right; font-family: Arial, Helvetica, sans-serif; font-weight: 600; font-size: 40px; color: #cbd5e1; opacity: 0; }
+  .track { position: absolute; left: 560px; width: 1240px; height: 80px; background: #12151c; border-radius: 0 6px 6px 0; opacity: 0; }
+  .bar { position: absolute; left: 560px; height: 80px; background: #256abf; border-radius: 0 6px 6px 0; transform-origin: 0% 50%; }
+  .bar.peak { background: #5598e7; }
+  .glow { position: absolute; left: 560px; top: 684px; width: 977.12px; height: 80px; background: #5598e7; border-radius: 0 6px 6px 0; filter: blur(28px); opacity: 0; }
+  .val { position: absolute; left: 560px; width: 360px; height: 80px; line-height: 80px; font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 44px; color: #f8fafc; white-space: nowrap; }
+  .val .num { opacity: 0; }
+  .tag { position: absolute; left: 0; top: 92px; line-height: 1; font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 4px; color: #6da7ec; opacity: 0; }
+  .axis { position: absolute; opacity: 0; }
+  .rule { left: 560px; top: 931px; width: 1240px; height: 2px; background: #1e2430; }
+  .tick { top: 931px; width: 2px; height: 12px; background: #1e2430; }
+  .tlabel { top: 952px; width: 140px; text-align: center; font-family: Arial, Helvetica, sans-serif; font-weight: 400; font-size: 26px; line-height: 1.2; color: #64748b; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="6" data-width="1920" data-height="1080">
+  <div id="bg"></div>
+
+  <div id="title">Cost per Million Context Tokens</div>
+  <div id="subtitle">Price by context window size, in USD</div>
+
+  <div class="head" id="head-ctx" style="left: 120px; width: 400px; text-align: right;">CONTEXT SIZE</div>
+  <div class="head" id="head-val" style="left: 560px;">COST PER 1M TOKENS (USD)</div>
+
+  <div class="label" id="r0-label" style="top: 396px;">0–50K</div>
+  <div class="track" id="r0-track" style="top: 396px;"></div>
+  <div class="bar" id="r0-bar" style="top: 396px; width: 252.96px;"></div>
+  <div class="val" id="r0-val" style="top: 396px;"><span class="num" id="r0-num">$0.000</span></div>
+
+  <div class="label" id="r1-label" style="top: 540px;">50–100K</div>
+  <div class="track" id="r1-track" style="top: 540px;"></div>
+  <div class="bar" id="r1-bar" style="top: 540px; width: 337.28px;"></div>
+  <div class="val" id="r1-val" style="top: 540px;"><span class="num" id="r1-num">$0.000</span></div>
+
+  <div class="label" id="r2-label" style="top: 684px;">100–150K</div>
+  <div class="track" id="r2-track" style="top: 684px;"></div>
+  <div class="glow" id="r2-glow"></div>
+  <div class="bar peak" id="r2-bar" style="top: 684px; width: 977.12px;"></div>
+  <div class="val" id="r2-val" style="top: 684px;"><span class="num" id="r2-num">$0.000</span><span class="tag" id="r2-tag">PEAK</span></div>
+
+  <div class="label" id="r3-label" style="top: 828px;">150–250K</div>
+  <div class="track" id="r3-track" style="top: 828px;"></div>
+  <div class="bar" id="r3-bar" style="top: 828px; width: 758.88px;"></div>
+  <div class="val" id="r3-val" style="top: 828px;"><span class="num" id="r3-num">$0.000</span></div>
+
+  <div class="axis rule"></div>
+  <div class="axis tick" style="left: 559px;"></div>
+  <div class="axis tick" style="left: 807px;"></div>
+  <div class="axis tick" style="left: 1055px;"></div>
+  <div class="axis tick" style="left: 1303px;"></div>
+  <div class="axis tick" style="left: 1551px;"></div>
+  <div class="axis tick" style="left: 1799px;"></div>
+  <div class="axis tlabel" style="left: 490px;">$0</div>
+  <div class="axis tlabel" style="left: 738px;">$0.05</div>
+  <div class="axis tlabel" style="left: 986px;">$0.10</div>
+  <div class="axis tlabel" style="left: 1234px;">$0.15</div>
+  <div class="axis tlabel" style="left: 1482px;">$0.20</div>
+  <div class="axis tlabel" style="left: 1730px;">$0.25</div>
+</div>
+<script>
+  const tl = gsap.timeline({ paused: true });
+
+  // Bar length: 0.25 domain across 1240px => 4960px per $1; value label rides the bar end (w + 20).
+  const FIRST = 1.4, STAGGER = 0.3, BAR_DUR = 1.6, EASE = "power3.out";
+  const ROWS = [
+    { id: "r0", value: 0.051, w: 252.96 },
+    { id: "r1", value: 0.068, w: 337.28 },
+    { id: "r2", value: 0.197, w: 977.12 },
+    { id: "r3", value: 0.153, w: 758.88 },
+  ];
+
+  tl.fromTo("#title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.2);
+  tl.fromTo("#subtitle", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.6);
+  tl.fromTo(".head", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }, 0.9);
+  tl.fromTo(".axis", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }, 1.1);
+
+  ROWS.forEach((row, i) => {
+    const t = FIRST + i * STAGGER;
+    const num = document.getElementById(row.id + "-num");
+    const counter = { n: 0 };
+    tl.fromTo("#" + row.id + "-track", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, t - 0.5);
+    tl.fromTo("#" + row.id + "-label", { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, t - 0.5);
+    tl.fromTo("#" + row.id + "-bar", { scaleX: 0 }, { scaleX: 1, duration: BAR_DUR, ease: EASE }, t);
+    tl.fromTo("#" + row.id + "-val", { x: 0 }, { x: row.w + 20, duration: BAR_DUR, ease: EASE }, t);
+    tl.fromTo(num, { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, t);
+    tl.to(counter, {
+      n: row.value,
+      duration: BAR_DUR,
+      ease: EASE,
+      onUpdate: () => { num.textContent = "$" + counter.n.toFixed(3); },
+    }, t);
+  });
+
+  // Peak (100–150K) lights up once its bar lands.
+  const PEAK_END = FIRST + 2 * STAGGER + BAR_DUR;
+  tl.fromTo("#r2-glow", { opacity: 0 }, { opacity: 0.45, duration: 0.8, ease: "power2.out" }, PEAK_END);
+  tl.fromTo("#r2-tag", { opacity: 0, y: -8 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, PEAK_END - 0.2);
+
+  window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

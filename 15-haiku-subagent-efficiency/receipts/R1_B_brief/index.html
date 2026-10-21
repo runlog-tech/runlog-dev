@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #08090c; }
+  #bg { position: absolute; inset: 0; background: #08090c; }
+  #title { position: absolute; left: 120px; top: 90px; width: 1680px; font-family: Arial, Helvetica, sans-serif; font-weight: 800; font-size: 84px; line-height: 1.1; color: #f8fafc; opacity: 0; }
+  #chart { position: absolute; left: 120px; top: 330px; width: 1680px; display: flex; flex-direction: column; gap: 40px; font-family: Arial, Helvetica, sans-serif; }
+  .row { display: flex; align-items: center; height: 96px; }
+  .label { flex: none; width: 340px; font-size: 44px; font-weight: 600; color: #e2e8f0; white-space: nowrap; }
+  .bar { flex: none; height: 72px; border-radius: 6px; background: #38bdf8; width: 0; }
+  .bar.hot { background: #f59e0b; }
+  .val { margin-left: 24px; font-size: 56px; font-weight: 800; color: #f8fafc; white-space: nowrap; opacity: 0; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="6" data-width="1920" data-height="1080">
+  <div id="bg"></div>
+  <div id="title">COST PER CONTEXT TOKEN</div>
+  <div id="chart">
+    <div class="row">
+      <div class="label">0 to 50K</div>
+      <div class="bar" data-w="255"></div>
+      <div class="val">$0.051</div>
+    </div>
+    <div class="row">
+      <div class="label">50 to 100K</div>
+      <div class="bar" data-w="340"></div>
+      <div class="val">$0.068</div>
+    </div>
+    <div class="row">
+      <div class="label">100 to 150K</div>
+      <div class="bar hot" data-w="985"></div>
+      <div class="val">$0.197</div>
+    </div>
+    <div class="row">
+      <div class="label">150 to 250K</div>
+      <div class="bar" data-w="765"></div>
+      <div class="val">$0.153</div>
+    </div>
+  </div>
+</div>
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  // Bar lengths are linear in value: 5000 px per dollar (0.051 -> 255, 0.068 -> 340, 0.197 -> 985, 0.153 -> 765).
+  tl.to("#title", { opacity: 1, duration: 0.6 }, 0.3);
+  tl.fromTo(".bar", { width: 0 }, { width: (i, el) => el.dataset.w + "px", duration: 0.9, ease: "power3.out", stagger: 0.3 }, 1.0);
+  tl.fromTo(".val", { opacity: 0 }, { opacity: 1, duration: 0.4, stagger: 0.3 }, 1.6);
+  window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

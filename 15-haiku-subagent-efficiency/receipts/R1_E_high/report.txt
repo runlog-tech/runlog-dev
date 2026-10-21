@@ -1,0 +1,7 @@
+The placeholder is replaced with an animated horizontal bar chart, `npm run check` passes, and the render is at `/tmp/subagent-eff/runs/R1_E_high/work/out.mp4` (1920x1080, 30fps, 6.0s, H.264).
+
+Edits are in `/tmp/subagent-eff/runs/R1_E_high/work/index.html`. The duration is still 6s. Each bar grows from zero while its value counts up, the 100–150K bar is highlighted in amber with a "HIGHEST" tag, and gridlines and axis ticks sit at $0.05, $0.10 and $0.15.
+
+Two check failures came up along the way and are fixed: a template-literal `querySelector` that the bundler rejects, and muted gray text below WCAG AA contrast. The final check reports 0 lint, runtime, layout or motion findings and 78/78 contrast checks passing.
+
+The project pins `hyperframes@0.8.82`, and a read-only probe reports the latest as 0.8.167. I did not bump the pin, since that changes `package.json` and was outside this request. Say if you want it upgraded and re-checked.

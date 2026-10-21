@@ -1,0 +1,20 @@
+Of the 22 `scripts/*/upload-notes.md` files, only `compact-best-practices-card` fails the Tags check, but 21 of 22 fail a literal Primary title check. The literal check is strict and the formats vary, so I also ran a looser check.
+
+**Primary title line**
+
+- **Literal `Primary title` label:** only `antigravity-context-mechanics` passes (`**Primary Title:**` at line 31). The other 21 fail.
+- **Loose check (a title line marked primary, locked, chosen, or live):** 15 pass. Their markers are `Primary:`, `primary, locked`, `LOCKED primary`, `Locked Title`, or `Primary (locked)`. These are `claude-compact-amnesia`, `claude-doctor-checkup`, `claude-workflows-pro-plan`, `claude-workflows-pro-plan-short-2`, `claude-workflows-pro-plan-short-3`, `haiku55-compact-short`, `mcp-context-bloat-fixed`, `mcp-goes-stateless`, `mcp-server-in-20-minutes`, `mods-handoff-test-short-1`, `mods-handoff-test-short-2`, `rebuild-your-claude-md`, `rtk-vs-caveman`, `subagent-scout`, and `antigravity-context-mechanics`.
+- **Loose fail (no primary marker):**
+  - `compact-best-practices-card`: one `- Title:` bullet at line 10, no title section.
+  - `haiku55-100k-cliff`: `## Title Candidates`, no primary marker.
+  - `opus55-effort-video`: `## Title` table, no primary marker. The notes recommend #1, but nothing in the table is marked primary.
+- **Ambiguous (live title, not labeled primary):** `jev-vs-kev` (`LIVE TITLE`), `plugin-eval-benchmark` (`Live Title`), and `taste-skill-fact-check` (`Live Title`). I counted these as passing the loose check, since a live title is effectively the primary.
+- **`mods-handoff-test`:** the title table marks row 1 as `Result (LOCKED)`, so it passes the loose check.
+
+**Tags heading**
+
+- **Literal `## Tags` heading:** 18 files pass.
+- **Numbered or suffixed heading:** `antigravity-context-mechanics` (`## 6. Tags`), `claude-compact-amnesia` (`## 7. Search Tags`), and `jev-vs-kev` (`## 7. Search Tags`) pass loosely but fail the literal heading check.
+- **Fail:** `compact-best-practices-card` has no Tags heading. Its tags appear only as a `- Tags:` bullet at line 22.
+
+No files were edited.

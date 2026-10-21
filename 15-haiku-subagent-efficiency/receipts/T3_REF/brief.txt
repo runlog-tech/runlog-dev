@@ -1,0 +1,1 @@
+For every scripts/*/upload-notes.md, check whether it has a Primary title line and a Tags heading, and tell me which ones fail.

@@ -1,0 +1,5 @@
+Files: `/tmp/subagent-eff/runs/T4_L1/work/solution.py` and `/tmp/subagent-eff/runs/T4_L1/work/test_solution.py`. 33 tests pass.
+
+Behavior notes:
+- Non-ASCII letters (é, 日本語) become hyphens, per spec. Substitution runs before `.lower()`, so the Kelvin sign doesn't fold into ASCII `k`.
+- Over-length input cuts at the last hyphen inside the first 60 chars. If none exists, it hard-cuts at 60. Example: `"ab-" + "c"*100` gives `"ab"`.

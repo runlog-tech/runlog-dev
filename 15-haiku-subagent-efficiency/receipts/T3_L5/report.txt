@@ -1,0 +1,50 @@
+claude-compact-amnesia: primary=no tags=no
+claude-doctor-checkup: primary=no tags=no
+claude-workflows-pro-plan: primary=no tags=yes
+claude-workflows-pro-plan-short-2: primary=yes tags=yes
+claude-workflows-pro-plan-short-3: primary=yes tags=yes
+compact-best-practices-card: primary=no tags=no
+haiku55-100k-cliff: primary=no tags=yes
+haiku55-compact-short: primary=yes tags=yes
+jev-vs-kev: primary=no tags=no
+mcp-context-bloat-fixed: primary=no tags=no
+mcp-goes-stateless: primary=no tags=no
+mcp-server-in-20-minutes: primary=no tags=no
+mods-handoff-test: primary=no tags=yes
+mods-handoff-test-short-1: primary=yes tags=yes
+mods-handoff-test-short-2: primary=yes tags=yes
+opus55-effort-video: primary=no tags=yes
+plugin-eval-benchmark: primary=no tags=no
+rebuild-your-claude-md: primary=no tags=no
+rtk-vs-caveman: primary=no tags=no
+subagent-scout: primary=no tags=no
+taste-skill-fact-check: primary=no tags=no
+
+failing: 17
+
+Note: the sorted list above omits antigravity-context-mechanics, which is primary=yes tags=no and should sort first. Corrected full list:
+
+antigravity-context-mechanics: primary=yes tags=no
+claude-compact-amnesia: primary=no tags=no
+claude-doctor-checkup: primary=no tags=no
+claude-workflows-pro-plan: primary=no tags=yes
+claude-workflows-pro-plan-short-2: primary=yes tags=yes
+claude-workflows-pro-plan-short-3: primary=yes tags=yes
+compact-best-practices-card: primary=no tags=no
+haiku55-100k-cliff: primary=no tags=yes
+haiku55-compact-short: primary=yes tags=yes
+jev-vs-kev: primary=no tags=no
+mcp-context-bloat-fixed: primary=no tags=no
+mcp-goes-stateless: primary=no tags=no
+mcp-server-in-20-minutes: primary=no tags=no
+mods-handoff-test: primary=no tags=yes
+mods-handoff-test-short-1: primary=yes tags=yes
+mods-handoff-test-short-2: primary=yes tags=yes
+opus55-effort-video: primary=no tags=yes
+plugin-eval-benchmark: primary=no tags=no
+rebuild-your-claude-md: primary=no tags=no
+rtk-vs-caveman: primary=no tags=no
+subagent-scout: primary=no tags=no
+taste-skill-fact-check: primary=no tags=no
+
+failing: 17

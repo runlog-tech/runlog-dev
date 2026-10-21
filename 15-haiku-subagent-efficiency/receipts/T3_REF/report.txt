@@ -1,0 +1,57 @@
+Of the 22 `scripts/*/upload-notes.md` files, only `antigravity-context-mechanics` passes both checks. I counted a Primary title line as a literal "Primary title" (case-insensitive). I counted a Tags heading as a `#` heading containing "Tags".
+
+**Fails the Primary title line (21 files)**
+- `claude-compact-amnesia`
+- `claude-doctor-checkup`
+- `claude-workflows-pro-plan`
+- `claude-workflows-pro-plan-short-2`
+- `claude-workflows-pro-plan-short-3`
+- `compact-best-practices-card`
+- `haiku55-100k-cliff`
+- `haiku55-compact-short`
+- `jev-vs-kev`
+- `mcp-context-bloat-fixed`
+- `mcp-goes-stateless`
+- `mcp-server-in-20-minutes`
+- `mods-handoff-test`
+- `mods-handoff-test-short-1`
+- `mods-handoff-test-short-2`
+- `opus55-effort-video`
+- `plugin-eval-benchmark`
+- `rebuild-your-claude-md`
+- `rtk-vs-caveman`
+- `subagent-scout`
+- `taste-skill-fact-check`
+
+Most of these do have a title, but it isn't labelled "Primary title". The wording varies:
+- **Locked Title:** `claude-compact-amnesia`
+- **Title (primary, locked):** `claude-doctor-checkup`
+- **Title (LOCKED):** `haiku55-compact-short`
+- **Video Title:** `jev-vs-kev`
+- A plain `## Title` heading: `claude-workflows-pro-plan` and the two Shorts
+- **Title Candidates:** `haiku55-100k-cliff`
+- **Title:** `compact-best-practices-card`
+
+I didn't grep the other files for their title wording. If you want a looser rule, such as any `Title` heading or line, most of these would pass.
+
+**Fails the Tags heading (1 file)**
+- `compact-best-practices-card`
+
+That file fails both checks.
+
+**No `upload-notes.md` at all**
+These 11 folders have no notes file:
+- `autocompact-window-test`
+- `claude-code-mods-audit`
+- `compaction-timing`
+- `context-cost-100k`
+- `haiku55-compact-rules`
+- `haiku55-subagent-fit`
+- `haiku-subagent-efficiency`
+- `model-routing-subagents`
+- `opus55-pro-usage-check`
+- `opusplan-tax`
+- `orchestrator-pilot`
+- `you-should-know-test`
+
+`_render-template` and `_tools` are also missing the file but are probably not video folders.

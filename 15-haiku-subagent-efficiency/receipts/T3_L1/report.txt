@@ -1,0 +1,10 @@
+Primary title line: 21 of 22 fail. Only `antigravity-context-mechanics` has a `**Primary Title:**` line. The rest use `## Title` headings, `Video Title`, `Locked Title`, or `Title:` bullets.
+
+Tags heading:
+- **Fail:** `compact-best-practices-card` has only a `- Tags:` bullet, no heading.
+- **Soft fail:** `jev-vs-kev` (line 128) and `claude-compact-amnesia` (line 125) have `## N. Search Tags`, not a plain `Tags` heading.
+- **Pass:** the other 19, including `antigravity-context-mechanics` (`## 6. Tags`).
+
+Nested `short/` and `short2/` upload-notes were outside the glob and not checked.
+
+Files live under `/tmp/subagent-fixture/scripts/<name>/upload-notes.md`.

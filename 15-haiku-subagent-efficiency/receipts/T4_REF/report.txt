@@ -1,0 +1,5 @@
+`slugify(title)` is in `/tmp/subagent-eff/runs/T4_REF/work/solution.py`, with tests in `/tmp/subagent-eff/runs/T4_REF/work/test_solution.py`. All 15 tests pass.
+
+Non-ASCII characters are not transliterated, so each one becomes a hyphen. For example, "Café" becomes "caf". Your spec said everything that isn't an ASCII letter or digit becomes a hyphen, so I read it literally.
+
+For titles over 60 characters, the cut goes back to the last hyphen so no word is split. If the cut already lands on a hyphen, it is made there. If there is no hyphen in the first 60 characters, it is a hard cut at 60.

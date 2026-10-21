@@ -1,0 +1,12 @@
+- Per-window mean cost: W100 $0.197 (0.177 to 0.212), W130 $0.214 (0.178 to 0.252), W200 $0.577 (0.426 to 0.672), W1000 $1.010 (0.955 to 1.102); W130 is about 79% less and W200 43% less than W1000.
+- With rules in chat, W100 and W130 broke rule 1 in 6 of 6 runs, plus rule 5 once (W100_2) and rule 11 once (W100_3).
+- W200 and W1000 had 0 of 6 rule breaks, with recall 12/12 in all six runs.
+- Chat-rule recall was 7, 0, 0 for W100 and 10, 1, 11 for W130, while W200 and W1000 were 12/12 in every run.
+- W130 peaks were 95K to 109K with 0 to 1 turns over 100K, while W200 spent 9 to 17 of 30 turns over 100K.
+- With the same 12 rules in `CLAUDE.md` (C100 and C130, n=3 each), there were 0 of 6 rule 1 breaks and 12/12 recall in all six, at 2 to 5 compactions per run and costs within 25% of the matching W arm (+10% and -7%).
+- The file says the cost gap mixes two causes this test does not separate: fewer tokens re-read per turn and staying under the Haiku 5.5 100K price tier.
+- Limits: n=3 per arm, one synthetic read-heavy task, one model and effort, headless runs.
+
+Not tested: the 400K setting, Sonnet and Opus, and a default-window `CLAUDE.md` control.
+
+Source: /tmp/subagent-fixture/scripts/autocompact-window-test/RESULTS.md

@@ -1,0 +1,3 @@
+check: pass
+render: ok
+/tmp/subagent-eff/runs/R1_B_combo_r2/work/index.html

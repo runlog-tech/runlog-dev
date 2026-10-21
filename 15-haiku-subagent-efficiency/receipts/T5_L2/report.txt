@@ -1,0 +1,26 @@
+22 scripts found. 9 have a status line. The other 13 have none, so I've marked them "none" in the Status column.
+
+| File | Title (H1) | Status line |
+|---|---|---|
+| /tmp/subagent-fixture/scripts/antigravity-context-mechanics/script.md | How Google Antigravity Actually Manages Context (Video 18) | none |
+| /tmp/subagent-fixture/scripts/claude-compact-amnesia/script.md | We Tried to Break Claude Code's Memory. It Mostly Held. (Video 17) | none (line 3: "Working title only.") |
+| /tmp/subagent-fixture/scripts/claude-doctor-checkup/script.md | /doctor (a.k.a. /checkup) — full script draft | STATUS: full line-by-line narration drafted 2026-09-04. Title/thumbnail intentionally not started yet. |
+| /tmp/subagent-fixture/scripts/claude-workflows-pro-plan-short-2/script.md | Video 20 Short 2: the same job, $0.27 vs $1.37 | none |
+| /tmp/subagent-fixture/scripts/claude-workflows-pro-plan-short-3/script.md | Video 20 Short 3: up to 18x the tokens (token race) | none |
+| /tmp/subagent-fixture/scripts/claude-workflows-pro-plan/script.md | Are Claude Code Workflows Worth the Tokens? Pro Plan Is the Sharpest Case (Video 20) | none (line 14 is a "DRAFT, 2026-10-02 … CLOSED 2026-10-04" note) |
+| /tmp/subagent-fixture/scripts/haiku55-100k-cliff/script.md | Haiku 5.5's 100K Price Cliff, and the Autocompact Window Test (Video 26, DRAFT NARRATION v1) | Status: PARKED 2026-10-17 (user moved the next video to Haiku subagent efficiency; needs a High-effort re-run and a reworded Section 07 before it can lock). DRAFT v1 2026-10-16, not locked. |
+| /tmp/subagent-fixture/scripts/haiku55-compact-short/script.md | Idea 34 Short: Haiku 4.5 broke rule 1 after /compact, Haiku 5.5 did not | Status: narration v4 LOCKED 2026-10-13; cover LOCKED 2026-10-13. Built and rendered v4 (41.9 s). Receipts audit and live-page check done; cover, upload-notes and Private upload still to do. |
+| /tmp/subagent-fixture/scripts/jev-vs-kev/script.md | Video 16 Script: Claude Code vs. Antigravity (Jev vs. Local Kev) | none |
+| /tmp/subagent-fixture/scripts/mcp-context-bloat-fixed/script.md | Claude Code Already Fixed Your MCP Context Bloat | ## Status: v2 built and rendered 2026-08-19 (6:42). Not yet done: review/trim pass and packaging (title/thumbnail/upload-notes). |
+| /tmp/subagent-fixture/scripts/mcp-goes-stateless/script.md | MCP Goes Stateless | ## Status: TTS, rendering, and packaging are all complete. Only remaining step is the user's own upload/publish action. |
+| /tmp/subagent-fixture/scripts/mcp-server-in-20-minutes/script.md | Build Your First MCP Server in 20 Minutes | none |
+| /tmp/subagent-fixture/scripts/mods-handoff-test-short-1/script.md | Video 21 Short 1: the bill, ranked | none |
+| /tmp/subagent-fixture/scripts/mods-handoff-test-short-2/script.md | Video 21 Short 2: ask for the rules back | none |
+| /tmp/subagent-fixture/scripts/mods-handoff-test/script.md | I Tested the Auto-Handoff Mods Everyone Is Building (Video 21, DRAFT NARRATION) | none (line 3 is a "Angle locked 2026-10-05 … not final until Sonnet rep 6" note) |
+| /tmp/subagent-fixture/scripts/opus55-effort-video/script.md | Same Task, Five Model and Effort Settings (Video 25, DRAFT NARRATION) | none (line 3: "Narration drafted 2026-10-07 … Humanizer pass pending.") |
+| /tmp/subagent-fixture/scripts/opusplan-tax/script.md | opusplan-tax (H1 is the slug; locked title in the file is "I Ran the Same Task Twice in Claude Code. One Cost 4.3x More") | Status: locked and fully built (8 sections, 413.0s / 6:53 stitched final). Ready for upload, see upload-notes.md. |
+| /tmp/subagent-fixture/scripts/plugin-eval-benchmark/script.md | Video 13: I Tested 5 Claude Code Skills. Only 1 Beat Plain Claude. | none |
+| /tmp/subagent-fixture/scripts/rebuild-your-claude-md/script.md | Rebuild Your CLAUDE.md, Don't Accrete It | ## Status (latest entry, 2026-08-22): full production day, ends at 7:46.5, published tonight. Nothing left open; "Still open before publish" is now empty. |
+| /tmp/subagent-fixture/scripts/rtk-vs-caveman/script.md | rtk-vs-caveman (H1 is the slug; no human-readable title in the H1) | Status: narration TTS'd, long-form locked, title and thumbnail locked, all 3 Shorts locked. Only packaging/upload remains. |
+| /tmp/subagent-fixture/scripts/subagent-scout/script.md | subagent-scout (H1 is the slug) | Status: not yet rendered. This is the narration draft, pending TTS/render. (A ## Status section at line 108 says the same.) |
+| /tmp/subagent-fixture/scripts/taste-skill-fact-check/script.md | Video 14 — I Fact-Checked the Viral "Anti-Slop" Claude Code Skill | none |

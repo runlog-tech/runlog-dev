@@ -1,0 +1,8 @@
+Wrote `solution.py` and `test_solution.py` in `/tmp/subagent-eff/runs/T4_L6/work/`. All 13 tests pass.
+
+- `/tmp/subagent-eff/runs/T4_L6/work/solution.py`: `slugify(title)` lowercases, collapses each run of non-`[a-z0-9]` into one hyphen, strips edge hyphens, cuts to 60 at the last hyphen if one exists, and returns `untitled` when empty.
+- `/tmp/subagent-eff/runs/T4_L6/work/test_solution.py`: parametrized basic cases, the hyphen-boundary cut, the exact-60 boundary, a single long word, and a length/edge-hyphen invariant.
+
+Skipped: no type-check or lint run, and no non-string input handling, since the spec didn't ask for it. The directory is not a git repo, so there was no commit.
+
+Risk: non-ASCII letters are dropped, not transliterated, so `Café` becomes `caf`. That follows the spec but may surprise users with accented titles.

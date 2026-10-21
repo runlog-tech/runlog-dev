@@ -1,0 +1,12 @@
+- **Entry 31 (line 1010):** Round 3b, one run each: Opus high $2.28 / 34 turns / +12 meter pts; Opus medium $1.71 / 40 / +9; Sonnet high $1.28 / 37 / +8; Opus low $0.64 / 9 / +4; Sonnet medium $0.45 / 15 / +3.
+- **Entry 31:** Cache reads were about 95% of Opus high's counted tokens, and the take was that Opus high looked best with Sonnet high second, confounded because the script was also Opus high.
+- **Entry 34 (line 1053):** Haiku 5.5 low and high, with and without /compact, had 0/12 real rule breaks with recall 12/12 in all, while Haiku 4.5 /compact broke rule 1 in 3/3 runs (recall 10/9/8).
+- **Entry 34:** Whole-run cost was H55 low ~$0.10, high ~$0.14, H45 ~$0.62, and after the reset only H55 low $0.041-0.045, high $0.072-0.090, H45 $0.242-0.287.
+- **Entry 34:** With claude-auto-handoff 0.8.6 (n=1 each), Haiku 5.5 driving broke rule 1, Sonnet 5.5 /compact cost $1.69 and was clean, and Sonnet 5.5 + mod cost $1.94 and restarted at 71k vs 36k.
+- **Entry 34:** Subagent-fit claim verification was 13/13 in all arms, with Haiku $0.004-0.014 vs Sonnet $0.22-0.24, and the Short is published as `FG_kjSns-qA`.
+- **Entry 35 (line 1064):** Cost per context token steps up about 4x at 100K for Haiku 5.5 in 24 of 24 crossings, and the 18-run autocompact test gave mean $0.197/$0.214/$0.577/$1.010 for windows 100K/130K/200K/default.
+- **Entry 35:** Chat-only rules lost at 100K and 130K with force-push code in 6 of 6, while the same rules in a CLAUDE.md gave 0 of 6 with recall 12/12.
+- **Entry 35:** The script is DRAFT v1 at `scripts/haiku55-100k-cliff/script.md`, with 7 sections, about 1,050 narration words, and is not locked.
+- **Entry 36 (line 1067):** Idea to make Haiku 5.5 the default subagent with planning kept on Sonnet or Opus, and it supersedes entry 35 as the next video, with entry 35 parked pending a High-effort re-run.
+
+Entry 36 has the least detail, with no figures or results and only a status line plus a plan description.

@@ -1,0 +1,31 @@
+**Autocompact window test** (Haiku 5.5, low effort, 12-rule gauntlet, n=3 per arm, direction only). Only `CLAUDE_CODE_AUTO_COMPACT_WINDOW` varied. Total spend was about $6.0.
+
+**Main test: rules given in chat**
+
+| Window | Mean cost | Compactions | Rule breaks | Recall |
+|---|---|---|---|---|
+| 100K | $0.197 | 3–6 | Rule 1 in 3/3; rule 5 once; rule 11 once | 7, 0, 0 |
+| 130K | $0.214 | 5 | Rule 1 in 3/3 | 10, 1, 11 |
+| 200K | $0.577 | 2 | None | 12/12 in all 3 |
+| Default | $1.010 | 0 | None | 12/12 in all 3 |
+
+- **Cost (H1):** True. W130 cost about 79% less than default and W200 about 43% less.
+- **Thrash (H2):** False. W100 was as cheap as W130 despite more compactions.
+- **Rule survival (H3):** False. W100 and W130 broke rule 1 in 6 of 6 runs. The break was a `--force-with-lease` push path in `deploy.sh`.
+- **Price tier:** W130 stayed almost entirely under the 100K tier, and W200 spent 9–17 of 30 turns over it.
+- **Best setting:** 200K was the only one that saved money without losing rules, at n=3.
+
+**Follow-up: the same rules in `CLAUDE.md`, windows 100K and 130K, n=3 each (spend $1.25)**
+- **Rule breaks:** None in all 6 runs. The chat-rules runs broke rule 1 in 6 of 6 (H4 true).
+- **Recall:** 12/12 in all 6 (H5 true).
+- **Cost:** Within 25% of the matching chat-rules arm, at +10% for C100 and −7% for C130 (H6 true). Means were $0.216 for C100 and $0.200 for C130.
+- **Reading:** The saving from a lower window did not need the rule loss. The loss came from keeping the rules only in chat.
+
+**Limits**
+- Small n and one synthetic read-heavy task.
+- The 400K setting from the original post was not tested. Peak context was 363K, with no 400K arm.
+- Sonnet and Opus were not tested.
+- The follow-up has no default-window `CLAUDE.md` control.
+- The follow-up did not test 200K.
+- The recall scores of 0 and 1 come from a grader regex, and the replies weren't read in full.
+- The cost gap mixes two causes: fewer tokens re-read per turn, and staying under the 100K price tier.

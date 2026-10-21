@@ -1,0 +1,14 @@
+Source: `/tmp/subagent-fixture/notes/video_ideas.md`
+
+- 31: Round 3b, one run each: Opus high $2.28 / 34 turns / +12 meter pts; Opus medium $1.71 / 40 / +9; Sonnet high $1.28 / 37 / +8; Opus low $0.64 / 9 / +4; Sonnet medium $0.45 / 15 / +3.
+- 31: Cache reads were about 95% of Opus high's counted tokens, and the post was not tested (the video says so).
+- 31: Message is that fitting the plan's limit is not the best use of it; Opus high looked best, Sonnet high second (user judgment, confounded: the script was also Opus high).
+- 34: Haiku 5.5 low and high, with and without `/compact`, had 0/12 real rule breaks and recall 12/12 in all; Haiku 4.5 `/compact` control broke rule 1 in 3/3 runs, recall 10/9/8.
+- 34: Whole-run cost: H55 low `/compact` ~$0.10, high ~$0.14, H45 ~$0.62.
+- 34: claude-auto-handoff 0.8.6 (n=1): Sonnet 5.5 `/compact` $1.69 clean; Sonnet 5.5 + mod $1.94, restart at 71k vs 36k.
+- 34: Subagent-fit claim verification was 13/13 in all arms; Haiku $0.004-0.014 vs Sonnet $0.22-0.24.
+- 35: Cost per context token steps up about 4x at 100K for Haiku 5.5 in 24 of 24 crossings, flat for Haiku 4.5 and Sonnet 5.5.
+- 35: Autocompact window test (18 runs): mean $0.197/$0.214/$0.577/$1.010 for window 100K/130K/200K/default; chat-only rules lost at 100K and 130K, force-push code in 6 of 6.
+- 36: Idea only, nothing run and not pre-registered; above 100K, Haiku 5.5 is still cheaper than Haiku 4.5 or Sonnet.
+
+Least detail: entry 36 (no measured results, nothing run).

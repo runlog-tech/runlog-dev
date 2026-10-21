@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #08090c; }
+  #bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 40%, #141b29 0%, #08090c 70%); }
+  #title, #subtitle { position: absolute; left: 120px; width: 1680px; font-family: Arial, Helvetica, sans-serif; color: #f8fafc; opacity: 0; }
+  #title { top: 90px; font-weight: 800; font-size: 84px; }
+  #subtitle { top: 196px; font-size: 36px; color: #94a3b8; }
+  .row { position: absolute; left: 0; width: 1920px; height: 84px; font-family: Arial, Helvetica, sans-serif; opacity: 0; }
+  .label { position: absolute; left: 120px; width: 380px; line-height: 84px; text-align: right; font-size: 40px; font-weight: 700; color: #e2e8f0; }
+  .track { position: absolute; left: 540px; width: 1080px; height: 84px; border-radius: 42px; background: rgba(148, 163, 184, 0.08); }
+  .bar { position: absolute; left: 0; top: 0; height: 84px; border-radius: 42px; background: linear-gradient(90deg, #0ea5e9, #38bdf8); transform-origin: 0 50%; }
+  .bar.peak { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+  .value { position: absolute; line-height: 84px; font-family: Arial, Helvetica, sans-serif; font-size: 44px; font-weight: 800; color: #f8fafc; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="6" data-width="1920" data-height="1080">
+  <div id="bg"></div>
+  <div id="title">Cost per Million Context Tokens</div>
+  <div id="subtitle">USD by context window size</div>
+
+  <div class="row" style="top: 340px"><div class="label">0–50K</div><div class="track"><div class="bar"></div></div><div class="value">$0.000</div></div>
+  <div class="row" style="top: 490px"><div class="label">50–100K</div><div class="track"><div class="bar"></div></div><div class="value">$0.000</div></div>
+  <div class="row" style="top: 640px"><div class="label">100–150K</div><div class="track"><div class="bar peak"></div></div><div class="value">$0.000</div></div>
+  <div class="row" style="top: 790px"><div class="label">150–250K</div><div class="track"><div class="bar"></div></div><div class="value">$0.000</div></div>
+</div>
+<script>
+  window.__timelines = window.__timelines || {};
+  const PX_PER_DOLLAR = 5400; // 0.20 fills the 1080px track
+  const data = [0.051, 0.068, 0.197, 0.153];
+  const tl = gsap.timeline({ paused: true });
+
+  tl.fromTo("#title", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.3);
+  tl.to("#subtitle", { opacity: 1, duration: 0.6 }, 0.6);
+
+  document.querySelectorAll(".row").forEach((row, i) => {
+    const bar = row.querySelector(".bar");
+    const value = row.querySelector(".value");
+    const t = 1.0 + i * 0.25;
+    const px = Math.round(data[i] * PX_PER_DOLLAR);
+    bar.style.width = px + "px";
+    value.style.left = (540 + px + 24) + "px";
+
+    const counter = { v: 0 };
+    tl.to(row, { opacity: 1, duration: 0.4 }, t);
+    tl.fromTo(bar, { scaleX: 0 }, { scaleX: 1, duration: 1.1, ease: "power3.out" }, t);
+    tl.to(counter, {
+      v: data[i], duration: 1.1, ease: "power3.out",
+      onUpdate: () => { value.textContent = "$" + counter.v.toFixed(3); }
+    }, t);
+  });
+
+  window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

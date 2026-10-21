@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #08090c; }
+  #bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 40%, #111827 0%, #08090c 70%); }
+  #title { position: absolute; left: 120px; top: 110px; width: 1680px; font-family: Arial, Helvetica, sans-serif; font-weight: 800; font-size: 76px; color: #f8fafc; letter-spacing: -1px; opacity: 0; }
+  #subtitle { position: absolute; left: 120px; top: 200px; width: 1680px; font-family: Arial, Helvetica, sans-serif; font-weight: 400; font-size: 34px; color: #64748b; opacity: 0; }
+  #axis { position: absolute; left: 436px; top: 370px; width: 4px; height: 552px; background: #1e293b; transform-origin: 50% 0; }
+  .row { position: absolute; left: 0; width: 1920px; height: 72px; }
+  .range { position: absolute; left: 120px; width: 280px; top: 0; height: 72px; line-height: 72px; text-align: right; font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 38px; color: #cbd5e1; opacity: 0; }
+  .track { position: absolute; left: 440px; top: 0; width: 1200px; height: 72px; border-radius: 6px; background: #12161f; }
+  .bar { position: absolute; left: 440px; top: 0; height: 72px; border-radius: 6px; background: #334155; transform-origin: 0 50%; }
+  .bar.peak { background: linear-gradient(90deg, #0ea5e9, #38bdf8); box-shadow: 0 0 40px rgba(56, 189, 248, 0.35); }
+  .value { position: absolute; top: 0; height: 72px; line-height: 72px; font-family: Arial, Helvetica, sans-serif; font-weight: 800; font-size: 56px; color: #94a3b8; opacity: 0; }
+  .value.peak { color: #f8fafc; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="6" data-width="1920" data-height="1080">
+  <div id="bg"></div>
+  <div id="title">Cost per million context tokens</div>
+  <div id="subtitle">USD per 1M tokens, by context size</div>
+  <div id="axis"></div>
+
+  <!-- bar width = value * 6000px (0.2 USD = 1200px); value label x = 440 + width + 24 -->
+  <div class="row" style="top: 380px;">
+    <div class="range">0–50K</div>
+    <div class="track"></div>
+    <div class="bar" style="width: 306px;"></div>
+    <div class="value" style="left: 770px;">$0.051</div>
+  </div>
+  <div class="row" style="top: 530px;">
+    <div class="range">50–100K</div>
+    <div class="track"></div>
+    <div class="bar" style="width: 408px;"></div>
+    <div class="value" style="left: 872px;">$0.068</div>
+  </div>
+  <div class="row" style="top: 680px;">
+    <div class="range">100–150K</div>
+    <div class="track"></div>
+    <div class="bar peak" style="width: 1182px;"></div>
+    <div class="value peak" style="left: 1646px;">$0.197</div>
+  </div>
+  <div class="row" style="top: 830px;">
+    <div class="range">150–250K</div>
+    <div class="track"></div>
+    <div class="bar" style="width: 918px;"></div>
+    <div class="value" style="left: 1382px;">$0.153</div>
+  </div>
+
+</div>
+<script>
+  const tl = gsap.timeline({ paused: true });
+
+  tl.fromTo("#title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.1);
+  tl.fromTo("#subtitle", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.35);
+  tl.fromTo("#axis", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "power2.inOut" }, 0.5);
+  tl.fromTo(".range", { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out", stagger: 0.12 }, 0.7);
+
+  const bars = gsap.utils.toArray(".bar");
+  const values = gsap.utils.toArray(".value");
+  bars.forEach((bar, i) => {
+    const start = 1.0 + i * 0.22;
+    tl.fromTo(bar, { scaleX: 0 }, { scaleX: 1, duration: 1.1, ease: "power3.out" }, start);
+    tl.fromTo(values[i], { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.45, ease: "power2.out" }, start + 0.85);
+  });
+
+  window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

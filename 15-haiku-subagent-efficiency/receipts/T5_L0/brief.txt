@@ -1,0 +1,1 @@
+For every scripts/*/script.md, report its title and its status line.

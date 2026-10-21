@@ -1,0 +1,42 @@
+34 mentions of `meter.jsonl` across 17 `.py` files under `/tmp/subagent-fixture/scripts/`:
+
+1. /tmp/subagent-fixture/scripts/haiku55-compact-rules/analyze.py:16
+2. /tmp/subagent-fixture/scripts/haiku55-compact-rules/run_pilot.py:5
+3. /tmp/subagent-fixture/scripts/haiku55-compact-rules/run_pilot.py:48
+4. /tmp/subagent-fixture/scripts/haiku55-compact-rules/run_pilot.py:81
+5. /tmp/subagent-fixture/scripts/haiku55-compact-rules/run_mod.py:93
+6. /tmp/subagent-fixture/scripts/you-should-know-test/pilot/analyze.py:15
+7. /tmp/subagent-fixture/scripts/you-should-know-test/pilot/run_ysk.py:31
+8. /tmp/subagent-fixture/scripts/you-should-know-test/pilot/run_pilot.py:5
+9. /tmp/subagent-fixture/scripts/you-should-know-test/pilot/run_pilot.py:47
+10. /tmp/subagent-fixture/scripts/you-should-know-test/pilot/run_pilot.py:80
+11. /tmp/subagent-fixture/scripts/you-should-know-test/pilot/run_mod.py:93
+12. /tmp/subagent-fixture/scripts/autocompact-window-test/run_window.py:6
+13. /tmp/subagent-fixture/scripts/autocompact-window-test/run_window.py:50
+14. /tmp/subagent-fixture/scripts/autocompact-window-test/run_window.py:83
+15. /tmp/subagent-fixture/scripts/claude-code-mods-audit/pilot/analyze.py:15
+16. /tmp/subagent-fixture/scripts/claude-code-mods-audit/pilot/run_pilot.py:5
+17. /tmp/subagent-fixture/scripts/claude-code-mods-audit/pilot/run_pilot.py:47
+18. /tmp/subagent-fixture/scripts/claude-code-mods-audit/pilot/run_pilot.py:80
+19. /tmp/subagent-fixture/scripts/claude-code-mods-audit/pilot/run_mod.py:93
+20. /tmp/subagent-fixture/scripts/context-cost-100k/analyze.py:5
+21. /tmp/subagent-fixture/scripts/haiku-subagent-efficiency/run_round1.py:51
+22. /tmp/subagent-fixture/scripts/haiku-subagent-efficiency/run_round1.py:84
+23. /tmp/subagent-fixture/scripts/haiku-subagent-efficiency/run_round1.py:102
+24. /tmp/subagent-fixture/scripts/haiku-subagent-efficiency/briefs.py:8
+25. /tmp/subagent-fixture/scripts/haiku-subagent-efficiency/briefs.py:15
+26. /tmp/subagent-fixture/scripts/mods-handoff-test/hyperframes/sections.py:276
+27. /tmp/subagent-fixture/scripts/mods-handoff-test/hyperframes/sections.py:277
+28. /tmp/subagent-fixture/scripts/opus55-effort-video/precedent/video21_sections.py:276
+29. /tmp/subagent-fixture/scripts/opus55-effort-video/precedent/video21_sections.py:277
+30. /tmp/subagent-fixture/scripts/opus55-effort-video/run_stage.py:2
+31. /tmp/subagent-fixture/scripts/opus55-effort-video/run_stage.py:89
+32. /tmp/subagent-fixture/scripts/opus55-pro-usage-check/run_build.py:46
+33. /tmp/subagent-fixture/scripts/opus55-pro-usage-check/run_build.py:106
+34. /tmp/subagent-fixture/scripts/opus55-pro-usage-check/run_frames.py:62
+
+Notes:
+- Lines 24 and 25 (`briefs.py`) are the task text itself, not code that uses the file.
+- Lines 26–29 are label or read strings in the video/section scripts, not writes.
+- Line 2 of `run_stage.py` is a docstring.
+- The search was a case-sensitive literal match on `*.py` only.

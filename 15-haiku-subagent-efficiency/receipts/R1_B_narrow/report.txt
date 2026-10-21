@@ -1,0 +1,7 @@
+The placeholder is replaced with an animated horizontal bar chart of cost per million context tokens. `npm run check` passes and the MP4 is rendered at 1920x1080, 30fps, 6.0s.
+
+- **Scene:** `/tmp/subagent-eff/runs/R1_B_narrow/work/index.html`. The four bars show your values, with `$` labels counting up as the bars grow. The 100–150K bar ($0.197) is highlighted in amber as the peak. The chart has gridlines and a $0.00–$0.25 axis. The root `data-duration` is still 6.
+- **Check:** passes with 0 lint, runtime, layout, or motion issues, and 62/62 contrast checks. The first run failed on a CSS transform conflicting with a GSAP tween, and the second on value labels overflowing their bars and tick labels overlapping the last row. I fixed both.
+- **Render:** `/tmp/subagent-eff/runs/R1_B_narrow/work/renders/work_2026-10-17_12-10-04.mp4` (627 KB, H.264). I checked a mid-animation frame and the final frame, and both look correct.
+
+The project is not a git repo, so nothing was committed.

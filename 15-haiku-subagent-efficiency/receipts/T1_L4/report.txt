@@ -1,0 +1,57 @@
+34 mentions of `meter.jsonl` across the Python files under `scripts/`:
+
+**claude-code-mods-audit/pilot**
+- /tmp/subagent-fixture/scripts/claude-code-mods-audit/pilot/analyze.py:15
+- /tmp/subagent-fixture/scripts/claude-code-mods-audit/pilot/run_pilot.py:5
+- /tmp/subagent-fixture/scripts/claude-code-mods-audit/pilot/run_pilot.py:47
+- /tmp/subagent-fixture/scripts/claude-code-mods-audit/pilot/run_pilot.py:80
+- /tmp/subagent-fixture/scripts/claude-code-mods-audit/pilot/run_mod.py:93
+
+**autocompact-window-test**
+- /tmp/subagent-fixture/scripts/autocompact-window-test/run_window.py:6
+- /tmp/subagent-fixture/scripts/autocompact-window-test/run_window.py:50
+- /tmp/subagent-fixture/scripts/autocompact-window-test/run_window.py:83
+
+**context-cost-100k**
+- /tmp/subagent-fixture/scripts/context-cost-100k/analyze.py:5
+
+**you-should-know-test/pilot**
+- /tmp/subagent-fixture/scripts/you-should-know-test/pilot/analyze.py:15
+- /tmp/subagent-fixture/scripts/you-should-know-test/pilot/run_ysk.py:31
+- /tmp/subagent-fixture/scripts/you-should-know-test/pilot/run_pilot.py:5
+- /tmp/subagent-fixture/scripts/you-should-know-test/pilot/run_pilot.py:47
+- /tmp/subagent-fixture/scripts/you-should-know-test/pilot/run_pilot.py:80
+- /tmp/subagent-fixture/scripts/you-should-know-test/pilot/run_mod.py:93
+
+**opus55-effort-video**
+- /tmp/subagent-fixture/scripts/opus55-effort-video/run_stage.py:2
+- /tmp/subagent-fixture/scripts/opus55-effort-video/run_stage.py:89
+- /tmp/subagent-fixture/scripts/opus55-effort-video/precedent/video21_sections.py:276
+- /tmp/subagent-fixture/scripts/opus55-effort-video/precedent/video21_sections.py:277
+
+**opus55-pro-usage-check**
+- /tmp/subagent-fixture/scripts/opus55-pro-usage-check/run_frames.py:62
+- /tmp/subagent-fixture/scripts/opus55-pro-usage-check/run_build.py:46
+- /tmp/subagent-fixture/scripts/opus55-pro-usage-check/run_build.py:106
+
+**mods-handoff-test/hyperframes**
+- /tmp/subagent-fixture/scripts/mods-handoff-test/hyperframes/sections.py:276
+- /tmp/subagent-fixture/scripts/mods-handoff-test/hyperframes/sections.py:277
+
+**haiku-subagent-efficiency**
+- /tmp/subagent-fixture/scripts/haiku-subagent-efficiency/run_round1.py:51
+- /tmp/subagent-fixture/scripts/haiku-subagent-efficiency/run_round1.py:84
+- /tmp/subagent-fixture/scripts/haiku-subagent-efficiency/run_round1.py:102 (inside a `git grep` argument, not a file access)
+- /tmp/subagent-fixture/scripts/haiku-subagent-efficiency/briefs.py:8 (inside a task string)
+- /tmp/subagent-fixture/scripts/haiku-subagent-efficiency/briefs.py:15 (inside a task string)
+
+**haiku55-compact-rules**
+- /tmp/subagent-fixture/scripts/haiku55-compact-rules/analyze.py:16
+- /tmp/subagent-fixture/scripts/haiku55-compact-rules/run_pilot.py:5
+- /tmp/subagent-fixture/scripts/haiku55-compact-rules/run_pilot.py:48
+- /tmp/subagent-fixture/scripts/haiku55-compact-rules/run_pilot.py:81
+- /tmp/subagent-fixture/scripts/haiku55-compact-rules/run_mod.py:93
+
+total: 34
+
+Notes: the search was a case-sensitive regex, `meter\.jsonl`, over `*.py` files under `scripts/`. `opus55-pro-usage-check/run_build.py:46` is a default parameter value (`name: str = "meter.jsonl"`), and the `sections.py` and `video21_sections.py` hits reference a hard-coded `/tmp/mods-pilot/B6/meter.jsonl` path.

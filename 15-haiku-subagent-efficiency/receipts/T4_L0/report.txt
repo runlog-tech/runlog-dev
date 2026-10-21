@@ -1,0 +1,3 @@
+I wrote `slugify` in `/tmp/subagent-eff/runs/T4_L0/work/solution.py` and 20 pytest tests in `/tmp/subagent-eff/runs/T4_L0/work/test_solution.py`. All 20 pass.
+
+Non-ASCII letters are treated as separators, not transliterated, so `café au lait` gives `caf-au-lait`. If you want accented letters mapped to their ASCII base, that needs a normalization step the spec didn't ask for.

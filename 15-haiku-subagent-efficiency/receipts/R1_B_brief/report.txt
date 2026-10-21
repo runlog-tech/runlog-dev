@@ -1,0 +1,3 @@
+check: pass
+render: ok
+index.html

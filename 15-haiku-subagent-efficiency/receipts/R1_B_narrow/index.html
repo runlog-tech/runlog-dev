@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #08090c; }
+  #bg { position: absolute; inset: 0; background: #08090c; }
+  .abs { position: absolute; }
+  #accent { left: 120px; top: 92px; width: 96px; height: 6px; background: #f59e0b; transform-origin: left center; }
+  #title { left: 120px; top: 116px; width: 1680px; font-family: Arial, Helvetica, sans-serif; font-weight: 800; font-size: 76px; line-height: 90px; color: #f8fafc; opacity: 0; }
+  #subtitle { left: 120px; top: 212px; width: 1680px; font-family: Arial, Helvetica, sans-serif; font-weight: 400; font-size: 32px; line-height: 40px; color: #94a3b8; opacity: 0; }
+  .grid { top: 360px; width: 2px; height: 556px; background: #1e293b; opacity: 0; }
+  .tick { top: 932px; width: 120px; margin-left: -60px; text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 24px; line-height: 30px; color: #64748b; opacity: 0; }
+  .row-label { left: 120px; width: 340px; height: 88px; line-height: 88px; text-align: right; font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 40px; color: #e2e8f0; opacity: 0; }
+  .bar { left: 500px; height: 88px; width: 0px; border-radius: 0 14px 14px 0; background: linear-gradient(90deg, #0ea5e9, #6366f1); }
+  .bar.peak { background: linear-gradient(90deg, #f59e0b, #f97316); }
+  .value { left: 528px; height: 88px; line-height: 88px; font-family: Arial, Helvetica, sans-serif; font-weight: 800; font-size: 48px; color: #e2e8f0; white-space: nowrap; font-variant-numeric: tabular-nums; opacity: 0; }
+  .value.peak { color: #fbbf24; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="6" data-width="1920" data-height="1080">
+  <div id="bg"></div>
+  <div id="accent" class="abs"></div>
+  <div id="title" class="abs">Cost per Million Context Tokens</div>
+  <div id="subtitle" class="abs">USD per 1M context tokens, by context window size</div>
+
+  <!-- gridlines at $0.05 steps; x = 500 + value * 4720 (scale max $0.25 over 1180px) -->
+  <div class="abs grid" style="left: 500px;"></div>
+  <div class="abs grid" style="left: 736px;"></div>
+  <div class="abs grid" style="left: 972px;"></div>
+  <div class="abs grid" style="left: 1208px;"></div>
+  <div class="abs grid" style="left: 1444px;"></div>
+  <div class="abs grid" style="left: 1680px;"></div>
+
+  <div class="abs tick" style="left: 500px;">$0.00</div>
+  <div class="abs tick" style="left: 736px;">$0.05</div>
+  <div class="abs tick" style="left: 972px;">$0.10</div>
+  <div class="abs tick" style="left: 1208px;">$0.15</div>
+  <div class="abs tick" style="left: 1444px;">$0.20</div>
+  <div class="abs tick" style="left: 1680px;">$0.25</div>
+
+  <div class="abs row-label" style="top: 380px;" id="lbl-0">0&ndash;50K</div>
+  <div class="abs row-label" style="top: 520px;" id="lbl-1">50&ndash;100K</div>
+  <div class="abs row-label" style="top: 660px;" id="lbl-2">100&ndash;150K</div>
+  <div class="abs row-label" style="top: 800px;" id="lbl-3">150&ndash;250K</div>
+
+  <div class="abs bar" style="top: 380px;" id="bar-0"></div>
+  <div class="abs bar" style="top: 520px;" id="bar-1"></div>
+  <div class="abs bar peak" style="top: 660px;" id="bar-2"></div>
+  <div class="abs bar" style="top: 800px;" id="bar-3"></div>
+
+  <div class="abs value" style="top: 380px;" id="val-0">$0.000</div>
+  <div class="abs value" style="top: 520px;" id="val-1">$0.000</div>
+  <div class="abs value peak" style="top: 660px;" id="val-2">$0.000</div>
+  <div class="abs value" style="top: 800px;" id="val-3">$0.000</div>
+</div>
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true, defaults: { ease: "power2.out" } });
+
+  // Bar widths are value * 4720px per USD (scale max $0.25 over 1180px).
+  const rows = [
+    { i: 0, v: 0.051, w: 240.7 },
+    { i: 1, v: 0.068, w: 321.0 },
+    { i: 2, v: 0.197, w: 929.8 },
+    { i: 3, v: 0.153, w: 722.2 },
+  ];
+
+  tl.fromTo("#accent", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power3.out" }, 0.1);
+  tl.fromTo("#title", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.7 }, 0.2);
+  tl.fromTo("#subtitle", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6 }, 0.5);
+  tl.to(".grid", { opacity: 1, duration: 0.6, stagger: 0.08 }, 0.7);
+  tl.to(".tick", { opacity: 1, duration: 0.5, stagger: 0.06 }, 0.9);
+
+  rows.forEach((r, n) => {
+    const s = 1.0 + n * 0.3;
+    const counter = { v: 0 };
+    tl.fromTo(`#lbl-${r.i}`, { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.5 }, s);
+    tl.to(`#bar-${r.i}`, { width: r.w, duration: 1.4, ease: "power3.out" }, s + 0.15);
+    tl.to(`#val-${r.i}`, { opacity: 1, x: r.w, duration: 1.4, ease: "power3.out" }, s + 0.15);
+    tl.to(counter, {
+      v: r.v,
+      duration: 1.4,
+      ease: "power3.out",
+      onUpdate: () => {
+        document.getElementById(`val-${r.i}`).textContent = "$" + counter.v.toFixed(3);
+      },
+    }, s + 0.15);
+  });
+
+  // Peak tier pulse once the last bar settles.
+  tl.to("#bar-2", { boxShadow: "0 0 48px rgba(249,115,22,0.55)", duration: 0.5, yoyo: true, repeat: 1 }, 3.9);
+  // Hold the final frame to the 6s composition end.
+  tl.set({}, {}, 6);
+
+  window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

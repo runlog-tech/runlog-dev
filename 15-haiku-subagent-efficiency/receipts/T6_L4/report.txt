@@ -1,0 +1,28 @@
+**Entry 31: Opus 5.5 effort, one visual task, five setups (video 25, produced 2026-10-07)**
+- One HyperFrames render task, run with Opus 5.5 high, medium and low and Sonnet 5.5 high and medium. Each setup ran once.
+- Cost and turns: Opus high $2.28 / 34 turns; Opus medium $1.71 / 40; Sonnet high $1.28 / 37; Opus low $0.64 / 9; Sonnet medium $0.45 / 15.
+- Message: fitting your plan's limit isn't the best use of it. For this task Opus high looked best and Sonnet high second. That ranking is a user judgment and is confounded, since the script was also written by Opus high.
+- Receipts: `scripts/opus55-pro-usage-check/FACTS.md` and `scripts/opus55-effort-video/upload-notes.md`.
+
+**Entry 34: Haiku 5.5 and /compact, does it still drop hard rules? (run 2026-10-12/13)**
+- Haiku 5.5 at low and high effort, with and without /compact: 0 of 12 runs broke a rule, and recall was 12/12 in all arms.
+- Haiku 4.5 with /compact: 3 of 3 runs broke rule 1 (the force push in `deploy.sh`).
+- n=3 per arm, so direction only. Whole-run costs are roughly $0.10 to $0.14 for Haiku 5.5 versus about $0.62 for Haiku 4.5.
+- The Short is published (`FG_kjSns-qA`). A long video is still undecided.
+- Caveat: earlier notes wrongly labelled whole-run costs as post-reset. The corrected numbers are in the entry.
+- Receipts: `scripts/haiku55-compact-rules/RESULTS.md` and `scripts/haiku55-subagent-fit/RESULTS.md`.
+
+**Entry 35: Haiku 5.5's 100K price cliff and the autocompact window (video 26, drafted 2026-10-16)**
+- Status: script draft v1 (7 sections, about 1,050 words), not locked. The pre-lock checklist is at the end of `scripts/haiku55-100k-cliff/script.md`.
+- Core claim: cost per context token rises about 4x at 100K for Haiku 5.5 (24 of 24 crossings). It is flat for Haiku 4.5 and Sonnet 5.5.
+- Window test (18 runs): at 100K and 130K windows, chat-only rules were lost. Putting the same rules in CLAUDE.md fixed it (0 of 6 broke, recall 12/12).
+- Not claimed: a 400K window, Sonnet or Opus pricing, or Anthropic confirming whole-request repricing.
+- Open items: title (3 candidates in the script), thumbnail (user, via Gemini), re-running prior-art search before upload, and an optional default-window control.
+
+**Entry 36: Making a Haiku 5.5 subagent token-efficient (video 27 candidate, logged 2026-10-17)**
+- Status: idea only. Draft plan in `scripts/haiku-subagent-efficiency/PLAN.md`. Not pre-registered, nothing run.
+- Premise: Haiku 5.5 is cheap enough to be the default subagent. Planning stays with Sonnet or Opus.
+- Levers: a concise-output instruction, narrow tools, a better brief, effort level, and Ponytail on code-writing tasks.
+- Even above 100K, Haiku 5.5 is still cheaper than Haiku 4.5 or Sonnet.
+- Reuses the price-step data from `scripts/context-cost-100k/` and the SubagentStop ledger in `scripts/_tools/runlog-guard/`.
+- This entry supersedes entry 35 as the next video. Entry 35 is parked pending a High-effort re-run.

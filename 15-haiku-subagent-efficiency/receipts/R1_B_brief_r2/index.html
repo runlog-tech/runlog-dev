@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #08090c; }
+  #bg { position: absolute; inset: 0; background: #08090c; }
+  #title { position: absolute; left: 120px; top: 90px; width: 1680px; font-family: Arial, Helvetica, sans-serif; font-weight: 800; font-size: 84px; line-height: 100px; color: #f8fafc; opacity: 0; }
+  .row { position: absolute; left: 0; width: 1920px; height: 76px; font-family: Arial, Helvetica, sans-serif; font-size: 44px; line-height: 76px; color: #f8fafc; }
+  .label { position: absolute; left: 120px; top: 0; width: 460px; white-space: nowrap; }
+  .bar { position: absolute; left: 600px; top: 0; height: 76px; width: 0px; background: #38bdf8; }
+  .bar.hl { background: #fb923c; }
+  .value { position: absolute; top: 0; font-weight: 800; white-space: nowrap; opacity: 0; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="6" data-width="1920" data-height="1080">
+  <div id="bg"></div>
+  <div id="title">COST PER CONTEXT TOKEN</div>
+
+  <div class="row" id="r0" style="top: 320px;">
+    <div class="label">0 to 50K</div>
+    <div class="bar" data-w="269"></div>
+    <div class="value" style="left: 893px;">$0.051</div>
+  </div>
+
+  <div class="row" id="r1" style="top: 490px;">
+    <div class="label">50 to 100K</div>
+    <div class="bar" data-w="358"></div>
+    <div class="value" style="left: 982px;">$0.068</div>
+  </div>
+
+  <div class="row" id="r2" style="top: 660px;">
+    <div class="label">100 to 150K</div>
+    <div class="bar hl" data-w="1040"></div>
+    <div class="value" style="left: 1664px;">$0.197</div>
+  </div>
+
+  <div class="row" id="r3" style="top: 830px;">
+    <div class="label">150 to 250K</div>
+    <div class="bar" data-w="808"></div>
+    <div class="value" style="left: 1432px;">$0.153</div>
+  </div>
+</div>
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  tl.to("#title", { opacity: 1, duration: 0.6 }, 0.3);
+
+  const bars = gsap.utils.toArray(".bar");
+  const values = gsap.utils.toArray(".value");
+  const barStart = 1.0;
+  const barStagger = 0.4;
+  bars.forEach((bar, i) => {
+    const t = barStart + i * barStagger;
+    tl.to(bar, { width: Number(bar.dataset.w), duration: 0.9, ease: "power2.out" }, t);
+    tl.to(values[i], { opacity: 1, duration: 0.4, ease: "none" }, t + 0.8);
+  });
+
+  window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

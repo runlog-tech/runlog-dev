@@ -1,0 +1,9 @@
+The placeholder is replaced with an animated horizontal bar chart. `npm run check` passes with 0 findings, and the MP4 is rendered at 6.0s, 1920x1080, 30fps, H.264.
+
+- **Scene:** `/tmp/subagent-eff/runs/R1_E_high_r2/work/index.html`. The four bars show $0.051, $0.068, $0.197 and $0.153 for 0–50K, 50–100K, 100–150K and 150–250K. The 100–150K bar is highlighted in amber as the peak.
+- **Animation:** the header fades in, then the gridlines and axis appear, then each row slides in and its bar grows while the value counts up at the bar tip. The peak bar glows and pulses briefly near the end.
+- **Check:** the first run failed contrast on the axis ticks and footnote (4.18:1). I lightened that grey from `#64748b` to `#8b99ad`, and the rerun passed with 82/82 text checks.
+- **Output:** `/tmp/subagent-eff/runs/R1_E_high_r2/work/out.mp4`.
+- **QC frames:** `/tmp/qc-r1/`, outside the project. I reviewed the 5.5s frame and it matched the intended layout.
+
+The GSAP script is still loaded from the jsDelivr CDN, as in the original file.

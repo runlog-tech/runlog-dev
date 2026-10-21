@@ -1,0 +1,6 @@
+The bar chart replaces the placeholder in `index.html`, `npm run check` passes with 0 findings, and the render is at `/tmp/subagent-eff/runs/R1_E_high_r3/work/out.mp4` (1920x1080, 30fps, 6.000s, H.264).
+
+- **Scene:** Four horizontal bars for the 0-50K, 50-100K, 100-150K and 150-250K ranges, each with its exact dollar value. The 100-150K bar ($0.197) is highlighted with a "PEAK" tag and a glow pulse. Bars grow in a staggered sequence and the values count up to their final figures. Bar length is scaled to a $0.20 maximum, noted in the footer.
+- **Duration:** `data-duration` stays at 6.
+- **Pin bump:** `package.json` pinned `hyperframes@0.8.82`, and the skill's pin probe reported the project behind latest (0.8.167). I applied the bump to 0.8.167 per the skill's procedure, then confirmed `check` passes on it. The old pin is in `/tmp/subagent-eff/pkg.bak.json` if you want to revert. This is the one change outside the scene you asked for.
+- **Side effects:** `check` and `snapshot` wrote to `.hyperframes/` in the project. QC frames went to `/tmp/subagent-eff/qc/`.

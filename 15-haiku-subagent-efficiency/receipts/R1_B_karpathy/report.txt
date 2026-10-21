@@ -1,0 +1,8 @@
+The placeholder is replaced with an animated horizontal bar chart, `npm run check` passes with 0 findings, and the render is at `/tmp/subagent-eff/runs/R1_B_karpathy/work/out.mp4`.
+
+- **Composition:** `/tmp/subagent-eff/runs/R1_B_karpathy/work/index.html`. It keeps the 6s root duration and the single paused GSAP timeline registered under `main`.
+- **Chart:** four bars for 0–50K ($0.051), 50–100K ($0.068), 100–150K ($0.197) and 150–250K ($0.153). The 100–150K bar is highlighted as the peak. Bars grow in sequence, with value labels and the axis fading in.
+- **Check:** `npm run check` reports lint, runtime, layout, motion and contrast all clean (37/37 WCAG AA text checks).
+- **Render:** `--quality looks`, beginframe capture. The output is H.264 at 1920x1080, 30fps, 6.000s, 411.6 KB. I checked a frame at 4s and the layout and labels read correctly.
+
+The compiler logged that it injected Inter for the Arial font stack, so the rendered text is Inter rather than Arial.

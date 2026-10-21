@@ -1,0 +1,6 @@
+**Primary title line (literal "Primary title"): 21 of 22 fail.** Only `antigravity-context-mechanics` has one (`/tmp/subagent-fixture/scripts/antigravity-context-mechanics/upload-notes.md:31`, `- **Primary Title:**`). The other 21 label their title differently, such as `## Title (primary, locked)`, `## 2. Title — LOCKED`, `**Live Title:**`, or `- Title:`. Every file has some title entry, so if you only need a title present, all 22 pass.
+
+**Tags heading: 3 fail.** Each of the 19 others has a `## Tags` heading, including numbered and parenthetical variants.
+- `/tmp/subagent-fixture/scripts/compact-best-practices-card/upload-notes.md:22` has only a `- Tags:` bullet, no heading.
+- `/tmp/subagent-fixture/scripts/jev-vs-kev/upload-notes.md:128` has `## 7. Search Tags`.
+- `/tmp/subagent-fixture/scripts/claude-compact-amnesia/upload-notes.md:125` has `## 7. Search Tags`.

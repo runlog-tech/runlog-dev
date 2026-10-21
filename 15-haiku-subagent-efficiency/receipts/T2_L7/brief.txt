@@ -1,0 +1,108 @@
+Task: summarize `scripts/autocompact-window-test/RESULTS.md` for a reader deciding whether to lower Claude Code's autocompact window. Read the file once in full. Return at most 8 bullets, each one sentence, each carrying its number or limit exactly as written in the file; no outside knowledge; finish with one line on what was NOT tested.
+
+Project background (for context):
+
+# RUNLOG — CLAUDE.md
+
+RUNLOG (@runlog_dev): a YouTube channel teaching solo/senior devs
+production-grade agentic engineering with Claude Code. This file is an
+index and a set of standing operating rules — not a log. If you're
+about to add "what happened" or "why we decided X," it belongs in one
+of the files below, not here.
+
+## Where things live
+
+- `memory/current_state.md` — **read this first.** Every standing fact: channel identity, video status, production model, visual identity, repos, skills, compliance, launch thresholds, packaging conventions, environment gotchas.
+- `memory/pending_decisions.md` — open decisions and the trigger to resolve each one.
+- `memory/video_ideas.md` — the video backlog, one dated entry per idea, full research/verification trail per video.
+- `memory/session_history.md` — settled narrative archived out of active files.
+- `memory/experiments.md` — per-video hypothesis/CTR/AVD log.
+- `~/faceless-content-playbook/PLAYBOOK.md` — shared, channel-agnostic production knowledge built up across faceless-yt and this channel. `git pull` it before starting a new video's production; check it before re-deriving something already solved there, and promote genuinely reusable lessons there rather than leaving them siloed here.
+- `docs/Transformation-First YouTube: Evaluation & Playbook for Your Second Channel.md` — full research backbone. `.scratch/runlog-launch/map.md` — wayfinder launch map (decisions, open tickets, fog).
+- Each video's own folder (`scripts/<video-slug>/`) — `script.md` and `upload-notes.md` are the source of truth for that video's content and packaging.
+- `scripts/_render-template/RENDER_KIT.md` — catalog of every render-pipeline "beat kind" (visual event type) available across video copies, with params and when to use each. Check this before writing a new video's `EVENTS` list instead of re-reading a previous video's `render_terminal.py`/`build_video.py` from scratch. All 29 kinds are in the scaffolding template as of the 2026-09-01 backport — this file's job now is discoverability, not tracking what's missing.
+
+## Non-negotiable rules
+
+- **Firewall**: this repo is content-only. Never import trading logic from sibling repos (names redacted). Never share live code or state with `~/other-pipeline` — copy-and-adapt only, even where the two pipelines converge.
+- **Repo split**: this repo (private) holds all planning, scripts, and render pipelines. `github.com/runlog-tech/runlog-dev` (public) holds only the demo source code a viewer would clone — never planning docs or render pipeline code.
+- **No topic drift**: stay within the four content branches (`memory/current_state.md`).
+- **No batching**: each video's idea/title/thumbnail/hook is bespoke, informed by the previous video's data — not pre-produced in bulk.
+- Keep trading/prediction-market content off this channel — that's @autopsylog's territory.
+
+## Conventions
+
+- Debut video optimized for the broadest proven demand signal rather than the channel's most distinctive angle — carried over from faceless-yt's own convention.
+- Prefer targeted reads over full-file reads: `grep` for the relevant line/function first, then `Read` with `offset`/`limit`, instead of reading a whole file when only a section is needed — especially the larger render pipeline scripts (`build_video.py`, `render_terminal.py`) and long memory files (`video_ideas.md`, `pending_decisions.md`). Full reads are fine for short files or a genuine full rework.
+- **Hard rule, no asking (user, 2026-10-07):** never commit any `.wav` or `.mp4` (`.gitignore` has `*.wav` and `*.mp4`). Stage by explicit path, never `git add -A`. Once a video is uploaded and public, its wav/mp4 media may be deleted without asking (verify it is live first via the channel video list); keep media for private or unposted videos and Shorts. Full rule in `AGENTS.md` section 9.
+
+## Keeping this file honest
+
+This file is an index over `memory/`, not a growing changelog. When a
+session produces a new standing fact, it goes in
+`memory/current_state.md`, not here. When it produces a decision with
+rationale, it goes in `memory/pending_decisions.md` or a dated
+`video_ideas.md` entry. Nothing gets appended to this file directly —
+if it needs to change, edit the relevant line in place. Use
+`/triage-memory` for that instead of editing `CLAUDE.md` on impulse.
+
+**Maintenance**: run `/audit-claude-md` opportunistically (e.g.
+alongside the "pull the shared playbook" habit at the start of a new
+video), not on a fixed calendar. Rebuild only when it actually flags
+drift — narrative language creeping back in, the token count climbing
+back toward the last rebuild's baseline, or a pointer that no longer
+resolves. To rebuild: snapshot this file, confirm every standing fact
+already has a home in `memory/current_state.md`, delete this file and
+write it back from scratch using only that index (never edit the old
+version forward), grep-verify every fact survived, then re-run
+`/audit-claude-md` on the result before trusting it. Last rebuilt
+2026-08-20: 6,080 → 912 tokens.
+
+
+# RUNLOG Vocabulary, Tone & Empirical Proof Guide
+
+This document captures all required vocabulary replacements, conversational tone filters, and visual proof mandates. All scripts, narration generation, and Hyperframes compositions must adhere strictly to these rules.
+
+---
+
+## 1. Banned Words & Approved Replacements
+
+| Banned Word / Pattern | Why It Is Banned | Approved Replacement | Example |
+|---|---|---|---|
+| **"real-world" / "real"** (as fluff) | Sounds like marketing hype and AI-generated filler. Real engineers speak plainly about what was tested. | **"practical"**, concrete descriptions, or omit entirely | ❌ *"We ran five real-world commands"*<br/>✅ *"We ran five practical bash commands"* |
+| **"for real" / "literally" / "honest" / "honestly" / "truly" / "really"** | Conversational filler that reduces credibility and signals synthetic script generation. | Omit entirely. State the fact directly. | ❌ *"This literally took 7 seconds"*<br/>✅ *"This took 7.67 seconds"* |
+| **"apology" / "apology tax" / "apology loop"** | Theatrical, emotional buzzword trope. Not professional architecture language. | **"frontier recovery loop"**, **"context reload"**, **"multi-paragraph response"**, **"execution halt"** | ❌ *"Claude Code burned tokens on the apology tax"*<br/>✅ *"Claude Code burned tokens on a three-paragraph recovery loop"* |
+| **"tax"** (metaphorical) | Overused YouTube prompt-hype jargon. | **"overhead"**, **"delay"**, **"latency penalty"**, **"token consumption"** | ❌ *"Network tax"*<br/>✅ *"Network roundtrip penalty"* |
+| **"our GPU" / "our local RX 7900 XTX"** | Unnecessary collective possessive; sounds promotional rather than objective. | **"local GPU RX 7900 XTX"**, **"on an RX 7900 XTX"** | ❌ *"tested on our local RX 7900 XTX"*<br/>✅ *"tested on local GPU RX 7900 XTX"* |
+| **"Claude 3.7"** | Outdated model (early 2025). As of September 2026, Anthropic's flagship standard is Claude 4 / 4.5. | **Claude Sonnet 4.5** | ❌ *"frontier models like Claude 3.7"*<br/>✅ *"frontier models like Claude Sonnet 4.5"* |
+| **"P. O. S. I. X." (spelled out)** | Unnatural TTS spelling. Developers pronounce it as a single word ("pah-zicks" / "paw-six"). | **"POSIX"** (or phonetically written as a single word) | ❌ *"P. O. S. I. X. exit code 2"*<br/>✅ *"POSIX exit code 2"* |
+| **"RUNLOG" in TTS** | Kokoro spells an all-caps token letter by letter ("R U N L O G"). | Spoken as **"run log"**. Keep `RUNLOG` in script, captions and on-screen text; `generate_tts.py` respells it at synthesis time only (`PRONUNCIATIONS`). | ❌ *"Subscribe to R U N L O G"*<br/>✅ *"Subscribe to run log"* |
+| **"arm" (experiment jargon)** | Viewers do not know "arm" means one condition being compared; it reads as lab-speak. | **"setup"** ("five setups", "the setup where I did nothing"). Applies to narration, on-screen text and upload notes. | ❌ *"Three runs per arm"*<br/>✅ *"Three runs per setup"* |
+| **Em dashes (`—`) and En dashes (`–`)** | Punctuation artifact of AI writing models; causes rendering and line-wrap bugs on mobile video canvas. | Commas, colons, or periods | ❌ *"Kev — a fast reflex — catches it"*<br/>✅ *"Kev, a fast reflex, catches it"* |
+
+---
+
+## 2. Natural Human Speech Rules
+- **Casual, matter-of-fact delivery:** Speak like an experienced developer talking casually to a peer. No breathless hype, no theatrical framing.
+- **Compact & concise:** If a word can be removed without losing technical meaning, remove it.
+- **Show, don't just assert:** If a command is practical or destructive, show the command itself (`git push --force origin main` or `rm -rf /`) rather than repeatedly telling the viewer it is "dangerous" or "real".
+
+---
+
+## 3. The Empirical Proof Mandate
+Whenever a number or metric is spoken in narration, the video canvas **must display visual proof** at that exact moment:
+- **Duration / Latency:**
+  - Spoken: *"took 7.67 seconds to resolve"*
+  - Canvas must show: Verbatim terminal execution timer footer (`Duration: 7.67s (7,669ms)`), live stopwatch odometer, or benchmark timestamp log.
+- **Token Counts:**
+  - Spoken: *"burned over two thousand output tokens"*
+  - Canvas must show: Verbatim CLI token counter (`Output: 2,140 tokens`).
+- **Verbatim Responses:**
+  - When referencing an agent's feedback, show the **full unedited response** in the terminal window chrome, rather than a truncated paraphrase.
+
+---
+
+## 4. Visual Layout Standard (Diagrams Over Dashboards)
+- **Ban "Dashboard Syndrome":** Never display boxed SaaS cards or Datadog-style monitoring tiles.
+- **Use Connected Diagrams & Flowcharts:** Use connected boxes, animated flow lines, and clear sequential stage swaps.
+- **Symmetrical 50/50 Margins:** Ensure all central stages and card stacks have equal left and right margins (1600px width centered on 1920px canvas = 160px left, 160px right).

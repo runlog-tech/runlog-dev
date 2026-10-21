@@ -1,0 +1,38 @@
+All 34 mentions of `meter.jsonl` in Python files under `scripts/` (from a ripgrep over `*.py`):
+
+1. /tmp/subagent-fixture/scripts/context-cost-100k/analyze.py:5
+2. /tmp/subagent-fixture/scripts/autocompact-window-test/run_window.py:6 (docstring)
+3. /tmp/subagent-fixture/scripts/autocompact-window-test/run_window.py:50
+4. /tmp/subagent-fixture/scripts/autocompact-window-test/run_window.py:83
+5. /tmp/subagent-fixture/scripts/haiku-subagent-efficiency/run_round1.py:51
+6. /tmp/subagent-fixture/scripts/haiku-subagent-efficiency/run_round1.py:84
+7. /tmp/subagent-fixture/scripts/haiku-subagent-efficiency/run_round1.py:102 (`git grep` argument)
+8. /tmp/subagent-fixture/scripts/haiku-subagent-efficiency/briefs.py:8 (task text)
+9. /tmp/subagent-fixture/scripts/haiku-subagent-efficiency/briefs.py:15 (task text)
+10. /tmp/subagent-fixture/scripts/haiku55-compact-rules/analyze.py:16
+11. /tmp/subagent-fixture/scripts/haiku55-compact-rules/run_pilot.py:5 (docstring)
+12. /tmp/subagent-fixture/scripts/haiku55-compact-rules/run_pilot.py:48
+13. /tmp/subagent-fixture/scripts/haiku55-compact-rules/run_pilot.py:81
+14. /tmp/subagent-fixture/scripts/haiku55-compact-rules/run_mod.py:93
+15. /tmp/subagent-fixture/scripts/opus55-effort-video/precedent/video21_sections.py:276 (hard-coded `/tmp/mods-pilot/B6/meter.jsonl`)
+16. /tmp/subagent-fixture/scripts/opus55-effort-video/precedent/video21_sections.py:277 (on-screen label)
+17. /tmp/subagent-fixture/scripts/opus55-effort-video/run_stage.py:2 (docstring)
+18. /tmp/subagent-fixture/scripts/opus55-effort-video/run_stage.py:89
+19. /tmp/subagent-fixture/scripts/opus55-pro-usage-check/run_frames.py:62
+20. /tmp/subagent-fixture/scripts/claude-code-mods-audit/pilot/analyze.py:15
+21. /tmp/subagent-fixture/scripts/claude-code-mods-audit/pilot/run_pilot.py:5 (docstring)
+22. /tmp/subagent-fixture/scripts/claude-code-mods-audit/pilot/run_pilot.py:47
+23. /tmp/subagent-fixture/scripts/claude-code-mods-audit/pilot/run_pilot.py:80
+24. /tmp/subagent-fixture/scripts/mods-handoff-test/hyperframes/sections.py:276 (hard-coded `/tmp/mods-pilot/B6/meter.jsonl`)
+25. /tmp/subagent-fixture/scripts/mods-handoff-test/hyperframes/sections.py:277 (on-screen label)
+26. /tmp/subagent-fixture/scripts/claude-code-mods-audit/pilot/run_mod.py:93
+27. /tmp/subagent-fixture/scripts/you-should-know-test/pilot/analyze.py:15
+28. /tmp/subagent-fixture/scripts/you-should-know-test/pilot/run_ysk.py:31
+29. /tmp/subagent-fixture/scripts/opus55-pro-usage-check/run_build.py:46 (`meter_rows` default argument)
+30. /tmp/subagent-fixture/scripts/opus55-pro-usage-check/run_build.py:106
+31. /tmp/subagent-fixture/scripts/you-should-know-test/pilot/run_mod.py:93
+32. /tmp/subagent-fixture/scripts/you-should-know-test/pilot/run_pilot.py:5 (docstring)
+33. /tmp/subagent-fixture/scripts/you-should-know-test/pilot/run_pilot.py:47
+34. /tmp/subagent-fixture/scripts/you-should-know-test/pilot/run_pilot.py:80
+
+Total: 34 mentions across 16 files. Nothing was edited.

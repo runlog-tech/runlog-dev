@@ -1,0 +1,15 @@
+**Summary of** `/tmp/subagent-fixture/scripts/autocompact-window-test/RESULTS.md`
+
+The test ran a 12-rule gauntlet on Haiku 5.5 (low effort, headless, n=3 per arm, direction only), varying only the autocompact window (100K, 130K, 200K, default 1000K).
+
+- **Cost:** Lower windows were much cheaper. Mean cost per run was $0.197 (100K), $0.214 (130K), $0.577 (200K), and $1.010 (default). The 130K arm was about 79% cheaper than default and the 200K arm about 43% cheaper.
+- **Rule breaks with rules in chat:** The 100K and 130K arms broke rule 1 in 6 of 6 runs, mostly a `--force-with-lease` push path in an opt-in flag of `deploy.sh`. The 100K arm also had one rule 5 and one rule 11 break. The 200K and default arms had zero breaks and full recall (12/12).
+- **Hypotheses:** H1 (lower windows cost less) held. H2 (100K thrashes and costs more than 130K) failed. H3 (compaction arms break more rules) held only for the chat-rules runs.
+- **Follow-up with rules in `CLAUDE.md`:** At 100K and 130K (n=3 each), no rule breaks occurred and recall was 12/12 in all six runs. Cost matched the chat-rules arms within about 10%. The file's reading is that the rule loss came from keeping rules only in chat, not from the lower window.
+- **Caveats the file states:**
+  - The cost gap mixes fewer tokens re-read with staying under the 100K price tier.
+  - The 400K setting was not tested.
+  - Sonnet and Opus were not tested.
+  - The compactions came from a synthetic read-heavy session.
+  - No default-window `CLAUDE.md` control exists, so the follow-up shows `CLAUDE.md` rules survive compaction here, not that `CLAUDE.md` changes behaviour without it.
+  - Recall scores of 0 and 1 came from the grader's regex and were not read in full.

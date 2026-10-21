@@ -1,0 +1,26 @@
+**Haiku 5.5 autocompact window test (n=3/arm, direction only)**
+
+Setup: same 12-rule gauntlet, 15 pads, low effort, headless `claude -p`. Only `CLAUDE_CODE_AUTO_COMPACT_WINDOW` varies. About $6.0 spent.
+
+**Rules in chat:**
+- **W100:** $0.197, peak 66-69K, 3-6 compactions. Rule 1 broken 3/3, plus one rule 5 and one rule 11. Recall 7/0/0.
+- **W130:** $0.214, peak 95-109K. Rule 1 broken 3/3. Recall 10/1/11.
+- **W200:** $0.577, 0 breaks, recall 12/12 x3. Only setting that was cheaper with no loss.
+- **W1000 (default):** $1.010, 0 breaks, recall 12/12.
+
+Hypotheses: H1 (lower windows cost less) true. H2 (W100 thrashes) false. H3 (compaction arms break more rules) false. Addendum (compaction at fixed fraction of window) partly true.
+
+**Rules in CLAUDE.md (C100/C130, n=3 each):**
+- 0 real breaks in 6/6, recall 12/12 in all six.
+- Cost $0.216 (C100), $0.200 (C130). 2-5 compactions, none over 100K. Spend $1.25.
+
+**Reading:** the saving from a lower window does not require losing rules. The loss came from rules living only in chat. CLAUDE.md rules survived 3-5 compactions here.
+
+**Limits:**
+- n=3, one synthetic task, Haiku only.
+- No 400K arm. Sonnet and Opus untested.
+- No default-window CLAUDE.md control.
+- Cost gap mixes re-read tokens with the 100K price tier.
+- Rule 1 "breaks" are mostly an opt-in `--force` line in `deploy.sh`.
+
+File: `/tmp/subagent-fixture/scripts/autocompact-window-test/RESULTS.md`

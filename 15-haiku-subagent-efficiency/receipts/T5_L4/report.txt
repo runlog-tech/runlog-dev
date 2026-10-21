@@ -1,0 +1,26 @@
+All 23 `scripts/*/script.md` files are in `/tmp/subagent-fixture/scripts/`. Nine have no explicit status line, so I've marked those "none" and noted any status-like section.
+
+| Script | Title | Status line |
+|---|---|---|
+| `antigravity-context-mechanics` | Script: How Google Antigravity Actually Manages Context (Video 18) | none |
+| `claude-compact-amnesia` | We Tried to Break Claude Code's Memory. It Mostly Held. (Video 17) | none. Working title only; needs title-craft and thumbnail-design before lock. |
+| `claude-doctor-checkup` | /doctor (a.k.a. /checkup) — full script draft | STATUS: full line-by-line narration drafted 2026-09-04, following the locked structure |
+| `claude-workflows-pro-plan` | Are Claude Code Workflows Worth the Tokens? Pro Plan Is the Sharpest Case (Video 20) | none. Titles locked in `upload-notes.md`. |
+| `claude-workflows-pro-plan-short-2` | Video 20 Short 2: the same job, $0.27 vs $1.37 | none |
+| `claude-workflows-pro-plan-short-3` | Video 20 Short 3: up to 18x the tokens (token race) | none |
+| `haiku55-100k-cliff` | Script: Haiku 5.5's 100K Price Cliff, and the Autocompact Window Test (Video 26, DRAFT NARRATION v1) | Status: PARKED 2026-10-17. Needs a High-effort re-run and a reworded Section 07 before it can lock. |
+| `haiku55-compact-short` | Idea 34 Short: Haiku 4.5 broke rule 1 after /compact, Haiku 5.5 did not | Status: narration v4 LOCKED and cover LOCKED 2026-10-13. Built and rendered v4 (41.9 s). Upload-notes and Private upload still to do. |
+| `jev-vs-kev` | Video 16 Script: Claude Code vs. Antigravity (Jev vs. Local Kev) | none |
+| `mcp-context-bloat-fixed` | Script: Claude Code Already Fixed Your MCP Context Bloat | none. Marked v2, rewritten 2026-08-19. |
+| `mcp-goes-stateless` | Script: MCP Goes Stateless | "## Status" section: TTS, rendering and packaging complete; only the user's upload/publish remains. |
+| `mcp-server-in-20-minutes` | Script: Build Your First MCP Server in 20 Minutes | none |
+| `mods-handoff-test` | I Tested the Auto-Handoff Mods Everyone Is Building (Video 21, DRAFT NARRATION) | none. Angle locked 2026-10-05; numbers not final. |
+| `mods-handoff-test-short-1` | Video 21 Short 1: the bill, ranked | none |
+| `mods-handoff-test-short-2` | Video 21 Short 2: ask for the rules back | none |
+| `opus55-effort-video` | Script: Same Task, Five Model and Effort Settings (Video 25, DRAFT NARRATION) | none |
+| `opusplan-tax` | Script: opusplan-tax | Status: locked and fully built (8 sections, 413.0s final). Title and thumbnail locked; ready for upload. |
+| `plugin-eval-benchmark` | Video 13: I Tested 5 Claude Code Skills. Only 1 Beat Plain Claude. | none |
+| `rebuild-your-claude-md` | Script: Rebuild Your CLAUDE.md, Don't Accrete It | "## Status" section: updated 2026-08-22, full production day, published that night; nothing left open. |
+| `rtk-vs-caveman` | Script: rtk-vs-caveman | Status: long-form and all 3 Shorts locked; title and thumbnail locked; only packaging/upload remains. |
+| `subagent-scout` | Script: subagent-scout | Status: not yet rendered. Narration draft, pending TTS/render. |
+| `taste-skill-fact-check` | Video 14 — I Fact-Checked the Viral "Anti-Slop" Claude Code Skill | none |

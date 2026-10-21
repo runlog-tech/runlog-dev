@@ -1,0 +1,25 @@
+antigravity-context-mechanics | Script: How Google Antigravity Actually Manages Context (Video 18) | none
+claude-compact-amnesia | Script: We Tried to Break Claude Code's Memory. It Mostly Held. (Video 17) | none
+claude-doctor-checkup | /doctor (a.k.a. /checkup) — full script draft | full line-by-line narration drafted 2026-09-04, following the
+claude-workflows-pro-plan | Script: Are Claude Code Workflows Worth the Tokens? Pro Plan Is the Sharpest Case (Video 20) | none
+claude-workflows-pro-plan-short-2 | Video 20 Short 2: the same job, $0.27 vs $1.37 | none
+claude-workflows-pro-plan-short-3 | Video 20 Short 3: up to 18x the tokens (token race) | none
+haiku55-100k-cliff | Script: Haiku 5.5's 100K Price Cliff, and the Autocompact Window Test (Video 26, DRAFT NARRATION v1) | PARKED 2026-10-17 (user moved the next video to Haiku subage
+haiku55-compact-short | Idea 34 Short: Haiku 4.5 broke rule 1 after /compact, Haiku 5.5 did not | narration v4 LOCKED 2026-10-13; cover LOCKED 2026-10-13 (`co
+jev-vs-kev | Video 16 Script: Claude Code vs. Antigravity (Jev vs. Local Kev) | none
+mcp-context-bloat-fixed | Script: Claude Code Already Fixed Your MCP Context Bloat | none
+mcp-goes-stateless | Script: MCP Goes Stateless | none
+mcp-server-in-20-minutes | Script: Build Your First MCP Server in 20 Minutes | none
+mods-handoff-test | Script: I Tested the Auto-Handoff Mods Everyone Is Building (Video 21, DRAFT NARRATION) | none
+mods-handoff-test-short-1 | Video 21 Short 1: the bill, ranked | none
+mods-handoff-test-short-2 | Video 21 Short 2: ask for the rules back | none
+opus55-effort-video | Script: Same Task, Five Model and Effort Settings (Video 25, DRAFT NARRATION) | none
+opusplan-tax | Script: opusplan-tax | none
+plugin-eval-benchmark | Video 13: I Tested 5 Claude Code Skills. Only 1 Beat Plain Claude. | none
+rebuild-your-claude-md | Script: Rebuild Your CLAUDE.md, Don't Accrete It | none
+rtk-vs-caveman | Script: rtk-vs-caveman | none
+subagent-scout | Script: subagent-scout | none
+taste-skill-fact-check | Video 14 — I Fact-Checked the Viral "Anti-Slop" Claude Code Skill | none
+total: 22
+
+Notes: the Grep tool has no per-file `-m 1`, so I ran content-mode Grep with all matches and took the first per file. The haiku55-100k-cliff status line was too long for the first grep output, so I re-ran a narrower grep on that file. Status lines were only found at line 3 in three files.

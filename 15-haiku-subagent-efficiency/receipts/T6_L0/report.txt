@@ -1,0 +1,30 @@
+**31. Opus 5.5 effort: one visual task, five setups (video 25, produced 2026-10-07)**
+- One HyperFrames render task run at five settings: Opus 5.5 high, medium and low, and Sonnet 5.5 high and medium. Same script, voice recording and design doc, one run each.
+- Cost and turns: Opus high $2.28 (34 turns), Opus medium $1.71 (40), Sonnet high $1.28 (37), Opus low $0.64 (9), Sonnet medium $0.45 (15).
+- Takeaway: for this visual task Opus high looked best and Sonnet high was second. This is a user judgment and is confounded, since the script was also written with Opus high.
+- The Opus-on-Light usage post itself was not tested, and the video says so. Sources are in `scripts/opus55-pro-usage-check/FACTS.md` and `scripts/opus55-effort-video/upload-notes.md`.
+
+**34. Haiku 5.5 and /compact: does it still drop hard rules? (run 2026-10-12/13)**
+- Reuses the 12-rule gauntlet. Results are n=3 per arm, so direction only.
+- Haiku 5.5 at low and high effort, with and without `/compact`: 0 of 12 runs broke a rule, recall 12/12 in every arm.
+- Haiku 4.5 with `/compact`: 3 of 3 broke rule 1 (the force push in `deploy.sh`).
+- Whole-run cost including pre-reset padding: Haiku 5.5 low about $0.10, high about $0.14, Haiku 4.5 about $0.62. High used roughly 4-8x the thinking tokens of low with no rule gain.
+- Short published 2026-10-13 (`FG_kjSns-qA`). A long video is still undecided.
+- Correction carried forward: the "Haiku lost the strongest wording" claim applied to Haiku 4.5 only. Subagent-fit tests (n=1-2) are in the same entry.
+- Receipts: `scripts/haiku55-compact-rules/RESULTS.md` and `scripts/haiku55-subagent-fit/RESULTS.md`.
+
+**35. Haiku 5.5's 100K price cliff and the autocompact window (video 26, drafted 2026-10-16)**
+- Premise: a post claimed autocompact at 400K saves money. Anthropic's footnote says the price is 90% lower up to 100K and 50% over.
+- Script draft v1 is in `scripts/haiku55-100k-cliff/script.md`, about 1,050 words, not locked.
+- Cost receipts: Haiku 5.5 per-token cost rises about 4x past 100K in 24 of 24 crossings. It stays flat for Haiku 4.5 and Sonnet 5.5.
+- Autocompact window test (18 runs): mean cost $0.197 at a 100K window, $0.214 at 130K, $0.577 at 200K, $1.010 at default. Chat-only rules were lost at 100K and 130K. The same rules in a CLAUDE.md were kept, 0 of 6 breaks.
+- Not claimed: 400K, Sonnet or Opus, or Anthropic confirming whole-request repricing.
+- Open items: title (3 candidates in the script), thumbnail (user, via Gemini), re-running prior-art search before upload, and an optional default-window CLAUDE.md control (about $1).
+
+**36. Making a Haiku 5.5 subagent token-efficient (video 27 candidate, logged 2026-10-17)**
+- Premise from the user: Haiku 5.5 is cheap enough to be the default subagent, unlike Haiku 4.5. Planning and hard reasoning stay with Sonnet or Opus.
+- Since subagent size under 100K can't be controlled, the idea is to make the subagent itself efficient: a concise-output prompt line, narrow tools, a better brief, effort setting, and Ponytail on code-writing tasks.
+- Haiku 5.5 is still cheaper than Haiku 4.5 or Sonnet above 100K.
+- Status: draft plan in `scripts/haiku-subagent-efficiency/PLAN.md`. Not pre-registered, nothing run.
+- Reuses `scripts/context-cost-100k/`, the SubagentStop ledger in `scripts/_tools/runlog-guard/`, and `scripts/orchestrator-pilot/`.
+- Supersedes entry 35 as the next video. Entry 35 is parked pending a High-effort re-run.

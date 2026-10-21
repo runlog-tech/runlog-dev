@@ -1,0 +1,9 @@
+{
+  "name": "render-task",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "npm exec --yes -- hyperframes@0.8.82 check",
+    "render": "npm exec --yes -- hyperframes@0.8.82 render"
+  }
+}

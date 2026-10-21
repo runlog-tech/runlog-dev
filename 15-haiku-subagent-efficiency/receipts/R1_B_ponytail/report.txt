@@ -1,0 +1,13 @@
+The placeholder is replaced with an animated horizontal bar chart. `npm run check` passes and the MP4 is rendered at 1920x1080, 30fps, 6.000s.
+
+- Composition: `/tmp/subagent-eff/runs/R1_B_ponytail/work/index.html`. It is a single GSAP timeline on the existing `#root`. Bars grow with a staggered `scaleX` tween, and the dollar values count up. The 100–150K bar ($0.197, the peak) is amber, the others are blue.
+- Video: `/tmp/subagent-eff/runs/R1_B_ponytail/work/renders/cost-per-million-context.mp4`. I created the `renders/` directory for it.
+- I checked a frame at 5s. Bar lengths are proportional to the values and the labels read correctly.
+- The first check failed on a `gsap.from()` opacity no-op on `#subtitle`. I changed the title and subtitle to `fromTo`/`to`, and the re-run passed.
+
+Skipped:
+- Snapshot checks were disabled, and I did not run any other tests.
+- The chart says "USD" because the values use `$`. I did not check that against the source pricing.
+- The GSAP script and Google Fonts load from the network, so a render without network access will fail or fall back.
+
+Risk: the project is not a git repo, so nothing was committed.

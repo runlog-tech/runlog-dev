@@ -1,0 +1,8 @@
+The placeholder is replaced with an animated horizontal bar chart. The check passes and the 6-second MP4 is rendered.
+
+- **Composition:** `/tmp/subagent-eff/runs/R1_E_xhigh/work/index.html`. Four bars at the values you gave, with the 100–150K bar ($0.197) highlighted as the peak. Bars grow in a staggered sequence, the value labels count up with them, and the axis fades in. The timeline is still one paused GSAP timeline, and the root stays at `data-duration="6"`.
+- **Check:** `npm run check` (pinned hyperframes@0.8.82) passed with 0 lint, runtime, layout, or motion findings and 71/71 WCAG AA text checks.
+- **Render:** `/tmp/subagent-eff/runs/R1_E_xhigh/work/cost-per-million-context.mp4`. It is H.264, 1920x1080, 30 fps, 6.0 s, 588 KB, rendered at `--quality looks` with beginframe capture and hardware GPU. I checked a frame from the file and it matches the composition.
+- **Pin not bumped:** The project pins hyperframes@0.8.82, and the upgrade probe reports 0.8.167 is available. I did not apply it because your global CLAUDE.md says to ask before major dependency changes. Say the word and I will bump it and re-run check and render.
+- **Side effects:** A `.hyperframes/` directory now exists in the project, created by the CLI for history and render caches. The project history entry is `c3a80068`. QC frames are in `/tmp/r1-qc/`, outside the project.
+- **Font:** The CSS asks for Arial, but the compiler substituted Inter when it rendered.
